@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Serenamente Vivir</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-beige: #e7cf9d;
+            --color-cyan: #c9e1e1;
+            --color-green: #cae4b2;
+            --color-cream: #f1ede2;
+            --color-gray: #898989;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f3f0;
+        }
+
+        /* Header y Navegación */
+        header {
+            background: linear-gradient(135deg, rgba(200, 225, 225, 0.6), rgba(202, 228, 178, 0.6));
+            padding: 20px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-style: italic;
+            color: var(--color-gray);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: var(--color-beige);
+            color: #555;
+        }
+
+        nav a.active {
+            background-color: var(--color-green);
+            color: var(--color-gray);
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(200, 225, 225, 0.6), rgba(202, 228, 178, 0.6)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="bg" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="2" fill="%23e7cf9d" opacity="0.1"/></pattern></defs><rect fill="%23f1ede2" width="1200" height="600"/><rect fill="url(%23bg)" width="1200" height="600"/></svg>');
+            background-size: cover;
+            background-position: center;
+            padding: 60px 40px;
+            text-align: center;
+            color: var(--color-gray);
+        }
+
+        .hero p {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-style: italic;
+            color: var(--color-gray);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        /* Contact Grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            background-color: white;
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .contact-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-style: italic;
+            color: var(--color-gray);
+            margin-bottom: 30px;
+        }
+
+        .contact-section p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        /* Form Styles */
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--color-gray);
+        }
+
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            padding: 12px 16px;
+            border: 2px solid var(--color-beige);
+            border-radius: 8px;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 16px;
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--color-green);
+            box-shadow: 0 0 0 3px rgba(202, 228, 178, 0.2);
+        }
+
+        .submit-button {
+            background-color: var(--color-gray);
+            color: white;
+            padding: 14px 30px;
+            border: none;
+            border-radius: 8px;
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-style: italic;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .submit-button:hover {
+            background-color: #707070;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        /* Appointment Section */
+        .appointment-section {
+            background: linear-gradient(to bottom, var(--color-green), white);
+            padding: 50px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border: 3px solid var(--color-beige);
+        }
+
+        .appointment-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 32px;
+            font-style: italic;
+            color: var(--color-gray);
+            margin-bottom: 20px;
+        }
+
+        .appointment-section p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 25px;
+            font-size: 16px;
+        }
+
+        /* Contact Info */
+        .contact-info-box {
+            background-color: var(--color-cream);
+            padding: 40px;
+            border-radius: 15px;
+            margin-top: 40px;
+        }
+
+        .contact-info-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-style: italic;
+            color: var(--color-gray);
+            margin-bottom: 20px;
+        }
+
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: #666;
+        }
+
+        .contact-info-item strong {
+            color: var(--color-gray);
+            min-width: 80px;
+        }
+
+        .contact-info-item a {
+            color: var(--color-gray);
+            text-decoration: none;
+        }
+
+        .contact-info-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #f5f3f0;
+            border-top: 1px solid #e0e0e0;
+            padding: 40px;
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .footer-bottom {
+            color: #999;
+            font-size: 12px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+            }
+
+            nav a {
+                text-align: center;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-section,
+            .appointment-section {
+                padding: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <nav>
+                <a href="serenamente_vivir.html">Inicio</a>
+                <a href="tu_espacio_privado.html">Tu Espacio Privado</a>
+                <a href="meditaciones_personalizadas.html">Meditaciones Personalizadas</a>
+                <a href="contacto.html" class="active">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <p>Estamos aquí para acompañarte en tu camino</p>
+    </section>
+
+    <!-- Separator -->
+    <div style="background-color: var(--color-beige); height: 5px;"></div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="contact-grid">
+            <!-- Contact Form -->
+            <div class="contact-section">
+                <h2>Envíanos un mensaje</h2>
+                <p>Si tienes alguna pregunta o deseas más información sobre nuestros servicios, no dudes en contactarnos.</p>
+
+                <form class="contact-form" onsubmit="handleContactSubmit(event)">
+                    <div class="form-group">
+                        <label for="name">Nombre completo *</label>
+                        <input type="text" id="name" name="name" required placeholder="Tu nombre">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email *</label>
+                        <input type="email" id="email" name="email" required placeholder="tu@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input type="tel" id="phone" name="phone" placeholder="+34 600 000 000">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Asunto *</label>
+                        <select id="subject" name="subject" required>
+                            <option value="">Selecciona un asunto</option>
+                            <option value="info">Información general</option>
+                            <option value="sesiones">Sesiones 1:1</option>
+                            <option value="membresia">Membresía</option>
+                            <option value="talleres">Talleres y retiros</option>
+                            <option value="meditaciones">Meditaciones personalizadas</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Mensaje *</label>
+                        <textarea id="message" name="message" required placeholder="Cuéntanos cómo podemos ayudarte..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-button">Enviar mensaje</button>
+                </form>
+            </div>
+
+            <!-- Appointment Booking -->
+            <div class="appointment-section">
+                <h2>Agenda una cita</h2>
+                <p>¿Prefieres agendar directamente una sesión o consulta? Elige el día y hora que mejor se adapte a ti.</p>
+
+                <form class="contact-form" onsubmit="handleAppointmentSubmit(event)">
+                    <div class="form-group">
+                        <label for="appt-name">Nombre completo *</label>
+                        <input type="text" id="appt-name" name="appt-name" required placeholder="Tu nombre">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="appt-email">Email *</label>
+                        <input type="email" id="appt-email" name="appt-email" required placeholder="tu@email.com">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="appt-phone">Teléfono *</label>
+                        <input type="tel" id="appt-phone" name="appt-phone" required placeholder="+34 600 000 000">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="appt-type">Tipo de sesión *</label>
+                        <select id="appt-type" name="appt-type" required>
+                            <option value="">Selecciona el tipo de sesión</option>
+                            <option value="primera">Primera sesión gratuita (30 min)</option>
+                            <option value="sesion11">Sesión 1:1 (90 min)</option>
+                            <option value="consulta">Consulta sobre membresía</option>
+                            <option value="taller">Información talleres/retiros</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="appt-date">Fecha preferida *</label>
+                        <input type="date" id="appt-date" name="appt-date" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="appt-time">Hora preferida *</label>
+                        <select id="appt-time" name="appt-time" required>
+                            <option value="">Selecciona una hora</option>
+                            <option value="09:00">09:00</option>
+                            <option value="10:00">10:00</option>
+                            <option value="11:00">11:00</option>
+                            <option value="12:00">12:00</option>
+                            <option value="16:00">16:00</option>
+                            <option value="17:00">17:00</option>
+                            <option value="18:00">18:00</option>
+                            <option value="19:00">19:00</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="appt-notes">Notas adicionales</label>
+                        <textarea id="appt-notes" name="appt-notes" placeholder="Cualquier información adicional que quieras compartir..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-button">Solicitar cita</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Contact Information -->
+        <div class="contact-info-box">
+            <h3>Información de contacto</h3>
+            <div class="contact-info-item">
+                <strong>Email:</strong>
+                <a href="mailto:info@serenamentevivir.com">info@serenamentevivir.com</a>
+            </div>
+            <div class="contact-info-item">
+                <strong>Teléfono:</strong>
+                <a href="tel:+34600000000">+34 600 000 000</a>
+            </div>
+            <div class="contact-info-item">
+                <strong>Ubicación:</strong>
+                <span>Granada, Andalucía, España</span>
+            </div>
+            <div class="contact-info-item">
+                <strong>Horario:</strong>
+                <span>Lunes a Viernes: 9:00 - 19:00</span>
+            </div>
+            <p style="margin-top: 20px; color: #888; font-style: italic; font-size: 14px;">
+                * Todas las sesiones pueden ser presenciales en Granada o en línea
+            </p>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Serenamente Vivir. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Set minimum date to today
+        const dateInput = document.getElementById('appt-date');
+        const today = new Date().toISOString().split('T')[0];
+        dateInput.setAttribute('min', today);
+
+        function handleContactSubmit(event) {
+            event.preventDefault();
+            alert('Gracias por tu mensaje. Te responderemos pronto.');
+            event.target.reset();
+        }
+
+        function handleAppointmentSubmit(event) {
+            event.preventDefault();
+            const name = document.getElementById('appt-name').value;
+            const date = document.getElementById('appt-date').value;
+            const time = document.getElementById('appt-time').value;
+            alert(`Gracias ${name}. Hemos recibido tu solicitud de cita para el ${date} a las ${time}. Te confirmaremos la disponibilidad pronto.`);
+            event.target.reset();
+        }
+    </script>
+</body>
+</html>

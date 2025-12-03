@@ -1,0 +1,71 @@
+/* ============================================
+   SISTEMA DE BOTONES MEJORADO
+   Variantes: primary, secondary, compact
+   ============================================ */
+
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    text-decoration: none;
+    border-radius: var(--radius-small);
+    margin-top: 20px;
+    transition: var(--transition);
+    font-size: 14px;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    text-align: center;
+}
+
+/* Botón Primario - CTAs principales */
+.btn-primary {
+    background-color: var(--color-green);
+    color: var(--color-gray);
+    font-weight: 600;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-beige);
+    color: #555;
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-soft);
+}
+
+/* Botón Secundario - Acciones alternativas */
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-gray);
+    border: 2px solid var(--color-gray);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-gray);
+    color: white;
+}
+
+/* Modificador: Botón Compacto */
+.btn-compact {
+    padding: 8px 20px;
+    font-size: 13px;
+    margin-top: 10px;
+}
+
+/* Modificador: Botón Grande */
+.btn-large {
+    padding: 16px 40px;
+    font-size: 16px;
+}
+
+/* Modificador: Ancho completo */
+.btn.w-full {
+    width: 100%;
+    display: block;
+}
+
+/* Estado: Deshabilitado */
+.btn:disabled,
+.btn.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}

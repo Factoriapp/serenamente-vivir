@@ -1,0 +1,37 @@
+# Node modules
+node_modules/
+
+# SCSS - Source maps
+*.css.map
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor directories and files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Archivos temporales
+*.tmp
+*.temp
+
+# Backups
+*.bak
+*.backup
+
+# Carpetas de pruebas Next/React (no son parte del proyecto principal)
+Pruebas Next-React- Estatico/
+serenamente-next/
+serenamente-react/
+
+# PowerPoint auxiliar (archivo de diseño, no código)
+*.pptx

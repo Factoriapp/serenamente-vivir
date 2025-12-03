@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditaciones Personalizadas - Serenamente Vivir</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --color-beige: #e7cf9d;
+            --color-cyan: #c9e1e1;
+            --color-green: #cae4b2;
+            --color-cream: #f1ede2;
+            --color-gray: #898989;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Source Sans Pro', 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f5f3f0;
+        }
+
+        /* Header y Navegación */
+        header {
+            background: linear-gradient(135deg, rgba(200, 225, 225, 0.6), rgba(202, 228, 178, 0.6));
+            padding: 20px 40px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-family: 'Playfair Display', serif;
+            font-size: 18px;
+            font-style: italic;
+            color: var(--color-gray);
+            text-decoration: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover {
+            background-color: var(--color-beige);
+            color: #555;
+        }
+
+        nav a.active {
+            background-color: var(--color-green);
+            color: var(--color-gray);
+            font-weight: 600;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, rgba(200, 225, 225, 0.6), rgba(202, 228, 178, 0.6)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="bg" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="2" fill="%23e7cf9d" opacity="0.1"/></pattern></defs><rect fill="%23f1ede2" width="1200" height="600"/><rect fill="url(%23bg)" width="1200" height="600"/></svg>');
+            background-size: cover;
+            background-position: center;
+            padding: 60px 40px;
+            text-align: center;
+            color: var(--color-gray);
+        }
+
+        .hero p {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-style: italic;
+            color: var(--color-gray);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        /* Content Section */
+        .content-section {
+            background-color: white;
+            padding: 60px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin-bottom: 40px;
+        }
+
+        .content-section h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 36px;
+            font-style: italic;
+            color: var(--color-gray);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .content-section h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 24px;
+            font-style: italic;
+            color: var(--color-gray);
+            margin-bottom: 20px;
+            margin-top: 30px;
+        }
+
+        .content-section p {
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .content-section ul {
+            color: #666;
+            margin-left: 30px;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .content-section li {
+            margin-bottom: 10px;
+        }
+
+        /* Grid de meditaciones */
+        .meditation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .meditation-card {
+            background: linear-gradient(to bottom, var(--color-cyan), white);
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid var(--color-beige);
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .meditation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            border-color: var(--color-green);
+        }
+
+        .meditation-card h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            font-style: italic;
+            color: var(--color-gray);
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .meditation-card p {
+            color: #666;
+            font-size: 14px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #f5f3f0;
+            border-top: 1px solid #e0e0e0;
+            padding: 40px;
+            margin-top: 80px;
+            text-align: center;
+        }
+
+        .footer-bottom {
+            color: #999;
+            font-size: 12px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+                width: 100%;
+            }
+
+            nav a {
+                text-align: center;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .container {
+                padding: 40px 20px;
+            }
+
+            .content-section {
+                padding: 30px;
+            }
+
+            .meditation-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <nav>
+                <a href="serenamente_vivir.html">Inicio</a>
+                <a href="tu_espacio_privado.html">Tu Espacio Privado</a>
+                <a href="meditaciones_personalizadas.html" class="active">Meditaciones Personalizadas</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <p>Encuentra paz y claridad a través de meditaciones diseñadas para ti</p>
+    </section>
+
+    <!-- Separator -->
+    <div style="background-color: var(--color-cyan); height: 5px;"></div>
+
+    <!-- Main Content -->
+    <div class="container" style="position: relative;">
+        <div style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-45deg); font-size: 120px; font-weight: bold; color: rgba(137, 137, 137, 0.25); white-space: nowrap; pointer-events: none; font-family: 'Playfair Display', serif; font-style: italic; letter-spacing: 20px; z-index: 10;">
+            En Desarrollo
+        </div>
+        <section class="content-section" style="position: relative; z-index: 2;">
+            <h2>Meditaciones Personalizadas</h2>
+            <p>Cada meditación está cuidadosamente diseñada para acompañarte en tu proceso de autoconocimiento, sanación y transformación personal.</p>
+            <p>Las meditaciones guiadas te ayudarán a reconectar con tu esencia, liberar tensiones y encontrar la calma interior que necesitas para vivir serenamente.</p>
+
+            <h3>¿Qué encontrarás aquí?</h3>
+            <ul>
+                <li>Meditaciones guiadas por voz profesional</li>
+                <li>Diferentes duraciones según tus necesidades (5, 10, 15, 20 minutos)</li>
+                <li>Temáticas específicas: ansiedad, sueño, autoestima, liberación emocional</li>
+                <li>Música y sonidos naturales relajantes</li>
+                <li>Acceso desde cualquier dispositivo</li>
+            </ul>
+        </section>
+
+        <section class="content-section" style="position: relative; z-index: 2;">
+            <h2>Colección de Meditaciones</h2>
+
+            <div class="meditation-grid">
+                <div class="meditation-card">
+                    <h3>Calma y Presencia</h3>
+                    <p>Encuentra paz en el momento presente. Ideal para comenzar el día o para momentos de estrés.</p>
+                    <p><strong>Duración:</strong> 10 minutos</p>
+                </div>
+
+                <div class="meditation-card">
+                    <h3>Liberación Emocional</h3>
+                    <p>Suelta cargas emocionales y permite que fluya la sanación. Reconecta con tu centro.</p>
+                    <p><strong>Duración:</strong> 15 minutos</p>
+                </div>
+
+                <div class="meditation-card">
+                    <h3>Descanso Profundo</h3>
+                    <p>Preparación para un sueño reparador. Relaja cuerpo y mente antes de dormir.</p>
+                    <p><strong>Duración:</strong> 20 minutos</p>
+                </div>
+
+                <div class="meditation-card">
+                    <h3>Amor Propio</h3>
+                    <p>Cultiva la compasión hacia ti misma. Fortalece tu autoestima y confianza interior.</p>
+                    <p><strong>Duración:</strong> 12 minutos</p>
+                </div>
+
+                <div class="meditation-card">
+                    <h3>Conexión Interior</h3>
+                    <p>Profundiza en tu ser. Escucha tu sabiduría interna y conecta con tu verdad.</p>
+                    <p><strong>Duración:</strong> 15 minutos</p>
+                </div>
+
+                <div class="meditation-card">
+                    <h3>Energía Vital</h3>
+                    <p>Activa tu energía para el día. Revitaliza cuerpo y mente con consciencia plena.</p>
+                    <p><strong>Duración:</strong> 8 minutos</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" style="position: relative; z-index: 2;">
+            <h2>Meditaciones Personalizadas a Medida</h2>
+            <p style="text-align: center; font-style: italic; color: var(--color-gray); font-size: 14px; margin-top: -15px; margin-bottom: 25px;">(Sólo para Miembros)</p>
+            <p>¿Necesitas una meditación específica para tu momento vital?</p>
+            <p>Puedo crear meditaciones personalizadas diseñadas especialmente para ti, adaptadas a tus necesidades, inquietudes y proceso personal.</p>
+            <p><strong>Contacta para más información sobre meditaciones personalizadas.</strong></p>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-bottom">
+            <p>&copy; 2024 Serenamente Vivir. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>

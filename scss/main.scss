@@ -1,0 +1,21 @@
+/* ============================================
+   SERENAMENTE VIVIR - SCSS PRINCIPAL
+   Archivo orquestador que importa todos los módulos
+   ============================================ */
+
+/* 1. Variables y configuración base */
+@import 'variables';
+@import 'reset';
+
+/* 2. Componentes de layout */
+@import 'header';
+@import 'hero';
+@import 'sections';
+@import 'footer';
+
+/* 3. Componentes interactivos */
+@import 'buttons';
+@import 'popups';
+
+/* 4. Responsive (último para que override lo necesario) */
+@import 'responsive';

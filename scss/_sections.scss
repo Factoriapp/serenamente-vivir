@@ -1,0 +1,309 @@
+/* ============================================
+   SECCIONES PRINCIPALES
+   ============================================ */
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* Welcome Section */
+.welcome-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.welcome-text h2 {
+    font-family: var(--font-serif);
+    font-size: 36px;
+    font-style: italic;
+    color: var(--color-gray);
+    margin-bottom: 20px;
+}
+
+.welcome-text p {
+    color: var(--color-text-light);
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.welcome-image {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+/* About Section */
+.about-section {
+    padding: 40px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.about-section h2 {
+    font-family: var(--font-serif);
+    font-size: 36px;
+    font-style: italic;
+    color: var(--color-gray);
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: start;
+}
+
+.about-text p {
+    color: var(--color-text-light);
+    margin-bottom: 15px;
+    line-height: 1.8;
+}
+
+.about-image {
+    width: 70%;
+    height: auto;
+    border-radius: var(--radius-medium);
+    object-fit: cover;
+    margin-top: -120px;
+    margin-left: auto;
+    transform: translateX(60px);
+}
+
+/* Who Section */
+.who-section {
+    padding: 80px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.who-section h2 {
+    font-family: var(--font-serif);
+    font-size: 36px;
+    font-style: italic;
+    color: var(--color-gray);
+    margin-bottom: 30px;
+    text-align: right;
+}
+
+.who-section p {
+    color: var(--color-text-light);
+    margin-bottom: 15px;
+    line-height: 1.8;
+    text-align: right;
+}
+
+/* Mission Section */
+.mission-section {
+    background-color: var(--color-cream);
+    padding: 60px 40px;
+    margin: 80px 0;
+    border-radius: var(--radius-medium);
+}
+
+.mission-section h3 {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-style: italic;
+    color: var(--color-gray);
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.mission-section p {
+    color: var(--color-text-light);
+    line-height: 1.8;
+    text-align: right;
+}
+
+/* Sessions Section */
+.sessions-section {
+    padding: 80px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.sessions-section h2 {
+    font-family: var(--font-serif);
+    font-size: 36px;
+    font-style: italic;
+    color: var(--color-gray);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.sessions-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.sessions-modules {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.session-module {
+    background-color: var(--color-cyan);
+    padding: 15px 20px;
+    border-radius: var(--radius-medium);
+    cursor: pointer;
+    transition: var(--transition);
+    border: 2px solid transparent;
+    text-decoration: none;
+    display: block;
+}
+
+.session-module:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+    background-color: #b8d1d1;
+    border-color: var(--color-gray);
+}
+
+.session-module h3 {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-style: italic;
+    color: var(--color-gray);
+    margin: 0;
+    line-height: 1.2;
+}
+
+.session-module p {
+    color: var(--color-text-light);
+    margin: 5px 0 0 0;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.sessions-image {
+    width: 100%;
+    height: auto;
+    border-radius: var(--radius-medium);
+    object-fit: cover;
+}
+
+/* Membership Section */
+.faq-section {
+    background-color: var(--color-cream);
+    padding: 40px;
+    border-radius: var(--radius-medium);
+    margin-top: 40px;
+    margin-bottom: 40px;
+    cursor: pointer;
+    transition: var(--transition);
+    border: 2px solid transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.faq-section:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+    background-color: #e8e3d5;
+}
+
+.membership-left {
+    flex: 0 0 auto;
+}
+
+.membership-right {
+    flex: 1;
+    text-align: right;
+    padding-left: 80px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.faq-section:hover .membership-right {
+    opacity: 1;
+}
+
+.faq-section h3 {
+    font-family: var(--font-serif);
+    font-size: 22px;
+    font-style: italic;
+    color: var(--color-gray);
+    margin-bottom: 10px;
+}
+
+.faq-section p {
+    color: var(--color-text-light);
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+.membership-description {
+    color: #888;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+/* FAQ Items */
+.faq-item {
+    margin-bottom: 20px;
+}
+
+.faq-item h4 {
+    color: var(--color-gray);
+    font-size: 14px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.faq-item p {
+    color: var(--color-text-light);
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+/* Events Section */
+.events-section {
+    padding: 80px 0;
+}
+
+.events-section h2 {
+    font-family: var(--font-serif);
+    font-size: 36px;
+    font-style: italic;
+    color: var(--color-gray);
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.events-list {
+    background-color: var(--color-green);
+    padding: 30px;
+    border-radius: var(--radius-medium);
+}
+
+.events-list ul {
+    list-style: none;
+}
+
+.events-list li {
+    color: var(--color-text-light);
+    margin-bottom: 15px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.events-list li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--color-gray);
+    font-weight: bold;
+}

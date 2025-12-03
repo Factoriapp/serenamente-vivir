@@ -1,0 +1,69 @@
+/* ============================================
+   CSS CUSTOM PROPERTIES - Serenamente Vivir
+   Variables nativas para theming runtime
+   ============================================ */
+
+:root {
+    /* ========================================
+       PALETA DE COLORES BASE (Identidad Serenamente)
+       ======================================== */
+    --color-beige: #e7cf9d;            /* Beige cálido principal */
+    --color-cyan: #c9e1e1;             /* Cyan suave */
+    --color-green: #cae4b2;            /* Verde menta */
+    --color-cream: #f1ede2;            /* Crema cálida */
+    --color-gray: #898989;             /* Gris medio */
+
+    /* Colores de texto */
+    --color-text: #333;                /* Texto principal */
+    --color-text-light: #666;          /* Texto secundario */
+    --color-text-muted: #999;          /* Texto apagado */
+    --color-white: #ffffff;
+    --color-bg: #f5f3f0;               /* Fondo principal */
+
+    /* ========================================
+       SISTEMA DE ESPACIADO (Nuevo)
+       Uso consistente en todo el sitio
+       ======================================== */
+    --spacing-xs: 0.5rem;    /* 8px - Espacios muy pequeños */
+    --spacing-sm: 1rem;      /* 16px - Espacios pequeños */
+    --spacing-md: 2rem;      /* 32px - Espacios medianos */
+    --spacing-lg: 3rem;      /* 48px - Espacios grandes */
+    --spacing-xl: 5rem;      /* 80px - Espacios muy grandes */
+
+    /* ========================================
+       SOMBRAS (Nuevo)
+       Sombras suaves para elementos
+       ======================================== */
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.08);
+    --shadow-medium: 0 6px 30px rgba(0, 0, 0, 0.12);
+    --shadow-hover: 0 8px 40px rgba(0, 0, 0, 0.15);
+
+    /* ========================================
+       BORDES REDONDEADOS (Nuevo)
+       Consistencia en radios
+       ======================================== */
+    --radius-small: 5px;     /* Botones pequeños, inputs */
+    --radius-medium: 10px;   /* Cards, imágenes */
+    --radius-large: 20px;    /* Popups, containers grandes */
+    --radius-pill: 50px;     /* Botones redondos completos */
+
+    /* ========================================
+       TIPOGRAFÍA
+       ======================================== */
+    --font-serif: 'Playfair Display', Georgia, serif;
+    --font-sans: 'Source Sans Pro', 'Segoe UI', sans-serif;
+
+    /* ========================================
+       TRANSICIONES (Nuevo)
+       Consistencia en animaciones
+       ======================================== */
+    --transition: all 0.3s ease;
+    --transition-fast: all 0.2s ease;
+    --transition-slow: all 0.4s ease;
+}
+
+/* Variables SCSS para breakpoints (no CSS variables) */
+$breakpoint-mobile-small: 480px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop-small: 968px;
+$breakpoint-desktop-large: 1200px;

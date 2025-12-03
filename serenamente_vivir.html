@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Serenamente Vivir - Un espacio para volver a ti</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS Externo - Sistema SCSS Modular -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <nav>
+                <a href="serenamente_vivir.html" class="active">Inicio</a>
+                <a href="tu_espacio_privado.html">Tu Espacio Privado</a>
+                <a href="meditaciones_personalizadas.html">Meditaciones Personalizadas</a>
+                <a href="contacto.html">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <img src="https://iili.io/K4AhJFs.png" alt="Serenamente Vivir" style="max-width: 400px; width: 100%; margin: 0 auto 30px; display: block; border-radius: 10px;">
+        <img src="https://iili.io/K4a3jgj.png" alt="Serenamente Vivir" style="max-width: 800px; width: 100%; margin: 0 auto 20px; display: block; border-radius: 10px;">
+        <p style="font-family: 'Playfair Display', serif; font-size: 24px;"><em>El permiso de ser, el arte de vivir serenamente</em></p>
+    </section>
+
+    <!-- Separator -->
+    <div style="background-color: var(--color-beige); height: 5px;"></div>
+
+    <!-- Welcome Section -->
+    <div class="container">
+        <section class="welcome-section">
+            <div class="welcome-text">
+                <h2>Un espacio para volver a ti</h2>
+                <p><em>"Permítete sentir, reconectar y elegir tu camino."</em></p>
+                <p>Aquí encontrarás acompañamiento profesional, procesos personalizados y herramientas transformadoras que te permiten volver a ti misma. Recuerda que eres mucho más que tus decisiones.</p>
+                <a href="#como-puedo-ayudarte" class="btn btn-primary">Descubre cómo puedo ayudarte</a>
+            </div>
+            <div>
+                <img src="https://iili.io/KQzEe8F.png" alt="Bienvenida" class="welcome-image">
+            </div>
+        </section>
+    </div>
+
+    <!-- Separator -->
+    <div style="background-color: var(--color-beige); height: 5px;"></div>
+
+    <div class="container">
+        <!-- About Section -->
+        <section class="about-section">
+            <h2>¿Qué es Serenamente Vivir?</h2>
+            <div class="about-grid">
+                <div class="about-text">
+                    <p>Es un espacio terapéutico pensado para mujeres que desean reconectar con su esencia, sanar su historia y elegir su vida desde la calma y honestidad interior.</p>
+                    <p>Aquí encontrarás acompañamiento sistémico, procesos personalizados y experiencias de transformación que te permitirán volver a ti misma, liberarte de exigencias y descubrir tu verdadera voz.</p>
+                </div>
+                <div>
+                    <img src="https://iili.io/KQzgZZl.png" alt="Qué es Serenamente Vivir" class="about-image">
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Separator -->
+    <div style="background-color: var(--color-beige); height: 5px;"></div>
+
+    <div class="container">
+        <!-- Who Am I Section -->
+        <section class="who-section">
+            <h2>Quién soy</h2>
+            <div style="display: grid; grid-template-columns: auto 1fr; gap: 40px; align-items: start;">
+                <img src="https://iili.io/K47j7AG.png" alt="Quién soy" style="width: 400px; height: auto; border-radius: 10px; margin-top: -120px;">
+                <div>
+                    <p>Con más de 20 años dedicada al desarrollo personal, la salud y el estudio de la consciencia, a través de la práctica constante de diversas disciplinas tales como Constelaciones Familiares, Biodescodificación, Genograma Familiar, entre otros.</p>
+                    <p>Con el tiempo comprendí que mi mayor aporte no es una técnica en particular, sino la forma en que puedo integrar lo aprendido y sostener procesos desde mi propia presencia y mirada.</p>
+                </div>
+            </div>
+
+            <!-- Mission Section -->
+            <div class="mission-section" style="margin-top: 20px; padding: 15px 40px;">
+                <h3>Mi misión</h3>
+                <p>... acompañar mujeres en momentos de transformación vital, brindando herramientas para que encuentren la calma, claridad y confianza necesarias para elegir consciente y asertivamente. Deseo que cada persona sienta que es posible volver a sí misma, reconocerse y aceptarse en su totalidad.</p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Separator -->
+    <div style="background-color: var(--color-beige); height: 5px;"></div>
+
+    <div class="container">
+        <!-- Sessions Section -->
+        <section id="como-puedo-ayudarte" class="sessions-section">
+            <h2>Cómo puedo ayudarte</h2>
+            <div class="sessions-content">
+                <div class="sessions-modules">
+                    <div class="session-module" onclick="openPopup('popup1')">
+                        <h3>Sesiones 1:1</h3>
+                        <p>¿Algo te inquieta? ¿Necesitas respuestas o claridad en un momento dado?<br>Una sesión individual puede ayudarte a encontar respuestas desde tu propia coherencia.</p>
+                    </div>
+                    <div class="session-module" onclick="openPopup('popup2')">
+                        <h3>Acompañamiento</h3>
+                        <p>Procesos de acompañamiento continuo adaptados a tus necesidades y momentos de transformación vital.</p>
+                    </div>
+                    <div class="session-module" onclick="openPopup('popup3')">
+                        <h3>Talleres</h3>
+                        <p>Espacios colectivos donde crecer, aprender y compartir experiencias junto a otras mujeres.</p>
+                    </div>
+                    <div class="session-module" onclick="openPopup('popup4')">
+                        <h3>Retiros</h3>
+                        <p>Experiencias inmersivas de 2 o 3 días en espacios naturales para conectar profundamente contigo misma.</p>
+                    </div>
+                </div>
+                <div>
+                    <img src="https://iili.io/KQIBG4V.png" alt="Cómo puedo ayudarte" class="sessions-image" style="width: 98%; margin-left: auto; margin-right: -80px; display: block;">
+                </div>
+            </div>
+        </section>
+
+        <!-- Membership Section -->
+        <section class="faq-section" onclick="openPopup('popup5')">
+            <div class="membership-left">
+                <h3>Membresía</h3>
+                <p>... tu espacio privado.</p>
+            </div>
+            <div class="membership-right">
+                <p class="membership-description">
+                    Accede a recursos exclusivos, sesiones grupales, círculos de mujeres y una comunidad de apoyo continuo para tu crecimiento personal.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Serenamente Vivir</h3>
+                <p>El propósito de vivir al arte de vivir amorosamente</p>
+                <div class="contact-info">
+                    <p><strong>Contacto:</strong></p>
+                    <p>📧 <a href="mailto:info@serenamentevivir.com">info@serenamentevivir.com</a></p>
+                    <p>📱 +34XXXXXXXXX</p>
+                    <p>📍 Granada, Andalucía</p>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Preguntas frecuentes</h3>
+                <div class="faq-item">
+                    <h4>¿Cuál es tu método de trabajo?</h4>
+                    <p>Utilizamos un enfoque integrador que combina técnicas psicológicas, mindfulness, y acompañamiento emocional personalizado.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Cuánto tiempo duran las sesiones?</h4>
+                    <p>Las sesiones 1:1 tienen una duración de 90 minutos. Los retiros y talleres varían según su formato.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>¿Ofrecen sesiones en línea?</h4>
+                    <p>Sí, ofrecemos sesiones en línea y presenciales. Adaptamos el formato según tus necesidades.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2024 Serenamente Vivir. Todos los derechos reservados. | Diseñado con cuidado y atención</p>
+        </div>
+    </footer>
+
+    <!-- Popups -->
+    <div id="popup1" class="popup-overlay" onclick="closePopup('popup1')">
+        <div class="popup-content" onclick="event.stopPropagation()">
+            <button class="popup-close" onclick="closePopup('popup1')">&times;</button>
+            <div class="popup-text">
+                <h2>Sesiones 1:1</h2>
+                <p>Las sesiones individuales son un espacio íntimo y personalizado donde podrás:</p>
+                <ul>
+                    <li>Reconectar con tu verdad interior y escuchar tu voz auténtica</li>
+                    <li>Explorar situaciones que te generan dudas o conflictos emocionales</li>
+                    <li>Descubrir caminos en tus circunstancias actuales</li>
+                    <li>Comprender claramente lo que estás viviendo</li>
+                    <li>Liberarte de exigencias externas y presiones sociales</li>
+                </ul>
+                <p>Encuentro de aproximadamente 60 minutos, online o presencial.</p>
+                <p>Porque a veces, una conversación honesta y un espacio seguro son todo lo que necesitas para volver a ti.</p>
+                <p style="display: flex; justify-content: space-between; align-items: center;"><em>Escríbeme y encontremos el momento adecuado para ti.</em><a href="contacto.html" class="btn btn-primary btn-compact">Contacto</a></p>
+            </div>
+            <div class="popup-image-placeholder">
+                <img src="https://iili.io/KL1jAqF.png" alt="Sesiones 1:1">
+            </div>
+        </div>
+    </div>
+
+    <div id="popup2" class="popup-overlay" onclick="closePopup('popup2')">
+        <div class="popup-content" onclick="event.stopPropagation()">
+            <button class="popup-close" onclick="closePopup('popup2')">&times;</button>
+            <div class="popup-text">
+                <h2>Acompañamiento</h2>
+                <p>Proceso diseñado para quienes buscan un espacio sostenido de transformación y crecimiento personal.</p>
+                <p>Recorreremos juntas un camino a través de:</p>
+                <ul>
+                    <li>Sesiones regulares adaptadas a tu ritmo y necesidades</li>
+                    <li>Herramientas sistémicas y de autoconocimiento</li>
+                    <li>Apoyo en momentos de transformación vital</li>
+                    <li>Comprensión de tu historia familiar y patrones transgeneracionales</li>
+                    <li>Integración de experiencias y aprendizajes</li>
+                </ul>
+                <p>Programas flexibles de 3, 6 o 12 meses, adaptados a tu proceso personal.</p>
+                <p><em>Un espacio para transformarte a tu propio ritmo, con la guía que necesitas.</em></p>
+                <p style="display: flex; justify-content: space-between; align-items: center;">¿Lista para comenzar tu proceso de transformación?<a href="contacto.html" class="btn btn-primary btn-compact">Contacto</a></p>
+            </div>
+            <div class="popup-image-placeholder">
+                <img src="https://iili.io/KL1iK1j.png" alt="Acompañamiento">
+            </div>
+        </div>
+    </div>
+
+    <div id="popup3" class="popup-overlay" onclick="closePopup('popup3')">
+        <div class="popup-content" onclick="event.stopPropagation()">
+            <button class="popup-close" onclick="closePopup('popup3')">&times;</button>
+            <div class="popup-text">
+                <h2>Talleres</h2>
+                <p>Encuentros grupales temáticos donde compartir, intercambiar experiencias y apoyarnos mutuamente en el crecimiento personal.</p>
+                <p>Cada taller es un espacio de:</p>
+                <ul>
+                    <li>Conexión y apoyo colectivo</li>
+                    <li>Aprendizaje compartido y crecimiento personal</li>
+                    <li>Exploración de temas específicos en profundidad</li>
+                    <li>Intercambio de experiencias en un entorno seguro</li>
+                    <li>Herramientas prácticas para tu día a día</li>
+                </ul>
+                <p>Talleres temáticos presenciales y online, en diferentes ubicaciones y fechas.</p>
+                <p><em>Un espacio para crecer juntas, aprender y sostener procesos colectivos.</em></p>
+                <p style="display: flex; justify-content: space-between; align-items: center;">¿Te gustaría formar parte de nuestros talleres?<a href="contacto.html" class="btn btn-primary btn-compact">Contacto</a></p>
+            </div>
+            <div class="popup-image-placeholder">
+                <img src="https://iili.io/KQF8g9e.png" alt="Talleres">
+            </div>
+        </div>
+    </div>
+
+    <div id="popup4" class="popup-overlay" onclick="closePopup('popup4')">
+        <div class="popup-content" onclick="event.stopPropagation()">
+            <button class="popup-close" onclick="closePopup('popup4')">&times;</button>
+            <div class="popup-text">
+                <h2>Retiros</h2>
+                <p>Los retiros son experiencias inmersivas que te permiten desconectar de la rutina y reconectar profundamente contigo misma en entornos naturales.</p>
+                <p>Durante el retiro vivirás:</p>
+                <ul>
+                    <li>Desconexión total del día a día para conectar contigo</li>
+                    <li>Prácticas de mindfulness y meditación</li>
+                    <li>Sesiones de constelaciones y trabajo grupal</li>
+                    <li>Contacto con la naturaleza como herramienta de sanación</li>
+                    <li>Círculos de mujeres y compartir de experiencias</li>
+                    <li>Tiempo para el silencio, la reflexión y el descanso</li>
+                </ul>
+                <p><strong>Duración:</strong> Retiros de 2 o 3 días</p>
+                <p><strong>Ubicación:</strong> A definir según el retiro</p>
+                <p><strong>Incluye:</strong> Alojamiento, alimentación consciente y todas las actividades</p>
+                <p><em>Una experiencia para reconectar contigo en profundidad.</em></p>
+                <p style="display: flex; justify-content: space-between; align-items: center;">¿Lista para tu próximo retiro?<a href="contacto.html" class="btn btn-primary btn-compact">Contacto</a></p>
+            </div>
+            <div class="popup-image-placeholder">
+                <img src="https://iili.io/KQ3DhW7.png" alt="Retiros">
+            </div>
+        </div>
+    </div>
+
+    <div id="popup5" class="popup-overlay" onclick="closePopup('popup5')">
+        <div class="popup-content" onclick="event.stopPropagation()">
+            <button class="popup-close" onclick="closePopup('popup5')">&times;</button>
+            <div class="popup-text">
+                <h2>Membresía</h2>
+                <p>La Membresía de Serenamente Vivir es tu espacio privado de crecimiento continuo, diseñado para acompañarte en tu proceso de transformación personal de manera sostenida.</p>
+                <p><strong>¿Qué incluye tu membresía?</strong></p>
+                <ul>
+                    <li>Acceso a sesiones grupales mensuales exclusivas</li>
+                    <li>Biblioteca digital con recursos, meditaciones guiadas y material de apoyo</li>
+                    <li>Círculos de mujeres online y presenciales</li>
+                    <li>Descuentos especiales en talleres, retiros y sesiones individuales</li>
+                    <li>Comunidad privada para compartir experiencias y apoyo mutuo</li>
+                    <li>Contenido mensual exclusivo: videos, artículos y ejercicios prácticos</li>
+                </ul>
+                <p><strong>Niveles de membresía:</strong></p>
+                <ul>
+                    <li><strong>Básica:</strong> Acceso a recursos digitales y comunidad</li>
+                    <li><strong>Intermedia:</strong> Incluye sesiones grupales mensuales</li>
+                    <li><strong>Premium:</strong> Acceso completo + sesión individual trimestral</li>
+                </ul>
+                <p><strong>Inversión:</strong> Desde 29€/mes</p>
+                <p><em>Tu espacio privado para crecer, sanar y florecer en comunidad.</em></p>
+            </div>
+            <div class="popup-image-placeholder">
+                <img src="https://iili.io/KQqB5MX.png" alt="Membresía">
+            </div>
+            <a href="tu_espacio_privado.html" class="btn btn-primary popup-access-button">Tu Espacio Privado</a>
+        </div>
+    </div>
+
+    <script>
+        function openPopup(popupId) {
+            document.getElementById(popupId).classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePopup(popupId) {
+            document.getElementById(popupId).classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // Cerrar popup con tecla ESC
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                const popups = document.querySelectorAll('.popup-overlay.active');
+                popups.forEach(popup => {
+                    popup.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
