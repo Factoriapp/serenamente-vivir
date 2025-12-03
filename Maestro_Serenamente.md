@@ -49,8 +49,10 @@ Website profesional para terapeuta especializada en bienestar emocional de mujer
 
 ### Arquitectura Base
 - **Origen**: Reutiliza sistema de Impulso Profesional
-- **CSS**: Sistema SCSS modular (en implementación)
+- **CSS**: Sistema SCSS modular (implementado)
 - **Componentes**: Adaptados de librería Impulso Pro
+- **Repositorio GitHub**: https://github.com/Factoriapp/serenamente-vivir.git
+- **Rama principal**: `main`
 
 ### Estado Actual (03-Dic-2025)
 - ✅ HTML completo con contenido
@@ -224,14 +226,20 @@ Plataforma_modelo/
 
 **Comandos útiles:**
 ```bash
-# Recompilar CSS
-npm run build:serenamente
+# SCSS - Compilación
+npm run build:serenamente          # Compilar CSS una vez
+npm run watch:serenamente          # Auto-compilar al guardar
+npm run build:serenamente:prod     # Minificar para producción
 
-# Ver CSS compilado
-cat Serenamente/css/styles.css
+# Git - Control de versiones
+git status                         # Ver cambios
+git add .                          # Agregar todos los cambios
+git commit -m "mensaje"            # Crear commit
+git push                           # Subir a GitHub
 
-# Modo watch (auto-compilar al editar)
-npm run watch:serenamente
+# Visualización
+cat css/styles.css                 # Ver CSS compilado
+grep "@media" css/styles.css       # Verificar media queries
 ```
 
 ---
@@ -261,6 +269,11 @@ npm run watch:serenamente
   - Animaciones suaves con cubic-bezier
   - Mejor accesibilidad (focus visible)
   - Botón cerrar más visible
+
+- ✅ **Repositorio GitHub creado**
+  - Repositorio: https://github.com/Factoriapp/serenamente-vivir.git
+  - Primer commit subido con todo el trabajo de la sesión
+  - 94 archivos (HTML, SCSS, CSS, imágenes, documentación)
 
 **⚠️ NOTAS IMPORTANTES:**
 - Responsive NO probado exitosamente, requiere corrección en próxima sesión
