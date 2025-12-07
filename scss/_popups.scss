@@ -178,6 +178,14 @@
     color: var(--color-gray);
 }
 
+/* Popup CTA - Call to Action row with button */
+.popup-cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
 /* Popups específicos - Talleres */
 #popup3 .popup-content {
     grid-template-columns: 1fr 400px;

@@ -1,20 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Serenamente Vivir - Un espacio para volver a ti</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
 
     <!-- CSS Externo - Sistema SCSS Modular -->
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/styles.css?v=11">
 </head>
+
 <body>
     <!-- Header -->
     <header>
         <div class="header-content">
             <nav>
                 <a href="serenamente_vivir.html" class="active">Inicio</a>
+                <a href="tienda.html">Para ti</a>
                 <a href="tu_espacio_privado.html">Tu Espacio Privado</a>
                 <a href="meditaciones_personalizadas.html">Meditaciones Personalizadas</a>
                 <a href="contacto.html">Contacto</a>
@@ -24,303 +29,393 @@
 
     <!-- Hero Section -->
     <section class="hero">
-        <img src="https://iili.io/K4AhJFs.png" alt="Serenamente Vivir" style="max-width: 400px; width: 100%; margin: 0 auto 30px; display: block; border-radius: 10px;">
-        <img src="https://iili.io/K4a3jgj.png" alt="Serenamente Vivir" style="max-width: 800px; width: 100%; margin: 0 auto 20px; display: block; border-radius: 10px;">
-        <p style="font-family: 'Playfair Display', serif; font-size: 24px;"><em>El permiso de ser, el arte de vivir serenamente</em></p>
+        <div class="hero-logo-container">
+            <img src="https://iili.io/K4AhJFs.png" alt="Serenamente Vivir" class="hero-logo">
+            <p class="hero-author">con <strong>Marlene Sosa</strong></p>
+        </div>
+        <img src="https://iili.io/K4a3jgj.png" alt="Serenamente Vivir" class="hero-banner">
+        <p class="hero-tagline"><em>El permiso de ser, el arte de vivir serenamente</em></p>
     </section>
 
     <!-- Separator -->
-    <div style="background-color: var(--color-beige); height: 5px;"></div>
+    <div class="separator"></div>
 
-    <!-- Welcome Section -->
-    <div class="container">
-        <section class="welcome-section">
-            <div class="welcome-text">
-                <h2>Un espacio para volver a ti</h2>
-                <p><em>"Permítete sentir, reconectar y elegir tu camino."</em></p>
-                <p>Aquí encontrarás acompañamiento profesional, procesos personalizados y herramientas transformadoras que te permiten volver a ti misma. Recuerda que eres mucho más que tus decisiones.</p>
-                <a href="#como-puedo-ayudarte" class="btn btn-primary">Descubre cómo puedo ayudarte</a>
-            </div>
-            <div>
-                <img src="https://iili.io/KQzEe8F.png" alt="Bienvenida" class="welcome-image">
-            </div>
-        </section>
-    </div>
+    <!-- Quién Soy + Qué es FUSIONADO (Autoridad + Propósito) -->
+    <section class="who-section">
+        <div class="container">
+            <h2>Un espacio para volver a ti</h2>
+            <p class="section-intro"><em>Permítete sentir, reconectar y elegir tu camino.</em></p>
+            <p class="section-intro"><strong>Serenamente Vivir</strong> es un espacio terapéutico pensado para mujeres <br>que desean reconectar con su esencia, sanar su historia y elegir su vida <br>desde la calma y honestidad interior.</p>
 
-    <!-- Separator -->
-    <div style="background-color: var(--color-beige); height: 5px;"></div>
-
-    <div class="container">
-        <!-- About Section -->
-        <section class="about-section">
-            <h2>¿Qué es Serenamente Vivir?</h2>
-            <div class="about-grid">
-                <div class="about-text">
-                    <p>Es un espacio terapéutico pensado para mujeres que desean reconectar con su esencia, sanar su historia y elegir su vida desde la calma y honestidad interior.</p>
-                    <p>Aquí encontrarás acompañamiento sistémico, procesos personalizados y experiencias de transformación que te permitirán volver a ti misma, liberarte de exigencias y descubrir tu verdadera voz.</p>
-                </div>
+            <div class="who-grid">
+                <img src="https://iili.io/K47j7AG.png" alt="Marlene Sosa" class="who-image">
                 <div>
-                    <img src="https://iili.io/KQzgZZl.png" alt="Qué es Serenamente Vivir" class="about-image">
-                </div>
-            </div>
-        </section>
-    </div>
-
-    <!-- Separator -->
-    <div style="background-color: var(--color-beige); height: 5px;"></div>
-
-    <div class="container">
-        <!-- Who Am I Section -->
-        <section class="who-section">
-            <h2>Quién soy</h2>
-            <div style="display: grid; grid-template-columns: auto 1fr; gap: 40px; align-items: start;">
-                <img src="https://iili.io/K47j7AG.png" alt="Quién soy" style="width: 400px; height: auto; border-radius: 10px; margin-top: -120px;">
-                <div>
-                    <p>Con más de 20 años dedicada al desarrollo personal, la salud y el estudio de la consciencia, a través de la práctica constante de diversas disciplinas tales como Constelaciones Familiares, Biodescodificación, Genograma Familiar, entre otros.</p>
-                    <p>Con el tiempo comprendí que mi mayor aporte no es una técnica en particular, sino la forma en que puedo integrar lo aprendido y sostener procesos desde mi propia presencia y mirada.</p>
+                    <h3>Marlene Sosa</h3>
+                    <p>Con más de 20 años dedicada al desarrollo personal, la salud y el estudio de la consciencia, a
+                        través de la práctica constante de diversas disciplinas tales como Constelaciones Familiares,
+                        Biodescodificación, Genograma Familiar, entre otros.</p>
+                    <p>Con el tiempo comprendí que mi mayor aporte no es una técnica en particular, sino la forma en que
+                        puedo integrar lo aprendido y sostener procesos desde mi propia presencia y mirada.</p>
                 </div>
             </div>
 
             <!-- Mission Section -->
-            <div class="mission-section" style="margin-top: 20px; padding: 15px 40px;">
+            <div class="mission-section">
                 <h3>Mi misión</h3>
-                <p>... acompañar mujeres en momentos de transformación vital, brindando herramientas para que encuentren la calma, claridad y confianza necesarias para elegir consciente y asertivamente. Deseo que cada persona sienta que es posible volver a sí misma, reconocerse y aceptarse en su totalidad.</p>
+                <p>... acompañar mujeres en momentos de transformación vital, brindando herramientas para que encuentren
+                    la calma, claridad y confianza necesarias para elegir consciente y asertivamente. Deseo que cada
+                    persona sienta que es posible volver a sí misma, reconocerse y aceptarse en su totalidad.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Separator -->
+    <div class="separator"></div>
+
+    <!-- Sessions Section - Versión Resumida -->
+    <section id="como-puedo-ayudarte" class="sessions-section">
+        <div class="container">
+            <h2>Cómo puedo ayudarte</h2>
+            <div class="services-grid">
+                <!-- Sesiones 1:1 -->
+                <div class="service-card service-card-summary">
+                    <div class="service-card-image">
+                        <img src="https://iili.io/KL1jAqF.png" alt="Sesiones 1:1" loading="lazy">
+                    </div>
+                    <div class="service-card-content">
+                        <h3>Sesiones 1:1</h3>
+                        <p>Un espacio íntimo y personalizado donde reconectar con tu verdad interior y encontrar claridad en tus circunstancias actuales.</p>
+                        <a href="tienda.html#servicios" class="btn btn-primary">Ver más</a>
+                    </div>
+                </div>
+
+                <!-- Acompañamiento -->
+                <div class="service-card service-card-summary">
+                    <div class="service-card-image">
+                        <img src="https://iili.io/KL1iK1j.png" alt="Acompañamiento" loading="lazy">
+                    </div>
+                    <div class="service-card-content">
+                        <h3>Acompañamiento</h3>
+                        <p>Procesos de transformación continua adaptados a tu ritmo, con herramientas sistémicas y apoyo sostenido.</p>
+                        <a href="tienda.html#servicios" class="btn btn-primary">Ver más</a>
+                    </div>
+                </div>
+
+                <!-- Talleres -->
+                <div class="service-card service-card-summary">
+                    <div class="service-card-image">
+                        <img src="https://iili.io/KQF8g9e.png" alt="Talleres" loading="lazy">
+                    </div>
+                    <div class="service-card-content">
+                        <h3>Talleres</h3>
+                        <p>Encuentros grupales para compartir experiencias, aprender en comunidad y crecer juntas en un espacio seguro.</p>
+                        <a href="tienda.html#servicios" class="btn btn-primary">Ver más</a>
+                    </div>
+                </div>
+
+                <!-- Retiros -->
+                <div class="service-card service-card-summary">
+                    <div class="service-card-image">
+                        <img src="https://iili.io/KQ3DhW7.png" alt="Retiros" loading="lazy">
+                    </div>
+                    <div class="service-card-content">
+                        <h3>Retiros</h3>
+                        <p>Experiencias inmersivas en entornos naturales para desconectar de la rutina y reconectar profundamente contigo misma.</p>
+                        <a href="tienda.html#servicios" class="btn btn-primary">Ver más</a>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 30px;">
+                <a href="tienda.html" style="color: var(--color-gray); text-decoration: none; font-size: 18px; font-weight: 600; transition: var(--transition);" onmouseover="this.style.color='var(--color-cyan)'" onmouseout="this.style.color='var(--color-gray)'">Ver todos los recursos →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Separator -->
+    <div class="separator"></div>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2>Historias de transformación</h2>
+
+            <div class="testimonials-vertical">
+                    <!-- Testimonial 1: Imagen izquierda -->
+                    <div class="testimonial-row">
+                        <div class="testimonial-image-container">
+                            <img src="https://placehold.co/69x69/e7cf9d/ffffff?text=AG" alt="Ana García" loading="lazy">
+                        </div>
+                        <div class="testimonial-content-container">
+                            <p class="testimonial-quote-mark beige">"</p>
+                            <p class="testimonial-text-large">
+                                Llegué a Marlene con una ansiedad que no me dejaba vivir. Sentía que mi cabeza iba a mil por hora. Sus sesiones no solo me calmaron, me enseñaron a escucharme. Hoy elijo mi vida desde la paz, no desde el miedo.
+                            </p>
+                            <div class="testimonial-author-info">
+                                <h3>Ana García</h3>
+                                <p>Paciente de Sesiones 1:1</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2: Imagen derecha -->
+                    <div class="testimonial-row-reverse">
+                        <div class="testimonial-image-container">
+                            <img src="https://placehold.co/69x69/cae4b2/ffffff?text=LP" alt="Lucía Pérez" loading="lazy">
+                        </div>
+                        <div class="testimonial-content-container">
+                            <p class="testimonial-quote-mark green">"</p>
+                            <p class="testimonial-text-large">
+                                La comunidad privada es mi refugio semanal. Antes me sentía muy sola en mi proceso. Saber que tengo recursos y apoyo constante me da una seguridad impagable. No estoy sola en esto.
+                            </p>
+                            <div class="testimonial-author-info">
+                                <h3>Lucía Pérez</h3>
+                                <p>Miembro de la Comunidad</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3: Imagen izquierda -->
+                    <div class="testimonial-row">
+                        <div class="testimonial-image-container">
+                            <img src="https://placehold.co/69x69/c9e1e1/ffffff?text=MR" alt="Marta Ruiz" loading="lazy">
+                        </div>
+                        <div class="testimonial-content-container">
+                            <p class="testimonial-quote-mark cyan">"</p>
+                            <p class="testimonial-text-large">
+                                El retiro fue un antes y un después. Sentirme sostenida por la mirada amorosa de Marlene fue profundamente sanador. Es una experiencia imprescindible para cualquier mujer que necesite parar.
+                            </p>
+                            <div class="testimonial-author-info">
+                                <h3>Marta Ruiz</h3>
+                                <p>Asistente a Retiro</p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Separator -->
+    <div class="separator"></div>
+
+    <div class="container">
+        <!-- Membership Section - Bloque Destacado -->
+        <section class="membership-featured">
+            <div class="membership-content">
+                <div class="membership-header" style="text-align: center; margin-bottom: 2rem;">
+                    <h2>Membresía</h2>
+                    <p class="membership-intro">Un refugio de crecimiento continuo y acompañamiento sostenido</p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+                    <div>
+                        <img src="https://iili.io/KLlTHBe.png" alt="Comunidad Privada" style="width: 100%; object-fit: cover;" loading="lazy">
+                    </div>
+
+                    <div>
+                        <p style="font-size: 1.1rem; color: var(--color-text-light); line-height: 1.8; margin-bottom: 2rem;">
+                            Un espacio diseñado para acompañarte de manera continua en tu proceso de transformación personal.
+                        </p>
+
+                        <h3 style="font-family: var(--font-serif); font-size: 1.8rem; font-style: italic; color: var(--color-gray); margin-bottom: 1.5rem;">¿Qué incluye?</h3>
+                        <ul style="color: var(--color-text); line-height: 2; margin-bottom: 2.5rem; font-size: 1.05rem;">
+                            <li><strong>Sesiones grupales mensuales</strong> online</li>
+                            <li><strong>Biblioteca completa</strong> de meditaciones guiadas y recursos</li>
+                            <li><strong>Círculos de mujeres</strong> (online y presenciales)</li>
+                            <li><strong>Comunidad privada</strong> de apoyo continuo</li>
+                            <li><strong>Contenido exclusivo</strong> mensual</li>
+                            <li><strong>Descuentos especiales</strong> en talleres, retiros y sesiones 1:1</li>
+                        </ul>
+
+                        <a href="membresia.html" class="btn btn-primary" style="width: 100%; text-align: center; margin-bottom: 1rem;">Únete a nuestra Comunidad</a>
+
+                        <p style="text-align: center; font-size: 1.1rem; color: var(--color-gray); margin: 0;">
+                            <strong>29€/mes</strong> · Cancela cuando quieras
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
 
     <!-- Separator -->
-    <div style="background-color: var(--color-beige); height: 5px;"></div>
+    <div class="separator"></div>
 
-    <div class="container">
-        <!-- Sessions Section -->
-        <section id="como-puedo-ayudarte" class="sessions-section">
-            <h2>Cómo puedo ayudarte</h2>
-            <div class="sessions-content">
-                <div class="sessions-modules">
-                    <div class="session-module" onclick="openPopup('popup1')">
-                        <h3>Sesiones 1:1</h3>
-                        <p>¿Algo te inquieta? ¿Necesitas respuestas o claridad en un momento dado?<br>Una sesión individual puede ayudarte a encontar respuestas desde tu propia coherencia.</p>
+    <!-- Blog Section - Inspiración -->
+    <section class="blog-section">
+        <div class="container">
+            <div class="blog-section-header">
+                <h2>Inspiración para tu camino</h2>
+                <p>Reflexiones, herramientas y miradas para vivir serenamente.</p>
+            </div>
+
+            <div class="blog-grid">
+                <!-- Artículo 1: Ansiedad -->
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="https://placehold.co/600x400/e7cf9d/ffffff?text=Ansiedad" alt="Gestión de ansiedad" loading="lazy">
                     </div>
-                    <div class="session-module" onclick="openPopup('popup2')">
-                        <h3>Acompañamiento</h3>
-                        <p>Procesos de acompañamiento continuo adaptados a tus necesidades y momentos de transformación vital.</p>
+                    <div class="blog-content">
+                        <span class="blog-category-badge emociones">Emociones</span>
+                        <h3>El mensaje oculto detrás de tu ansiedad</h3>
+                        <p>¿Y si la ansiedad no fuera el enemigo, sino una mensajera que intenta decirte algo importante?</p>
+                        <a href="#" class="blog-read-more">Leer artículo →</a>
                     </div>
-                    <div class="session-module" onclick="openPopup('popup3')">
-                        <h3>Talleres</h3>
-                        <p>Espacios colectivos donde crecer, aprender y compartir experiencias junto a otras mujeres.</p>
+                </article>
+
+                <!-- Artículo 2: Rituales -->
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="https://placehold.co/600x400/cae4b2/ffffff?text=Rituales" alt="Rituales diarios" loading="lazy">
                     </div>
-                    <div class="session-module" onclick="openPopup('popup4')">
-                        <h3>Retiros</h3>
-                        <p>Experiencias inmersivas de 2 o 3 días en espacios naturales para conectar profundamente contigo misma.</p>
+                    <div class="blog-content">
+                        <span class="blog-category-badge habitos">Hábitos</span>
+                        <h3>3 rituales matutinos para volver a ti</h3>
+                        <p>Pequeños gestos que cambian la química de tu cerebro y preparan tu día desde la calma.</p>
+                        <a href="#" class="blog-read-more">Leer artículo →</a>
                     </div>
+                </article>
+
+                <!-- Artículo 3: Duelo -->
+                <article class="blog-card">
+                    <div class="blog-card-image">
+                        <img src="https://placehold.co/600x400/f1ede2/333333?text=Duelo" alt="Proceso de duelo" loading="lazy">
+                    </div>
+                    <div class="blog-content">
+                        <span class="blog-category-badge sanacion">Sanación</span>
+                        <h3>Honrar el vacío: Transitar el duelo</h3>
+                        <p>Cómo sostenernos cuando la vida nos pide soltar. Claves sistémicas para la despedida.</p>
+                        <a href="#" class="blog-read-more">Leer artículo →</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="blog-cta-container">
+                <a href="blog.html" class="btn btn-secondary">Ver todas las entradas</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Separator -->
+    <div class="separator"></div>
+
+    <!-- Lead Magnet Section -->
+    <section class="lead-magnet-section">
+        <div class="container">
+            <div class="who-grid" style="align-items: center;">
+                <div class="lead-magnet-image">
+                    <img src="https://iili.io/fuP5Rne.png" alt="Portada Meditación" loading="lazy">
                 </div>
+
                 <div>
-                    <img src="https://iili.io/KQIBG4V.png" alt="Cómo puedo ayudarte" class="sessions-image" style="width: 98%; margin-left: auto; margin-right: -80px; display: block;">
-                </div>
-            </div>
-        </section>
+                    <h2>Un regalo para tu calma</h2>
+                    <p>¿Sientes que el ruido mental no te deja descansar? He grabado una <strong>Meditación de Calma Interior (15 min)</strong> especialmente para ti.</p>
+                    <p>Es una herramienta de emergencia para volver a tu centro cuando la ansiedad aprieta.</p>
 
-        <!-- Membership Section -->
-        <section class="faq-section" onclick="openPopup('popup5')">
-            <div class="membership-left">
-                <h3>Membresía</h3>
-                <p>... tu espacio privado.</p>
-            </div>
-            <div class="membership-right">
-                <p class="membership-description">
-                    Accede a recursos exclusivos, sesiones grupales, círculos de mujeres y una comunidad de apoyo continuo para tu crecimiento personal.
-                </p>
-            </div>
-        </section>
-    </div>
+                    <div class="lead-form-box">
+                        <p><strong>Descárgala gratis aquí:</strong></p>
+                        <form id="leadMagnetForm" class="lead-form" action="#" method="POST">
+                            <input type="text" id="leadName" name="name" placeholder="Tu nombre" required>
+                            <input type="email" id="leadEmail" name="email" placeholder="Tu mejor email" required>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Serenamente Vivir</h3>
-                <p>El propósito de vivir al arte de vivir amorosamente</p>
-                <div class="contact-info">
-                    <p><strong>Contacto:</strong></p>
-                    <p>📧 <a href="mailto:info@serenamentevivir.com">info@serenamentevivir.com</a></p>
-                    <p>📱 +34XXXXXXXXX</p>
-                    <p>📍 Granada, Andalucía</p>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h3>Preguntas frecuentes</h3>
-                <div class="faq-item">
-                    <h4>¿Cuál es tu método de trabajo?</h4>
-                    <p>Utilizamos un enfoque integrador que combina técnicas psicológicas, mindfulness, y acompañamiento emocional personalizado.</p>
-                </div>
-                <div class="faq-item">
-                    <h4>¿Cuánto tiempo duran las sesiones?</h4>
-                    <p>Las sesiones 1:1 tienen una duración de 90 minutos. Los retiros y talleres varían según su formato.</p>
-                </div>
-                <div class="faq-item">
-                    <h4>¿Ofrecen sesiones en línea?</h4>
-                    <p>Sí, ofrecemos sesiones en línea y presenciales. Adaptamos el formato según tus necesidades.</p>
+                            <label class="privacy-checkbox">
+                                <input type="checkbox" id="consentCheckbox" name="privacy" required>
+                                <span class="privacy-text">
+                                    He leído y acepto la <a href="#">Política de Privacidad</a> y acepto recibir correos de Serenamente Vivir.
+                                </span>
+                            </label>
+
+                            <button type="submit" id="leadSubmitBtn" class="btn btn-secondary">Envíamela</button>
+                        </form>
+                        <p class="lead-form-disclaimer">🔒 Respeto tu privacidad. Cero spam.</p>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="footer-bottom">
-            <p>&copy; 2024 Serenamente Vivir. Todos los derechos reservados. | Diseñado con cuidado y atención</p>
+    <!-- Separator -->
+    <div class="separator"></div>
+
+    <!-- Red Antifuga -->
+    <section class="antifuga-section">
+        <div class="container">
+            <h2>¿Tienes dudas sobre qué camino elegir?</h2>
+            <div class="antifuga-content">
+                <p>A veces es difícil saber si necesitas una Sesión Individual, un Taller o entrar a la Comunidad. No te quedes con la incertidumbre.</p>
+            </div>
+
+            <div class="antifuga-cta-container">
+                <a href="contacto.html" class="btn btn-secondary">Pregúntame</a>
+                <a href="contacto.html" class="btn btn-primary">Agenda 15 min de valoración (Gratis)</a>
+            </div>
+
+            <p class="antifuga-disclaimer">* Sin compromiso de compra. Solo claridad.</p>
+        </div>
+    </section>
+
+    <!-- Separator -->
+    <div class="separator"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wrapper">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <ul>
+                        <li><a href="serenamente_vivir.html">Inicio</a></li>
+                        <li><a href="#como-puedo-ayudarte">Para ti</a></li>
+                        <li><a href="blog.html">Inspiración</a></li>
+                        <li><a href="membresia.html">Membresía</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <ul>
+                        <li><a href="#">Privacidad</a></li>
+                        <li><a href="#">Términos</a></li>
+                        <li><a href="#">Aviso Legal</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <p>Sígueme en redes sociales.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/34XXXXXXXXX" class="social-link" aria-label="WhatsApp">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                            </svg>
+                        </a>
+                        <a href="mailto:info@serenamentevivir.com" class="social-link" aria-label="Email">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Serenamente Vivir - Marlene Sosa | Todos los derechos reservados</p>
+            </div>
         </div>
     </footer>
 
-    <!-- Popups -->
-    <div id="popup1" class="popup-overlay" onclick="closePopup('popup1')">
-        <div class="popup-content" onclick="event.stopPropagation()">
-            <button class="popup-close" onclick="closePopup('popup1')">&times;</button>
-            <div class="popup-text">
-                <h2>Sesiones 1:1</h2>
-                <p>Las sesiones individuales son un espacio íntimo y personalizado donde podrás:</p>
-                <ul>
-                    <li>Reconectar con tu verdad interior y escuchar tu voz auténtica</li>
-                    <li>Explorar situaciones que te generan dudas o conflictos emocionales</li>
-                    <li>Descubrir caminos en tus circunstancias actuales</li>
-                    <li>Comprender claramente lo que estás viviendo</li>
-                    <li>Liberarte de exigencias externas y presiones sociales</li>
-                </ul>
-                <p>Encuentro de aproximadamente 60 minutos, online o presencial.</p>
-                <p>Porque a veces, una conversación honesta y un espacio seguro son todo lo que necesitas para volver a ti.</p>
-                <p style="display: flex; justify-content: space-between; align-items: center;"><em>Escríbeme y encontremos el momento adecuado para ti.</em><a href="contacto.html" class="btn btn-primary btn-compact">Contacto</a></p>
-            </div>
-            <div class="popup-image-placeholder">
-                <img src="https://iili.io/KL1jAqF.png" alt="Sesiones 1:1">
-            </div>
-        </div>
-    </div>
-
-    <div id="popup2" class="popup-overlay" onclick="closePopup('popup2')">
-        <div class="popup-content" onclick="event.stopPropagation()">
-            <button class="popup-close" onclick="closePopup('popup2')">&times;</button>
-            <div class="popup-text">
-                <h2>Acompañamiento</h2>
-                <p>Proceso diseñado para quienes buscan un espacio sostenido de transformación y crecimiento personal.</p>
-                <p>Recorreremos juntas un camino a través de:</p>
-                <ul>
-                    <li>Sesiones regulares adaptadas a tu ritmo y necesidades</li>
-                    <li>Herramientas sistémicas y de autoconocimiento</li>
-                    <li>Apoyo en momentos de transformación vital</li>
-                    <li>Comprensión de tu historia familiar y patrones transgeneracionales</li>
-                    <li>Integración de experiencias y aprendizajes</li>
-                </ul>
-                <p>Programas flexibles de 3, 6 o 12 meses, adaptados a tu proceso personal.</p>
-                <p><em>Un espacio para transformarte a tu propio ritmo, con la guía que necesitas.</em></p>
-                <p style="display: flex; justify-content: space-between; align-items: center;">¿Lista para comenzar tu proceso de transformación?<a href="contacto.html" class="btn btn-primary btn-compact">Contacto</a></p>
-            </div>
-            <div class="popup-image-placeholder">
-                <img src="https://iili.io/KL1iK1j.png" alt="Acompañamiento">
-            </div>
-        </div>
-    </div>
-
-    <div id="popup3" class="popup-overlay" onclick="closePopup('popup3')">
-        <div class="popup-content" onclick="event.stopPropagation()">
-            <button class="popup-close" onclick="closePopup('popup3')">&times;</button>
-            <div class="popup-text">
-                <h2>Talleres</h2>
-                <p>Encuentros grupales temáticos donde compartir, intercambiar experiencias y apoyarnos mutuamente en el crecimiento personal.</p>
-                <p>Cada taller es un espacio de:</p>
-                <ul>
-                    <li>Conexión y apoyo colectivo</li>
-                    <li>Aprendizaje compartido y crecimiento personal</li>
-                    <li>Exploración de temas específicos en profundidad</li>
-                    <li>Intercambio de experiencias en un entorno seguro</li>
-                    <li>Herramientas prácticas para tu día a día</li>
-                </ul>
-                <p>Talleres temáticos presenciales y online, en diferentes ubicaciones y fechas.</p>
-                <p><em>Un espacio para crecer juntas, aprender y sostener procesos colectivos.</em></p>
-                <p style="display: flex; justify-content: space-between; align-items: center;">¿Te gustaría formar parte de nuestros talleres?<a href="contacto.html" class="btn btn-primary btn-compact">Contacto</a></p>
-            </div>
-            <div class="popup-image-placeholder">
-                <img src="https://iili.io/KQF8g9e.png" alt="Talleres">
-            </div>
-        </div>
-    </div>
-
-    <div id="popup4" class="popup-overlay" onclick="closePopup('popup4')">
-        <div class="popup-content" onclick="event.stopPropagation()">
-            <button class="popup-close" onclick="closePopup('popup4')">&times;</button>
-            <div class="popup-text">
-                <h2>Retiros</h2>
-                <p>Los retiros son experiencias inmersivas que te permiten desconectar de la rutina y reconectar profundamente contigo misma en entornos naturales.</p>
-                <p>Durante el retiro vivirás:</p>
-                <ul>
-                    <li>Desconexión total del día a día para conectar contigo</li>
-                    <li>Prácticas de mindfulness y meditación</li>
-                    <li>Sesiones de constelaciones y trabajo grupal</li>
-                    <li>Contacto con la naturaleza como herramienta de sanación</li>
-                    <li>Círculos de mujeres y compartir de experiencias</li>
-                    <li>Tiempo para el silencio, la reflexión y el descanso</li>
-                </ul>
-                <p><strong>Duración:</strong> Retiros de 2 o 3 días</p>
-                <p><strong>Ubicación:</strong> A definir según el retiro</p>
-                <p><strong>Incluye:</strong> Alojamiento, alimentación consciente y todas las actividades</p>
-                <p><em>Una experiencia para reconectar contigo en profundidad.</em></p>
-                <p style="display: flex; justify-content: space-between; align-items: center;">¿Lista para tu próximo retiro?<a href="contacto.html" class="btn btn-primary btn-compact">Contacto</a></p>
-            </div>
-            <div class="popup-image-placeholder">
-                <img src="https://iili.io/KQ3DhW7.png" alt="Retiros">
-            </div>
-        </div>
-    </div>
-
-    <div id="popup5" class="popup-overlay" onclick="closePopup('popup5')">
-        <div class="popup-content" onclick="event.stopPropagation()">
-            <button class="popup-close" onclick="closePopup('popup5')">&times;</button>
-            <div class="popup-text">
-                <h2>Membresía</h2>
-                <p>La Membresía de Serenamente Vivir es tu espacio privado de crecimiento continuo, diseñado para acompañarte en tu proceso de transformación personal de manera sostenida.</p>
-                <p><strong>¿Qué incluye tu membresía?</strong></p>
-                <ul>
-                    <li>Acceso a sesiones grupales mensuales exclusivas</li>
-                    <li>Biblioteca digital con recursos, meditaciones guiadas y material de apoyo</li>
-                    <li>Círculos de mujeres online y presenciales</li>
-                    <li>Descuentos especiales en talleres, retiros y sesiones individuales</li>
-                    <li>Comunidad privada para compartir experiencias y apoyo mutuo</li>
-                    <li>Contenido mensual exclusivo: videos, artículos y ejercicios prácticos</li>
-                </ul>
-                <p><strong>Niveles de membresía:</strong></p>
-                <ul>
-                    <li><strong>Básica:</strong> Acceso a recursos digitales y comunidad</li>
-                    <li><strong>Intermedia:</strong> Incluye sesiones grupales mensuales</li>
-                    <li><strong>Premium:</strong> Acceso completo + sesión individual trimestral</li>
-                </ul>
-                <p><strong>Inversión:</strong> Desde 29€/mes</p>
-                <p><em>Tu espacio privado para crecer, sanar y florecer en comunidad.</em></p>
-            </div>
-            <div class="popup-image-placeholder">
-                <img src="https://iili.io/KQqB5MX.png" alt="Membresía">
-            </div>
-            <a href="tu_espacio_privado.html" class="btn btn-primary popup-access-button">Tu Espacio Privado</a>
-        </div>
-    </div>
-
-    <script>
-        function openPopup(popupId) {
-            document.getElementById(popupId).classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closePopup(popupId) {
-            document.getElementById(popupId).classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Cerrar popup con tecla ESC
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                const popups = document.querySelectorAll('.popup-overlay.active');
-                popups.forEach(popup => {
-                    popup.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                });
-            }
-        });
-    </script>
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
 </body>
+
 </html>

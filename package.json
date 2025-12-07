@@ -1,0 +1,13 @@
+{
+  "name": "serenamente-vivir",
+  "version": "1.0.0",
+  "description": "Website Serenamente Vivir - Sistema SCSS Modular",
+  "scripts": {
+    "build": "sass scss/main.scss css/styles.css",
+    "watch": "sass --watch scss/main.scss css/styles.css",
+    "build:prod": "sass scss/main.scss css/styles.css --style=compressed"
+  },
+  "devDependencies": {
+    "sass": "^1.69.5"
+  }
+}

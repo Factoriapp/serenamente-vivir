@@ -33,6 +33,15 @@
     header {
         padding: 20px 30px;
     }
+
+    /* Services Grid - 2 columnas en pantallas medianas */
+    .services-grid {
+        gap: 30px;
+    }
+
+    .service-card {
+        flex: 0 1 calc(50% - 15px);
+    }
 }
 
 /* ========================================
@@ -61,12 +70,47 @@
         font-size: 32px;
     }
 
+    .hero-logo {
+        max-width: 300px;
+    }
+
+    .hero-banner {
+        max-width: 100%;
+    }
+
+    .hero-tagline {
+        font-size: 20px;
+    }
+
+    .hero-author {
+        position: static;
+        text-align: center;
+        margin-top: 5px;
+    }
+
+    .hero-logo-container {
+        margin-bottom: 5px;
+    }
+
     /* Layouts grid → columna simple */
     .welcome-section,
     .about-grid,
     .sessions-content,
     .footer-content {
         grid-template-columns: 1fr;
+    }
+
+    /* Who section - colapsar grid */
+    .who-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .who-image {
+        width: 100%;
+        max-width: 400px;
+        margin: 0 auto;
+        display: block;
     }
 
     /* Ajustes de imágenes */
@@ -112,10 +156,36 @@
         width: 100%;
     }
 
+    /* Popup CTA - stack vertical en mobile */
+    .popup-cta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
     /* Sesiones */
     .sessions-image {
         width: 100%;
         margin: 0;
+        margin-right: 0;
+    }
+
+    /* Services Grid - Tarjetas de Servicios */
+    .services-grid {
+        gap: 30px;
+    }
+
+    .service-card {
+        flex: 1 1 100%;
+        max-width: none;
+    }
+
+    .service-card-image {
+        height: 200px;
+    }
+
+    .service-card-content {
+        padding: 25px;
     }
 
     /* Membership */
@@ -131,8 +201,76 @@
 
     /* Who section */
     .who-section h2,
-    .who-section p {
+    .who-section p,
+    .who-grid h3,
+    .section-intro {
         text-align: center;
+    }
+
+    .section-intro {
+        margin: 0 auto 30px;
+    }
+
+    .who-grid {
+        margin-top: 30px;
+    }
+
+    .who-image {
+        margin-top: 0;
+    }
+
+    /* Membership Featured */
+    .membership-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .membership-featured {
+        padding: 40px 25px;
+    }
+
+    /* Lead Magnet Responsive */
+    .lead-magnet-section h2 {
+        text-align: center;
+    }
+
+    .lead-form {
+        flex-direction: column;
+    }
+
+    .lead-form input {
+        min-width: 100%;
+    }
+
+    /* Antifuga Responsive */
+    .antifuga-cta-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .antifuga-cta-container .btn {
+        width: 100%;
+        max-width: 300px;
+    }
+
+    /* Blog Responsive */
+    .blog-card {
+        flex: 1 1 100%;
+        max-width: none;
+    }
+
+    .blog-section-header h2 {
+        font-size: 32px;
+    }
+
+    /* Testimonials Responsive */
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .testimonials-section h2 {
+        font-size: 32px;
     }
 }
 
@@ -154,6 +292,19 @@
         font-size: 16px;
     }
 
+    .hero-logo {
+        max-width: 250px;
+        margin-bottom: 20px;
+    }
+
+    .hero-banner {
+        margin-bottom: 15px;
+    }
+
+    .hero-tagline {
+        font-size: 18px;
+    }
+
     /* Títulos más pequeños */
     .welcome-text h2,
     .about-section h2,
@@ -173,8 +324,13 @@
     }
 
     .mission-section {
-        padding: 30px 20px;
-        margin: 40px 0;
+        padding: 15px 20px;
+        margin: 20px 0 5px 0;
+    }
+
+    /* Who image en mobile */
+    .who-image {
+        max-width: 100%;
     }
 
     .who-section,
@@ -226,6 +382,19 @@
         font-size: 16px;
     }
 
+    /* Services Grid - Mobile */
+    .service-card-image {
+        height: 180px;
+    }
+
+    .service-card-content {
+        padding: 20px;
+    }
+
+    .service-card-content h3 {
+        font-size: 22px;
+    }
+
     /* FAQ/Membership */
     .faq-section {
         padding: 25px 20px;
@@ -233,5 +402,100 @@
 
     .faq-section h3 {
         font-size: 20px;
+    }
+
+    /* Section intro mobile */
+    .section-intro {
+        font-size: 15px;
+    }
+
+    .section-intro em {
+        font-size: 18px;
+    }
+
+    /* Membership Featured Mobile */
+    .membership-featured {
+        padding: 30px 20px;
+    }
+
+    .membership-header h2 {
+        font-size: 28px;
+    }
+
+    .membership-intro {
+        font-size: 16px;
+    }
+
+    .tier-card {
+        padding: 15px;
+    }
+
+    /* Antifuga Mobile */
+    .antifuga-section {
+        padding: 40px 0;
+    }
+
+    .antifuga-section h2 {
+        font-size: 28px;
+    }
+
+    /* Lead Magnet Mobile */
+    .lead-magnet-section {
+        padding: 2rem 0;
+    }
+
+    .lead-magnet-section h2 {
+        font-size: 28px;
+    }
+
+    .lead-form-box {
+        padding: 15px;
+    }
+
+    .antifuga-content {
+        font-size: 1rem;
+    }
+
+    /* Blog Mobile */
+    .blog-section {
+        padding: 2rem 0;
+    }
+
+    .blog-section-header {
+        margin-bottom: 2rem;
+    }
+
+    .blog-section-header h2 {
+        font-size: 28px;
+    }
+
+    .blog-content {
+        padding: 1.25rem;
+    }
+
+    .blog-content h3 {
+        font-size: 1.15rem;
+    }
+
+    .blog-card-image {
+        height: 180px;
+    }
+
+    /* Testimonials Mobile */
+    .testimonials-section {
+        padding: 2rem 0;
+    }
+
+    .testimonials-section h2 {
+        font-size: 28px;
+        margin-bottom: 2rem;
+    }
+
+    .testimonial-card {
+        padding: 1.5rem;
+    }
+
+    .testimonial-quote {
+        font-size: 1.5rem;
     }
 }

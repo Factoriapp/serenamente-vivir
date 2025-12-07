@@ -1,0 +1,41 @@
+ 🎨 Paleta de Colores Principal
+
+  Colores de Identidad (Variables CSS):
+
+  - --color-beige: #e7cf9d - Beige cálido principal
+  - --color-cyan: #c9e1e1 - Cyan suave
+  - --color-green: #cae4b2 - Verde menta
+  - --color-cream: #f1ede2 - Crema cálida
+  - --color-gray: #898989 - Gris medio
+
+  Colores de Texto:
+
+  - --color-text: #333 - Texto principal (negro suave)
+  - --color-text-light: #666 - Texto secundario
+  - --color-text-muted: #999 - Texto apagado
+  - Texto cursiva: #555 - Usado en testimonios
+
+  Colores de Fondo:
+
+  - --color-white: #ffffff - Blanco puro
+  - --color-bg: #f5f3f0 - Fondo principal (beige muy claro)
+
+  Colores Adicionales Específicos:
+
+  - #F5FAF0 - Verde muy claro (tarjetas de testimonios)
+  - #b8d1d1 - Cyan más oscuro (hover estados)
+  - #e0e0e0 - Gris claro (bordes)
+  - #ddd - Gris muy claro (bordes suaves)
+  - #e8e3d5 - Beige apagado
+  - #888 - Gris medio oscuro (textos auxiliares)
+
+  📋 Resumen por Uso:
+
+  Fondos de sección:
+  - Blanco (#ffffff) - Secciones "Un espacio para volver a ti", "Testimonios", "Inspiración"
+  - Crema (#f1ede2) - Sección "Cómo puedo ayudarte", bloque "Mi misión"
+  - Beige claro (#f5f3f0) - Fondo general del body, sección "Un regalo para tu calma"
+
+  Acentos:
+  - Verde muy claro (#F5FAF0) - Tarjetas de testimonios
+  - Beige (#e7cf9d), Cyan (#c9e1e1), Verde (#cae4b2) - Categorías, quote marks, detalles

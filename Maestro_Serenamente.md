@@ -286,7 +286,54 @@ grep "@media" css/styles.css       # Verificar media queries
 - ✅ Definición de roadmap en 2 fases (Visual + Optimizaciones)
 - ✅ Inicio implementación Fase 1 (SCSS modular, variables, responsive, botones, popups)
 
+### [07-Dic-2025] - Versión 1.2 - Unificación de Headers/Footers + Lead Magnet
+- ✅ **Lead Magnet con validación implementado**
+  - Formulario con validación en tiempo real (nombre, email con @, checkbox privacidad)
+  - Botón cambia de `btn-secondary` a `btn-primary` cuando todo es válido
+  - Imagen agregada: https://iili.io/fuP5Rne.png (sin marco ni sombra)
+  - JavaScript de validación en `js/main.js`
+  - Funcionalidad copiada desde Index y adaptada a Serenamente
+
+- ✅ **Headers y Footers unificados en todos los archivos HTML**
+  - Navegación consistente: "Para ti" reemplaza "Servicios"
+  - Hero section con logo + banner (https://iili.io/K4a3jgj.png) en todas las páginas
+  - Footer estándar con 3 columnas (navegación, legal, redes sociales)
+  - Archivos actualizados:
+    - contacto.html
+    - tienda.html
+    - tu_espacio_privado.html
+    - meditaciones_personalizadas.html
+    - serenamente_vivir.html
+
+- ✅ **CSS versionado a v=11** en todos los archivos
+- ✅ **JavaScript main.js** vinculado en todos los archivos
+- ✅ **Separadores** (`<div class="separator">`) antes de footers
+
+- ⚠️ **ISSUE PENDIENTE**: Espaciado del copyright en footer
+  - El texto "© 2025 Serenamente Vivir..." aparece muy separado del contenido superior
+  - Se intentaron múltiples ajustes sin éxito (padding-top, margin-top, border-top eliminado)
+  - Posible causa: elemento padre o caché del navegador
+  - **Acción**: Investigar en próxima sesión
+
+- ✅ **Testimonios ajustados**
+  - Imágenes reducidas a 69x69px circulares
+  - Fondo de tarjetas: #F5FAF0
+  - Nombres alineados a la derecha
+  - Altura de tarjetas reducida
+
+- ✅ **Secciones con fondos blancos**
+  - "Un espacio para volver a ti"
+  - "Historias de transformación"
+  - "Inspiración para tu camino"
+  - Fondo #f5f3f0 aplicado a "Un regalo para tu calma"
+
+- ✅ **Membresía rediseñada**
+  - Un solo tier (simplificado de 3 tiers)
+  - Imagen: https://iili.io/KLlTHBe.png (sin marco ni sombra)
+  - Énfasis en beneficios sobre precio
+  - Botón "Únete a nuestra Comunidad" → membresia.html
+
 ---
 
-**Última actualización**: 03-Dic-2025
+**Última actualización**: 07-Dic-2025
 **Responsable**: Devito (Claude Code)
