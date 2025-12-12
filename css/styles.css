@@ -1332,6 +1332,152 @@ nav a.active {
   border: 0;
 }
 
+/* ======================================
+   CLASES TIPOGRÁFICAS COMPLEMENTARIAS
+   ====================================== */
+/* Título alternativo (estilo serif itálica) */
+.section-title-alt {
+  font-family: var(--font-serif);
+  font-size: 32px;
+  font-style: italic;
+  color: var(--color-gray);
+  margin-bottom: 30px;
+}
+
+/* Título pequeño (h3) */
+.section-title-small {
+  font-family: var(--font-serif);
+  font-size: 24px;
+  font-style: italic;
+  color: var(--color-gray);
+  margin-bottom: 20px;
+}
+
+/* Texto de disclaimer/nota */
+.disclaimer-text {
+  margin-top: 20px;
+  color: #888;
+  font-style: italic;
+  font-size: 14px;
+}
+
+/* ======================================
+   PÁGINA CONTACTO - ESTRUCTURA Y LAYOUT
+   ====================================== */
+/* Contenedor principal con padding */
+.contact-main-content {
+  padding: var(--spacing-xl) var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Grid asimétrico: Calendario protagonista (2fr) + CTA secundario (1fr) */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: var(--spacing-md);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Caja de formulario base */
+.form-box-contact {
+  padding: 50px;
+  border-radius: 15px;
+  box-shadow: var(--shadow-soft);
+  background-color: white;
+}
+
+/* Caja de formulario para agendamiento (con gradient) */
+.form-box-appointment {
+  padding: 50px;
+  border-radius: 15px;
+  box-shadow: var(--shadow-soft);
+  background: linear-gradient(to bottom, var(--color-green), white);
+  border: 3px solid var(--color-beige);
+}
+
+/* Bloque de información de contacto */
+.contact-info-block {
+  background-color: var(--color-cream);
+  padding: var(--spacing-md);
+  border-radius: 15px;
+}
+
+/* Item individual de información */
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+  color: #666;
+}
+.contact-info-item strong {
+  color: var(--color-gray);
+  min-width: 80px;
+}
+.contact-info-item a, .contact-info-item span {
+  color: var(--color-gray);
+  text-decoration: none;
+}
+
+/* ======================================
+   FORMULARIOS - INPUTS Y CONTROLES
+   ====================================== */
+/* Grupo de campo de formulario */
+.form-field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Label de formulario */
+.form-label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-gray);
+}
+
+/* Estilo base para inputs, selects y textareas */
+.form-input-style {
+  padding: 12px 16px;
+  border: 2px solid var(--color-beige);
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: white;
+  font-family: var(--font-sans);
+  transition: var(--transition);
+}
+.form-input-style:focus {
+  border-color: var(--color-cyan);
+  outline: none;
+}
+.form-input-style.textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Aplicar a textareas */
+textarea.form-input-style {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* ======================================
+   RESPONSIVE - CONTACTO
+   ====================================== */
+/* Tablet y mobile: Stack vertical */
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  .form-box-contact,
+  .form-box-appointment {
+    padding: 30px;
+  }
+  .contact-main-content {
+    padding: var(--spacing-md) var(--spacing-sm);
+  }
+}
 /* ============================================
    FOOTER
    ============================================ */

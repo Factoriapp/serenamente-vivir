@@ -1,144 +1,55 @@
-Creación de Clases SCSS (Devito)
-Las clases de layout se añadirán a _sections.scss y las clases de formulario a _buttons.scss o, si existe un _forms.scss, ahí. Asumiremos que las clases de formulario se pueden añadir a _sections.scss para simplificar si _forms.scss no existe.
+Para: Stratego Web Serenamente (Proyecto Serenamente Vivir) De: Stratego Web Impulso / Dirección de Producto Asunto: Reestructuración Crítica de Flujos de Conversión (Agenda vs. Contacto)
 
-Instrucción para Devito (Claude Code):
+Se ordena la anulación inmediata de la arquitectura unificada (contacto-agenda.html) por ineficiencia operativa. A continuación, se detallan las nuevas directrices de arquitectura y negocio que deben implementarse:
 
-Devito, implementa las siguientes clases en scss/_sections.scss y compila.
+1. NUEVA ARQUITECTURA: "LA DOBLE PUERTA"
+Se prohíbe mezclar la venta con el soporte. Se crean dos destinos separados para dos intenciones de usuario distintas:
 
-Clases de Contenedor y Estructura:
+PÁGINA A: agenda.html (La Caja Fuerte)
 
-SCSS
+Objetivo: Transaccional (Cerrar Venta).
 
-/* Contacto: Estructura de dos columnas con espaciado */
-.contact-main-content {
-    padding: var(--spacing-xl) var(--spacing-md); /* Mapeo de 80px 40px */
-    margin-bottom: var(--spacing-lg); /* 60px */
-}
-.contact-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-md); /* 40px */
-}
-/* Cajas de Formulario */
-.form-box-contact {
-    padding: 50px;
-    border-radius: 15px; /* Usar valor explícito por si no hay variable exacto */
-    box-shadow: var(--shadow-soft);
-    background-color: white;
-}
-.form-box-appointment {
-    @extend .form-box-contact; 
-    background: linear-gradient(to bottom, var(--color-green), white);
-    border: 3px solid var(--color-beige);
-}
-/* Contenedor de Información de Contacto */
-.contact-info-block {
-    background-color: var(--color-cream);
-    padding: var(--spacing-md); /* 40px */
-    border-radius: 15px;
-}
-.contact-info-item {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 15px;
-    color: #666;
-    strong {
-        color: var(--color-gray);
-        min-width: 80px;
-    }
-    a, span {
-        color: var(--color-gray);
-        text-decoration: none;
-    }
-}
-```
-Clases de Formulario (Inputs, Select, Textarea):
+Usuario: Cliente decidido ("Pedro") o recurrente.
 
-SCSS
+Contenido: Únicamente el Calendario de Pago (90 min) incrustado (Calendly/Stripe).
 
-.form-field-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
-.form-label {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--color-gray);
-}
-.form-input-style {
-    padding: 12px 16px;
-    border: 2px solid var(--color-beige);
-    border-radius: 8px;
-    font-size: 16px;
-    background-color: white; /* Para consistencia, especialmente en el bloque de cita */
-    &:focus {
-        border-color: var(--color-cyan);
-        outline: none;
-    }
-    &.textarea {
-        resize: vertical;
-        min-height: 120px;
-    }
-}
-Compila: npm run build.
+Diseño: Limpio, sin distracciones.
 
-Paso 2: Aplicación de Clases en HTML (Decodex)
-Ahora, Decodex reemplazará los estilos inline por las clases en contacto.html.
+Enlace de Salida: Un link discreto: "¿Dudas antes de reservar? Hablemos" (lleva a Página B).
 
-Instrucción para Decodex (Codex OpenIA):
+PÁGINA B: contacto.html (La Sala de Espera)
 
-Decodex, en contacto.html, elimina todos los estilos inline en las líneas 31-155 y aplica las nuevas clases de SCSS.
+Objetivo: Relacional (Generar Confianza).
 
-Contenedor Principal (Línea 31):
+Usuario: Cliente nuevo/indeciso ("Ana").
 
-HTML
+Contenido Híbrido:
 
-<div class="container contact-main-content">
-    <div class="contact-grid">
-Bloque de Formulario de Mensaje (Línea 33):
+Lead Magnet: Calendario de Sesión de Valoración (15 min GRATIS).
 
-HTML
+Soporte: Formulario de contacto VISIBLE (Nada de popups ocultos aquí; queremos facilitar la conversación).
 
-<div class="form-box-contact">
-    <h2 class="section-title-alt">Envíanos un mensaje</h2>
-    <p class="section-intro">Si tienes alguna pregunta o deseas más información sobre nuestros servicios, no dudes en contactarnos.</p>
-    >         <form onsubmit="handleContactSubmit(event)">
-        <div class="form-field-group">
-            <label class="form-label">Nombre completo *</label>
-            <input type="text" name="name" required placeholder="Tu nombre" class="form-input-style">
-        </div>
-        >             <div class="form-field-group">
-            <label class="form-label">Mensaje *</label>
-            <textarea name="message" required placeholder="Cuéntanos cómo podemos ayudarte..." class="form-input-style textarea"></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Enviar mensaje</button>
-    </form>
-</div>
-Bloque de Agendamiento (Línea 78):
+Enlace de Salida: Un CTA visible: "¿Listo para empezar? Reserva tu sesión completa" (lleva a Página A).
 
-HTML
+2. ESTRATEGIA DE LA SESIÓN DE 15 MINUTOS (GRATIS)
+Naturaleza: Es una Herramienta de Venta, NO un "Producto".
 
-<div class="form-box-appointment">
-    <h2 class="section-title-alt">Agenda una cita</h2>
-    <p class="section-intro">¿Prefieres agendar directamente una sesión o consulta? Elige el día y hora que mejor se adapte a ti.</p>
-    >         <form onsubmit="handleAppointmentSubmit(event)">
-        >             <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Solicitar cita</button>
-    </form>
-</div>
-Bloque de Información de Contacto (Línea 156):
+Ubicación Permitida: Solo en contacto.html y en la sección "Red Antifuga" de la Home.
 
-HTML
+PROHIBICIÓN: No debe aparecer en la Tienda (catalogo.html).
 
-<div class="contact-info-block">
-    <h3 class="section-title-small">Información de contacto</h3>
-    <div class="contact-info-item">
-        <strong>Email:</strong>
-        <a href="mailto:info@serenamentevivir.com">info@serenamentevivir.com</a>
-    </div>
-    >         <p class="disclaimer-text">
-        * Todas las sesiones pueden ser presenciales en Granada o en línea
-    </p>
-</div>
-Nota de Decodex: Asegúrate de reemplazar las clases de estilo h2, p, h3, strong, a, span por las clases semánticas de Serenamente Vivir (ej: .section-title-alt, .section-intro, etc., si existen en la arquitectura).
+Razón: Provoca "Efecto Ancla Inverso" y devalúa los productos de pago. En la base de datos existe, pero con visibilidad hidden_in_catalog.
+
+3. NAVEGACIÓN Y MENÚ (EL FLUJO)
+El menú principal debe reflejar esta jerarquía de doble velocidad:
+
+Botón Destacado (CTA): "Reservar Sesión" → Enlaza directo a agenda.html. (Carril Rápido).
+
+Enlace Estándar: "Contacto / Primeros Pasos" → Enlaza a contacto.html. (Carril Lento/Humano).
+
+4. LÓGICA DE LA HOME (INDEX)
+Héroe / CTA Principal: Envía tráfico a agenda.html (asumimos intención de compra).
+
+Red Antifuga (Final de página): Envía tráfico a contacto.html (recuperamos a los indecisos con la sesión de 15 min).
+
+Nota Final: Esta estructura prioriza la automatización de la venta (Agenda) sin sacrificar la calidad humana (Contacto), resolviendo el problema de los emails innecesarios y la fricción de pago. Ejecútese sin desviaciones.
