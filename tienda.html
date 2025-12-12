@@ -41,16 +41,16 @@
     <div class="separator"></div>
 
     <div class="container">
-        <!-- Services Section -->
+        <!-- Services Section - Tarjetas Horizontales -->
         <section id="servicios" class="sessions-section">
             <h2>Nuestros Servicios</h2>
-            <div class="services-grid">
+            <div class="services-grid-horizontal">
                 <!-- Sesiones 1:1 -->
-                <div class="service-card">
-                    <div class="service-card-image">
+                <div class="service-card-horizontal">
+                    <div class="service-card-image-horizontal">
                         <img src="https://iili.io/KL1jAqF.png" alt="Sesiones 1:1" loading="lazy">
                     </div>
-                    <div class="service-card-content">
+                    <div class="service-card-content-horizontal">
                         <h3>Sesiones 1:1</h3>
                         <p>Las sesiones individuales son un espacio íntimo y personalizado donde podrás:</p>
                         <ul>
@@ -67,11 +67,11 @@
                 </div>
 
                 <!-- Acompañamiento -->
-                <div class="service-card">
-                    <div class="service-card-image">
+                <div class="service-card-horizontal">
+                    <div class="service-card-image-horizontal">
                         <img src="https://iili.io/KL1iK1j.png" alt="Acompañamiento" loading="lazy">
                     </div>
-                    <div class="service-card-content">
+                    <div class="service-card-content-horizontal">
                         <h3>Acompañamiento</h3>
                         <p>Proceso diseñado para quienes buscan un espacio sostenido de transformación y crecimiento personal.</p>
                         <p>Recorreremos juntas un camino a través de:</p>
@@ -89,11 +89,11 @@
                 </div>
 
                 <!-- Talleres -->
-                <div class="service-card">
-                    <div class="service-card-image">
+                <div class="service-card-horizontal">
+                    <div class="service-card-image-horizontal">
                         <img src="https://iili.io/KQF8g9e.png" alt="Talleres" loading="lazy">
                     </div>
-                    <div class="service-card-content">
+                    <div class="service-card-content-horizontal">
                         <h3>Talleres</h3>
                         <p>Encuentros grupales temáticos donde compartir, intercambiar experiencias y apoyarnos mutuamente en el crecimiento personal.</p>
                         <p>Cada taller es un espacio de:</p>
@@ -111,11 +111,11 @@
                 </div>
 
                 <!-- Retiros -->
-                <div class="service-card">
-                    <div class="service-card-image">
+                <div class="service-card-horizontal">
+                    <div class="service-card-image-horizontal">
                         <img src="https://iili.io/KQ3DhW7.png" alt="Retiros" loading="lazy">
                     </div>
-                    <div class="service-card-content">
+                    <div class="service-card-content-horizontal">
                         <h3>Retiros</h3>
                         <p>Los retiros son experiencias inmersivas que te permiten desconectar de la rutina y reconectar profundamente contigo misma en entornos naturales.</p>
                         <p>Durante el retiro vivirás:</p>
@@ -135,114 +135,50 @@
                 </div>
             </div>
         </section>
+    </div>
 
-        <!-- Membership Section -->
-        <section class="faq-section" onclick="openPopup('popup5')">
-            <div class="membership-left">
-                <h3>Membresía</h3>
-                <p>... tu espacio privado.</p>
-            </div>
-            <div class="membership-right">
-                <p class="membership-description">
-                    Accede a recursos exclusivos, sesiones grupales, círculos de mujeres y una comunidad de apoyo
-                    continuo para tu crecimiento personal.
-                </p>
+    <!-- Separator -->
+    <div class="separator"></div>
+
+    <!-- Membership Section - Bloque Destacado -->
+    <div class="container">
+        <section class="membership-featured">
+            <div class="membership-content">
+                <div class="membership-header" style="text-align: center; margin-bottom: 2rem;">
+                    <h2>Membresía</h2>
+                    <p class="membership-intro">Un refugio de crecimiento continuo y acompañamiento sostenido</p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
+                    <div>
+                        <img src="https://iili.io/KLlTHBe.png" alt="Comunidad Privada" style="width: 100%; object-fit: cover;" loading="lazy">
+                    </div>
+
+                    <div>
+                        <p style="font-size: 1.1rem; color: var(--color-text-light); line-height: 1.8; margin-bottom: 2rem;">
+                            Un espacio diseñado para acompañarte de manera continua en tu proceso de transformación personal.
+                        </p>
+
+                        <h3 style="font-family: var(--font-serif); font-size: 1.8rem; font-style: italic; color: var(--color-gray); margin-bottom: 1.5rem;">¿Qué incluye?</h3>
+                        <ul style="color: var(--color-text); line-height: 2; margin-bottom: 2.5rem; font-size: 1.05rem;">
+                            <li><strong>Sesiones grupales mensuales</strong> online</li>
+                            <li><strong>Biblioteca completa</strong> de meditaciones guiadas y recursos</li>
+                            <li><strong>Círculos de mujeres</strong> (online y presenciales)</li>
+                            <li><strong>Comunidad privada</strong> de apoyo continuo</li>
+                            <li><strong>Contenido exclusivo</strong> mensual</li>
+                            <li><strong>Descuentos especiales</strong> en talleres, retiros y sesiones 1:1</li>
+                        </ul>
+
+                        <a href="tu_espacio_privado.html" class="btn btn-primary" style="width: 100%; text-align: center; margin-bottom: 1rem;">Únete a nuestra Comunidad</a>
+
+                        <p style="text-align: center; font-size: 1.1rem; color: var(--color-gray); margin: 0;">
+                            <strong>29€/mes</strong> · Cancela cuando quieras
+                        </p>
+                    </div>
+                </div>
             </div>
         </section>
     </div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h3>Serenamente Vivir</h3>
-                <p>El propósito de vivir al arte de vivir amorosamente</p>
-                <div class="contact-info">
-                    <p><strong>Contacto:</strong></p>
-                    <p>📧 <a href="mailto:info@serenamentevivir.com">info@serenamentevivir.com</a></p>
-                    <p>📱 +34XXXXXXXXX</p>
-                    <p>📍 Granada, Andalucía</p>
-                </div>
-            </div>
-            <div class="footer-section">
-                <h3>Preguntas frecuentes</h3>
-                <div class="faq-item">
-                    <h4>¿Cuál es tu método de trabajo?</h4>
-                    <p>Utilizamos un enfoque integrador que combina técnicas psicológicas, mindfulness, y acompañamiento
-                        emocional personalizado.</p>
-                </div>
-                <div class="faq-item">
-                    <h4>¿Cuánto tiempo duran las sesiones?</h4>
-                    <p>Las sesiones 1:1 tienen una duración de 90 minutos. Los retiros y talleres varían según su
-                        formato.</p>
-                </div>
-                <div class="faq-item">
-                    <h4>¿Ofrecen sesiones en línea?</h4>
-                    <p>Sí, ofrecemos sesiones en línea y presenciales. Adaptamos el formato según tus necesidades.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2024 Serenamente Vivir. Todos los derechos reservados. | Diseñado con cuidado y atención</p>
-        </div>
-    </footer>
-
-    <!-- Popup Membresía -->
-    <div id="popup5" class="popup-overlay" onclick="closePopup('popup5')">
-        <div class="popup-content" onclick="event.stopPropagation()">
-            <button class="popup-close" onclick="closePopup('popup5')">&times;</button>
-            <div class="popup-text">
-                <h2>Membresía</h2>
-                <p>La Membresía de Serenamente Vivir es tu espacio privado de crecimiento continuo, diseñado para
-                    acompañarte en tu proceso de transformación personal de manera sostenida.</p>
-                <p><strong>¿Qué incluye tu membresía?</strong></p>
-                <ul>
-                    <li>Acceso a sesiones grupales mensuales exclusivas</li>
-                    <li>Biblioteca digital con recursos, meditaciones guiadas y material de apoyo</li>
-                    <li>Círculos de mujeres online y presenciales</li>
-                    <li>Descuentos especiales en talleres, retiros y sesiones individuales</li>
-                    <li>Comunidad privada para compartir experiencias y apoyo mutuo</li>
-                    <li>Contenido mensual exclusivo: videos, artículos y ejercicios prácticos</li>
-                </ul>
-                <p><strong>Niveles de membresía:</strong></p>
-                <ul>
-                    <li><strong>Básica:</strong> Acceso a recursos digitales y comunidad</li>
-                    <li><strong>Intermedia:</strong> Incluye sesiones grupales mensuales</li>
-                    <li><strong>Premium:</strong> Acceso completo + sesión individual trimestral</li>
-                </ul>
-                <p><strong>Inversión:</strong> Desde 29€/mes</p>
-                <p><em>Tu espacio privado para crecer, sanar y florecer en comunidad.</em></p>
-            </div>
-            <div class="popup-image-placeholder">
-                <img src="https://iili.io/KQqB5MX.png" alt="Membresía">
-            </div>
-            <a href="tu_espacio_privado.html" class="btn btn-primary popup-access-button">Tu Espacio Privado</a>
-        </div>
-    </div>
-
-    <script>
-        function openPopup(popupId) {
-            document.getElementById(popupId).classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-
-        function closePopup(popupId) {
-            document.getElementById(popupId).classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-
-        // Cerrar popup con tecla ESC
-        document.addEventListener('keydown', function (event) {
-            if (event.key === 'Escape') {
-                const popups = document.querySelectorAll('.popup-overlay.active');
-                popups.forEach(popup => {
-                    popup.classList.remove('active');
-                    document.body.style.overflow = 'auto';
-                });
-            }
-        });
-    </script>
 
     <!-- Separator -->
     <div class="separator"></div>
@@ -254,9 +190,9 @@
                 <div class="footer-section">
                     <ul>
                         <li><a href="serenamente_vivir.html">Inicio</a></li>
-                        <li><a href="#como-puedo-ayudarte">Para ti</a></li>
+                        <li><a href="tienda.html">Para ti</a></li>
                         <li><a href="blog.html">Inspiración</a></li>
-                        <li><a href="membresia.html">Membresía</a></li>
+                        <li><a href="tu_espacio_privado.html">Membresía</a></li>
                         <li><a href="contacto.html">Contacto</a></li>
                     </ul>
                 </div>

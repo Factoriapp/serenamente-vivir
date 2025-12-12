@@ -242,18 +242,15 @@
 }
 
 /* Services Grid (Tarjetas de Servicios) */
+/* Sistema de 3 columnas fijas - máximo 3 tarjetas destacadas */
 .services-grid {
-    display: flex;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     gap: 40px;
     margin-top: 40px;
-    justify-content: center;
-}
-
-.service-card {
-    flex: 0 1 calc(33.333% - 27px);
-    max-width: 380px;
-    min-width: 300px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .service-card {
@@ -274,15 +271,18 @@
 
 .service-card-image {
     width: 100%;
-    height: 250px;
+    height: 300px;
     overflow: hidden;
     background-color: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .service-card-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     transition: transform 0.3s ease;
 }
 
@@ -354,10 +354,6 @@
 
 /* Service Card Summary - Versión resumida para homepage */
 .service-card-summary {
-    .service-card-image {
-        height: 200px;
-    }
-
     .service-card-content {
         padding: 25px;
     }
@@ -366,6 +362,119 @@
         margin-bottom: 20px;
         font-size: 15px;
     }
+}
+
+/* ======================================
+   TARJETAS HORIZONTALES (TIENDA)
+   Layout imagen izquierda + contenido derecha
+   ====================================== */
+
+.services-grid-horizontal {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-card-horizontal {
+    display: grid;
+    grid-template-columns: 350px 1fr;
+    gap: 40px;
+    background-color: #fff;
+    border-radius: var(--radius-medium);
+    overflow: hidden;
+    border: 1px solid #e0e0e0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    transition: var(--transition);
+    padding: 30px;
+    align-items: center;
+}
+
+.service-card-horizontal:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-hover);
+}
+
+.service-card-image-horizontal {
+    width: 350px;
+    border-radius: var(--radius-medium);
+    overflow: hidden;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+.service-card-image-horizontal img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.service-card-horizontal:hover .service-card-image-horizontal img {
+    transform: scale(1.05);
+}
+
+.service-card-content-horizontal {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.service-card-content-horizontal h3 {
+    font-family: var(--font-serif);
+    font-size: 28px;
+    font-style: italic;
+    color: var(--color-gray);
+    margin-bottom: 15px;
+    margin-top: 0;
+}
+
+.service-card-content-horizontal p {
+    color: var(--color-text-light);
+    line-height: 1.8;
+    margin-bottom: 15px;
+}
+
+.service-card-content-horizontal ul {
+    list-style: none;
+    margin-bottom: 20px;
+    padding-left: 0;
+}
+
+.service-card-content-horizontal ul li {
+    color: var(--color-text-light);
+    margin-bottom: 10px;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.service-card-content-horizontal ul li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: var(--color-green);
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.service-card-content-horizontal .service-detail {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.service-card-content-horizontal .service-tagline {
+    font-style: italic;
+    color: var(--color-gray);
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+.service-card-content-horizontal .btn {
+    align-self: flex-start;
+    margin-top: auto;
 }
 
 /* Membership Section */
@@ -993,4 +1102,19 @@
 .antifuga-disclaimer {
     font-size: 0.9rem;
     color: var(--color-gray);
+}
+
+/* ======================================
+   CLASE DE ACCESIBILIDAD/SEO
+   Oculta visualmente el texto pero mantiene accesibilidad y SEO
+   ====================================== */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
 }
