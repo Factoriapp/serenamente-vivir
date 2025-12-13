@@ -1,5 +1,5 @@
 # 📐 Sistema SCSS Modular - Serenamente Vivir
-**Guía para Srtatego Web (Asesor Estratégico)**
+**Guía para Stratego Web (Asesor Estratégico)**
 
 ---ude
 
@@ -408,4 +408,4 @@ El sistema SCSS modular de Serenamente Vivir transforma un CSS monolítico difí
 **Versión**: 1.0
 **Fecha**: 12-Dic-2025
 **Autor**: Devito (Claude Code)
-**Destinatario**: Srtatego Web (Asesor Estratégico)
+**Destinatario**: Stratego Web (Asesor Estratégico)
