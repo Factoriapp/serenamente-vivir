@@ -102,6 +102,97 @@ if (document.getElementById('leadMagnetForm')) {
     validar();
 }
 
+// ============================================
+// MODAL DE LOGIN Y REGISTRO - INICIALIZACIÓN
+// ============================================
+
+function initializeModals() {
+    const loginModal = document.getElementById('loginModal');
+    const loginModalClose = document.getElementById('loginModalClose');
+    const loginModalOverlay = document.getElementById('loginModalOverlay');
+    const registroModal = document.getElementById('registroModal');
+    const registroModalClose = document.getElementById('registroModalClose');
+    const registroModalOverlay = document.getElementById('registroModalOverlay');
+
+    // Función para abrir el modal de login
+    window.abrirModalLogin = function() {
+        if (loginModal) {
+            loginModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+    };
+
+    // Función para cerrar el modal de login
+    window.cerrarModalLogin = function() {
+        if (loginModal) {
+            loginModal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    };
+
+    // Cerrar modal de login al hacer clic en X
+    if (loginModalClose) {
+        loginModalClose.addEventListener('click', window.cerrarModalLogin);
+    }
+
+    // Cerrar modal de login al hacer clic en overlay
+    if (loginModalOverlay) {
+        loginModalOverlay.addEventListener('click', window.cerrarModalLogin);
+    }
+
+    // Función para abrir el modal de registro
+    window.abrirModalRegistro = function() {
+        if (registroModal) {
+            registroModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+    };
+
+    // Función para cerrar el modal de registro
+    window.cerrarModalRegistro = function() {
+        if (registroModal) {
+            registroModal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    };
+
+    // Cerrar modal de registro al hacer clic en X
+    if (registroModalClose) {
+        registroModalClose.addEventListener('click', window.cerrarModalRegistro);
+    }
+
+    // Cerrar modal de registro al hacer clic en overlay
+    if (registroModalOverlay) {
+        registroModalOverlay.addEventListener('click', window.cerrarModalRegistro);
+    }
+
+    // Cerrar modales con tecla ESC
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            const loginModal = document.getElementById('loginModal');
+            const registroModal = document.getElementById('registroModal');
+
+            if (loginModal && loginModal.style.display === 'flex') {
+                window.cerrarModalLogin();
+            }
+            if (registroModal && registroModal.style.display === 'flex') {
+                window.cerrarModalRegistro();
+            }
+        }
+    });
+
+    console.log('✅ Modales Login/Registro: Event listeners registrados');
+}
+
+// Inicializar modales por primera vez
+initializeModals();
+
+// Re-inicializar modales si config-loader.js reemplaza el DOM
+document.addEventListener('dictionaryApplied', function() {
+    console.log('🔄 Re-inicializando modales después de aplicar diccionario...');
+    initializeModals();
+});
+
 // Verificación de carga exitosa
 console.log('✨ Serenamente Vivir - main.js cargado correctamente - ' + new Date().toLocaleTimeString());
 console.log('✅ Lead Magnet: Validación activa');
