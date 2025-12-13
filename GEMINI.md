@@ -22,7 +22,7 @@ Eres **Degevito**, el Desarrollador (Dev) Técnico del proyecto "Serenamente Viv
 
 Antes de implementar cualquier feature, DEBO consultar:
 1. `Maestro_Serenamente.md` (¿Está aprobado? ¿Hay decisiones previas?)
-2. `GUIA_SISTEMA_SCSS_Stratego.md` (¿Cómo se implementa técnicamente?)
+2. `CHULETA-TECNICA-SERENAMENTE.md` (¿Cómo se implementa técnicamente?)
 3. `TODO.md` (¿Hay tareas pendientes relacionadas?)
 
 ---
@@ -32,7 +32,7 @@ Antes de implementar cualquier feature, DEBO consultar:
 **DEFINICIÓN - BASE DE CONOCIMIENTO (BC):**
 Cuando en este proyecto se menciona "BC" o "Base de Conocimiento", nos referimos EXCLUSIVAMENTE a estos archivos maestros:
 1. `Maestro_Serenamente.md` - Decisiones estratégicas y roadmap
-2. `GUIA_SISTEMA_SCSS_Stratego.md` - Sistema SCSS modular y arquitectura técnica
+2. `CHULETA-TECNICA-SERENAMENTE.md` - Sistema SCSS modular y arquitectura técnica
 3. `TODO.md` - Tareas y deuda técnica pendiente
 
 Estos archivos constituyen la ÚNICA fuente de verdad del proyecto. Cualquier información que no esté aquí, no existe oficialmente.
@@ -115,7 +115,7 @@ Estos archivos constituyen la ÚNICA fuente de verdad del proyecto. Cualquier in
 - Listado de módulos SCSS o variables (eso va en GUIA_SISTEMA_SCSS)
 - Tareas pendientes operativas (eso va en TODO.md)
 
-### B. Para IMPLEMENTACIÓN TÉCNICA → `GUIA_SISTEMA_SCSS_Stratego.md`
+### B. Para IMPLEMENTACIÓN TÉCNICA → `CHULETA-TECNICA-SERENAMENTE.md`
 
 **¿QUÉ ES?**: Guía completa del sistema SCSS modular. Documenta arquitectura técnica, comandos npm, variables CSS, workflow de desarrollo.
 
@@ -331,7 +331,7 @@ npm run watch
 ### 📚 Referencia Completa:
 
 **Para detalles completos del sistema SCSS:**
-- Ver `GUIA_SISTEMA_SCSS_Stratego.md` (documento completo con 412 líneas)
+- Ver `CHULETA-TECNICA-SERENAMENTE.md` (documento completo con 412 líneas)
 - Mapa de 10 módulos con descripción y líneas
 - Tabla "¿Qué archivo editar?"
 - Sistema de variables CSS
@@ -376,7 +376,7 @@ Antes de responder cualquier *prompt*, verifica mentalmente:
 ### ❌ NUNCA LEER INST.TXT:
 
 - Al inicio de una sesión nueva
-- Al leer `Maestro_Serenamente.md`, `GUIA_SISTEMA_SCSS_Stratego.md`, `TODO.md` o este `GEMINI.md`
+- Al leer `Maestro_Serenamente.md`, `CHULETA-TECNICA-SERENAMENTE.md`, `TODO.md` o este `GEMINI.md`
 - Por "contexto adicional" o "exploración"
 - Porque aparece mencionado en algún archivo
 
@@ -384,7 +384,7 @@ Antes de responder cualquier *prompt*, verifica mentalmente:
 
 1. Usuario escribe `***` → Leo Inst.txt → Ejecuto instrucciones
 2. Usuario NO menciona Inst.txt → NO lo leo NUNCA
-3. Si tengo dudas → Consulto archivos maestros (`Maestro_Serenamente.md`, `GUIA_SISTEMA_SCSS_Stratego.md`, `TODO.md`)
+3. Si tengo dudas → Consulto archivos maestros (`Maestro_Serenamente.md`, `CHULETA-TECNICA-SERENAMENTE.md`, `TODO.md`)
 
 **Inst.txt NO es fuente de verdad. Es mensajería temporal.**
 
@@ -395,7 +395,7 @@ Antes de responder cualquier *prompt*, verifica mentalmente:
 Cuando el usuario dice... | Debo entender...
 ---|---
 "Usa el Maestro" | Consultar `Maestro_Serenamente.md`
-"Según la Guía SCSS" | Consultar `GUIA_SISTEMA_SCSS_Stratego.md`
+"Según la Guía SCSS" | Consultar `CHULETA-TECNICA-SERENAMENTE.md`
 "Doble Destino" | Arquitectura separada: agenda.html (pago) + contacto.html (relacional)
 "Simplicidad Radical" | Si usuario no lo entiende en 30s, simplificar
 "Fase 1" | Visual + Arquitectura SCSS (COMPLETADA)
@@ -443,7 +443,7 @@ Cuando el usuario dice... | Debo entender...
 **Última actualización**: Creación inicial adaptada de Impulso Pro y Claude.md para Serenamente Vivir.
 
 **Historial de cambios**:
-- v1.0 (2025-12-13): Creación inicial del GEMINI.md para Serenamente Vivir. Adaptado de Impulso Pro v1.5 y Claude.md. Simplificado: sin multi-tenant, sin GTM complejo, sin 5 Pilares. Archivos maestros: Maestro_Serenamente.md, GUIA_SISTEMA_SCSS_Stratego.md, TODO.md. Sistema SCSS modular (10 módulos). Comandos npm correctos (sin sufijo `:serenamente`). Relación con Impulso Pro documentada.
+- v1.0 (2025-12-13): Creación inicial del GEMINI.md para Serenamente Vivir. Adaptado de Impulso Pro v1.5 y Claude.md. Simplificado: sin multi-tenant, sin GTM complejo, sin 5 Pilares. Archivos maestros: Maestro_Serenamente.md, CHULETA-TECNICA-SERENAMENTE.md, TODO.md. Sistema SCSS modular (10 módulos). Comandos npm correctos (sin sufijo `:serenamente`). Relación con Impulso Pro documentada.
 
 ---
 

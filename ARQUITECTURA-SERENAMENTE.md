@@ -645,7 +645,7 @@ getCurrentConfig() → { tenant_id: "serenamente", ... }
 
 **Archivos Maestros:**
 - `Maestro_Serenamente.md` - Decisiones estratégicas y roadmap
-- `GUIA_SISTEMA_SCSS_Stratego.md` - Chuleta técnica (SCSS, variables, comandos)
+- `CHULETA-TECNICA-SERENAMENTE.md` - Chuleta técnica (SCSS, variables, comandos)
 - `CLAUDE.md` - Contexto para Claude Code
 - `GEMINI.md` - Contexto para Gemini
 - `CODEX.md` - Contexto para Codex
