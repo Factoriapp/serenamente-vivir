@@ -137,6 +137,40 @@ Website profesional para terapeuta especializada en bienestar emocional de mujer
 **Decisión**: Fase 1 = Arquitectura + Visual (SCSS, variables, responsive, botones, popups). Fase 2 = SEO/Performance (Open Graph, lazy loading, meta tags).
 **Razón**: Cliente necesita ver resultado visual rápidamente. Optimizaciones técnicas se pueden agregar después sin afectar diseño.
 
+### [12-Dic-2025] **DECISIÓN FIRME**: Separación Radical Agenda/Contacto + Eliminación de "Gratis" Automático
+**Contexto**: Se evaluó la unificación de Agenda y Contacto en `contacto-agenda.html` y la estrategia de "Sesión de Valoración Gratuita". Se concluye que ambas estrategias complican la operativa del profesional y atraen leads de baja calidad ("Curiosos"), violando el principio de "Simplicidad Radical".
+
+**Decisión (Firme)**:
+
+1. **ANULACIÓN DE UNIFICACIÓN**:
+   - Se elimina el archivo `contacto-agenda.html`
+   - Se establece arquitectura de "Doble Destino":
+     - **`agenda.html`**: Exclusiva para herramientas de reserva de PAGO (Transaccional - Calendly/Stripe)
+     - **`contacto.html`**: Exclusiva para formulario de texto y datos (Relacional - Email)
+
+2. **ELIMINACIÓN DE AUTOMATIZACIÓN "GRATIS"**:
+   - La plataforma NO dará soporte nativo ni arquitectónico a "Sesiones Gratuitas" en el frontend
+   - El Dashboard solo pedirá "Enlace de Reserva (Pago)"
+   - No habrá lógica condicional para mostrar/ocultar eventos gratuitos
+   - Sin botón "Agendar sesión gratis 15 min" en web
+
+3. **ESTRATEGIA DE FILTRO MANUAL**:
+   - La "Sesión Gratuita" pasa a ser herramienta de gestión privada (Back-office) del profesional
+   - Flujo web estricto: **Pagas (Agenda)** O **Escribes (Contacto)**
+   - Si el profesional regala tiempo, lo hace manualmente por email tras recibir contacto, no mediante botón web
+
+**Razón Estratégica**:
+- Proteger el tiempo del profesional
+- Simplificar desarrollo del SaaS
+- Maximizar percepción de autoridad ("Lo gratis no se exhibe, se concede")
+- Evitar leads "Curiosos" de baja calidad
+- Cumplir con "Simplicidad Radical"
+
+**Anula**:
+- Unificación Agenda/Contacto en `contacto-agenda.html`
+- Estrategia "Sesión Valoración Gratuita" visible en web
+- Inst.txt anterior que mencionaba "Lead Magnet 15 min GRATIS"
+
 ---
 
 ## 5. ARCHIVOS Y UBICACIÓN
@@ -145,13 +179,15 @@ Website profesional para terapeuta especializada en bienestar emocional de mujer
 ```
 Plataforma_modelo/
 └── Serenamente/
-    ├── serenamente_vivir.html      (Homepage - 1070 líneas)
-    ├── contacto.html
-    ├── tu_espacio_privado.html
+    ├── serenamente_vivir.html      (Homepage)
+    ├── tienda.html                  (Catálogo de servicios - tarjetas horizontales)
+    ├── agenda.html                  (Reserva de PAGO - Calendly/Stripe) [NUEVO - 12-Dic-2025]
+    ├── contacto.html                (Formulario contacto relacional) [NUEVO - 12-Dic-2025]
+    ├── tu_espacio_privado.html      (Área privada/membresía)
     ├── meditaciones_personalizadas.html
     ├── Imagenes/                    (Assets del sitio)
     ├── Maestro_Serenamente.md       (Este archivo)
-    ├── scss/                        (CSS modular - en creación)
+    ├── scss/                        (CSS modular)
     │   ├── main.scss
     │   ├── _variables.scss
     │   ├── _header.scss
@@ -161,8 +197,13 @@ Plataforma_modelo/
     │   ├── _sections.scss
     │   ├── _footer.scss
     │   └── _responsive.scss
-    └── css/
-        └── styles.css               (Auto-generado desde SCSS)
+    ├── css/
+    │   └── styles.css               (Auto-generado desde SCSS)
+    └── js/
+        └── main.js                  (JavaScript validaciones)
+
+OBSOLETO (ELIMINADO 12-Dic-2025):
+    ❌ contacto-agenda.html          (Unificación agenda/contacto - Anulada)
 ```
 
 ---
@@ -245,6 +286,50 @@ grep "@media" css/styles.css       # Verificar media queries
 ---
 
 ## 7. CHANGELOG
+
+**NOTA IMPORTANTE - SISTEMA DE ACTUALIZACIÓN**: En este documento, al igual que en DM1, cuando existen decisiones contradictorias, **LA ÚLTIMA DECISIÓN (por fecha) PREVALECE** sobre las anteriores. Cada entrada tiene fecha explícita para facilitar la resolución de conflictos.
+
+---
+
+### [12-Dic-2025] - Versión 2.0 - **DECISIÓN FIRME: Arquitectura "Doble Destino" (Anula Unificación)**
+
+**⚠️ CAMBIO RADICAL DE ESTRATEGIA - ESTA DECISIÓN ANULA DECISIONES PREVIAS**
+
+- ✅ **ARQUITECTURA "DOBLE DESTINO" IMPLEMENTADA**
+  - Creado `agenda.html`: Página exclusiva para reservas de PAGO (Calendly/Stripe)
+  - Creado `contacto.html`: Página exclusiva para formulario relacional (email)
+  - ❌ Eliminado `contacto-agenda.html` (unificación anulada)
+  - Separación radical: Venta (Transaccional) ≠ Soporte (Relacional)
+
+- ✅ **ELIMINACIÓN DE "GRATIS" AUTOMÁTICO**
+  - NO hay soporte frontend para "Sesión Valoración Gratuita"
+  - Dashboard solo pide "Enlace de Reserva (Pago)"
+  - Sin lógica condicional para eventos gratuitos
+  - Sin botón "Agendar sesión gratis 15 min" en web
+
+- ✅ **ESTRATEGIA DE FILTRO MANUAL**
+  - "Sesión Gratuita" pasa a back-office privado del profesional
+  - Flujo web estricto: **Pagas (Agenda)** O **Escribes (Contacto)**
+  - Si regala tiempo → Manual por email, no mediante botón web
+
+- ✅ **ENLACES ACTUALIZADOS**
+  - `serenamente_vivir.html`: Enlaces separados a agenda.html y contacto.html
+  - `tienda.html`: CTAs redirigen a agenda.html (reserva de pago)
+  - Navegación actualizada en todos los archivos HTML
+
+**RAZÓN ESTRATÉGICA:**
+- Proteger tiempo del profesional
+- Simplificar desarrollo del SaaS
+- Maximizar percepción de autoridad ("Lo gratis no se exhibe, se concede")
+- Evitar leads "Curiosos" de baja calidad
+- Cumplir con "Simplicidad Radical"
+
+**ANULA (decisiones previas que quedan obsoletas):**
+- [12-Dic-2025 anterior] Estrategia "Calendario Protagonista" en contacto-agenda.html
+- [13-Nov] Unificación Agenda/Contacto
+- Estrategia "Lead Magnet 15 min GRATIS" visible en web
+
+---
 
 ### [03-Dic-2025] - Versión 1.1 - **FASE 1 IMPLEMENTADA** (con issues detectados)
 - ✅ **Migración completa a sistema SCSS modular**

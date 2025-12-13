@@ -22,7 +22,7 @@
                 <a href="tienda.html">Para ti</a>
                 <a href="tu_espacio_privado.html">Tu Espacio Privado</a>
                 <a href="meditaciones_personalizadas.html">Meditaciones Personalizadas</a>
-                <a href="contacto-agenda.html" class="active">Contacto</a>
+                <a href="contacto.html" class="active">Contacto</a>
             </nav>
         </div>
     </header>
@@ -34,7 +34,7 @@
             <p class="hero-author">con <strong>Marlene Sosa</strong></p>
         </div>
         <img src="https://iili.io/K4a3jgj.png" alt="Serenamente Vivir" class="hero-banner">
-        <p class="hero-tagline"><em>Estamos aquí para acompañarte en tu camino</em></p>
+        <p class="hero-tagline"><em>Estamos aquí para escucharte</em></p>
     </section>
 
     <!-- Separator -->
@@ -42,80 +42,63 @@
 
     <!-- Main Content -->
     <div class="container contact-main-content">
-        <div class="contact-grid">
-            <!-- Appointment Booking - PROTAGONISTA (Columna izquierda 2fr) -->
-            <div class="form-box-appointment">
-                <h2 class="section-title-alt">Agenda una cita</h2>
-                <p class="section-intro">¿Prefieres agendar directamente una sesión o consulta? Elige el día y hora que mejor se adapte a ti.</p>
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 class="section-title-alt" style="text-align: center; margin-bottom: 1.5rem;">Hablemos</h2>
+            <p class="section-intro" style="text-align: center; margin-bottom: 3rem;">
+                ¿Tienes dudas sobre cómo puedo acompañarte? ¿Necesitas más información antes de dar el paso? Estoy aquí para resolver todas tus preguntas. Cuéntame qué necesitas y te responderé en menos de 24 horas.
+            </p>
 
-                <form style="display: flex; flex-direction: column; gap: 20px;" onsubmit="handleAppointmentSubmit(event)">
+            <!-- Formulario de Contacto -->
+            <div class="form-box-contact">
+                <form style="display: flex; flex-direction: column; gap: 20px;" onsubmit="handleContactSubmit(event)">
                     <div class="form-field-group">
                         <label class="form-label">Nombre completo *</label>
-                        <input type="text" id="appt-name" name="appt-name" required placeholder="Tu nombre" class="form-input-style">
+                        <input type="text" id="contact-name" name="contact-name" required placeholder="Tu nombre" class="form-input-style">
                     </div>
 
                     <div class="form-field-group">
                         <label class="form-label">Email *</label>
-                        <input type="email" id="appt-email" name="appt-email" required placeholder="tu@email.com" class="form-input-style">
+                        <input type="email" id="contact-email" name="contact-email" required placeholder="tu@email.com" class="form-input-style">
                     </div>
 
                     <div class="form-field-group">
-                        <label class="form-label">Teléfono *</label>
-                        <input type="tel" id="appt-phone" name="appt-phone" required placeholder="+34 600 000 000" class="form-input-style">
+                        <label class="form-label">Teléfono</label>
+                        <input type="tel" id="contact-phone" name="contact-phone" placeholder="+34 600 000 000" class="form-input-style">
                     </div>
 
                     <div class="form-field-group">
-                        <label class="form-label">Tipo de sesión *</label>
-                        <select name="appt-type" required class="form-input-style">
-                            <option value="">Selecciona el tipo de sesión</option>
-                            <option value="primera">Primera sesión gratuita (30 min)</option>
-                            <option value="sesion11">Sesión 1:1 (90 min)</option>
-                            <option value="consulta">Consulta sobre membresía</option>
-                            <option value="taller">Información talleres/retiros</option>
+                        <label class="form-label">¿En qué puedo ayudarte? *</label>
+                        <select name="contact-subject" required class="form-input-style">
+                            <option value="">Selecciona un tema</option>
+                            <option value="consulta-general">Consulta general</option>
+                            <option value="informacion-servicios">Información sobre servicios</option>
+                            <option value="tarifas">Tarifas y formas de pago</option>
+                            <option value="disponibilidad">Disponibilidad horaria</option>
+                            <option value="enfoque-terapeutico">Enfoque terapéutico</option>
+                            <option value="otro">Otro</option>
                         </select>
                     </div>
 
                     <div class="form-field-group">
-                        <label class="form-label">Fecha preferida *</label>
-                        <input type="date" id="appt-date" name="appt-date" required class="form-input-style">
+                        <label class="form-label">Cuéntame más sobre tu consulta *</label>
+                        <textarea name="contact-message" required placeholder="Describe tu situación o pregunta con el detalle que necesites. No hay prisa, tómate tu tiempo..." class="form-input-style" rows="6"></textarea>
                     </div>
 
-                    <div class="form-field-group">
-                        <label class="form-label">Hora preferida *</label>
-                        <select name="appt-time" required class="form-input-style">
-                            <option value="">Selecciona una hora</option>
-                            <option value="09:00">09:00</option>
-                            <option value="10:00">10:00</option>
-                            <option value="11:00">11:00</option>
-                            <option value="12:00">12:00</option>
-                            <option value="16:00">16:00</option>
-                            <option value="17:00">17:00</option>
-                            <option value="18:00">18:00</option>
-                            <option value="19:00">19:00</option>
-                        </select>
-                    </div>
-
-                    <div class="form-field-group">
-                        <label class="form-label">Notas adicionales</label>
-                        <textarea name="appt-notes" placeholder="Cualquier información adicional que quieras compartir..." class="form-input-style"></textarea>
-                    </div>
-
-                    <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Solicitar cita</button>
+                    <button type="submit" class="btn btn-primary" style="margin-top: 10px;">Enviar mensaje</button>
                 </form>
             </div>
 
-            <!-- CTA Contacto General - SECUNDARIO (Columna derecha 1fr) -->
-            <div class="form-box-contact">
-                <h2 class="section-title-alt">¿Tienes una duda específica?</h2>
-                <p class="section-intro">Si no encuentras hueco en el calendario o necesitas preguntar algo muy concreto sobre tu caso (tarifas, disponibilidad, enfoque terapéutico), no te vayas sin escribirnos. Te responderemos en menos de 24 horas.</p>
-                <a href="mailto:info@serenamentevivir.com" class="btn btn-secondary" style="margin-top: 20px;">Escríbenos por Email</a>
-                <p class="disclaimer-text">
-                    Si ya sabes que quieres reservar, usa el formulario de la izquierda.
+            <!-- CTA hacia Agenda -->
+            <div style="background: var(--color-bg-alt); padding: 2rem; border-radius: 8px; margin-top: 3rem; text-align: center;">
+                <h3 class="section-title-small" style="margin-bottom: 1rem;">¿Ya lo tienes claro?</h3>
+                <p style="color: var(--color-text-light); margin-bottom: 1.5rem;">
+                    Si ya sabes que quieres trabajar conmigo y solo necesitas elegir fecha, puedes reservar directamente tu sesión.
                 </p>
+                <a href="agenda.html" class="btn btn-primary">Reservar sesión completa</a>
             </div>
         </div>
 
-        <!-- Contact Information -->
+        <!-- Contact Information Block -->
         <div class="contact-info-block">
             <h3 class="section-title-small">Información de contacto</h3>
             <div class="contact-info-item">
@@ -131,7 +114,7 @@
                 <span>Granada, Andalucía, España</span>
             </div>
             <div class="contact-info-item">
-                <strong>Horario:</strong>
+                <strong>Horario de respuesta:</strong>
                 <span>Lunes a Viernes: 9:00 - 19:00</span>
             </div>
             <p class="disclaimer-text">
@@ -150,10 +133,10 @@
                 <div class="footer-section">
                     <ul>
                         <li><a href="serenamente_vivir.html">Inicio</a></li>
-                        <li><a href="#como-puedo-ayudarte">Para ti</a></li>
+                        <li><a href="tienda.html">Para ti</a></li>
                         <li><a href="blog.html">Inspiración</a></li>
-                        <li><a href="membresia.html">Membresía</a></li>
-                        <li><a href="contacto-agenda.html">Contacto</a></li>
+                        <li><a href="tu_espacio_privado.html">Membresía</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
                     </ul>
                 </div>
 
@@ -204,23 +187,10 @@
     <!-- JavaScript -->
     <script src="js/main.js"></script>
     <script>
-        // Set minimum date to today
-        const dateInput = document.getElementById('appt-date');
-        const today = new Date().toISOString().split('T')[0];
-        dateInput.setAttribute('min', today);
-
         function handleContactSubmit(event) {
             event.preventDefault();
-            alert('Gracias por tu mensaje. Te responderemos pronto.');
-            event.target.reset();
-        }
-
-        function handleAppointmentSubmit(event) {
-            event.preventDefault();
-            const name = document.getElementById('appt-name').value;
-            const date = document.getElementById('appt-date').value;
-            const time = document.querySelector('select[name="appt-time"]').value;
-            alert(`Gracias ${name}. Hemos recibido tu solicitud de cita para el ${date} a las ${time}. Te confirmaremos la disponibilidad pronto.`);
+            const name = document.getElementById('contact-name').value;
+            alert(`Gracias ${name}. Hemos recibido tu mensaje. Te responderemos en menos de 24 horas.`);
             event.target.reset();
         }
     </script>
