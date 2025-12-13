@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Cuenta</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+        /* HEADER COMPARTIDO */
+        .app-header {
+            background: var(--color-white);
+            border-bottom: 1px solid var(--color-border);
+            padding: 1.5rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .app-header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .app-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-primary);
+        }
+
+        .user-menu-btn {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem 1.5rem;
+            background: var(--color-bg-secondary);
+            border: 2px solid var(--color-primary);
+            border-radius: 8px;
+            cursor: pointer;
+            position: relative;
+        }
+
+        .user-badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 12px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            background: linear-gradient(135deg, var(--color-primary), var(--color-accent));
+            color: white;
+        }
+
+        .user-badge.ala-carta {
+            background: linear-gradient(135deg, #6b7c8d, #8ba4b8);
+        }
+
+        .user-dropdown {
+            position: absolute;
+            top: calc(100% + 0.5rem);
+            right: 0;
+            background: white;
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            min-width: 200px;
+            display: none;
+            z-index: 1000;
+        }
+
+        .user-dropdown.active {
+            display: block;
+        }
+
+        .user-dropdown-item {
+            display: block;
+            padding: 1rem 1.5rem;
+            color: var(--color-text);
+            text-decoration: none;
+            border-bottom: 1px solid var(--color-border);
+            transition: background 0.2s ease;
+        }
+
+        .user-dropdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .user-dropdown-item:hover {
+            background: var(--color-bg-secondary);
+        }
+
+        /* LAYOUT PRINCIPAL */
+        .cuenta-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .page-header {
+            background: var(--color-bg-secondary);
+            padding: 1.5rem 2rem;
+            border-radius: 8px;
+            margin-bottom: 2rem;
+            border-left: 4px solid var(--color-primary);
+        }
+
+        .page-title {
+            font-size: 1.75rem;
+            color: var(--color-text);
+            margin-bottom: 0.25rem;
+        }
+
+        .page-subtitle {
+            color: var(--color-text-light);
+            margin: 0;
+            font-size: 0.95rem;
+        }
+
+        /* GRID LAYOUT */
+        .cuenta-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        /* BLOQUES */
+        .cuenta-block {
+            background: var(--color-white);
+            border: 1px solid var(--color-border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .cuenta-block.bg-alt {
+            background: var(--color-bg-secondary);
+        }
+
+        .cuenta-block.full-width {
+            grid-column: 1 / -1;
+        }
+
+        .block-header {
+            background: #e5e7eb;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .block-title {
+            font-size: 1.1rem;
+            color: var(--color-text);
+            margin: 0;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+        }
+
+        .block-icon {
+            width: 20px;
+            height: 20px;
+            stroke: var(--color-primary);
+        }
+
+        .block-body {
+            padding: 1.5rem;
+            background: inherit;
+        }
+
+        /* FORMULARIOS */
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 500;
+            margin-bottom: 0.4rem;
+            color: var(--color-text);
+            font-size: 0.875rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 0.6rem 0.875rem;
+            border: 1px solid var(--color-border);
+            border-radius: 6px;
+            font-size: 0.95rem;
+            transition: border-color 0.2s ease;
+            background: var(--color-white);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--color-primary);
+            background: var(--color-bg-primary-light);
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+        }
+
+        .btn {
+            padding: 0.6rem 1.25rem;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 0.9rem;
+        }
+
+        .btn {
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+        }
+
+        .btn-primary {
+            background: var(--color-primary);
+            color: var(--color-text);
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: var(--color-bg-secondary);
+            color: var(--color-text);
+            border: 1px solid var(--color-border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--color-border);
+        }
+
+        .btn-danger {
+            background: transparent;
+            color: var(--color-error);
+            border: 1px solid var(--color-error);
+        }
+
+        .btn-danger:hover {
+            background: var(--color-error);
+            color: white;
+        }
+
+        .btn-upgrade {
+            background: var(--color-primary);
+            color: var(--color-text);
+            font-size: 1.1rem;
+            padding: 1rem 2rem;
+            border: 2px solid var(--color-secondary);
+            font-weight: 700;
+        }
+
+        .btn-upgrade:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            background: var(--color-secondary);
+        }
+
+        /* ESTADO DE SUSCRIPCIÓN */
+        .subscription-status {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            background: var(--color-bg-secondary);
+            border-radius: 6px;
+            margin-bottom: 1.25rem;
+        }
+
+        .status-badge {
+            padding: 0.35rem 0.75rem;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 0.75rem;
+        }
+
+        .status-active {
+            background: #8db4a0;
+            color: white;
+        }
+
+        .status-inactive {
+            background: #6b7280;
+            color: white;
+        }
+
+        .subscription-info {
+            display: grid;
+            gap: 0;
+            margin-bottom: 1.25rem;
+        }
+
+        .info-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.65rem 0;
+            border-bottom: 1px solid var(--color-border);
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-label {
+            color: var(--color-text-light);
+            font-weight: 500;
+            font-size: 0.875rem;
+        }
+
+        .info-value {
+            color: var(--color-text);
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+
+        /* UPSELL BANNER */
+        .upsell-banner {
+            background: linear-gradient(135deg, #dbeafe, #e0e7ff);
+            padding: 2rem;
+            border-radius: 12px;
+            color: #1e3a8a;
+            margin-bottom: 1.5rem;
+            border-left: 4px solid #93c5fd;
+        }
+
+        .upsell-banner h3 {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            color: #1e40af;
+        }
+
+        .upsell-banner p {
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+            color: #3b5998;
+        }
+
+        .upsell-features {
+            display: grid;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .upsell-feature {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #1e3a8a;
+        }
+
+        .upsell-feature::before {
+            content: "✓";
+            color: #60a5fa;
+            font-weight: 700;
+        }
+
+        /* HISTORIAL */
+        .historial-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .historial-table th {
+            text-align: left;
+            padding: 0.75rem 1.5rem;
+            background: var(--color-bg-secondary);
+            font-weight: 600;
+            border-bottom: 2px solid var(--color-border);
+            font-size: 0.85rem;
+            color: var(--color-text-light);
+        }
+
+        .historial-table td {
+            padding: 0.75rem 1.5rem;
+            border-bottom: 1px solid #d1d5db;
+            font-size: 0.9rem;
+        }
+
+        .historial-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .historial-table tbody tr {
+            transition: background 0.2s ease;
+        }
+
+        .historial-table tbody tr:hover {
+            background: var(--color-bg-primary-light);
+        }
+
+        .historial-empty {
+            text-align: center;
+            padding: 2rem;
+            color: var(--color-text-light);
+        }
+
+        /* HIDDEN UTILITY */
+        .hidden {
+            display: none !important;
+        }
+
+        /* ACTIONS */
+        .actions-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* SERVICIOS ESPECIALES GRID */
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1rem;
+            justify-content: center;
+            max-width: 100%;
+        }
+
+        /* Centrar cuando hay menos de 3 tarjetas */
+        .servicios-grid:has(.servicio-card:nth-child(2):last-child) {
+            max-width: 620px;
+            margin: 0 auto;
+        }
+
+        .servicios-grid:has(.servicio-card:only-child) {
+            max-width: 310px;
+            margin: 0 auto;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 968px) {
+            .cuenta-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .cuenta-container {
+                padding: 1rem;
+            }
+
+            .page-header {
+                padding: 1rem 1.5rem;
+            }
+
+            .page-title {
+                font-size: 1.5rem;
+            }
+
+            .block-body {
+                padding: 1rem;
+            }
+
+            .actions-group {
+                flex-direction: column;
+            }
+
+            .actions-group .btn {
+                width: 100%;
+            }
+
+            .historial-table {
+                font-size: 0.8rem;
+            }
+
+            .historial-table th,
+            .historial-table td {
+                padding: 0.65rem 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header class="app-header">
+        <div class="app-header-container">
+            <div class="app-logo">[Tu Logo]</div>
+
+            <div id="headerBadge" style="padding: 0.5rem 1.5rem; background: #8db4a0; color: white; border-radius: 6px; font-weight: 600; font-size: 0.9rem;">
+                [Premium]
+            </div>
+
+            <a href="area-privada.html" class="btn btn-primary">← Volver</a>
+        </div>
+    </header>
+
+    <!-- CONTENEDOR PRINCIPAL -->
+    <div class="cuenta-container">
+
+        <!-- PAGE HEADER -->
+        <div class="page-header">
+            <h1 class="page-title">[Mi Cuenta]</h1>
+            <p class="page-subtitle">[Gestiona tu perfil, suscripción y facturación]</p>
+        </div>
+
+        <!-- GRID 2 COLUMNAS -->
+        <div class="cuenta-grid">
+
+            <!-- COLUMNA 1: MI PERFIL -->
+            <section class="cuenta-block">
+                <div class="block-header">
+                    <h2 class="block-title">
+                        <svg class="block-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="12" cy="7" r="4"></circle>
+                        </svg>
+                        [Mi Perfil]
+                    </h2>
+                </div>
+
+                <div class="block-body">
+                    <!-- Información del perfil -->
+                    <div style="margin-bottom: 1.5rem;">
+                        <div class="info-row">
+                            <span class="info-label">[Nombre]</span>
+                            <span class="info-value" id="userName">Ana García</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">[Email]</span>
+                            <span class="info-value" id="userEmailDisplay">ana@ejemplo.com</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">[Miembro desde]</span>
+                            <span class="info-value">[Sep 2025]</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">[Tipo de Cuenta]</span>
+                            <span class="info-value" id="accountTypeDisplay">[Premium]</span>
+                        </div>
+                    </div>
+
+                    <!-- Botón editar perfil -->
+                    <button class="btn btn-secondary btn" style="width: 100%; margin-bottom: 1rem;" onclick="toggleEditProfile()">[Editar Email]</button>
+
+                    <!-- Formulario de edición (oculto por defecto) -->
+                    <form id="profileForm" style="display: none; margin-bottom: 1rem; padding-top: 1rem; border-top: 1px solid var(--color-border);">
+                        <div class="form-group">
+                            <label class="form-label">[Nuevo Email]</label>
+                            <input type="email" class="form-input" value="ana@ejemplo.com" id="userEmail">
+                        </div>
+                        <button type="submit" class="btn btn-primary btn" style="width: 100%;">[Guardar Email]</button>
+                    </form>
+
+                    <!-- Sección de seguridad (colapsable) -->
+                    <div style="border-top: 1px solid var(--color-border); padding-top: 1rem;">
+                        <button class="btn btn-secondary btn" style="width: 100%;" onclick="togglePasswordForm()">
+                            <span id="passwordBtnText">[▼ Cambiar Contraseña]</span>
+                        </button>
+
+                        <form id="passwordForm" style="display: none; margin-top: 1rem;">
+                            <div class="form-group">
+                                <label class="form-label">[Contraseña Actual]</label>
+                                <input type="password" class="form-input" placeholder="[Tu contraseña actual]">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">[Nueva Contraseña]</label>
+                                <input type="password" class="form-input" placeholder="[Mínimo 8 caracteres]">
+                            </div>
+                            <div class="form-group">
+                                <label class="form-label">[Confirmar Contraseña]</label>
+                                <input type="password" class="form-input" placeholder="[Repetir nueva contraseña]">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn" style="width: 100%;">[Actualizar Contraseña]</button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+
+            <!-- COLUMNA 2: MI SUSCRIPCIÓN (PREMIUM - ANA) -->
+            <section class="cuenta-block" id="subscriptionPremium" data-user-type="ana">
+                <div class="block-header">
+                    <h2 class="block-title">
+                        <svg class="block-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        [Mi Suscripción]
+                    </h2>
+                </div>
+
+                <div class="block-body">
+                    <div class="subscription-status">
+                        <span class="status-badge status-active">[Activa]</span>
+                        <span style="flex: 1; font-size: 0.9rem; font-weight: 500;">[Miembro Premium]</span>
+                    </div>
+
+                    <div class="subscription-info">
+                        <div class="info-row">
+                            <span class="info-label">[Próximo Cobro]</span>
+                            <span class="info-value">[15 Dic 2025]</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">[Método de Pago]</span>
+                            <span class="info-value">[Visa •••• 4242]</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">[Monto Mensual]</span>
+                            <span class="info-value">[€29/mes]</span>
+                        </div>
+                    </div>
+
+                    <div class="actions-group">
+                        <button class="btn btn-secondary btn" style="flex: 1;">[Gestionar Pago]</button>
+                        <button class="btn btn-danger btn" style="flex: 1;">[Cancelar]</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- COLUMNA 2B: MI SUSCRIPCIÓN (A LA CARTA - REGINA - UPSELL) -->
+            <section class="cuenta-block" id="subscriptionAlaCarta" data-user-type="regina">
+                <div class="block-header">
+                    <h2 class="block-title">
+                        <svg class="block-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        [Mi Suscripción]
+                    </h2>
+                </div>
+
+                <div class="block-body">
+                    <div class="subscription-status">
+                        <span class="status-badge status-active">[Activa]</span>
+                        <span style="flex: 1; font-size: 0.9rem; font-weight: 500;">[Cuenta Estándar]</span>
+                    </div>
+
+                    <div class="upsell-banner">
+                        <h3>[¡Actualiza a Premium y Desbloquea Todo!]</h3>
+                        <p>[Actualmente compras productos individuales. Con una Membresía Premium accedes a:]</p>
+
+                        <div class="upsell-features">
+                            <div class="upsell-feature">[Biblioteca Completa de Cursos y Recursos]</div>
+                            <div class="upsell-feature">[Acceso a Eventos en Vivo Exclusivos]</div>
+                            <div class="upsell-feature">[Asistente IA Personalizado]</div>
+                            <div class="upsell-feature">[Comunidad Privada de Miembros]</div>
+                            <div class="upsell-feature">[Descuentos Exclusivos en Productos y Servicios]</div>
+                            <div class="upsell-feature">[Ahorra en comparación con compras individuales]</div>
+                        </div>
+
+                        <button class="btn btn-upgrade" onclick="window.location.href='membresia.html'">[Ver Planes de Membresía]</button>
+                    </div>
+
+                    <p style="color: var(--color-text-light); font-size: 0.875rem; text-align: center;">
+                        [Ya tienes acceso a los productos que has comprado. La membresía es opcional.]
+                    </p>
+                </div>
+            </section>
+
+        </div>
+
+        <!-- SEPARADOR -->
+        <div style="margin: 3rem 0;"></div>
+
+        <!-- SERVICIOS ESPECIALES CONTRATADOS -->
+        <section class="cuenta-block full-width bg-alt" id="serviciosEspeciales">
+            <div class="block-header">
+                <h2 class="block-title">
+                    <svg class="block-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="3"></circle>
+                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                    </svg>
+                    [Servicios Especiales Contratados]
+                </h2>
+            </div>
+
+            <div class="block-body">
+                <div class="servicios-grid">
+
+                    <!-- Servicio 1: Asistente IA Premium -->
+                    <div class="servicio-card" style="padding: 1rem; background: var(--color-bg-secondary); border-radius: 6px; border-left: 3px solid var(--color-primary);">
+                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                            <div>
+                                <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 0.25rem;">[Asistente IA Premium]</div>
+                                <div style="font-size: 0.8rem; color: var(--color-text-light);">[Add-on activo]</div>
+                            </div>
+                            <span class="status-badge status-active">[Activo]</span>
+                        </div>
+                        <div class="info-row" style="margin-top: 0.75rem;">
+                            <span class="info-label">[Créditos restantes]</span>
+                            <span class="info-value">[150 / 200]</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">[Renovación]</span>
+                            <span class="info-value">[15 Dic 2025]</span>
+                        </div>
+                    </div>
+
+                    <!-- Servicio 2: Soporte Prioritario -->
+                    <div class="servicio-card" style="padding: 1rem; background: var(--color-bg-secondary); border-radius: 6px; border-left: 3px solid var(--color-primary);">
+                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                            <div>
+                                <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 0.25rem;">[Soporte Prioritario]</div>
+                                <div style="font-size: 0.8rem; color: var(--color-text-light);">[Incluido en Premium]</div>
+                            </div>
+                            <span class="status-badge status-active">[Activo]</span>
+                        </div>
+                        <div class="info-row" style="margin-top: 0.75rem;">
+                            <span class="info-label">[Respuesta]</span>
+                            <span class="info-value">[< 2 horas]</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">[Canal]</span>
+                            <span class="info-value">[Email + Chat]</span>
+                        </div>
+                    </div>
+
+                    <!-- Servicio 3: Almacenamiento Extra -->
+                    <div class="servicio-card" style="padding: 1rem; background: var(--color-bg-secondary); border-radius: 6px; border-left: 3px solid var(--color-primary);">
+                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                            <div>
+                                <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 0.25rem;">[Almacenamiento Extra]</div>
+                                <div style="font-size: 0.8rem; color: var(--color-text-light);">[Add-on +50GB]</div>
+                            </div>
+                            <span class="status-badge status-active">[Activo]</span>
+                        </div>
+                        <div class="info-row" style="margin-top: 0.75rem;">
+                            <span class="info-label">[Uso actual]</span>
+                            <span class="info-value">[32 / 75 GB]</span>
+                        </div>
+                        <div class="info-row">
+                            <span class="info-label">[Monto]</span>
+                            <span class="info-value">[€5/mes]</span>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Mensaje si no hay servicios -->
+                <div id="noServiciosMsg" style="display: none; text-align: center; padding: 2rem; color: var(--color-text-light);">
+                    [No tienes servicios especiales contratados]
+                </div>
+            </div>
+        </section>
+
+        <!-- SEPARADOR -->
+        <div style="margin: 3rem 0;"></div>
+
+        <!-- HISTORIAL DE FACTURACIÓN (FULL WIDTH) -->
+        <section class="cuenta-block full-width">
+            <div class="block-header">
+                <h2 class="block-title">
+                    <svg class="block-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
+                    </svg>
+                    [Historial de Facturación]
+                </h2>
+            </div>
+
+            <div class="block-body" style="padding: 0;">
+
+            <!-- TABLA PREMIUM (ANA) -->
+            <div id="historialPremium" data-user-type="ana">
+                <table class="historial-table">
+                    <thead>
+                        <tr>
+                            <th>[Fecha]</th>
+                            <th>[Concepto]</th>
+                            <th>[Monto]</th>
+                            <th>[Estado]</th>
+                            <th>[Acción]</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>[15 Nov 2025]</td>
+                            <td>[Membresía Premium - Mensual]</td>
+                            <td>[€29.00]</td>
+                            <td style="color: #8db4a0; font-weight: 600;">[Pagado]</td>
+                            <td><a href="#" style="color: var(--color-primary);">[Descargar]</a></td>
+                        </tr>
+                        <tr>
+                            <td>[15 Oct 2025]</td>
+                            <td>[Membresía Premium - Mensual]</td>
+                            <td>[€29.00]</td>
+                            <td style="color: #8db4a0; font-weight: 600;">[Pagado]</td>
+                            <td><a href="#" style="color: var(--color-primary);">[Descargar]</a></td>
+                        </tr>
+                        <tr>
+                            <td>[15 Sep 2025]</td>
+                            <td>[Membresía Premium - Mensual]</td>
+                            <td>[€29.00]</td>
+                            <td style="color: #8db4a0; font-weight: 600;">[Pagado]</td>
+                            <td><a href="#" style="color: var(--color-primary);">[Descargar]</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- TABLA A LA CARTA (REGINA) -->
+            <div id="historialAlaCarta" data-user-type="regina">
+                <table class="historial-table">
+                    <thead>
+                        <tr>
+                            <th>[Fecha]</th>
+                            <th>[Producto]</th>
+                            <th>[Monto]</th>
+                            <th>[Estado]</th>
+                            <th>[Acción]</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>[10 Nov 2025]</td>
+                            <td>[Curso: Gestión del Estrés]</td>
+                            <td>[€49.00]</td>
+                            <td style="color: #8db4a0; font-weight: 600;">[Pagado]</td>
+                            <td><a href="#" style="color: var(--color-primary);">[Descargar]</a></td>
+                        </tr>
+                        <tr>
+                            <td>[05 Oct 2025]</td>
+                            <td>[Ebook: Técnicas de Respiración]</td>
+                            <td>[€12.00]</td>
+                            <td style="color: #8db4a0; font-weight: 600;">[Pagado]</td>
+                            <td><a href="#" style="color: var(--color-primary);">[Descargar]</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- SCRIPT DE GESTIÓN USUARIO UNIFICADO -->
+    <!-- Config Loader - Sistema Multi-Tenant -->
+    <script src="js/config-loader.js"></script>
+    <script src="js/auth.js?v=10"></script>
+
+    <script>
+        // ==========================================
+        // SISTEMA UNIFICADO: Detección de Usuario Real
+        // ==========================================
+
+        // Función principal de inicialización
+        window.addEventListener('DOMContentLoaded', function() {
+            // Obtener usuario actual desde user-manager.js
+            const usuario = obtenerUsuarioActual();
+
+            if (!usuario) {
+                // Si no hay usuario, redirigir a login
+                console.warn('[cuenta.html] No hay usuario. Redirigiendo a login...');
+                window.location.href = 'serenamente_vivir.html';
+                return;
+            }
+
+            console.log('[cuenta.html] Usuario detectado:', usuario.nombre, '| Nivel:', usuario.nivel);
+
+            // Aplicar vista según nivel de usuario
+            if (usuario.nivel === 3) {
+                // Ana: Usuario Premium (nivel 3)
+                aplicarVistaAna(usuario);
+            } else if (usuario.nivel === 2) {
+                // Regina: Usuario Registrado (nivel 2)
+                aplicarVistaRegina(usuario);
+            } else {
+                // Nivel 1 (Teresa) no debería acceder aquí
+                console.warn('[cuenta.html] Usuario Teresa no tiene acceso. Redirigiendo...');
+                window.location.href = 'serenamente_vivir.html';
+            }
+        });
+
+        // ==========================================
+        // VISTA ANA (PREMIUM - NIVEL 3)
+        // ==========================================
+        function aplicarVistaAna(usuario) {
+            console.log('[cuenta.html] Aplicando vista ANA (Premium)');
+
+            // 1. Badge del header
+            const headerBadge = document.getElementById('headerBadge');
+            if (headerBadge) {
+                headerBadge.textContent = '[Premium]';
+                headerBadge.style.background = '#8db4a0';
+            }
+
+            // 2. Datos del perfil
+            document.getElementById('userName').textContent = usuario.nombre;
+            document.getElementById('userEmailDisplay').textContent = usuario.email;
+            document.getElementById('userEmail').value = usuario.email;
+            document.getElementById('accountTypeDisplay').textContent = '[Premium]';
+
+            // 3. Mostrar sección de suscripción Premium
+            mostrarSeccionesPorTipo('ana');
+        }
+
+        // ==========================================
+        // VISTA REGINA (REGISTRADA - NIVEL 2)
+        // ==========================================
+        function aplicarVistaRegina(usuario) {
+            console.log('[cuenta.html] Aplicando vista REGINA (Cuenta Estándar)');
+
+            // 1. Badge del header
+            const headerBadge = document.getElementById('headerBadge');
+            if (headerBadge) {
+                headerBadge.textContent = '[Cuenta Estándar]';
+                headerBadge.style.background = '#a3aab5';
+            }
+
+            // 2. Datos del perfil
+            document.getElementById('userName').textContent = usuario.nombre;
+            document.getElementById('userEmailDisplay').textContent = usuario.email;
+            document.getElementById('userEmail').value = usuario.email;
+            document.getElementById('accountTypeDisplay').textContent = '[Cuenta Estándar]';
+
+            // 3. Mostrar sección de upsell (A la Carta)
+            mostrarSeccionesPorTipo('regina');
+        }
+
+        // ==========================================
+        // FUNCIONES DE CONTROL DE VISIBILIDAD
+        // ==========================================
+        function mostrarSeccionesPorTipo(tipo) {
+            // Obtener todas las secciones con data-user-type
+            const todasLasSecciones = document.querySelectorAll('[data-user-type]');
+
+            todasLasSecciones.forEach(seccion => {
+                const tipoSeccion = seccion.getAttribute('data-user-type');
+
+                if (tipoSeccion === tipo) {
+                    // Mostrar secciones del tipo correcto
+                    seccion.classList.remove('hidden');
+                } else {
+                    // Ocultar secciones de otros tipos
+                    seccion.classList.add('hidden');
+                }
+            });
+
+            console.log(`[cuenta.html] Secciones visibles para tipo: ${tipo}`);
+        }
+
+        // ==========================================
+        // FUNCIONES COMUNES (AMBOS USUARIOS)
+        // ==========================================
+
+        // Dropdown (si existiera en el futuro)
+        function toggleDropdown() {
+            const dropdown = document.getElementById('userDropdown');
+            if (dropdown) {
+                dropdown.classList.toggle('active');
+            }
+        }
+
+        // Cerrar clic fuera del dropdown
+        document.addEventListener('click', function(e) {
+            const menuBtn = document.querySelector('.user-menu-btn');
+            const dropdown = document.getElementById('userDropdown');
+
+            if (menuBtn && dropdown && !menuBtn.contains(e.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
+
+        // Cerrar sesión
+        function cerrarSesion() {
+            if (confirm('[¿Seguro que quieres cerrar sesión?]')) {
+                localStorage.removeItem('usuario');
+                window.location.href = 'serenamente_vivir.html';
+            }
+        }
+
+        // Formulario de perfil (editar email)
+        document.getElementById('profileForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const nuevoEmail = document.getElementById('userEmail').value;
+
+            // Actualizar en localStorage (simulación)
+            const usuario = obtenerUsuarioActual();
+            if (usuario) {
+                usuario.email = nuevoEmail;
+                localStorage.setItem('usuario', JSON.stringify(usuario));
+                document.getElementById('userEmailDisplay').textContent = nuevoEmail;
+                alert('[Email actualizado correctamente]');
+            }
+
+            toggleEditProfile();
+        });
+
+        // Toggle para editar email
+        function toggleEditProfile() {
+            const form = document.getElementById('profileForm');
+            form.style.display = form.style.display === 'none' ? 'block' : 'none';
+        }
+
+        // Toggle para cambiar contraseña
+        function togglePasswordForm() {
+            const form = document.getElementById('passwordForm');
+            const btnText = document.getElementById('passwordBtnText');
+
+            if (form.style.display === 'none') {
+                form.style.display = 'block';
+                btnText.textContent = '[▲ Ocultar Cambio de Contraseña]';
+            } else {
+                form.style.display = 'none';
+                btnText.textContent = '[▼ Cambiar Contraseña]';
+            }
+        }
+
+        // Formulario de contraseña
+        document.getElementById('passwordForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('[Contraseña actualizada correctamente]');
+            togglePasswordForm();
+        });
+    </script>
+
+</body>
+</html>

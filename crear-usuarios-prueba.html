@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crear Usuarios de Prueba</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .btn {
+            padding: 12px 24px;
+            background: #e7cf9d;
+            color: #333;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 10px 5px;
+        }
+        .btn:hover {
+            opacity: 0.9;
+        }
+        .btn-danger {
+            background: #dc3545;
+        }
+        .message {
+            margin: 20px 0;
+            padding: 15px;
+            border-radius: 6px;
+        }
+        .success {
+            background: #d4edda;
+            color: #155724;
+            border: 1px solid #cae4b2;
+        }
+        .info {
+            background: #c9e1e1;
+            color: #333;
+            border: 1px solid #e7cf9d;
+        }
+        .user-card {
+            background: #f1ede2;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 6px;
+            border-left: 4px solid #c9e1e1;
+        }
+        .user-card h3 {
+            margin: 0 0 10px 0;
+            color: #c9e1e1;
+        }
+        .user-card p {
+            margin: 5px 0;
+            color: #555;
+        }
+        .user-card code {
+            background: #e9ecef;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔧 Crear Usuarios de Prueba</h1>
+
+        <div class="message info">
+            <strong>ℹ️ Información:</strong><br>
+            Este script creará dos usuarios de prueba para testing del sistema de autenticación:
+        </div>
+
+        <div class="user-card">
+            <h3>👤 Regina (Registrada / Compradora)</h3>
+            <p><strong>Email:</strong> <code>regina@test.com</code></p>
+            <p><strong>Contraseña:</strong> <code>123456</code></p>
+            <p><strong>Tipo:</strong> Comprador (nivel 2)</p>
+            <p><strong>Uso:</strong> Para probar funcionalidad de usuarios registrados/compradores</p>
+        </div>
+
+        <div class="user-card">
+            <h3>👑 Ana (Premium / Miembro)</h3>
+            <p><strong>Email:</strong> <code>ana@test.com</code></p>
+            <p><strong>Contraseña:</strong> <code>123456</code></p>
+            <p><strong>Tipo:</strong> Miembro Premium (nivel 3)</p>
+            <p><strong>Uso:</strong> Para probar funcionalidad de usuarios premium</p>
+        </div>
+
+        <button class="btn" onclick="crearUsuarios()">✅ Crear Usuarios de Prueba</button>
+        <button class="btn btn-danger" onclick="eliminarUsuarios()">🗑️ Eliminar Usuarios de Prueba</button>
+        <button class="btn" onclick="verUsuarios()">👀 Ver Usuarios en localStorage</button>
+
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        function crearUsuarios() {
+            // LIMPIAR TODO: Borrar usuarios anteriores y sesión actual
+            localStorage.removeItem('usuarios');
+            localStorage.removeItem('usuarioActual');
+
+            // Crear array vacío de usuarios
+            const usuariosFiltrados = [];
+
+            // Crear usuario Regina (Registrada/Compradora)
+            const regina = {
+                id: Date.now().toString(),
+                nombre: 'Regina',
+                email: 'regina@test.com',
+                password: '123456',
+                tipoUsuario: 'comprador',
+                nivel: 2,
+                fechaRegistro: new Date().toISOString(),
+                // Datos adicionales para testing
+                cursosComprados: [
+                    { id: 1, tipo: 'curso', titulo: 'Curso Demo Regina', progreso: 25 },
+                    { id: 2, tipo: 'pdf', titulo: 'Guía Práctica', progreso: 0 }
+                ]
+            };
+
+            // Crear usuario Ana (Premium/Miembro)
+            const ana = {
+                id: (Date.now() + 1).toString(),
+                nombre: 'Ana',
+                email: 'ana@test.com',
+                password: '123456',
+                tipoUsuario: 'miembro',
+                nivel: 3,
+                fechaRegistro: new Date().toISOString(),
+                // Datos adicionales para testing
+                ultimoCurso: { titulo: 'Curso Premium Demo', leccion: 3, progreso: 45 },
+                cursosComprados: [
+                    { id: 1, tipo: 'curso', titulo: 'Curso Premium 1', progreso: 45 },
+                    { id: 2, tipo: 'curso', titulo: 'Curso Premium 2', progreso: 80 },
+                    { id: 3, tipo: 'pdf', titulo: 'Guía Premium', progreso: 100 }
+                ]
+            };
+
+            // Agregar usuarios
+            usuariosFiltrados.push(regina);
+            usuariosFiltrados.push(ana);
+
+            // Guardar en localStorage
+            localStorage.setItem('usuarios', JSON.stringify(usuariosFiltrados));
+
+            // Mostrar mensaje de éxito
+            document.getElementById('resultado').innerHTML = `
+                <div class="message success">
+                    <strong>✅ ¡Usuarios creados exitosamente!</strong><br><br>
+                    ⚠️ <strong>IMPORTANTE:</strong> Se borró el localStorage anterior (incluyendo "Fundador")<br><br>
+                    Ahora puedes iniciar sesión con:<br>
+                    • <strong>Regina:</strong> regina@test.com / 123456 (Nivel 2 - Registrada)<br>
+                    • <strong>Ana:</strong> ana@test.com / 123456 (Nivel 3 - Premium)<br><br>
+                    <a href="index.html" style="color: #155724;">→ Ir a la página principal para hacer login</a>
+                </div>
+            `;
+        }
+
+        function eliminarUsuarios() {
+            if (!confirm('¿Estás seguro de eliminar los usuarios de prueba?')) {
+                return;
+            }
+
+            // Obtener usuarios existentes
+            const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
+
+            // Filtrar usuarios de prueba
+            const usuariosFiltrados = usuarios.filter(u =>
+                u.email !== 'regina@test.com' && u.email !== 'ana@test.com'
+            );
+
+            // Guardar en localStorage
+            localStorage.setItem('usuarios', JSON.stringify(usuariosFiltrados));
+
+            document.getElementById('resultado').innerHTML = `
+                <div class="message success">
+                    <strong>✅ Usuarios de prueba eliminados</strong>
+                </div>
+            `;
+        }
+
+        function verUsuarios() {
+            const usuarios = JSON.parse(localStorage.getItem('usuarios') || '[]');
+
+            if (usuarios.length === 0) {
+                document.getElementById('resultado').innerHTML = `
+                    <div class="message info">
+                        <strong>ℹ️ No hay usuarios en localStorage</strong>
+                    </div>
+                `;
+                return;
+            }
+
+            let html = '<div class="message info"><strong>👥 Usuarios en localStorage:</strong></div>';
+            usuarios.forEach(u => {
+                html += `
+                    <div class="user-card">
+                        <h3>${u.nombre}</h3>
+                        <p><strong>Email:</strong> ${u.email}</p>
+                        <p><strong>Tipo:</strong> ${u.tipoUsuario}</p>
+                        <p><strong>Nivel:</strong> ${u.nivel || 'No definido'}</p>
+                        <p><strong>ID:</strong> ${u.id}</p>
+                    </div>
+                `;
+            });
+
+            document.getElementById('resultado').innerHTML = html;
+        }
+    </script>
+</body>
+</html>

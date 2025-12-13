@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Básico -->
+    <meta name="description" content="[DESCRIPCIÓN: Servicios, cursos y eventos disponibles. Describe tus soluciones y beneficios principales.]">
+    <meta name="author" content="[TU_NOMBRE_PROFESIONAL]">
+    <meta name="robots" content="index, follow">
+    <title>[oferta-de-servicios]</title>
+    <link rel="canonical" href="[TU_URL_COMPLETA]/catalogo.html">
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="[TU_URL_COMPLETA]/catalogo.html">
+    <meta property="og:site_name" content="[TU_NOMBRE_MARCA]">
+    <meta property="og:title" content="Servicios y Soluciones Profesionales">
+    <meta property="og:description" content="[DESCRIPCIÓN: Descubre cómo puedo ayudarte con servicios personalizados, cursos y eventos]">
+    <meta property="og:image" content="[TU_URL_COMPLETA]/images/og-image-servicios.jpg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Catálogo de servicios profesionales">
+    <meta property="og:locale" content="es_ES">
+
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Servicios y Soluciones Profesionales">
+    <meta name="twitter:description" content="[DESCRIPCIÓN: Resumen de tus servicios]">
+    <meta name="twitter:image" content="[TU_URL_COMPLETA]/images/og-image-servicios.jpg">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <meta name="theme-color" content="#c5d9e8">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <header class="header" id="header">
+        <nav class="nav-container">
+            <a href="index.html" class="logo-container" aria-label="Inicio" style="text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
+                <img id="headerLogo" class="logo-img hidden" src="" alt="Logotipo" style="height: 40px; width: auto;">
+                
+                <span id="headerBrandName" class="logo">
+                    [Identidad del Sitio]
+                </span>
+            </a>
+
+            <!-- CENTRO: Área Personal (TODOS) - Con lógica de portero -->
+            <div class="header-center-action" id="headerCenterAction" onclick="navegarAreaPersonal(event)" style="cursor: pointer;">
+                <span>👤</span>
+                <span>Área Personal</span>
+            </div>
+
+            <!-- DERECHA: Avatar + Nombre (Usuarios) - Indicador visual sin link -->
+            <div class="header-center-profile" id="headerCenterProfile" style="display: none;">
+                <img id="userAvatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'%3E%3Ccircle cx='18' cy='18' r='18' fill='%236B9080'/%3E%3Ctext x='18' y='23' font-size='14' fill='white' text-anchor='middle' font-family='Arial'%3EUS%3C/text%3E%3C/svg%3E"
+                     alt="Avatar"
+                     style="width: 36px; height: 36px; border-radius: 50%;">
+                <span id="userNameHeader">Usuario</span>
+            </div>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html">[index]</a></li>
+                <li><a href="presentacion-profesional.html">[presentacion-profesional]</a></li>
+                <li><a href="catalogo.html" class="active">[catalogo]</a></li>
+                <li><a href="blog.html">[blog]</a></li>
+                <li><a href="javascript:void(0);" id="areaPersonalLink" onclick="navegarAreaPersonal(event)">Área Personal</a></li>
+                <li id="cuentaMenuItem" class="hidden"><a href="javascript:void(0);" id="cuentaLink" onclick="navegarCuenta(event)">Mi Cuenta</a></li>
+                <li><a href="membresia.html">[membresia]</a></li>
+                <li><a href="contacto-agenda.html" class="nav-cta">[contacto-agenda]</a></li>
+                <li id="salirMenuItem" class="hidden"><a href="javascript:void(0);" onclick="cerrarSesion()">Salir</a></li>
+            </ul>
+
+            <!-- DERECHA: Botones de autenticación -->
+            <div class="auth-buttons" id="authButtons">
+                <button onclick="abrirModalLogin()" class="btn btn-secondary">Iniciar Sesión</button>
+                <button onclick="abrirModalRegistro()" class="btn btn-primary">Registro</button>
+            </div>
+
+            <button class="nav-toggle" id="navToggle">
+                <span class="nav-toggle-text">Menú</span>
+                <div class="nav-toggle-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </button>
+        </nav>
+    </header>
+
+    <div class="nav-overlay" id="navOverlay"></div>
+
+    <section class="section" style="padding-top: 4rem; padding-bottom: 2rem;">
+        <div class="container">
+            <div class="guia-cliente">
+                <h4>📍 Página Unificada: Lista Única de Soluciones</h4>
+                <p><strong>Estrategia:</strong> Sin barreras. Servicios, Cursos y Eventos conviven en el mismo espacio.</p>
+                <p><strong>Orden:</strong> El profesional decide qué aparece primero según su prioridad de venta (ej. llenar un evento urgente).</p>
+                <p><strong>Claridad:</strong> Las "Etiquetas" (Badges) en la esquina superior derecha indican al usuario qué tipo de solución es.</p>
+                <p><strong>Nueva Funcionalidad:</strong> Cada tarjeta lleva a una sección de detalle en la misma página. El usuario hace scroll para ver más información antes de comprar.</p>
+            </div>
+
+            <div class="section-header">
+                <h1 class="section-title">[Catálogo de Recursos]</h1>
+                <p class="section-description">
+                    [Intro: Explora las diferentes formas en las que podemos trabajar juntos. Haz clic en "Ver Detalles" para conocer en profundidad qué incluye cada opción.]
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="padding: 2rem 0;">
+        <div class="container">
+
+            <div class="cards-grid">
+
+                <!-- 1. LEAD MAGNET (GRATIS) -->
+                <div class="card--fluid card--enhanced">
+
+                    <div class="card-image-resource">
+                        <img src="https://iili.io/f3yx86v.png" alt="Guía Gratuita" loading="lazy">
+                    </div>
+
+                    <h3 class="card-title">[Guía Gratuita: Los 5 Errores...]</h3>
+                    <p class="card-text">[PDF de 18 páginas con ejercicios prácticos para identificar y eliminar tus ladrones de tiempo.]</p>
+
+                    <div class="mt-auto">
+                        <div class="card-precio" data-recurso-id="lead-magnet-001">
+                            <p class="price price--large" style="color: var(--color-success);">GRATIS</p>
+                        </div>
+                        <a href="#lead-magnet-001" class="card-link-action">[Ver detalles →]</a>
+                    </div>
+                </div>
+
+                <!-- 2. MINI-CURSO -->
+                <div class="card--fluid card--enhanced">
+
+                    <div class="card-image-resource">
+                        <img src="https://iili.io/f3yx86v.png" alt="Mini-Curso" loading="lazy">
+                    </div>
+
+                    <h3 class="card-title">[Mini-Curso: Desconexión Digital]</h3>
+                    <p class="card-text">[7 video-lecciones de 10 minutos para recuperar tu atención y reducir la ansiedad.]</p>
+
+                    <div class="mt-auto">
+                        <div class="card-precio" data-recurso-id="curso-bajo-101">
+                            <p class="price">[Normal]: <strong>€19</strong></p>
+                            <p class="price price--premium">[Miembros]: <strong>€0</strong></p>
+                        </div>
+                        <a href="#curso-bajo-101" class="card-link-action">[Ver detalles →]</a>
+                    </div>
+                </div>
+
+                <!-- 3. EVENTO EN VIVO -->
+                <div class="card--fluid card--enhanced">
+
+                    <div class="card-image-resource">
+                        <img src="https://iili.io/f3yx86v.png" alt="Taller en Vivo" loading="lazy">
+                    </div>
+
+                    <div class="date-badge">
+                        <span class="event-day">25</span>
+                        <span class="event-month">NOV</span>
+                    </div>
+
+<h3 class="card-title">[Taller en Vivo: Diseña tu Semana Ideal]</h3>
+                    <p class="card-text">[Masterclass intensiva de 2h. Crea un sistema semanal sostenible que respete tu energía.]</p>
+
+                    <div class="mt-auto">
+                        <div class="card-precio" data-recurso-id="evento-205">
+                            <p class="price">[Normal]: <strong>€47</strong></p>
+                            <p class="price price--premium">[Miembros]: <strong>€0</strong></p>
+                        </div>
+                        <a href="#evento-205" class="card-link-action">[Ver detalles →]</a>
+                    </div>
+                </div>
+
+                <!-- 4. SERVICIO 1:1 -->
+                <div class="card--fluid card--enhanced">
+
+                    <div class="card-image-resource">
+                        <img src="https://iili.io/f3yx86v.png" alt="Sesión de Diagnóstico" loading="lazy">
+                    </div>
+
+<h3 class="card-title">[Sesión de Diagnóstico Profesional]</h3>
+                    <p class="card-text">[60 minutos 1:1 conmigo. Analizamos tu situación actual y diseñamos un plan de acción personalizado.]</p>
+
+                    <div class="mt-auto">
+                        <div class="card-precio" data-recurso-id="servicio-301">
+                            <p class="price">[Normal]: <strong>€97</strong></p>
+                            <p class="price price--premium">[Miembros]: <strong>€47</strong></p>
+                        </div>
+                        <a href="#servicio-301" class="card-link-action">[Ver detalles →]</a>
+                    </div>
+                </div>
+
+                <!-- 5. CURSO COMPLETO -->
+                <div class="card--fluid card--enhanced">
+
+                    <div class="card-image-resource">
+                        <img src="https://iili.io/f3yx86v.png" alt="Programa Productividad" loading="lazy">
+                    </div>
+
+<h3 class="card-title">[Programa: Productividad con Calma]</h3>
+                    <p class="card-text">[8 módulos en profundidad. Domina tu tiempo, energía y atención sin sacrificar tu bienestar.]</p>
+
+                    <div class="mt-auto">
+                        <div class="card-precio" data-recurso-id="recurso-101">
+                            <p class="price">[Normal]: <strong>€129</strong></p>
+                            <p class="price price--premium">[Miembros]: <strong>€67</strong></p>
+                        </div>
+                        <a href="#recurso-101" class="card-link-action">[Ver detalles →]</a>
+                    </div>
+                </div>
+
+                <!-- 6. PROGRAMA PREMIUM -->
+                <div class="card--fluid card--enhanced">
+
+                    <div class="card-image-resource">
+                        <img src="https://iili.io/f3yx86v.png" alt="Mentoría Premium" loading="lazy">
+                    </div>
+
+<h3 class="card-title">[Mentoría Premium de 90 Días]</h3>
+                    <p class="card-text">[Acompañamiento 1:1 completo para transformar tu relación con el trabajo y alcanzar tus objetivos.]</p>
+
+                    <div class="mt-auto">
+                        <div class="card-precio" data-recurso-id="programa-premium-501">
+                            <p class="price">[Normal]: <strong>€297</strong></p>
+                            <p class="price price--premium">[Miembros]: <strong>€147</strong></p>
+                        </div>
+                        <a href="#programa-premium-501" class="card-link-action">[Ver detalles →]</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================
+         SECCIONES DE DETALLE (6 RECURSOS)
+    ========================================= -->
+
+    <!-- DETALLE 1: LEAD MAGNET GRATIS -->
+    <section id="lead-magnet-001" class="section section-alt detail-section">
+        <div class="container">
+            <div class="detail-box">
+                <div class="detail-box__content">
+                    <span class="model-tag" style="background: var(--color-accent-medium); color: white;">📚 Lead Magnet Gratuito</span>
+                    <h2 style="margin-top: 0.5rem; font-size: 2rem; margin-bottom: 2rem;">[Guía: Los 5 Errores que Sabotean tu Productividad]</h2>
+
+                    <p style="line-height: 1.8; color: var(--color-text-light); margin-bottom: 2rem;">
+                        [Copywriting: Descarga inmediata. PDF de 18 páginas con ejercicios prácticos. Identifica y elimina tus ladrones de tiempo...]
+                    </p>
+
+                    <div style="background: var(--color-bg-neutral); padding: 2rem; border-radius: 8px; margin-bottom: 2rem;">
+                        <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">✓ Incluye:</h3>
+                        <ul style="margin: 0; padding-left: 1.2rem; line-height: 1.8;">
+                            <li>Test de auto-diagnóstico</li>
+                            <li>5 errores críticos explicados</li>
+                            <li>Plan de acción de 7 días</li>
+                        </ul>
+                    </div>
+
+                    <!-- PRECIO SIEMPRE €0 -->
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <p class="price price--xlarge price--text" style="color: var(--color-accent-medium); margin: 0;">GRATIS</p>
+                    </div>
+
+                    <!-- BOTÓN GATILLO (Captura email) -->
+                    <button onclick="activarGatillo('lead-magnet-001', 'Guía Gratuita')" class="btn btn-primary btn-large w-full gatillo-adquisicion">
+                        [Descargar Ahora]
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DETALLE 2: MINI-CURSO €19 -->
+    <section id="curso-bajo-101" class="section detail-section">
+        <div class="container">
+            <div class="detail-box">
+                <div class="detail-box__content">
+                    <span class="model-tag" style="background: var(--color-secondary); color: white;">🎓 Mini-Curso</span>
+                    <h2 style="margin-top: 0.5rem; font-size: 2rem; margin-bottom: 2rem;">[Desconexión Digital en 7 Días]</h2>
+
+                    <p style="line-height: 1.8; color: var(--color-text-light); margin-bottom: 2rem;">
+                        [Copywriting: 7 video-lecciones de 10 minutos cada una. Recupera tu atención y reduce la ansiedad por notificaciones...]
+                    </p>
+
+                    <!-- DOBLE PRECIO - VISIBLE SIEMPRE -->
+                    <div class="precio-container" data-recurso-id="curso-bajo-101" data-precio-normal="19" data-precio-premium="0" style="text-align: center; margin-bottom: 2rem;">
+                        <p style="margin: 0; font-size: 1.1rem; color: var(--color-text); font-weight: 700;">Precio: <span style="font-weight: 800; color: var(--color-text); font-size: 1.4rem;">€19</span></p>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 1.1rem; color: var(--color-text); font-weight: 700;">Precio para Miembros: <span class="price price--xlarge price--text" style="font-weight: 900; color: var(--color-accent-medium);">€0</span></p>
+                    </div>
+
+                    <!-- BOTÓN GATILLO -->
+                    <button onclick="activarGatillo('curso-bajo-101', 'Mini-Curso: Desconexión Digital')" class="btn btn-secondary btn-large w-full gatillo-adquisicion">
+                        [Lo Quiero]
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DETALLE 3: EVENTO EN VIVO €47 -->
+    <section id="evento-205" class="section section-alt detail-section">
+        <div class="container">
+            <div class="detail-box">
+                <div class="detail-box__content">
+                    <div class="flex-between" style="margin-bottom: 2rem;">
+                        <div>
+                            <span class="model-tag" style="background: var(--color-primary); color: white;">📅 Evento en Vivo</span>
+                            <h2 style="margin-top: 0.5rem; font-size: 2rem;">[Nombre del Taller / Evento]</h2>
+                        </div>
+                        <div class="text-right">
+                            <p class="price price--large price--primary" style="margin: 0;">[25 Noviembre]</p>
+                            <p style="margin: 0; color: var(--color-text-light);">18:00h - 20:00h</p>
+                        </div>
+                    </div>
+
+                    <hr class="divider">
+
+                    <div class="detail-grid-2col">
+                        <div>
+                            <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">¿Qué vas a conseguir?</h3>
+                            <p style="line-height: 1.8; color: var(--color-text-light); margin-bottom: 1.5rem;">
+                                [Descripción detallada del evento. Aquí explicas la transformación. "En estas 2 horas intensivas, vamos a desmontar tus creencias sobre la productividad y te irás con un sistema listo para usar..."]
+                            </p>
+                            <ul class="list-unstyled">
+                                <li>✅ Estrategias prácticas aplicables al momento.</li>
+                                <li>✅ Ronda de preguntas y respuestas en directo.</li>
+                                <li>✅ Acceso a la grabación por si no puedes asistir.</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-box">
+                            <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">Reserva tu Plaza</h3>
+                            <p style="font-size: 0.9rem; color: var(--color-text-light);">Las plazas son limitadas para garantizar la interacción.</p>
+
+                            <!-- DOBLE PRECIO - VISIBLE SIEMPRE -->
+                            <div style="margin: 2rem 0; text-align: center;">
+                                <p style="margin: 0; font-size: 1.1rem; color: var(--color-text); font-weight: 700;">Precio: <span style="font-weight: 800; color: var(--color-text); font-size: 1.4rem;">€47</span></p>
+                                <p style="margin: 0.5rem 0 0 0; font-size: 1.1rem; color: var(--color-text); font-weight: 700;">Precio para Miembros: <span class="price price--xlarge price--text" style="font-weight: 900; color: var(--color-accent-medium);">€0</span></p>
+                            </div>
+
+                            <!-- BOTÓN GATILLO DE ADQUISICIÓN -->
+                            <button onclick="activarGatillo('evento-205', 'Taller: Gestión del Tiempo')" class="btn btn-primary btn-large w-full gatillo-adquisicion">
+                                [Lo Quiero]
+                            </button>
+
+                            <p class="text-center" style="margin-top: 1rem; font-size: 0.8rem; color: var(--color-muted-text);">✓ Acceso inmediato tras confirmar</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DETALLE: SERVICIO 1:1 -->
+    <!-- Layout B: Imagen Izquierda / Texto Derecha (ZIG-ZAG) -->
+    <section id="servicio-301" class="section detail-section">
+        <div class="container">
+            <div class="detail-grid-2col align-center">
+                <!-- IMAGEN IZQUIERDA -->
+                <div class="image-placeholder h-400">
+                    <!--
+                    INSTRUCCIÓN: Cuando tengas la imagen real, descomenta esta línea.
+                    NOTA: loading="lazy" porque esta imagen está debajo del primer viewport (el usuario debe hacer scroll).
+                    BENEFICIO: Mejora SEO (Core Web Vitals) + Ahorra ancho de banda + Carga inicial más rápida.
+                    -->
+                    <!-- <img src="ruta/a/tu/imagen-servicio.jpg"
+                              alt="[Descripción de la imagen]"
+                              loading="lazy"
+                              style="width: 100%; height: 100%; object-fit: cover;"> -->
+
+                    <!-- PLACEHOLDER TEMPORAL (Eliminar cuando tengas la imagen real) -->
+                    <div class="image-placeholder__content">
+                        <p style="margin: 0; font-size: 3rem; margin-bottom: 1rem;">📷</p>
+                        <p style="margin: 0; font-weight: 600;">Aquí va tu imagen real</p>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 0.85rem;">Foto profesional • 800x800px</p>
+                    </div>
+                </div>
+
+                <!-- TEXTO DERECHA -->
+                <div>
+                    <span class="model-tag">👤 Servicio Personalizado</span>
+                    <h2 style="margin-top: 0.5rem; font-size: 2rem; margin-bottom: 1.5rem;">[Sesión de Diagnóstico y Claridad]</h2>
+
+                    <p style="line-height: 1.8; color: var(--color-text-light); margin-bottom: 2rem;">
+                        [Descripción detallada del servicio. "A veces solo necesitas una visión externa para desbloquearte. En esta sesión de 60 minutos, analizaremos tu caso específico y..."]
+                    </p>
+
+                    <h4 style="font-size: 1.1rem; margin-bottom: 1rem;">Perfecto si:</h4>
+                    <ul style="margin-bottom: 2rem; padding-left: 1.2rem; color: var(--color-text-light); line-height: 1.8;">
+                        <li style="margin-bottom: 0.5rem;">Te sientes estancado y no sabes el siguiente paso.</li>
+                        <li style="margin-bottom: 0.5rem;">Necesitas una segunda opinión profesional.</li>
+                        <li style="margin-bottom: 0.5rem;">Quieres resolver un problema concreto de forma rápida.</li>
+                    </ul>
+
+                    <!-- DOBLE PRECIO - VISIBLE SIEMPRE -->
+                    <div style="text-align: center; margin-bottom: 1.5rem;">
+                        <p style="margin: 0; font-size: 1.1rem; color: var(--color-text); font-weight: 700;">Precio: <span style="font-weight: 800; color: var(--color-text); font-size: 1.4rem;">€97</span></p>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 1.1rem; color: var(--color-text); font-weight: 700;">Precio para Miembros: <span class="price price--large price--text" style="font-weight: 900; color: var(--color-accent-medium);">€47</span></p>
+                    </div>
+
+                    <!-- BOTÓN GATILLO DE ADQUISICIÓN -->
+                    <button onclick="activarGatillo('servicio-301', 'Sesión de Diagnóstico')" class="btn btn-secondary btn-large gatillo-adquisicion" style="width: 100%;">
+                        [Lo Quiero]
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DETALLE: CURSO ONLINE -->
+    <!-- Layout C: Texto Izquierda / Sidebar Derecha (ZIG-ZAG) -->
+    <section id="recurso-101" class="section section-alt detail-section">
+        <div class="container">
+            <div class="detail-box">
+                <div class="detail-box__content">
+                    <span class="model-tag" style="background: var(--color-secondary); color: white;">🎓 Formación Online</span>
+                    <h2 style="margin-top: 0.5rem; font-size: 2rem; margin-bottom: 2rem;">[Programa: Calma Mental]</h2>
+
+                    <div class="detail-grid-asymmetric">
+                        <!-- TEXTO IZQUIERDA -->
+                        <div>
+                            <p style="line-height: 1.8; color: var(--color-text-light); margin-bottom: 2rem;">
+                                [Copywriting del curso. "Un programa diseñado para personas ocupadas que quieren recuperar su paz mental sin retirarse a una montaña. Aprenderás herramientas de gestión emocional aplicables desde el día 1..."]
+                            </p>
+
+                            <div class="detail-grid-2col">
+                                <div class="info-box info-box--small">
+                                    <h4 style="margin-top: 0; margin-bottom: 1rem;">📚 Qué incluye</h4>
+                                    <ul style="margin: 0; padding-left: 1rem; font-size: 0.9rem; color: var(--color-text-light); line-height: 1.8;">
+                                        <li>10 Lecciones en Video HD</li>
+                                        <li>Cuaderno de trabajo PDF</li>
+                                        <li>Audio-meditaciones guiadas</li>
+                                        <li>Plantillas descargables</li>
+                                    </ul>
+                                </div>
+                                <div class="info-box info-box--small">
+                                    <h4 style="margin-top: 0; margin-bottom: 1rem;">⚙️ Formato</h4>
+                                    <ul style="margin: 0; padding-left: 1rem; font-size: 0.9rem; color: var(--color-text-light); line-height: 1.8;">
+                                        <li>100% Online y Grabado</li>
+                                        <li>Acceso inmediato</li>
+                                        <li>De por vida</li>
+                                        <li>Actualizaciones incluidas</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- SIDEBAR DERECHA -->
+                        <div class="pricing-box">
+                            <p style="color: var(--color-text-light); margin-bottom: 0.5rem;">Inversión Única</p>
+
+                            <!-- DOBLE PRECIO - VISIBLE SIEMPRE -->
+                            <div style="text-align: center;">
+                                <p style="margin: 0; font-size: 1.1rem; color: var(--color-text); font-weight: 700;">Precio: <span style="font-weight: 800; color: var(--color-text); font-size: 1.4rem;">€129</span></p>
+                                <p style="margin: 0.5rem 0 1.5rem 0; font-size: 1.1rem; color: var(--color-text); font-weight: 700;">Precio para Miembros: <span class="price price--xlarge price--secondary" style="font-weight: 900; color: var(--color-accent-medium);">€67</span></p>
+                            </div>
+
+                            <!-- BOTÓN GATILLO DE ADQUISICIÓN -->
+                            <button onclick="activarGatillo('recurso-101', 'Programa: Calma Mental')" class="btn btn-secondary w-full gatillo-adquisicion" style="margin-bottom: 1rem;">
+                                [Lo Quiero]
+                            </button>
+
+                            <p style="margin: 0; font-size: 0.8rem; color: var(--color-text-light);">✓ Garantía de 15 días</p>
+                            <p style="margin: 0.25rem 0 0 0; font-size: 0.8rem; color: var(--color-text-light);">✓ Acceso inmediato</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DETALLE 6: PROGRAMA PREMIUM €297 -->
+    <section id="programa-premium-501" class="section section-alt detail-section">
+        <div class="container">
+            <div class="detail-box">
+                <div class="detail-box__content">
+                    <span class="model-tag" style="background: linear-gradient(135deg, var(--color-accent-medium), var(--color-primary)); color: white;">⭐ Programa Premium</span>
+                    <h2 style="margin-top: 0.5rem; font-size: 2rem; margin-bottom: 2rem;">[Mentoría Premium: Transformación de 90 Días]</h2>
+
+                    <p style="line-height: 1.8; color: var(--color-text-light); margin-bottom: 2rem;">
+                        [Copywriting: Acompañamiento 1:1 completo durante 90 días. Transforma tu relación con el trabajo y alcanza tus objetivos profesionales sin sacrificar tu bienestar...]
+                    </p>
+
+                    <div class="detail-grid-2col" style="margin-bottom: 2rem;">
+                        <div style="background: var(--color-bg-neutral); padding: 1.5rem; border-radius: 8px;">
+                            <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">📚 Qué incluye:</h3>
+                            <ul style="margin: 0; padding-left: 1.2rem; line-height: 1.8;">
+                                <li>12 sesiones 1:1 de 60 minutos</li>
+                                <li>Acceso directo vía WhatsApp</li>
+                                <li>Análisis completo de situación</li>
+                                <li>Plan estratégico personalizado</li>
+                            </ul>
+                        </div>
+                        <div style="background: var(--color-bg-neutral); padding: 1.5rem; border-radius: 8px;">
+                            <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">⚙️ Cómo funciona:</h3>
+                            <ul style="margin: 0; padding-left: 1.2rem; line-height: 1.8;">
+                                <li>1 sesión semanal (12 semanas)</li>
+                                <li>Seguimiento continuo</li>
+                                <li>Material personalizado</li>
+                                <li>Garantía de resultados</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- DOBLE PRECIO - VISIBLE SIEMPRE -->
+                    <div style="text-align: center; margin-bottom: 2rem;">
+                        <p style="margin: 0; font-size: 1.1rem; color: var(--color-text); font-weight: 700;">Precio: <span style="font-weight: 800; color: var(--color-text); font-size: 1.5rem;">€297</span></p>
+                        <p style="margin: 0.5rem 0 1rem 0; font-size: 1.1rem; color: var(--color-text); font-weight: 700;">Precio para Miembros: <span class="price price--xlarge price--text" style="font-weight: 900; color: var(--color-accent-medium);">€147</span></p>
+                        <p style="margin: 0; font-size: 0.9rem; color: var(--color-text);">(Pago único o 3 cuotas sin intereses)</p>
+                    </div>
+
+                    <!-- BOTÓN GATILLO -->
+                    <button onclick="activarGatillo('programa-premium-501', 'Mentoría Premium 90 Días')" class="btn btn-primary btn-large w-full gatillo-adquisicion">
+                        [Quiero Reservar Mi Plaza]
+                    </button>
+
+                    <p style="margin-top: 1rem; text-align: center; font-size: 0.8rem; color: var(--color-text-light);">✓ Plazas limitadas (máx. 5 mentorías simultáneas)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MÓDULO DE ORIENTACIÓN -->
+    <section class="section" style="background-color: var(--color-bg-alt); border-top: 1px solid var(--color-border);">
+        <div class="container">
+            <div class="guia-cliente">
+                <h4>📍 Módulo: Asistente de Orientación</h4>
+                <p><strong>Propósito:</strong> Si la lista unificada abruma al usuario, este módulo lo rescata. "Cuéntame tu problema y yo te digo qué elegir de la lista de arriba".</p>
+            </div>
+
+            <div style="max-width: 800px; margin: 0 auto;">
+
+                <div id="acordeonHeader" onclick="toggleOrientacion()" style="background: white; padding: 1.5rem 2rem; border-radius: 12px; box-shadow: var(--shadow-sm); cursor: pointer; border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; transition: all 0.3s;">
+                    <div style="display: flex; align-items: center; gap: 1rem;">
+                        <div style="background: var(--color-primary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">?</div>
+                        <div>
+                            <h3 style="margin: 0; font-size: 1.1rem; color: var(--color-text);">¿No sabes qué opción es para ti?</h3>
+                            <p style="margin: 0; font-size: 0.9rem; color: var(--color-text-light);">Haz clic aquí y te ayudo a elegir.</p>
+                        </div>
+                    </div>
+                    <div id="acordeonIcon" style="font-size: 1.2rem; color: var(--color-primary); transition: transform 0.3s;">▼</div>
+                </div>
+
+                <div id="acordeonContent" style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out;">
+                    <div style="background: white; padding: 2rem; border-radius: 0 0 12px 12px; border: 1px solid var(--color-border); border-top: none; margin-top: -5px; box-shadow: var(--shadow-sm);">
+                        <form id="formOrientacion" style="display: grid; gap: 1rem;">
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                <input type="text" class="form-input" placeholder="Tu Nombre" required>
+                                <input type="email" class="form-input" placeholder="Tu Email" required>
+                            </div>
+                            <textarea class="form-input" rows="3" placeholder="Cuéntame brevemente tu situación o duda..." required></textarea>
+
+                            <label style="font-size: 0.85rem; display: flex; gap: 0.5rem; align-items: start; cursor: pointer;">
+                                <input type="checkbox" id="consentimiento" required style="margin-top: 3px;">
+                                <span style="color: var(--color-text-light);">Acepto la política de privacidad y recibir la recomendación por email.</span>
+                            </label>
+
+                            <div style="text-align: right;">
+                                <button type="submit" id="btnOrientacion" class="btn btn-primary" disabled style="opacity: 0.5; cursor: not-allowed;">
+                                    Enviar Consulta
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <script>
+            function toggleOrientacion() {
+                const content = document.getElementById('acordeonContent');
+                const icon = document.getElementById('acordeonIcon');
+                const header = document.getElementById('acordeonHeader');
+
+                if (content.style.maxHeight && content.style.maxHeight !== '0px') {
+                    // Cerrar
+                    content.style.maxHeight = '0px';
+                    icon.style.transform = 'rotate(0deg)';
+                } else {
+                    // Abrir
+                    content.style.maxHeight = content.scrollHeight + 'px';
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            }
+
+            // Habilitar botón solo con checkbox
+            document.getElementById('consentimiento').addEventListener('change', function() {
+                const btn = document.getElementById('btnOrientacion');
+                if(this.checked) {
+                    btn.disabled = false;
+                    btn.style.opacity = '1';
+                    btn.style.cursor = 'pointer';
+                } else {
+                    btn.disabled = true;
+                    btn.style.opacity = '0.5';
+                    btn.style.cursor = 'not-allowed';
+                }
+            });
+        </script>
+    </section>
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer">
+        <div class="footer-wrapper">
+            <div class="guia-cliente">
+                <h4>📍 Módulo: Footer (Pie de Página)</h4>
+                <p><strong>Propósito:</strong> Proveer navegación secundaria, enlaces legales, redes sociales y contacto.</p>
+                <p><strong>Siempre incluir:</strong> Política de privacidad, Términos y condiciones, Contacto, Login miembros (discreto).</p>
+            </div>
+
+            <div class="footer-content">
+                <div class="footer-section">
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="presentacion-profesional.html">Sobre Mí</a></li>
+                        <li><a href="catalogo.html">Soluciones</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="membresia.html">Membresía</a></li>
+                        <li><a href="contacto-agenda.html">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <ul>
+                        <li><a href="#">Privacidad</a></li>
+                        <li><a href="#">Términos</a></li>
+                        <li><a href="#">Aviso Legal</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <p>Sígueme en redes sociales.</p>
+                <div class="social-links">
+                    <a href="#" class="social-link" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="YouTube">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
+                            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
+                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                        </svg>
+                    </a>
+                    <a href="#" class="social-link" aria-label="Email">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 [LEGAL_NAME] - [Tu Profesión] | Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Config Loader - Sistema Multi-Tenant -->
+    <script src="js/config-loader.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/main.js"></script>
+
+    <!-- ============================================
+         SISTEMA "GATILLO DE ADQUISICIÓN"
+         Arquitectura aprobada en DM1 (17-Nov-2025)
+    ============================================= -->
+    <script>
+        // DETECCIÓN DE NIVEL DE USUARIO
+        // En producción, esto vendría de localStorage, sessionStorage o backend
+        function detectarNivelUsuario() {
+            // Simula detección desde localStorage (seteado en area-privada tras login)
+            const userLevel = localStorage.getItem('userLevel') || 'visitante';
+            // Opciones: 'visitante', 'estandar' (Regina), 'premium' (Ana)
+            return userLevel;
+        }
+
+        // NO HAY OCULTACIÓN DE PRECIOS
+        // TODOS VEN SIEMPRE AMBOS PRECIOS (Objetivo: Upsell permanente)
+        // El "Doble Precio" es visible para Regina (motivación) y para Ana (confirmación)
+
+        // ACTIVAR GATILLO DE ADQUISICIÓN
+        function activarGatillo(recursoId, nombreRecurso) {
+            const nivel = detectarNivelUsuario();
+            const container = document.querySelector(`[data-recurso-id="${recursoId}"]`);
+            const precioNormal = container ? container.dataset.precioNormal : '0';
+            const precioPremium = container ? container.dataset.precioPremium : '0';
+            const precioFinal = (nivel === 'premium') ? precioPremium : precioNormal;
+
+            console.log('🎯 GATILLO ACTIVADO');
+            console.log('Recurso:', nombreRecurso);
+            console.log('ID:', recursoId);
+            console.log('Nivel Usuario:', nivel);
+            console.log('Precio Normal:', `€${precioNormal}`);
+            console.log('Precio Premium:', `€${precioPremium}`);
+            console.log('Precio Final:', `€${precioFinal}`);
+
+            // SIMULACIÓN DE TRANSACCIÓN
+            if (nivel === 'visitante') {
+                // Visitante debe registrarse primero
+                alert(`Para adquirir "${nombreRecurso}", primero debes crear una cuenta.\n\n¿Deseas registrarte?`);
+                // Redirigir a modal de registro o página de registro
+                if (typeof abrirModalRegistro === 'function') {
+                    abrirModalRegistro();
+                }
+                return;
+            }
+
+            // Usuario registrado (Regina o Ana)
+            let mensajeConfirmacion = `¿Confirmas que quieres adquirir:\n\n"${nombreRecurso}"\n\n`;
+
+            if (nivel === 'premium') {
+                mensajeConfirmacion += `Precio para Miembros: €${precioPremium}`;
+                if (precioPremium === '0') {
+                    mensajeConfirmacion += ' (GRATIS con tu membresía)';
+                } else {
+                    mensajeConfirmacion += `\n(Ahorras €${parseInt(precioNormal) - parseInt(precioPremium)})`;
+                }
+            } else {
+                mensajeConfirmacion += `Precio: €${precioNormal}`;
+            }
+
+            if (confirm(mensajeConfirmacion)) {
+                // AQUÍ IRÍA LA INTEGRACIÓN CON BACKEND/STRIPE
+                // Por ahora, simulamos el éxito
+                procesarAdquisicion(recursoId, nombreRecurso, precioFinal, nivel);
+            }
+        }
+
+        // PROCESAR ADQUISICIÓN (Simulado)
+        function procesarAdquisicion(recursoId, nombreRecurso, precio, nivel) {
+            // En producción: llamada a backend para crear transacción
+            // Backend registra: userId, recursoId, precio, timestamp
+
+            // Simulación: Guardar en localStorage
+            let recursosAdquiridos = JSON.parse(localStorage.getItem('recursosAdquiridos') || '[]');
+
+            if (!recursosAdquiridos.includes(recursoId)) {
+                recursosAdquiridos.push(recursoId);
+                localStorage.setItem('recursosAdquiridos', JSON.stringify(recursosAdquiridos));
+
+                alert(`✅ ¡Adquisición completada!\n\n"${nombreRecurso}" ahora aparecerá en tu Área Personal.\n\n${precio === '0' ? '🎁 Disfrutaste tu privilegio Premium.' : `💳 Cargo: €${precio}`}`);
+
+                // Redirigir al área privada (unificada)
+                setTimeout(() => {
+                    window.location.href = 'area-privada.html';
+                }, 1500);
+            } else {
+                alert(`ℹ️ Ya tienes acceso a "${nombreRecurso}".\n\nPuedes encontrarlo en tu Área Personal.`);
+            }
+        }
+
+        // EJECUTAR AL CARGAR LA PÁGINA
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('🏪 Tienda lista. Nivel de usuario:', detectarNivelUsuario());
+            console.log('💰 Doble Precio visible para TODOS (objetivo: upsell permanente)');
+        });
+    </script>
+</body>
+</html>

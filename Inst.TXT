@@ -1,55 +1,64 @@
-Para: Stratego Web Serenamente (Proyecto Serenamente Vivir) De: Stratego Web Impulso / Dirección de Producto Asunto: Reestructuración Crítica de Flujos de Conversión (Agenda vs. Contacto)
+Aquí tienes las respuestas técnicas para Devito, alineadas estrictamente con la ARQUITECTURA-TECNICA.md y el Documento Maestro 1.txt.
 
-Se ordena la anulación inmediata de la arquitectura unificada (contacto-agenda.html) por ineficiencia operativa. A continuación, se detallan las nuevas directrices de arquitectura y negocio que deben implementarse:
+1. Estructura de Archivos HTML
+Respuesta: MANTENER LA ESTRUCTURA EXACTA (Clonación).
 
-1. NUEVA ARQUITECTURA: "LA DOBLE PUERTA"
-Se prohíbe mezclar la venta con el soporte. Se crean dos destinos separados para dos intenciones de usuario distintas:
+No crees archivos nuevos ni estructuras diferentes. La arquitectura es Multi-Tenant con Base de Código Única.
 
-PÁGINA A: agenda.html (La Caja Fuerte)
+Debes usar exactamente los mismos archivos: cuenta.html (Gestión/Login) y area-privada.html (Hub Dinámico).
 
-Objetivo: Transaccional (Cerrar Venta).
+La Diferencia: El contenido y el estilo se inyectan dinámicamente vía config-loader.js leyendo serenamente.json.
 
-Usuario: Cliente decidido ("Pedro") o recurrente.
+Razón: Si cambias la estructura HTML, rompes la escalabilidad. Si mañana mejoramos el Login en Impulso, queremos que Serenamente herede la mejora gratis.
 
-Contenido: Únicamente el Calendario de Pago (90 min) incrustado (Calendly/Stripe).
+2. Flujo del Embudo (El "Doble Gancho")
+Respuesta: REPLICA EXACTA DE LA LÓGICA, CAMBIO DE NARRATIVA.
 
-Diseño: Limpio, sin distracciones.
+El flujo técnico definido en el DM1 es innegociable porque maximiza el upsell .
 
-Enlace de Salida: Un link discreto: "¿Dudas antes de reservar? Hablemos" (lleva a Página B).
+Paso 1 (Teresa - ToFu): En serenamente_vivir.html (o la home), el formulario solo pide Email + Nombre. Fricción mínima.
 
-PÁGINA B: contacto.html (La Sala de Espera)
+Paso 2 (El Puente): El email de entrega dice: "Tu meditación está lista en tu Santuario Privado. Entra aquí para escucharla". No adjunta el archivo.
 
-Objetivo: Relacional (Generar Confianza).
+Paso 3 (Regina - BoFu): Al hacer clic, llega a area-privada.html. El sistema le pide crear password para "abrir el santuario".
 
-Usuario: Cliente nuevo/indeciso ("Ana").
+Paso 4 (La Vista Regina): Al entrar, ve:
 
-Contenido Híbrido:
+🎁 Desbloqueado: La Meditación Gratuita (Lead Magnet).
 
-Lead Magnet: Calendario de Sesión de Valoración (15 min GRATIS).
+🔒 Bloqueado (Upsell): "Círculo de Sanación (Semanal)", "Biblioteca de Ansiedad", etc..
 
-Soporte: Formulario de contacto VISIBLE (Nada de popups ocultos aquí; queremos facilitar la conversación).
+3. Lead Magnet Específico (Sugerencia Estratégica)
+Respuesta: AUDIO/MEDITACIÓN (Baja Fricción de Consumo).
 
-Enlace de Salida: Un CTA visible: "¿Listo para empezar? Reserva tu sesión completa" (lleva a Página A).
+Para el nicho de "Serenamente" (Bienestar/Holístico), un PDF tiene fricción de consumo (hay que leer).
 
-2. ESTRATEGIA DE LA SESIÓN DE 15 MINUTOS (GRATIS)
-Naturaleza: Es una Herramienta de Venta, NO un "Producto".
+Recomendación: "Audio de Rescate Emocional (5 min)" o "Meditación Guiada para Dormir".
 
-Ubicación Permitida: Solo en contacto.html y en la sección "Red Antifuga" de la Home.
+Por qué: Se consume pasivamente. Genera una conexión íntima (voz del terapeuta) que acelera la confianza (Pilar 1: Autoridad).
 
-PROHIBICIÓN: No debe aparecer en la Tienda (catalogo.html).
+Técnicamente: Es un Recurso de tipo digital_product con precio 0€.
 
-Razón: Provoca "Efecto Ancla Inverso" y devalúa los productos de pago. En la base de datos existe, pero con visibilidad hidden_in_catalog.
+4. Contenido Premium para Ana (Miembro)
+Respuesta: MODELO "BÓVEDA + TRIBU" (Vault + Tribe).
 
-3. NAVEGACIÓN Y MENÚ (EL FLUJO)
-El menú principal debe reflejar esta jerarquía de doble velocidad:
+Siguiendo la decisión de membresía del DM1:
 
-Botón Destacado (CTA): "Reservar Sesión" → Enlaza directo a agenda.html. (Carril Rápido).
+La Bóveda (Pasivo): Biblioteca de meditaciones grabadas y talleres anteriores (lo que ya existe).
 
-Enlace Estándar: "Contacto / Primeros Pasos" → Enlaza a contacto.html. (Carril Lento/Humano).
+La Tribu (Activo/En Vivo): Acceso al "Círculo de Sanación en Vivo" (Zoom mensual/semanal).
 
-4. LÓGICA DE LA HOME (INDEX)
-Héroe / CTA Principal: Envía tráfico a agenda.html (asumimos intención de compra).
+Técnicamente: Esto no requiere desarrollo nuevo. Son Tarjetas de Recursos tipo membership y event visibles en el catalogo.html y desbloqueados en el area-privada.html.
 
-Red Antifuga (Final de página): Envía tráfico a contacto.html (recuperamos a los indecisos con la sesión de 15 min).
+5. Simplificación vs. Sistema Completo
+Respuesta: SISTEMA COMPLETO (Configurado, no Recortado).
 
-Nota Final: Esta estructura prioriza la automatización de la venta (Agenda) sin sacrificar la calidad humana (Contacto), resolviendo el problema de los emails innecesarios y la fricción de pago. Ejecútese sin desviaciones.
+¡Cuidado Devito! No caigas en la trampa de hacer una versión "Lite" modificando el código.
+
+Usa el Sistema Completo de Impulso Pro.
+
+Simplifica vía Configuración (JSON): Si Serenamente no necesita "Facturación Avanzada" o "Cursos Complejos", apágalos en el archivo config/tenants/serenamente.json usando los feature flags (features: { facturacion_avanzada: false }).
+
+Resultado: El código sigue siendo robusto, pero la interfaz de Serenamente se ve limpia y sencilla.
+
+Resumen para Devito: No estás construyendo una casa nueva desde cero. Estás tomando las llaves de un apartamento en el edificio "Impulso" y redecorándolo (JSON) para que parezca un templo zen. La estructura de hormigón (HTML/JS/Lógica) no se toc

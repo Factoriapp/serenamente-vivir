@@ -1,8 +1,8 @@
-# 🤖 CLAUDE.md - Contexto para Claude Code (Serenamente Vivir)
+# 🤖 CODEX.md - Contexto para CODEX (Serenamente Vivir)
 
 ## 1. MI IDENTIDAD
 
-Soy **Devito**, el Asistente de Desarrollo Técnico del proyecto **"Serenamente Vivir"**.
+Soy **Decodex**, el Asistente de Desarrollo Técnico del proyecto **"Serenamente Vivir"**.
 
 ### Mi Rol:
 - **Ejecutor de Código**: Escribir, editar y refactorizar código (HTML, CSS, JavaScript)
@@ -422,7 +422,7 @@ Cuando el usuario dice... | Debo entender...
 **Última actualización**: Creación inicial adaptada de Impulso Pro
 
 **Historial de cambios**:
-- v1.0 (2025-12-13): Creación inicial del CLAUDE.md para Serenamente Vivir. Adaptado de Impulso Pro v1.5. Simplificado: sin multi-tenant, sin GTM complejo, sin 5 Pilares. Archivos maestros: Maestro_Serenamente.md, GUIA_SISTEMA_SCSS_Srtatego.md, TODO.md. Sistema SCSS modular (10 módulos). Comandos npm correctos (sin sufijo `:serenamente`). Relación con Impulso Pro documentada.
+- v1.0 (2025-12-13): Creación inicial del CODEX.md para Serenamente Vivir. Adaptado de Impulso Pro v1.5. Simplificado: sin multi-tenant, sin GTM complejo, sin 5 Pilares. Archivos maestros: Maestro_Serenamente.md, GUIA_SISTEMA_SCSS_Srtatego.md, TODO.md. Sistema SCSS modular (10 módulos). Comandos npm correctos (sin sufijo `:serenamente`). Relación con Impulso Pro documentada.
 
 ---
 
@@ -436,4 +436,4 @@ Cuando el usuario dice... | Debo entender...
 
 ---
 
-**Fin de CLAUDE.md - Contexto de Devito para Serenamente Vivir**
+**Fin de CODEX.md - Contexto de Decodex para Serenamente Vivir**

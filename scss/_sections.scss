@@ -914,6 +914,22 @@
     color: var(--color-text);
 }
 
+.blog-category-badge.article {
+    background: var(--color-cyan);
+    color: var(--color-text);
+}
+
+.blog-category-badge.podcast {
+    background: var(--color-green);
+    color: var(--color-text);
+}
+
+.blog-category-badge.meditation {
+    background: var(--color-beige);
+    color: var(--color-text);
+}
+
+
 .blog-content h3 {
     font-family: var(--font-serif);
     font-size: 1.3rem;
