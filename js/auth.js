@@ -165,13 +165,27 @@ function mostrarExito(mensaje, elementoId = 'mensajeExito') {
 }
 
 // ============================================
-// FORMULARIO DE REGISTRO
+// FORMULARIO DE REGISTRO - INICIALIZACIÓN
 // ============================================
 
-if (document.getElementById('registroForm')) {
+/**
+ * Inicializa el formulario de registro
+ * Se llama desde main.js después de que los modales se crean en el DOM
+ */
+window.initializeRegistroForm = function() {
     const registroForm = document.getElementById('registroForm');
 
-    registroForm.addEventListener('submit', function(e) {
+    if (!registroForm) {
+        console.warn('⚠️ initializeRegistroForm: registroForm no encontrado en el DOM');
+        return;
+    }
+
+    // Remover listener previo si existe (evitar duplicados)
+    const newRegistroForm = registroForm.cloneNode(true);
+    registroForm.parentNode.replaceChild(newRegistroForm, registroForm);
+    const form = document.getElementById('registroForm');
+
+    form.addEventListener('submit', function(e) {
         e.preventDefault();
 
         // Obtener valores del formulario
@@ -230,7 +244,7 @@ if (document.getElementById('registroForm')) {
         mostrarExito('¡Cuenta creada exitosamente! Redirigiendo...');
 
         // Limpiar formulario
-        registroForm.reset();
+        form.reset();
 
         // Loguear automáticamente y redirigir
         setTimeout(() => {
@@ -240,16 +254,32 @@ if (document.getElementById('registroForm')) {
             window.location.href = 'area-privada.html';
         }, 2000);
     });
-}
+
+    console.log('✅ Registro Form: Event listener registrado');
+};
 
 // ============================================
-// FORMULARIO DE LOGIN
+// FORMULARIO DE LOGIN - INICIALIZACIÓN
 // ============================================
 
-if (document.getElementById('loginForm')) {
+/**
+ * Inicializa el formulario de login
+ * Se llama desde main.js después de que los modales se crean en el DOM
+ */
+window.initializeLoginForm = function() {
     const loginForm = document.getElementById('loginForm');
 
-    loginForm.addEventListener('submit', function(e) {
+    if (!loginForm) {
+        console.warn('⚠️ initializeLoginForm: loginForm no encontrado en el DOM');
+        return;
+    }
+
+    // Remover listener previo si existe (evitar duplicados)
+    const newLoginForm = loginForm.cloneNode(true);
+    loginForm.parentNode.replaceChild(newLoginForm, loginForm);
+    const form = document.getElementById('loginForm');
+
+    form.addEventListener('submit', function(e) {
         e.preventDefault();
 
         // Obtener valores del formulario (usando IDs del modal)
@@ -295,7 +325,9 @@ if (document.getElementById('loginForm')) {
             window.location.href = 'area-privada.html';
         }
     });
-}
+
+    console.log('✅ Login Form: Event listener registrado');
+};
 
 // ============================================
 // BOTÓN DE CERRAR SESIÓN

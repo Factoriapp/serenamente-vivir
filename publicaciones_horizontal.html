@@ -16,11 +16,11 @@
         .service-card-horizontal {
             position: relative;
             height: 280px; /* Fixed height for the card */
-            overflow: hidden; 
+            overflow: hidden;
         }
         .service-card-image-horizontal {
-            height: 100%; 
-            display: flex; 
+            height: 100%;
+            display: flex;
             align-items: center; /* Center vertically */
             justify-content: center; /* Center horizontally */
         }
@@ -103,7 +103,7 @@
                         <a href="#" class="btn btn-primary">Escuchar ahora</a>
                     </div>
                 </div>
-                
+
                 <!-- Publicación 3: Artículo sobre Relaciones -->
                 <div class="service-card-horizontal">
                     <div class="service-card-image-horizontal">
@@ -223,7 +223,10 @@
     </footer>
 
     <!-- JavaScript -->
-    <script src="js/main.js"></script>
+    <!-- Sistema Multi-Tenant -->
+    <script src="js/config-loader.js"></script>
+    <script src="js/auth.js?v=10"></script>
+    <script src="js/main.js?v=11"></script>
 </body>
 
 </html>

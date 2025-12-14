@@ -497,11 +497,17 @@
         <div class="app-header-container">
             <div class="app-logo">[Tu Logo]</div>
 
-            <div id="headerBadge" style="padding: 0.5rem 1.5rem; background: #8db4a0; color: white; border-radius: 6px; font-weight: 600; font-size: 0.9rem;">
-                [Premium]
-            </div>
+            <div style="display: flex; gap: 1rem; align-items: center;">
+                <div id="headerBadge" style="padding: 0.5rem 1.5rem; background: #8db4a0; color: white; border-radius: 6px; font-weight: 600; font-size: 0.9rem;">
+                    [Premium]
+                </div>
 
-            <a href="area-privada.html" class="btn btn-primary">← Volver</a>
+                <button onclick="cerrarSesion()" class="btn btn-secondary" style="background: #d9534f; color: white; border: none;">
+                    🚪 Cerrar Sesión
+                </button>
+
+                <a href="area-privada.html" class="btn btn-primary">← Volver</a>
+            </div>
         </div>
     </header>
 
@@ -973,8 +979,8 @@
 
         // Cerrar sesión
         function cerrarSesion() {
-            if (confirm('[¿Seguro que quieres cerrar sesión?]')) {
-                localStorage.removeItem('usuario');
+            if (confirm('¿Seguro que quieres cerrar sesión?')) {
+                localStorage.removeItem('usuarioActual');
                 window.location.href = 'serenamente_vivir.html';
             }
         }

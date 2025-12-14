@@ -187,10 +187,26 @@ function initializeModals() {
 // Inicializar modales por primera vez
 initializeModals();
 
+// Inicializar formularios (después de que los modales existan)
+if (typeof window.initializeLoginForm === 'function') {
+    window.initializeLoginForm();
+}
+if (typeof window.initializeRegistroForm === 'function') {
+    window.initializeRegistroForm();
+}
+
 // Re-inicializar modales si config-loader.js reemplaza el DOM
 document.addEventListener('dictionaryApplied', function() {
     console.log('🔄 Re-inicializando modales después de aplicar diccionario...');
     initializeModals();
+
+    // Re-inicializar formularios
+    if (typeof window.initializeLoginForm === 'function') {
+        window.initializeLoginForm();
+    }
+    if (typeof window.initializeRegistroForm === 'function') {
+        window.initializeRegistroForm();
+    }
 });
 
 // Verificación de carga exitosa
