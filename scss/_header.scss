@@ -62,6 +62,27 @@ nav a.nav-destacado:hover {
     background-color: var(--color-beige);
 }
 
+/* Usuario logueado (sin borde) */
+nav a.user-logged {
+    font-family: var(--font-serif);
+    font-size: 18px;
+    font-style: italic;
+    color: var(--color-gray);
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: var(--radius-small);
+    transition: var(--transition);
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    vertical-align: middle;
+}
+
+nav a.user-logged:hover {
+    background-color: var(--color-beige);
+    color: #555;
+}
+
 /* ============================================
    DROPDOWN DE USUARIO LOGUEADO
    ============================================ */

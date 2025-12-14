@@ -1,64 +1,13 @@
-Aquí tienes las respuestas técnicas para Devito, alineadas estrictamente con la ARQUITECTURA-TECNICA.md y el Documento Maestro 1.txt.
+en publicaciones_horizontal.html
 
-1. Estructura de Archivos HTML
-Respuesta: MANTENER LA ESTRUCTURA EXACTA (Clonación).
-
-No crees archivos nuevos ni estructuras diferentes. La arquitectura es Multi-Tenant con Base de Código Única.
-
-Debes usar exactamente los mismos archivos: cuenta.html (Gestión/Login) y area-privada.html (Hub Dinámico).
-
-La Diferencia: El contenido y el estilo se inyectan dinámicamente vía config-loader.js leyendo serenamente.json.
-
-Razón: Si cambias la estructura HTML, rompes la escalabilidad. Si mañana mejoramos el Login en Impulso, queremos que Serenamente herede la mejora gratis.
-
-2. Flujo del Embudo (El "Doble Gancho")
-Respuesta: REPLICA EXACTA DE LA LÓGICA, CAMBIO DE NARRATIVA.
-
-El flujo técnico definido en el DM1 es innegociable porque maximiza el upsell .
-
-Paso 1 (Teresa - ToFu): En serenamente_vivir.html (o la home), el formulario solo pide Email + Nombre. Fricción mínima.
-
-Paso 2 (El Puente): El email de entrega dice: "Tu meditación está lista en tu Santuario Privado. Entra aquí para escucharla". No adjunta el archivo.
-
-Paso 3 (Regina - BoFu): Al hacer clic, llega a area-privada.html. El sistema le pide crear password para "abrir el santuario".
-
-Paso 4 (La Vista Regina): Al entrar, ve:
-
-🎁 Desbloqueado: La Meditación Gratuita (Lead Magnet).
-
-🔒 Bloqueado (Upsell): "Círculo de Sanación (Semanal)", "Biblioteca de Ansiedad", etc..
-
-3. Lead Magnet Específico (Sugerencia Estratégica)
-Respuesta: AUDIO/MEDITACIÓN (Baja Fricción de Consumo).
-
-Para el nicho de "Serenamente" (Bienestar/Holístico), un PDF tiene fricción de consumo (hay que leer).
-
-Recomendación: "Audio de Rescate Emocional (5 min)" o "Meditación Guiada para Dormir".
-
-Por qué: Se consume pasivamente. Genera una conexión íntima (voz del terapeuta) que acelera la confianza (Pilar 1: Autoridad).
-
-Técnicamente: Es un Recurso de tipo digital_product con precio 0€.
-
-4. Contenido Premium para Ana (Miembro)
-Respuesta: MODELO "BÓVEDA + TRIBU" (Vault + Tribe).
-
-Siguiendo la decisión de membresía del DM1:
-
-La Bóveda (Pasivo): Biblioteca de meditaciones grabadas y talleres anteriores (lo que ya existe).
-
-La Tribu (Activo/En Vivo): Acceso al "Círculo de Sanación en Vivo" (Zoom mensual/semanal).
-
-Técnicamente: Esto no requiere desarrollo nuevo. Son Tarjetas de Recursos tipo membership y event visibles en el catalogo.html y desbloqueados en el area-privada.html.
-
-5. Simplificación vs. Sistema Completo
-Respuesta: SISTEMA COMPLETO (Configurado, no Recortado).
-
-¡Cuidado Devito! No caigas en la trampa de hacer una versión "Lite" modificando el código.
-
-Usa el Sistema Completo de Impulso Pro.
-
-Simplifica vía Configuración (JSON): Si Serenamente no necesita "Facturación Avanzada" o "Cursos Complejos", apágalos en el archivo config/tenants/serenamente.json usando los feature flags (features: { facturacion_avanzada: false }).
-
-Resultado: El código sigue siendo robusto, pero la interfaz de Serenamente se ve limpia y sencilla.
-
-Resumen para Devito: No estás construyendo una casa nueva desde cero. Estás tomando las llaves de un apartamento en el edificio "Impulso" y redecorándolo (JSON) para que parezca un templo zen. La estructura de hormigón (HTML/JS/Lógica) no se toc
+1 quita hover de zoom en imagenes
+2 centra las imagenes verticalmente en las    
+ tarjetas
+3 coloca las etiquetas en el borde 
+superior derech de la tarjeta y que no        
+tapen el texto como ahora
+4 No todas las tarjetas tienen la misma       
+tamaño. Iguala la altura de todas las         
+tarjetas a la más alta
+5 Algún boton de tarjeta se esta cortando.    
+ Ajústalo 

@@ -18,7 +18,8 @@ Soy **Devito**, el Asistente de Desarrollo Técnico del proyecto **"Serenamente 
 Antes de implementar cualquier feature, DEBO consultar:
 1. `Maestro_Serenamente.md` (¿Está aprobado? ¿Hay decisiones previas?)
 2. `CHULETA-TECNICA-SERENAMENTE.md` (¿Cómo se implementa técnicamente?)
-3. `TODO.md` (¿Hay tareas pendientes relacionadas?)
+3. `ARQUITECTURA-SERENAMENTE.md` (¿Afecta sistema multi-tenant?)
+4. `TODO.md` (¿Hay tareas pendientes relacionadas?)
 
 ---
 
@@ -28,7 +29,8 @@ Antes de implementar cualquier feature, DEBO consultar:
 Cuando en este proyecto se menciona "BC" o "Base de Conocimiento", nos referimos EXCLUSIVAMENTE a estos archivos maestros:
 1. `Maestro_Serenamente.md` - Decisiones estratégicas y roadmap
 2. `CHULETA-TECNICA-SERENAMENTE.md` - Sistema SCSS modular y arquitectura técnica
-3. `TODO.md` - Tareas y deuda técnica pendiente
+3. `ARQUITECTURA-SERENAMENTE.md` - Sistema multi-tenant y configuración
+4. `TODO.md` - Tareas y deuda técnica pendiente
 
 Estos archivos constituyen la ÚNICA fuente de verdad del proyecto. Cualquier información que no esté aquí, no existe oficialmente.
 
@@ -145,7 +147,39 @@ Estos archivos constituyen la ÚNICA fuente de verdad del proyecto. Cualquier in
 - Issues detectados (eso va en Maestro_Serenamente sección 6)
 - Tareas pendientes (eso va en TODO.md)
 
-### C. Para TAREAS PENDIENTES → `TODO.md`
+### C. Para ARQUITECTURA MULTI-TENANT → `ARQUITECTURA-SERENAMENTE.md`
+
+**¿QUÉ ES?**: Especificación del Sistema Multi-Tenant. Documenta cómo el código se adapta según tenant mediante config-loader.js.
+
+**FUNCIONES**:
+1. **Sistema de Configuración por Tenant** - JSON con theme, dictionary, features
+2. **Lógica de Aplicación** - applyTheme(), applyDictionary(), applyFeatures()
+3. **Flujo de Usuarios** - Teresa (Visitante) → Regina (Registrada) → Ana (Pago)
+4. **Feature Flags** - Qué módulos mostrar/ocultar según configuración
+5. **Diccionario Semántico** - Términos personalizables por tenant
+6. **Event-Driven Architecture** - dictionaryApplied, re-inicialización de listeners
+
+**Cuándo CONSULTAR**:
+- Al trabajar con config-loader.js o config/tenants/*.json
+- Para entender lógica de aplicación de temas/diccionarios
+- Al implementar feature flags (mostrar/ocultar módulos)
+- Para diseñar flujo Teresa → Regina → Ana
+- Al debuggear issues con modales o event listeners
+
+**Cuándo ACTUALIZAR**:
+- Se modifica estructura de config JSON
+- Se agregan nuevos feature flags
+- Se cambian funciones de aplicación (applyTheme, applyDictionary)
+- Se modifica lógica de localStorage o auth
+- Se agregan eventos custom (como dictionaryApplied)
+
+**Qué NUNCA va aquí**:
+- Componentes CSS reutilizables (eso va en CHULETA-TECNICA)
+- Decisiones estratégicas del proyecto (eso va en Maestro_Serenamente)
+- Variables CSS específicas (eso va en CHULETA-TECNICA)
+- Tareas pendientes (eso va en TODO.md)
+
+### D. Para TAREAS PENDIENTES → `TODO.md`
 
 **¿QUÉ ES?**: Registro de deuda técnica y tareas futuras (optimizaciones, mejoras no urgentes).
 
@@ -417,12 +451,13 @@ Cuando el usuario dice... | Debo entender...
 
 ## 8. VERSIÓN Y ACTUALIZACIÓN
 
-**Versión actual**: 1.0
-**Fecha**: 13 de Diciembre de 2025
-**Última actualización**: Creación inicial adaptada de Impulso Pro
+**Versión actual**: 1.1
+**Fecha**: 14 de Diciembre de 2025
+**Última actualización**: Agregado ARQUITECTURA-SERENAMENTE.md a Base de Conocimiento
 
 **Historial de cambios**:
-- v1.0 (2025-12-13): Creación inicial del CLAUDE.md para Serenamente Vivir. Adaptado de Impulso Pro v1.5. Simplificado: sin multi-tenant, sin GTM complejo, sin 5 Pilares. Archivos maestros: Maestro_Serenamente.md, CHULETA-TECNICA-SERENAMENTE.md, TODO.md. Sistema SCSS modular (10 módulos). Comandos npm correctos (sin sufijo `:serenamente`). Relación con Impulso Pro documentada.
+- v1.1 (2025-12-14): Agregado ARQUITECTURA-SERENAMENTE.md como 4to archivo maestro de la BC. Documenta sistema multi-tenant, config-loader.js, flujo Teresa→Regina→Ana, feature flags, event-driven architecture. Actualizada sección 2 (Protocolo de Contexto) con sección C dedicada a Arquitectura Multi-Tenant.
+- v1.0 (2025-12-13): Creación inicial del CLAUDE.md para Serenamente Vivir. Adaptado de Impulso Pro v1.5. Archivos maestros: Maestro_Serenamente.md, CHULETA-TECNICA-SERENAMENTE.md, TODO.md. Sistema SCSS modular (10 módulos). Comandos npm correctos (sin sufijo `:serenamente`). Relación con Impulso Pro documentada.
 
 ---
 

@@ -90,8 +90,8 @@
         <div class="header-content">
             <nav>
                 <a href="tienda.html">Para ti</a>
-                <a href="tu_espacio_privado.html">Tu Espacio Privado</a>
-                <a href="meditaciones_personalizadas.html">Meditaciones Personalizadas</a>
+                <a href="publicaciones.html">Publicaciones</a>
+                <a href="#" onclick="irAEspacioPrivado(); return false;">Tu Espacio Privado</a>
                 <a href="contacto.html">Contacto</a>
 
                 <!-- Mostrar según estado de sesión -->
@@ -99,9 +99,9 @@
 
                 <!-- Dropdown de usuario logueado -->
                 <div class="user-menu-container" id="userMenuContainer" style="display: none; position: relative;">
-                    <a href="#" onclick="toggleUserDropdown(); return false;" class="nav-destacado" id="btnUsuarioLogueado">
-                        <span id="nombreUsuarioHeader"></span>
-                        <span style="margin-left: 0.25rem;">▼</span>
+                    <a href="#" onclick="toggleUserDropdown(); return false;" class="user-logged" id="btnUsuarioLogueado">
+                        <span style="font-weight: 600;">Hola <span id="nombreUsuarioHeader"></span>!</span>
+                        <span style="margin-left: 0.25rem; font-size: 0.75em;">▼</span>
                     </a>
 
                     <div class="user-dropdown" id="userDropdown" style="display: none;">
@@ -640,6 +640,19 @@
                 }
             }
         });
+
+        // Ir a Espacio Privado (verificar si está logueado)
+        function irAEspacioPrivado() {
+            const usuario = obtenerUsuarioActual();
+
+            if (usuario) {
+                // Usuario logueado → ir al área privada
+                window.location.href = 'area-privada.html';
+            } else {
+                // No hay usuario → abrir modal de login
+                abrirModalLogin();
+            }
+        }
 
         // Cerrar sesión
         function cerrarSesion() {

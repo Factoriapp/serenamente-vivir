@@ -147,6 +147,27 @@ nav a.nav-destacado:hover {
   background-color: var(--color-beige);
 }
 
+/* Usuario logueado (sin borde) */
+nav a.user-logged {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  font-style: italic;
+  color: var(--color-gray);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: var(--radius-small);
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  vertical-align: middle;
+}
+
+nav a.user-logged:hover {
+  background-color: var(--color-beige);
+  color: #555;
+}
+
 /* ============================================
    DROPDOWN DE USUARIO LOGUEADO
    ============================================ */
@@ -441,7 +462,6 @@ nav a.nav-destacado:hover {
 .sessions-section {
   padding: 80px 0;
   border-bottom: 1px solid #e0e0e0;
-  background-color: #f1ede2;
 }
 
 .sessions-section h2 {
@@ -1130,24 +1150,20 @@ nav a.nav-destacado:hover {
 }
 
 .blog-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px) scale(1.02);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
 .blog-card-image {
   height: 200px;
   overflow: hidden;
+  background-color: #f9f9f9;
 }
 
 .blog-card-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
-  transition: transform 0.4s ease;
-}
-
-.blog-card:hover .blog-card-image img {
-  transform: scale(1.05);
+  object-fit: contain;
 }
 
 .blog-content {

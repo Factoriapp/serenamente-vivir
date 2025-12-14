@@ -1,0 +1,15 @@
+                <!-- Ritual guiado -->
+                <article class="blog-card" style="display:flex;flex-direction:column;height:650px;">
+                    <div class="blog-card-image">
+                        <img src="https://iili.io/KQ3DhW7.png" alt="Ritual guiado" loading="lazy">
+                    </div>
+                    <div class="blog-content" style="display:flex;flex-direction:column;gap:0.75rem;flex:1;overflow:hidden;align-items:flex-start;">
+                        <h3>Ritual guiado de cierre de ciclo</h3>
+                        <p>Un recorrido sensible para honrar lo vivido, despedir lo que pesa y abrir espacio a lo nuevo con calma y presencia.</p>
+                        <p class="service-detail"><strong>Precio:</strong> 12€ | Audio + guía PDF</p>
+                        <p class="service-detail">Incluye meditaciones, pasos claros y una lista de reproducción sugerida.</p>
+                        <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;justify-content:flex-start;margin-top:auto;">
+                            <a href="#detalle-ritual" class="btn btn-primary">Ver detalles</a>
+                        </div>
+                    </div>
+                </article>
