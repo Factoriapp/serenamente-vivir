@@ -1150,6 +1150,8 @@ nav a.user-logged:hover {
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   transition: var(--transition);
+  display: flex;
+  flex-direction: column;
 }
 
 .blog-card:hover {
@@ -1171,6 +1173,14 @@ nav a.user-logged:hover {
 
 .blog-content {
   padding: 1.5rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+.blog-content > *:last-child {
+  margin-top: auto;
 }
 
 .blog-category-badge {
