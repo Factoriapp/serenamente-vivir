@@ -1,6 +1,6 @@
 // ============================================
 // LÓGICA ESPECÍFICA PARA area-privada.html
-// ============================================ 
+// ============================================
 
 // Se ejecuta cuando el DOM está completamente cargado
 window.addEventListener('DOMContentLoaded', function() {
@@ -8,18 +8,27 @@ window.addEventListener('DOMContentLoaded', function() {
 
     // 1. Verificación y redirección de usuario (usando función global de auth.js)
     const usuario = obtenerUsuarioActual(); // Viene de js/auth.js
+    console.log('--- DEBUG: Objeto de Usuario ---');
+    console.log(usuario);
+    console.log('---------------------------------');
 
     if (!usuario) {
-        console.warn('[area-privada.js] No hay usuario autenticado. Redirigiendo a index.html...');
-        window.location.href = 'index.html';
+        console.warn('[area-privada.js] No hay usuario autenticado. Redirigiendo a serenamente_vivir.html...');
+        window.location.href = 'serenamente_vivir.html';
         return;
     }
 
-    // 2. Actualizar el header con el nombre del usuario
+    // 2. Actualizar el header y el título de la página con el nombre del usuario
     const primerNombre = obtenerPrimerNombre(usuario.nombre); // Viene de js/auth.js
+    
     const nombreUsuarioHeaderElement = document.getElementById('nombreUsuarioHeader'); // Nuevo ID del header estándar
     if (nombreUsuarioHeaderElement) {
         nombreUsuarioHeaderElement.textContent = primerNombre;
+    }
+
+    const pageTitleElement = document.getElementById('pageTitle');
+    if (pageTitleElement) {
+        pageTitleElement.textContent = `Espacio Personal de ${primerNombre}`;
     }
 
     // Mostrar el userMenuContainer si hay usuario
@@ -39,8 +48,8 @@ window.addEventListener('DOMContentLoaded', function() {
     } else if (usuario.nivel === 2) {
         aplicarVistaRegina(usuario);
     } else {
-        console.warn('[area-privada.js] Usuario con nivel insuficiente. Redirigiendo a index.html...');
-        window.location.href = 'index.html';
+        console.warn('[area-privada.js] Usuario con nivel insuficiente. Redirigiendo a serenamente_vivir.html...');
+        window.location.href = 'serenamente_vivir.html';
     }
 
     // 4. Inicializar funcionalidad de Tabs de Anuncios y Pomodoro (si existen)
@@ -60,12 +69,12 @@ function aplicarVistaAna(usuario) {
     // Mostrar secciones de Ana
     mostrarSeccionesPorTipo('ana');
 
-    // Actualizar success badge
-    const successBadge = document.getElementById('successBadge');
-    if (successBadge) {
-        successBadge.classList.remove('regina');
-        const successMessage = document.getElementById('successMessage');
-        if (successMessage) successMessage.textContent = '✅ Como Miembro Premium, tienes acceso ilimitado';
+
+
+    // Actualizar subtítulo
+    const pageSubtitle = document.getElementById('pageSubtitle');
+    if (pageSubtitle) {
+        pageSubtitle.innerHTML = '... como <strong>Miembro</strong> tienes acceso a contenido <strong>Premium</strong>';
     }
 
     // Actualizar tablón de anuncios (saludo)
@@ -94,12 +103,12 @@ function aplicarVistaRegina(usuario) {
     // const headerBadge = document.getElementById('headerBadgeAna');
     // if (headerBadge) { headerBadge.classList.add('regina'); } 
 
-    // Actualizar success badge
-    const successBadge = document.getElementById('successBadge');
-    if (successBadge) {
-        successBadge.classList.add('regina');
-        const successMessage = document.getElementById('successMessage');
-        if (successMessage) successMessage.textContent = '👋 Bienvenida, accede a tu contenido gratuito';
+
+
+    // Actualizar subtítulo
+    const pageSubtitle = document.getElementById('pageSubtitle');
+    if (pageSubtitle) {
+        pageSubtitle.textContent = '... tu contenido disponible';
     }
 
     // Actualizar tablón de anuncios (saludo - solo primer nombre)
@@ -199,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const usuario = obtenerUsuarioActual();
             if (!usuario) {
-                window.location.href = 'index.html'; // Redirigir si no hay usuario
+                window.location.href = 'serenamente_vivir.html'; // Redirigir si no hay usuario
                 return;
             }
 

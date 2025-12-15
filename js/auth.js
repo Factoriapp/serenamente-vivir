@@ -76,7 +76,7 @@ function verificarAutenticacion() {
     const usuario = obtenerUsuarioActual();
     if (!usuario) {
         // Redirigir a la página principal si no está autenticado
-        window.location.href = 'index.html';
+        window.location.href = 'serenamente_vivir.html';
         return false;
     }
     return true;

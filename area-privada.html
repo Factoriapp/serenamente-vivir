@@ -141,33 +141,34 @@
             <img src="https://iili.io/K4AhJFs.png" alt="Serenamente Vivir" class="hero-logo">
             <p class="hero-author">con <strong>Marlene Sosa</strong></p>
         </div>
-        <img src="https://iili.io/K4a3jgj.png" alt="Serenamente Vivir" class="hero-banner">
-        <p class="hero-tagline"><em>El permiso de ser, el arte de vivir serenamente</em></p>
     </section>
+
+    <!-- Separator -->
+    <div class="separator"></div>
 
     <!-- CONTENEDOR PRINCIPAL - SOLO HUB DE CONSUMO -->
     <div class="app-container">
 
         <!-- ============================================
-             ÃšNICO BLOQUE: HUB DE CONSUMO
+             ÚNICO BLOQUE: HUB DE CONSUMO
              ============================================ -->
         <section class="content-block">
             <div class="block-header">
                 <div class="block-header-text">
-                    <h2 class="block-title">[TÃ­tulo: Contenido Miembro]</h2>
-                    <p class="block-subtitle">[DescripciÃ³n: Contenido disponible para miembro]</p>
+                    <h2 class="block-title" id="pageTitle"></h2>
+                    <p class="block-subtitle" id="pageSubtitle"></p>
                 </div>
 
                 <!-- ============================================
-                     TABLÃ“N DE ANUNCIOS (Universal)
+                     TABLÓN DE ANUNCIOS (Universal)
                      ============================================
 
                      ARQUITECTURA LEAN:
                      - Pepe escribe UN SOLO anuncio en dashboard.html
-                     - Este HTML es IDÃ‰NTICO en area-privada-ana.html y area-privada-regina.html
-                     - La diferencia estÃ¡ en la LÃ“GICA DE LOS ENLACES (backend/JS)
+                     - Este HTML es IDÉNTICO en area-privada-ana.html y area-privada-regina.html
+                     - La diferencia está en la LÓGICA DE LOS ENLACES (backend/JS)
 
-                     LÃ“GICA DE PERMISOS (Para Devito):
+                     LÓGICA DE PERMISOS (Para Devito):
                      - Todos los enlaces <a> con clase "recurso-link" deben tener:
                        * data-recurso-id="123" (ID del recurso)
                        * data-nivel-requerido="premium" o "estandar"
@@ -186,16 +187,12 @@
                             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                         </svg>
                         <h3 class="tablon-title">[Anuncios y Novedades]</h3>
-                        <button class="tablon-close" onclick="cerrarTablon()" aria-label="Cerrar anuncio">Ã—</button>
+                        <button class="tablon-close" onclick="cerrarTablon()" aria-label="Cerrar anuncio">&times;</button>
                     </div>
                     <div class="tablon-content" id="tablonContentText">
-                        <p>Â¡Hola! Esta semana tenemos novedades: ya estÃ¡ disponible el nuevo <a href="catalogo.html#curso-bajo-101" class="recurso-link">Mini-Curso de DesconexiÃ³n Digital</a> ðŸ“š y el Taller en vivo <a href="catalogo.html#evento-205" class="recurso-link">"DiseÃ±a tu Semana Ideal"</a> serÃ¡ el Jueves a las 19:00h ðŸŽ¥. AdemÃ¡s, abrimos plazas para la <a href="catalogo.html#programa-premium-501" class="recurso-link">MentorÃ­a Premium</a> â­. Â¡No te lo pierdas!</p>
+                        <p>¡Hola! Esta semana tenemos novedades: ya está disponible el nuevo <a href="catalogo.html#curso-bajo-101" class="recurso-link">Mini-Curso de Desconexión Digital</a> 📚 y el Taller en vivo <a href="catalogo.html#evento-205" class="recurso-link">"Diseña tu Semana Ideal"</a> será el Jueves a las 19:00h 🎥. Además, abrimos plazas para la <a href="catalogo.html#programa-premium-501" class="recurso-link">Mentoría Premium</a> ⭐. ¡No te lo pierdas!</p>
                     </div>
                 </div>
-            </div>
-
-            <div class="success-badge" id="successBadge">
-                <p id="successMessage">[Mensaje de Estado]</p>
             </div>
 
             <!-- RECURSOS GRID (CONDICIONAL) -->
@@ -214,7 +211,7 @@
                         </svg>
                     </div>
                     <div class="recurso-title">[Producto 1: Ej. Curso Avanzado de Oratoria]</div>
-                    <div class="recurso-meta">[8 mÃ³dulos â€¢ 4h 30min]</div>
+                    <div class="recurso-meta">[8 módulos • 4h 30min]</div>
                 </div>
 
                 <!-- Recurso 2: Ebook/PDF -->
@@ -229,7 +226,7 @@
                         </svg>
                     </div>
                     <div class="recurso-title">[Producto 2: Ej. Manual de Productividad]</div>
-                    <div class="recurso-meta">[PDF â€¢ 85 pÃ¡ginas]</div>
+                    <div class="recurso-meta">[PDF • 85 páginas]</div>
                 </div>
 
                 <!-- Recurso 3: Video/Masterclass -->
@@ -241,7 +238,7 @@
                         </svg>
                     </div>
                     <div class="recurso-title">[Producto 3: Ej. Masterclass Marketing Digital]</div>
-                    <div class="recurso-meta">[1 sesiÃ³n â€¢ 2h 15min]</div>
+                    <div class="recurso-meta">[1 sesión • 2h 15min]</div>
                 </div>
 
                 <!-- Recurso 4: Plantillas/Herramientas -->
@@ -268,7 +265,7 @@
                         </svg>
                     </div>
                     <div class="recurso-title">[Producto 5: Ej. Serie Podcast Liderazgo]</div>
-                    <div class="recurso-meta">[12 episodios â€¢ 3h total]</div>
+                    <div class="recurso-meta">[12 episodios • 3h total]</div>
                 </div>
 
                 <!-- Recurso 6: Acceso Comunidad -->
@@ -289,7 +286,7 @@
                      RECURSOS REGINA (REGISTRADA - NIVEL 2)
                      ============================================ -->
 
-                <!-- Recurso 1: Con Acceso (Lead Magnet - SuscripciÃ³n gratuita) -->
+                <!-- Recurso 1: Con Acceso (Lead Magnet - Suscripción gratuita) -->
                 <div class="recurso-card" data-user-type="regina">
                     <div class="recurso-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -300,8 +297,8 @@
                             <polyline points="10 9 9 9 8 9"></polyline>
                         </svg>
                     </div>
-                    <div class="recurso-title">[Recurso Gratuito: Ej. GuÃ­a de Inicio Profesional]</div>
-                    <div class="recurso-meta">[PDF â€¢ 15 pÃ¡ginas]</div>
+                    <div class="recurso-title">[Recurso Gratuito: Ej. Guía de Inicio Profesional]</div>
+                    <div class="recurso-meta">[PDF • 15 páginas]</div>
                 </div>
 
                 <!-- Recurso 2: Adquirido (Comprado por Regina) -->
@@ -312,8 +309,8 @@
                             <polygon points="10 8 16 12 10 16 10 8"></polygon>
                         </svg>
                     </div>
-                    <div class="recurso-title">[Recurso Adquirido: Ej. Curso BÃ¡sico de Marketing]</div>
-                    <div class="recurso-meta">[Video â€¢ 45 min]</div>
+                    <div class="recurso-title">[Recurso Adquirido: Ej. Curso Básico de Marketing]</div>
+                    <div class="recurso-meta">[Video • 45 min]</div>
                 </div>
 
             </div>
@@ -325,7 +322,7 @@
          POMODORO TIMER - DRAWER LATERAL
          ============================================ -->
 
-    <!-- BotÃ³n flotante -->
+    <!-- Botón flotante -->
     <div class="pomodoro-trigger" onclick="openPomodoro()">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"></circle>
@@ -339,27 +336,27 @@
     <!-- Panel lateral -->
     <div class="pomodoro-drawer" id="pomodoroDrawer">
         <div class="pomodoro-header">
-            <h3>[Temporizador de ConcentraciÃ³n]</h3>
-            <button class="pomodoro-close" onclick="closePomodoro()">âœ•</button>
+            <h3>[Temporizador de Concentración]</h3>
+            <button class="pomodoro-close" onclick="closePomodoro()">&times;</button>
         </div>
 
         <div class="pomodoro-content">
             <!-- Modos -->
             <div class="pomodoro-modes">
                 <div class="pomodoro-mode active" onclick="setMode('focus', 25)" data-mode="focus">
-                    ðŸŽ¯ [Trabajo Concentrado]<br><small>25 min</small>
+                    🎯 [Trabajo Concentrado]<br><small>25 min</small>
                 </div>
                 <div class="pomodoro-mode" onclick="setMode('short', 5)" data-mode="short">
-                    â˜• [Descanso Breve]<br><small>5 min</small>
+                    ☕ [Descanso Breve]<br><small>5 min</small>
                 </div>
                 <div class="pomodoro-mode" onclick="setMode('long', 15)" data-mode="long">
-                    ðŸŒŸ [Descanso Largo]<br><small>15 min</small>
+                    🌟 [Descanso Largo]<br><small>15 min</small>
                 </div>
             </div>
 
             <!-- Display del timer -->
             <div class="pomodoro-display">
-                <div class="pomodoro-label" id="pomodoroLabel">[SesiÃ³n de Trabajo Concentrado]</div>
+                <div class="pomodoro-label" id="pomodoroLabel">[Sesión de Trabajo Concentrado]</div>
                 <div class="pomodoro-time" id="pomodoroTime">25:00</div>
 
                 <!-- Barra de progreso -->
@@ -375,9 +372,9 @@
                 <button class="pomodoro-btn pomodoro-btn-reset" onclick="resetTimer()">Reiniciar</button>
             </div>
 
-            <!-- EstadÃ­sticas -->
+            <!-- Estadísticas -->
             <div class="pomodoro-stats">
-                <h4>ðŸ“Š EstadÃ­sticas de Hoy</h4>
+                <h4>📊 Estadísticas de Hoy</h4>
                 <div class="pomodoro-stat-item">
                     <span>Pomodoros completados:</span>
                     <span class="pomodoro-stat-value" id="completedPomodoros">0</span>
