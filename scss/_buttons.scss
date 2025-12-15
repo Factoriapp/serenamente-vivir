@@ -69,3 +69,29 @@
     cursor: not-allowed;
     pointer-events: none;
 }
+
+/* CTA BUTTON PARA REGINA */
+.cta-premium {
+    padding: 0.75rem 1.75rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    background: transparent;
+    color: #E8965A;
+    display: inline-block;
+    box-shadow: none;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 3px solid #E8965A;
+    cursor: pointer;
+}
+
+.cta-premium:hover {
+    background: linear-gradient(135deg, #E8965A, #F0A876);
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(232, 150, 90, 0.3);
+    border-color: #E8965A;
+}

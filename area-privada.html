@@ -1,925 +1,183 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Área privada para miembros. Accede a tu contenido y recursos.">
-    <title>Mi Área Personal - [Tu Nombre]</title>
-
-    <!-- ============================================
-         OPEN GRAPH PROTOCOL (Optimización #4)
-         ============================================
-
-         INSTRUCCIONES PARA "PEPE" (El Profesional):
-
-         1. Reemplaza [TU_URL] con tu dominio real (ej. https://tudominio.com)
-         2. Reemplaza [TU_NOMBRE] con tu nombre profesional
-         3. Esta página NO debe ser indexada (es privada), por eso incluimos noindex
-
-         Documentación completa: images/README-OG-IMAGES.md
-    -->
-
-    <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="[TU_URL]/area-privada.html">
-    <meta property="og:title" content="Área Personal - [TU_NOMBRE]">
-    <meta property="og:description" content="Área privada para miembros. Accede a tu contenido y recursos.">
-    <meta property="og:site_name" content="[TU_NOMBRE] - Profesional">
-    <meta property="og:locale" content="es_ES">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Área Personal - [TU_NOMBRE]">
-    <meta name="twitter:description" content="Área privada para miembros.">
+    <title>Mi Área Personal - Serenamente Vivir</title>
+    <meta name="description" content="Área privada para miembros de Serenamente Vivir. Accede a tu contenido y recursos.">
 
     <!-- SEO: Página privada NO indexable -->
     <meta name="robots" content="noindex, nofollow">
     <link rel="canonical" href="[TU_URL]/area-privada.html">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
+    <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="[TU_URL]/area-privada.html">
+    <meta property="og:title" content="Área Personal - Serenamente Vivir">
+    <meta property="og:description" content="Área privada para miembros. Accede a tu contenido y recursos.">
+    <meta property="og:site_name" content="Serenamente Vivir - Profesional">
+    <meta property="og:locale" content="es_ES">
 
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Área Personal - Serenamente Vivir">
+    <meta name="twitter:description" content="Área privada para miembros.">
+
+    <!-- Fuentes y CSS -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css?v=11">
+
+    <!-- ESTILOS MODAL (INLINE - WORKAROUND) -->
     <style>
-        /* VARIABLES ESPECÍFICAS ÁREA PRIVADA */
-        :root {
-            --color-premium-text: #0A5D70;  /* Color texto para badges Premium */
-            --color-accent-medium: #1B7A8E;  /* Color intermedio para UI elementos */
-        }
-
-        /* HEADER ULTRA-SIMPLIFICADO */
-        .app-header {
-            background: var(--color-white);
-            border-bottom: 1px solid var(--color-border);
-            padding: 1.5rem 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-        }
-
-        .app-header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .app-logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--color-primary);
-        }
-
-        .user-menu-btn {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 0.75rem 1.5rem;
-            background: var(--color-bg-secondary);
-            border: 1px solid var(--color-border);
-            border-radius: 8px;
-            cursor: pointer;
-            position: relative;
-        }
-
-        .user-badge {
-            padding: 0.5rem 1.5rem;
-            border-radius: 6px;
-            font-size: 0.95rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-            color: var(--color-premium-text);
-            display: inline-block;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-            text-shadow: 0 1px 2px rgba(255,255,255,0.5);
-        }
-
-        .user-badge.regina {
-            background: var(--color-bg-neutral);
-            color: var(--color-text);
-            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-            border: 2px solid var(--color-border);
-            text-shadow: none;
-        }
-
-        /* CTA BUTTON PARA REGINA */
-        .cta-premium {
-            padding: 0.75rem 1.75rem;
-            border-radius: 8px;
-            font-size: 0.95rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            background: transparent;
-            color: #E8965A;
-            display: inline-block;
-            box-shadow: none;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            border: 3px solid #E8965A;
-            cursor: pointer;
-        }
-
-        .cta-premium:hover {
-            background: linear-gradient(135deg, #E8965A, #F0A876);
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(232, 150, 90, 0.3);
-            border-color: #E8965A;
-        }
-
-        /* DROPDOWN MENU */
-        .user-dropdown {
-            position: absolute;
-            top: calc(100% + 0.5rem);
-            right: 0;
-            background: white;
-            border: 1px solid var(--color-border);
-            border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            min-width: 200px;
+        .modal {
             display: none;
-            z-index: 1000;
+            position: fixed !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            z-index: 2000 !important;
+            align-items: center !important;
+            justify-content: center !important;
         }
-
-        .user-dropdown.active {
-            display: block;
-        }
-
-        .user-dropdown-item {
-            display: block;
-            padding: 1rem 1.5rem;
-            color: var(--color-text);
-            text-decoration: none;
-            border-bottom: 1px solid var(--color-border);
-            transition: background 0.2s ease;
-        }
-
-        .user-dropdown-item:last-child {
-            border-bottom: none;
-        }
-
-        .user-dropdown-item:hover {
-            background: var(--color-bg-secondary);
-        }
-
-        /* CONTENEDOR PRINCIPAL */
-        .app-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3rem 2rem;
-        }
-
-        /* BLOQUES */
-        .content-block {
-            margin-bottom: 4rem;
-        }
-
-        .block-header {
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 2px solid var(--color-border);
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            gap: 2rem;
-        }
-
-        .block-header-text {
-            flex: 1;
-        }
-
-        .block-title {
-            font-size: 1.75rem;
-            color: var(--color-text);
-            margin-bottom: 0.5rem;
-        }
-
-        .block-subtitle {
-            color: var(--color-text-light);
-            font-size: 1rem;
-        }
-
-        /* SUCCESS BADGE */
-        .success-badge {
-            background: linear-gradient(135deg, var(--color-bg-primary-light), var(--color-bg-secondary));
-            padding: 1rem 1.5rem;
-            border-radius: 8px;
-            margin-bottom: 2rem;
-            width: fit-content;
-            margin-left: auto;
-            box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-        }
-
-        .success-badge.regina {
-            background: var(--color-bg-secondary);
-            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
-            border: 2px solid var(--color-border);
-        }
-
-        .success-badge p {
-            margin: 0;
-            color: var(--color-premium-text);
-            font-weight: 900;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            font-size: 0.95rem;
-            text-align: center;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            text-shadow: 0 1px 2px rgba(255,255,255,0.5);
-        }
-
-        .success-badge.regina p {
-            color: var(--color-text);
-            font-weight: 600;
-            text-transform: none;
-            letter-spacing: normal;
-            text-shadow: none;
-        }
-
-        .success-badge p::before {
-            content: "✓";
-            color: var(--color-premium-text);
-            font-weight: 700;
-            font-size: 1.1rem;
-            flex-shrink: 0;
-        }
-
-        .success-badge.regina p::before {
-            color: var(--color-accent-medium);
-        }
-
-        /* RECURSOS GRID (Recursos Finales Específicos) */
-        .recursos-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            justify-content: center;
-            max-width: 100%;
-        }
-
-        /* Si hay menos de 3 items, limitar el ancho máximo para centrarlos */
-        .recursos-grid:has(.recurso-card:nth-child(3):last-child),
-        .recursos-grid:has(.recurso-card:nth-child(2):last-child),
-        .recursos-grid:has(.recurso-card:only-child) {
-            justify-content: center;
-        }
-
-        .recursos-grid:has(.recurso-card:nth-child(2):last-child) {
-            max-width: 620px;
-            margin: 0 auto;
-        }
-
-        .recursos-grid:has(.recurso-card:only-child) {
-            max-width: 310px;
-            margin: 0 auto;
-        }
-
-        .recurso-card {
-            background: var(--color-white);
-            border: 2px solid var(--color-primary);
-            border-radius: 12px;
-            padding: 1.5rem;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-            aspect-ratio: 1 / 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            position: relative;
-        }
-
-        .recurso-card:hover {
-            box-shadow: 0 6px 16px rgba(0,0,0,0.12);
-            border-color: var(--color-secondary);
-            transform: translateY(-3px);
-        }
-
-        .recurso-badge {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            padding: 0.25rem 0.75rem;
-            border-radius: 12px;
-            font-size: 0.7rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            background: var(--color-bg-primary-light);
-            color: var(--color-accent-medium);
-            border: 1px solid var(--color-accent-medium);
-        }
-
-        .recurso-icon {
-            width: 48px;
-            height: 48px;
-            margin-bottom: 1rem;
-            padding: 0.75rem;
-            background: var(--color-bg-primary-light);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .recurso-icon svg {
-            width: 100%;
-            height: 100%;
-            stroke: var(--color-accent-medium);
-        }
-
-        .recurso-title {
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        .recurso-meta {
-            color: var(--color-text-light);
-            font-size: 0.875rem;
-        }
-
-        /* ============================================
-           TABLÓN DE ANUNCIOS (Universal: Ana + Regina)
-           ============================================
-
-           ARQUITECTURA:
-           - UN solo tablón escrito por Pepe en dashboard.html
-           - Visible para TODOS (Ana Premium y Regina Estándar)
-           - Los ENLACES dentro tienen lógica de permisos
-           - Si Regina clic en recurso Premium → Popup "Actualiza"
-           - Si Ana clic en recurso Premium → Abre directamente
-           ============================================ */
-
-        .tablon-anuncios {
-            background: linear-gradient(135deg, var(--color-bg-primary-light), var(--color-bg-secondary));
-            border-left: 4px solid var(--color-primary);
-            border-radius: 8px;
-            padding: 1rem 1.25rem;
-            max-width: 500px;
-            flex-shrink: 0;
-            position: relative;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-        }
-
-        .tablon-header {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .tablon-icon {
-            width: 24px;
-            height: 24px;
-            color: var(--color-accent-medium);
-        }
-
-        .tablon-title {
-            font-weight: 700;
-            font-size: 0.85rem;
-            color: var(--color-accent-medium);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin: 0;
-        }
-
-        .tablon-close {
-            margin-left: auto;
-            background: none;
-            border: none;
-            color: var(--color-text-light);
-            cursor: pointer;
-            padding: 0.25rem;
-            font-size: 1.25rem;
-            line-height: 1;
-            transition: color 0.2s ease;
-        }
-
-        .tablon-close:hover {
-            color: var(--color-text);
-        }
-
-        .tablon-content {
-            color: var(--color-text);
-            font-size: 0.9rem;
-            line-height: 1.5;
-            max-height: 150px;
-            overflow-y: auto;
-        }
-
-        .tablon-content::-webkit-scrollbar {
-            width: 6px;
-        }
-
-        .tablon-content::-webkit-scrollbar-track {
-            background: var(--color-bg-neutral);
-            border-radius: 3px;
-        }
-
-        .tablon-content::-webkit-scrollbar-thumb {
-            background: var(--color-primary);
-            border-radius: 3px;
-        }
-
-        .tablon-content::-webkit-scrollbar-thumb:hover {
-            background: var(--color-secondary);
-        }
-
-        .tablon-content a {
-            color: var(--color-accent-medium);
-            font-weight: 600;
-            text-decoration: none;
-            border-bottom: 2px solid var(--color-accent-medium);
-            transition: all 0.2s ease;
-        }
-
-        .tablon-content a:hover {
-            color: var(--color-accent-medium);
-            border-bottom-color: var(--color-accent-medium);
-            opacity: 0.8;
-        }
-
-        .tablon-anuncios.hidden {
-            display: none;
-        }
-
-        /* ============================================
-           POMODORO TIMER - DRAWER LATERAL
-           ============================================ */
-
-        /* Botón flotante para abrir el Pomodoro */
-        .pomodoro-trigger {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            transition: all 0.3s ease;
-            z-index: 999;
-            border: 3px solid white;
-        }
-
-        .pomodoro-trigger:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-        }
-
-        .pomodoro-trigger.running {
-            animation: pulsate 2s ease-in-out infinite;
-        }
-
-        @keyframes pulsate {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            }
-            50% {
-                transform: scale(1.1);
-                box-shadow: 0 8px 24px rgba(10, 93, 112, 0.5);
-            }
-            100% {
-                transform: scale(1);
-                box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-            }
-        }
-
-        .pomodoro-trigger svg {
-            width: 30px;
-            height: 30px;
-            stroke: var(--color-premium-text);
-            stroke-width: 2.5;
-        }
-
-        /* Overlay oscuro */
-        .pomodoro-overlay {
+        .modal-overlay {
             position: fixed;
             top: 0;
             left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0,0,0,0.5);
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 1000;
-        }
-
-        .pomodoro-overlay.active {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        /* Panel lateral */
-        .pomodoro-drawer {
-            position: fixed;
-            top: 0;
-            right: -400px;
-            width: 400px;
-            height: 100vh;
-            background: white;
-            box-shadow: -4px 0 20px rgba(0,0,0,0.2);
-            transition: right 0.3s ease;
-            z-index: 1001;
-            overflow-y: auto;
-        }
-
-        .pomodoro-drawer.active {
-            right: 0;
-        }
-
-        /* Header del drawer */
-        .pomodoro-header {
-            padding: 1.5rem;
-            background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 3px solid var(--color-premium-text);
-        }
-
-        .pomodoro-header h3 {
-            margin: 0;
-            color: var(--color-premium-text);
-            font-size: 1.3rem;
-            font-weight: 900;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-        }
-
-        .pomodoro-close {
-            background: none;
-            border: none;
-            color: var(--color-premium-text);
-            font-size: 1.5rem;
-            cursor: pointer;
-            padding: 0.25rem 0.5rem;
-            line-height: 1;
-            font-weight: bold;
-        }
-
-        .pomodoro-close:hover {
-            opacity: 0.7;
-        }
-
-        /* Contenido del drawer */
-        .pomodoro-content {
-            padding: 2rem;
-        }
-
-        /* Display del timer */
-        .pomodoro-display {
-            text-align: center;
-            margin-bottom: 2rem;
-        }
-
-        .pomodoro-time {
-            font-size: 4rem;
-            font-weight: 900;
-            color: var(--color-premium-text);
-            font-family: 'Courier New', monospace;
-            margin: 1rem 0;
-        }
-
-        .pomodoro-label {
-            font-size: 1rem;
-            color: var(--color-text-light);
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-weight: 600;
-        }
-
-        /* Barra de progreso */
-        .pomodoro-progress {
             width: 100%;
-            height: 8px;
-            background: var(--color-bg-neutral);
-            border-radius: 10px;
-            overflow: hidden;
-            margin-bottom: 2rem;
-        }
-
-        .pomodoro-progress-bar {
             height: 100%;
-            background: linear-gradient(90deg, var(--color-premium-text), var(--color-primary));
-            transition: width 0.3s ease;
-            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
         }
-
-        /* Controles */
-        .pomodoro-controls {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 2rem;
+        .modal-content {
+            position: relative;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            max-width: 500px;
+            width: 90%;
+            z-index: 2001;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
         }
-
-        .pomodoro-btn {
-            flex: 1;
-            padding: 1rem;
+        .modal-close {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            font-size: 28px;
+            color: #999;
+            cursor: pointer;
             border: none;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            background: transparent;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            line-height: 1;
         }
-
-        .pomodoro-btn-start {
-            background: var(--color-premium-text);
-            color: white;
+        .modal-close:hover {
+            background-color: #f0f0f0;
+            color: #333;
         }
-
-        .pomodoro-btn-start:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(10, 93, 112, 0.3);
-        }
-
-        .pomodoro-btn-pause {
-            background: var(--color-secondary);
-            color: var(--color-text);
-        }
-
-        .pomodoro-btn-pause:hover {
-            opacity: 0.8;
-        }
-
-        .pomodoro-btn-reset {
-            background: var(--color-bg-neutral);
-            color: var(--color-text);
-        }
-
-        .pomodoro-btn-reset:hover {
-            background: var(--color-border);
-        }
-
-        /* Modos de Pomodoro */
-        .pomodoro-modes {
-            display: flex;
-            gap: 0.5rem;
-            margin-bottom: 2rem;
-        }
-
-        .pomodoro-mode {
-            flex: 1;
-            padding: 0.75rem;
-            background: var(--color-bg-neutral);
-            border: 2px solid transparent;
-            border-radius: 8px;
-            cursor: pointer;
-            text-align: center;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            font-size: 0.85rem;
-        }
-
-        .pomodoro-mode.active {
-            background: var(--color-bg-primary-light);
-            border-color: var(--color-premium-text);
-            color: var(--color-premium-text);
-        }
-
-        /* Estadísticas */
-        .pomodoro-stats {
-            background: var(--color-bg-neutral);
-            padding: 1.5rem;
-            border-radius: 8px;
+        .form-group {
             margin-bottom: 1.5rem;
         }
-
-        .pomodoro-stats h4 {
-            margin: 0 0 1rem 0;
-            color: var(--color-text);
-            font-size: 1rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .pomodoro-stat-item {
-            display: flex;
-            justify-content: space-between;
+        .form-label {
+            display: block;
             margin-bottom: 0.5rem;
-            color: var(--color-text);
+            font-weight: 500;
+            color: #333;
         }
-
-        .pomodoro-stat-value {
-            font-weight: 700;
-            color: var(--color-premium-text);
+        .form-input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
         }
-
-        /* HIDDEN UTILITY */
-        .hidden {
-            display: none !important;
-        }
-
-        /* ============================================
-           RESPONSIVE MOBILE FIRST
-           ============================================ */
-
-        /* Mobile: ajustes para pantallas pequeñas */
-        @media (max-width: 768px) {
-            .pomodoro-trigger {
-                bottom: 1rem;
-                right: 1rem;
-                width: 50px;
-                height: 50px;
-            }
-
-            .pomodoro-trigger svg {
-                width: 24px;
-                height: 24px;
-            }
-
-            .pomodoro-drawer {
-                width: 100%;
-                right: -100%;
-            }
-
-            .pomodoro-time {
-                font-size: 3rem;
-            }
-
-            .pomodoro-content {
-                padding: 1.5rem;
-            }
-            .app-header-container {
-                grid-template-columns: auto 1fr auto;
-                gap: 0.5rem;
-                padding: 0 1rem;
-            }
-
-            .app-logo {
-                font-size: 1.2rem;
-            }
-
-            .user-badge {
-                padding: 0.4rem 1rem;
-                font-size: 0.75rem;
-                letter-spacing: 1px;
-            }
-
-            .cta-premium {
-                padding: 0.5rem 1rem;
-                font-size: 0.8rem;
-                letter-spacing: 1px;
-            }
-
-            .user-menu-btn {
-                padding: 0.5rem 0.75rem;
-                font-size: 0.85rem;
-            }
-
-            .app-container {
-                padding: 2rem 1rem;
-            }
-
-            .block-header {
-                flex-direction: column;
-                align-items: stretch;
-                gap: 1rem;
-            }
-
-            .block-title {
-                font-size: 1.5rem;
-            }
-
-            .block-subtitle {
-                font-size: 0.9rem;
-            }
-
-            .success-badge {
-                margin-left: 0;
-                margin-right: 0;
-                width: 100%;
-            }
-
-            .success-badge p {
-                font-size: 0.8rem;
-                letter-spacing: 0.5px;
-                flex-wrap: wrap;
-            }
-
-            .recursos-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
-            }
-
-            .recursos-grid:has(.recurso-card:nth-child(2):last-child),
-            .recursos-grid:has(.recurso-card:only-child) {
-                max-width: 100%;
-            }
-
-            .tablon-anuncios {
-                padding: 1rem;
-                max-width: 100%;
-            }
-
-            .tablon-title {
-                font-size: 0.8rem;
-            }
-
-            .tablon-content {
-                font-size: 0.85rem;
-            }
-
-            .user-dropdown {
-                right: 0;
-                min-width: 180px;
-            }
-        }
-
-        /* Tablet: ajustes para pantallas medianas */
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .app-header-container {
-                padding: 0 1.5rem;
-            }
-
-            .app-container {
-                padding: 2.5rem 1.5rem;
-            }
-
-            .recursos-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
+        .form-input:focus {
+            outline: none;
+            border-color: #e7cf9d;
         }
     </style>
 </head>
 <body>
-    <!-- HEADER CON DROPDOWN -->
-    <header class="app-header">
-        <div class="app-header-container">
-            <div class="app-logo">[Tu Logo]</div>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <nav>
+                <a href="serenamente_vivir.html">Inicio</a>
+                <a href="sobre_mi.html">Sobre mi</a>
+                <a href="tienda.html">Para ti</a>
+                <a href="publicaciones.html">Publicaciones</a>
+                <a href="#" onclick="irAEspacioPrivado(); return false;">Tu Espacio Privado</a>
+                <a href="contacto.html">Contacto</a>
 
-            <!-- MENÚ USUARIO (DERECHA) -->
-            <div class="user-menu-btn" onclick="toggleDropdown()">
-                <div style="display: flex; align-items: center; gap: 0.5rem;">
-                    <div style="font-weight: 600; font-size: 0.95rem; color: var(--color-text);" id="userNameDisplay">Usuario</div>
-                    <span style="font-size: 0.875rem; color: var(--color-text-light);">▼</span>
-                </div>
+                <!-- Mostrar según estado de sesión -->
+                <a href="#" onclick="abrirModalLogin(); return false;" class="nav-destacado" id="btnIniciarSesion">Iniciar Sesión</a>
 
-                <!-- DROPDOWN CON GESTIÓN -->
-                <div class="user-dropdown" id="userDropdown">
-                    <a href="cuenta.html" class="user-dropdown-item">⚙️ [Mi Cuenta]</a>
-                    <a href="membresia.html" class="user-dropdown-item" id="upgradeLink" data-user-type="regina" style="color: var(--color-accent-medium); font-weight: 600;">⭐ [Actualizar a Premium]</a>
-                    <a href="#" class="user-dropdown-item" style="color: var(--color-error);" onclick="cerrarSesion(); return false;">🚪 [Cerrar Sesión]</a>
+                <!-- Dropdown de usuario logueado -->
+                <div class="user-menu-container" id="userMenuContainer" style="display: none; position: relative;">
+                    <a href="#" onclick="toggleUserDropdown(); return false;" class="user-logged" id="btnUsuarioLogueado">
+                        <span style="font-weight: 600;">Hola <span id="nombreUsuarioHeader"></span>!</span>
+                        <span style="margin-left: 0.25rem; font-size: 0.75em;">▼</span>
+                    </a>
+
+                    <div class="user-dropdown" id="userDropdown" style="display: none;">
+                        <a href="cuenta.html" class="user-dropdown-item">
+                            👤 Mi Cuenta
+                        </a>
+                        <a href="#" onclick="cerrarSesion(); return false;" class="user-dropdown-item" style="color: #d9534f;">
+                            🚪 Cerrar Sesión
+                        </a>
+                    </div>
                 </div>
-            </div>
+            </nav>
         </div>
     </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-logo-container">
+            <img src="https://iili.io/K4AhJFs.png" alt="Serenamente Vivir" class="hero-logo">
+            <p class="hero-author">con <strong>Marlene Sosa</strong></p>
+        </div>
+        <img src="https://iili.io/K4a3jgj.png" alt="Serenamente Vivir" class="hero-banner">
+        <p class="hero-tagline"><em>El permiso de ser, el arte de vivir serenamente</em></p>
+    </section>
 
     <!-- CONTENEDOR PRINCIPAL - SOLO HUB DE CONSUMO -->
     <div class="app-container">
 
         <!-- ============================================
-             ÚNICO BLOQUE: HUB DE CONSUMO
+             ÃšNICO BLOQUE: HUB DE CONSUMO
              ============================================ -->
         <section class="content-block">
             <div class="block-header">
                 <div class="block-header-text">
-                    <h2 class="block-title">[Título: Contenido Miembro]</h2>
-                    <p class="block-subtitle">[Descripción: Contenido disponible para miembro]</p>
+                    <h2 class="block-title">[TÃ­tulo: Contenido Miembro]</h2>
+                    <p class="block-subtitle">[DescripciÃ³n: Contenido disponible para miembro]</p>
                 </div>
 
                 <!-- ============================================
-                     TABLÓN DE ANUNCIOS (Universal)
+                     TABLÃ“N DE ANUNCIOS (Universal)
                      ============================================
 
                      ARQUITECTURA LEAN:
                      - Pepe escribe UN SOLO anuncio en dashboard.html
-                     - Este HTML es IDÉNTICO en area-privada-ana.html y area-privada-regina.html
-                     - La diferencia está en la LÓGICA DE LOS ENLACES (backend/JS)
+                     - Este HTML es IDÃ‰NTICO en area-privada-ana.html y area-privada-regina.html
+                     - La diferencia estÃ¡ en la LÃ“GICA DE LOS ENLACES (backend/JS)
 
-                     LÓGICA DE PERMISOS (Para Devito):
+                     LÃ“GICA DE PERMISOS (Para Devito):
                      - Todos los enlaces <a> con clase "recurso-link" deben tener:
                        * data-recurso-id="123" (ID del recurso)
                        * data-nivel-requerido="premium" o "estandar"
 
                      - JavaScript verifica:
-                       * Si user.nivel >= recurso.nivel_requerido → Abrir recurso
-                       * Si user.nivel < recurso.nivel_requerido → Mostrar popup upsell
+                       * Si user.nivel >= recurso.nivel_requerido â†’ Abrir recurso
+                       * Si user.nivel < recurso.nivel_requerido â†’ Mostrar popup upsell
 
                      AUTO-OCULTABLE:
-                     - Si Pepe no escribe nada en dashboard → display: none
+                     - Si Pepe no escribe nada en dashboard â†’ display: none
                      ============================================ -->
 
                 <div class="tablon-anuncios" id="tablonAnuncios">
@@ -928,10 +186,10 @@
                             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                         </svg>
                         <h3 class="tablon-title">[Anuncios y Novedades]</h3>
-                        <button class="tablon-close" onclick="cerrarTablon()" aria-label="Cerrar anuncio">×</button>
+                        <button class="tablon-close" onclick="cerrarTablon()" aria-label="Cerrar anuncio">Ã—</button>
                     </div>
                     <div class="tablon-content" id="tablonContentText">
-                        <p>¡Hola! Esta semana tenemos novedades: ya está disponible el nuevo <a href="catalogo.html#curso-bajo-101" class="recurso-link">Mini-Curso de Desconexión Digital</a> 📚 y el Taller en vivo <a href="catalogo.html#evento-205" class="recurso-link">"Diseña tu Semana Ideal"</a> será el Jueves a las 19:00h 🎥. Además, abrimos plazas para la <a href="catalogo.html#programa-premium-501" class="recurso-link">Mentoría Premium</a> ⭐. ¡No te lo pierdas!</p>
+                        <p>Â¡Hola! Esta semana tenemos novedades: ya estÃ¡ disponible el nuevo <a href="catalogo.html#curso-bajo-101" class="recurso-link">Mini-Curso de DesconexiÃ³n Digital</a> ðŸ“š y el Taller en vivo <a href="catalogo.html#evento-205" class="recurso-link">"DiseÃ±a tu Semana Ideal"</a> serÃ¡ el Jueves a las 19:00h ðŸŽ¥. AdemÃ¡s, abrimos plazas para la <a href="catalogo.html#programa-premium-501" class="recurso-link">MentorÃ­a Premium</a> â­. Â¡No te lo pierdas!</p>
                     </div>
                 </div>
             </div>
@@ -956,7 +214,7 @@
                         </svg>
                     </div>
                     <div class="recurso-title">[Producto 1: Ej. Curso Avanzado de Oratoria]</div>
-                    <div class="recurso-meta">[8 módulos • 4h 30min]</div>
+                    <div class="recurso-meta">[8 mÃ³dulos â€¢ 4h 30min]</div>
                 </div>
 
                 <!-- Recurso 2: Ebook/PDF -->
@@ -971,7 +229,7 @@
                         </svg>
                     </div>
                     <div class="recurso-title">[Producto 2: Ej. Manual de Productividad]</div>
-                    <div class="recurso-meta">[PDF • 85 páginas]</div>
+                    <div class="recurso-meta">[PDF â€¢ 85 pÃ¡ginas]</div>
                 </div>
 
                 <!-- Recurso 3: Video/Masterclass -->
@@ -983,7 +241,7 @@
                         </svg>
                     </div>
                     <div class="recurso-title">[Producto 3: Ej. Masterclass Marketing Digital]</div>
-                    <div class="recurso-meta">[1 sesión • 2h 15min]</div>
+                    <div class="recurso-meta">[1 sesiÃ³n â€¢ 2h 15min]</div>
                 </div>
 
                 <!-- Recurso 4: Plantillas/Herramientas -->
@@ -1010,7 +268,7 @@
                         </svg>
                     </div>
                     <div class="recurso-title">[Producto 5: Ej. Serie Podcast Liderazgo]</div>
-                    <div class="recurso-meta">[12 episodios • 3h total]</div>
+                    <div class="recurso-meta">[12 episodios â€¢ 3h total]</div>
                 </div>
 
                 <!-- Recurso 6: Acceso Comunidad -->
@@ -1031,7 +289,7 @@
                      RECURSOS REGINA (REGISTRADA - NIVEL 2)
                      ============================================ -->
 
-                <!-- Recurso 1: Con Acceso (Lead Magnet - Suscripción gratuita) -->
+                <!-- Recurso 1: Con Acceso (Lead Magnet - SuscripciÃ³n gratuita) -->
                 <div class="recurso-card" data-user-type="regina">
                     <div class="recurso-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -1042,8 +300,8 @@
                             <polyline points="10 9 9 9 8 9"></polyline>
                         </svg>
                     </div>
-                    <div class="recurso-title">[Recurso Gratuito: Ej. Guía de Inicio Profesional]</div>
-                    <div class="recurso-meta">[PDF • 15 páginas]</div>
+                    <div class="recurso-title">[Recurso Gratuito: Ej. GuÃ­a de Inicio Profesional]</div>
+                    <div class="recurso-meta">[PDF â€¢ 15 pÃ¡ginas]</div>
                 </div>
 
                 <!-- Recurso 2: Adquirido (Comprado por Regina) -->
@@ -1054,8 +312,8 @@
                             <polygon points="10 8 16 12 10 16 10 8"></polygon>
                         </svg>
                     </div>
-                    <div class="recurso-title">[Recurso Adquirido: Ej. Curso Básico de Marketing]</div>
-                    <div class="recurso-meta">[Video • 45 min]</div>
+                    <div class="recurso-title">[Recurso Adquirido: Ej. Curso BÃ¡sico de Marketing]</div>
+                    <div class="recurso-meta">[Video â€¢ 45 min]</div>
                 </div>
 
             </div>
@@ -1067,7 +325,7 @@
          POMODORO TIMER - DRAWER LATERAL
          ============================================ -->
 
-    <!-- Botón flotante -->
+    <!-- BotÃ³n flotante -->
     <div class="pomodoro-trigger" onclick="openPomodoro()">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"></circle>
@@ -1081,27 +339,27 @@
     <!-- Panel lateral -->
     <div class="pomodoro-drawer" id="pomodoroDrawer">
         <div class="pomodoro-header">
-            <h3>[Temporizador de Concentración]</h3>
-            <button class="pomodoro-close" onclick="closePomodoro()">✕</button>
+            <h3>[Temporizador de ConcentraciÃ³n]</h3>
+            <button class="pomodoro-close" onclick="closePomodoro()">âœ•</button>
         </div>
 
         <div class="pomodoro-content">
             <!-- Modos -->
             <div class="pomodoro-modes">
                 <div class="pomodoro-mode active" onclick="setMode('focus', 25)" data-mode="focus">
-                    🎯 [Trabajo Concentrado]<br><small>25 min</small>
+                    ðŸŽ¯ [Trabajo Concentrado]<br><small>25 min</small>
                 </div>
                 <div class="pomodoro-mode" onclick="setMode('short', 5)" data-mode="short">
-                    ☕ [Descanso Breve]<br><small>5 min</small>
+                    â˜• [Descanso Breve]<br><small>5 min</small>
                 </div>
                 <div class="pomodoro-mode" onclick="setMode('long', 15)" data-mode="long">
-                    🌟 [Descanso Largo]<br><small>15 min</small>
+                    ðŸŒŸ [Descanso Largo]<br><small>15 min</small>
                 </div>
             </div>
 
             <!-- Display del timer -->
             <div class="pomodoro-display">
-                <div class="pomodoro-label" id="pomodoroLabel">[Sesión de Trabajo Concentrado]</div>
+                <div class="pomodoro-label" id="pomodoroLabel">[SesiÃ³n de Trabajo Concentrado]</div>
                 <div class="pomodoro-time" id="pomodoroTime">25:00</div>
 
                 <!-- Barra de progreso -->
@@ -1117,9 +375,9 @@
                 <button class="pomodoro-btn pomodoro-btn-reset" onclick="resetTimer()">Reiniciar</button>
             </div>
 
-            <!-- Estadísticas -->
+            <!-- EstadÃ­sticas -->
             <div class="pomodoro-stats">
-                <h4>📊 Estadísticas de Hoy</h4>
+                <h4>ðŸ“Š EstadÃ­sticas de Hoy</h4>
                 <div class="pomodoro-stat-item">
                     <span>Pomodoros completados:</span>
                     <span class="pomodoro-stat-value" id="completedPomodoros">0</span>
@@ -1132,441 +390,64 @@
         </div>
     </div>
 
-    <!-- SCRIPT DE GESTIÓN USUARIO -->
+        <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wrapper">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <ul>
+                        <li><a href="serenamente_vivir.html">Inicio</a></li>
+                        <li><a href="tienda.html">Tienda</a></li>
+                        <li><a href="publicaciones.html">Inspiración</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <ul>
+                        <li><a href="#">Privacidad</a></li>
+                        <li><a href="#">Términos</a></li>
+                        <li><a href="#">Aviso Legal</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <p>Sígueme en redes sociales.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/34XXXXXXXXX" class="social-link" aria-label="WhatsApp">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
+                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                            </svg>
+                        </a>
+                        <a href="mailto:info@serenamentevivir.com" class="social-link" aria-label="Email">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Serenamente Vivir - Marlene Sosa | Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SCRIPT DE GESTIÃ“N USUARIO -->
     <!-- Config Loader - Sistema Multi-Tenant -->
     <script src="js/config-loader.js"></script>
-    <script src="js/auth.js?v=10"></script>
+        <script src="js/auth.js?v=10"></script>
+        <script src="js/area-privada.js"></script>
+    
+    </body>
+    </html>
 
-    <script>
-        // ==========================================
-        // SISTEMA UNIFICADO: Detección de Usuario Real
-        // ==========================================
-
-        // Función principal de inicialización
-        window.addEventListener('DOMContentLoaded', function() {
-            const usuario = obtenerUsuarioActual();
-
-            if (!usuario) {
-                // Si no hay usuario, redirigir a login
-                console.warn('[area-privada.html] No hay usuario. Redirigiendo a index...');
-                window.location.href = 'index.html';
-                return;
-            }
-
-            // Aplicar vista según nivel de usuario
-            if (usuario.nivel === 3) {
-                aplicarVistaAna(usuario);
-            } else if (usuario.nivel === 2) {
-                aplicarVistaRegina(usuario);
-            } else {
-                // Nivel 1 (Teresa) no debería acceder aquí
-                console.warn('[area-privada.html] Usuario sin acceso. Redirigiendo...');
-                window.location.href = 'index.html';
-            }
-        });
-
-        // ==========================================
-        // VISTA ANA (PREMIUM - NIVEL 3)
-        // ==========================================
-        function aplicarVistaAna(usuario) {
-            console.log('[area-privada.html] Aplicando vista ANA (Premium)');
-
-            // 0. Aplicar tema premium al body
-            document.body.classList.add('theme-premium');
-
-            // 1. Actualizar nombre en header (solo primer nombre)
-            const primerNombre = obtenerPrimerNombre(usuario.nombre);
-            document.getElementById('userNameDisplay').textContent = primerNombre;
-
-            // 2. Mostrar secciones de Ana
-            mostrarSeccionesPorTipo('ana');
-
-            // 3. Actualizar success badge
-            const successBadge = document.getElementById('successBadge');
-            successBadge.classList.remove('regina');
-            document.getElementById('successMessage').textContent = '[Mensaje de Estado: Como Miembro Premium, tienes acceso ilimitado]';
-
-            // 4. Actualizar tablón de anuncios (saludo)
-            const tablonContent = document.getElementById('tablonContentText');
-            if (tablonContent) {
-                const html = tablonContent.innerHTML;
-                tablonContent.innerHTML = html.replace('¡Hola!', '¡Hola equipo!');
-            }
-
-            // 5. GATILLO DE ADQUISICIÓN: Setear nivel de usuario para la Tienda
-            localStorage.setItem('userLevel', 'premium');
-            console.log('✅ Nivel de usuario seteado: PREMIUM (Ana)');
-        }
-
-        // ==========================================
-        // VISTA REGINA (REGISTRADA - NIVEL 2)
-        // ==========================================
-        function aplicarVistaRegina(usuario) {
-            console.log('[area-privada.html] Aplicando vista REGINA (Cuenta Estándar)');
-
-            // 1. Actualizar nombre en header (solo primer nombre)
-            const primerNombre = obtenerPrimerNombre(usuario.nombre);
-            document.getElementById('userNameDisplay').textContent = primerNombre;
-
-            // 2. Mostrar secciones de Regina
-            mostrarSeccionesPorTipo('regina');
-
-            // 3. Actualizar badge del header (cambiar estilo)
-            const headerBadge = document.getElementById('headerBadgeAna');
-            if (headerBadge) {
-                headerBadge.classList.add('regina');
-            }
-
-            // 4. Actualizar success badge
-            const successBadge = document.getElementById('successBadge');
-            successBadge.classList.add('regina');
-            document.getElementById('successMessage').textContent = '[Mensaje de Estado: Bienvenida, accede a tu contenido gratuito]';
-
-            // 5. Actualizar tablón de anuncios (saludo - solo primer nombre)
-            const tablonContent = document.getElementById('tablonContentText');
-            if (tablonContent) {
-                const html = tablonContent.innerHTML;
-                tablonContent.innerHTML = html.replace('¡Hola!', '¡Hola ' + primerNombre + '!');
-            }
-
-            // 6. GATILLO DE ADQUISICIÓN: Setear nivel de usuario para la Tienda
-            localStorage.setItem('userLevel', 'estandar');
-            console.log('✅ Nivel de usuario seteado: ESTÁNDAR (Regina)');
-        }
-
-        // ==========================================
-        // FUNCIONES DE CONTROL DE VISIBILIDAD
-        // ==========================================
-        function mostrarSeccionesPorTipo(tipo) {
-            // Obtener todas las secciones con data-user-type
-            const todasLasSecciones = document.querySelectorAll('[data-user-type]');
-
-            todasLasSecciones.forEach(seccion => {
-                const tipoSeccion = seccion.getAttribute('data-user-type');
-
-                if (tipoSeccion === tipo) {
-                    // Mostrar secciones del tipo correcto
-                    seccion.classList.remove('hidden');
-                } else {
-                    // Ocultar secciones de otros tipos
-                    seccion.classList.add('hidden');
-                }
-            });
-
-            console.log(`[area-privada.html] Secciones visibles para tipo: ${tipo}`);
-        }
-
-        // ==========================================
-        // FUNCIONES COMUNES (AMBOS USUARIOS)
-        // ==========================================
-
-        function toggleDropdown() {
-            const dropdown = document.getElementById('userDropdown');
-            dropdown.classList.toggle('active');
-        }
-
-        // Cerrar dropdown al hacer click fuera
-        document.addEventListener('click', function(e) {
-            const menuBtn = document.querySelector('.user-menu-btn');
-            const dropdown = document.getElementById('userDropdown');
-
-            if (!menuBtn.contains(e.target)) {
-                dropdown.classList.remove('active');
-            }
-        });
-
-        // Función cerrar sesión
-        function cerrarSesion() {
-            if (confirm('[¿Seguro que quieres cerrar sesión?]')) {
-                localStorage.removeItem('usuario');
-                window.location.href = 'index.html';
-            }
-        }
-
-        // ============================================
-        // TABLÓN DE ANUNCIOS - FUNCIONALIDAD
-        // ============================================
-
-        // Cerrar tablón (guardar en localStorage para no mostrar hoy)
-        function cerrarTablon() {
-            const tablon = document.getElementById('tablonAnuncios');
-            tablon.classList.add('hidden');
-
-            // Guardar en localStorage (no mostrar hasta mañana)
-            const hoy = new Date().toDateString();
-            localStorage.setItem('tablonCerrado', hoy);
-        }
-
-        // Verificar si el tablón debe mostrarse
-        window.addEventListener('load', () => {
-            const tablonCerrado = localStorage.getItem('tablonCerrado');
-            const hoy = new Date().toDateString();
-
-            // Si se cerró hoy, ocultarlo
-            if (tablonCerrado === hoy) {
-                document.getElementById('tablonAnuncios').classList.add('hidden');
-            }
-        });
-
-        // ============================================
-        // LÓGICA DE PERMISOS EN ENLACES (Para Devito)
-        // ============================================
-
-        /*
-        ARQUITECTURA DE PERMISOS:
-
-        Este código es un PLACEHOLDER para Devito.
-        La lógica real se implementará en el backend.
-
-        FLUJO:
-        1. Usuario (Ana/Regina) hace clic en enlace con clase "recurso-link"
-        2. JavaScript captura el clic e impide navegación por defecto
-        3. Lee data-recurso-id y data-nivel-requerido del enlace
-        4. Verifica nivel del usuario actual (desde sesión/localStorage)
-        5. Si nivel suficiente → Redirige al recurso
-        6. Si nivel insuficiente → Muestra modal de upsell
-
-        EJEMPLO DE USO EN HTML:
-        <a href="#" class="recurso-link"
-           data-recurso-id="101"
-           data-nivel-requerido="premium">
-           Nombre del Recurso
-        </a>
-        */
-
-        document.addEventListener('DOMContentLoaded', () => {
-            // Capturar todos los enlaces de recursos
-            const recursosLinks = document.querySelectorAll('.recurso-link');
-
-            recursosLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-
-                    const recursoId = this.dataset.recursoId;
-                    const nivelRequerido = this.dataset.nivelRequerido;
-
-                    // Obtener usuario actual
-                    const usuario = obtenerUsuarioActual();
-                    if (!usuario) {
-                        window.location.href = 'index.html';
-                        return;
-                    }
-
-                    // Obtener nivel del usuario
-                    const userNivel = usuario.nivel === 3 ? 'premium' : 'estandar';
-
-                    // Verificar permisos
-                    if (tienePermiso(userNivel, nivelRequerido)) {
-                        // Redirigir al recurso
-                        window.location.href = `/recurso/${recursoId}`;
-                    } else {
-                        // Mostrar modal de upsell
-                        mostrarModalUpsell(nivelRequerido);
-                    }
-                });
-            });
-        });
-
-        // Verificar si el usuario tiene permiso
-        function tienePermiso(userNivel, nivelRequerido) {
-            const niveles = { 'estandar': 1, 'premium': 2 };
-            return niveles[userNivel] >= niveles[nivelRequerido];
-        }
-
-        // Mostrar modal de upsell (PLACEHOLDER)
-        function mostrarModalUpsell(nivelRequerido) {
-            // TODO: Devito debe crear un modal bonito
-            alert(`Este recurso es exclusivo para miembros ${nivelRequerido.toUpperCase()}.\n\n¿Quieres actualizar tu membresía?`);
-            // En producción: abrir modal y redirigir a membresia.html
-        }
-
-        // ============================================
-        // POMODORO TIMER - FUNCIONALIDAD
-        // ============================================
-
-        let pomodoroState = {
-            minutes: 25,
-            seconds: 0,
-            totalSeconds: 25 * 60,
-            currentMode: 'focus',
-            isRunning: false,
-            interval: null,
-            completedPomodoros: 0,
-            totalMinutes: 0
-        };
-
-        // Abrir/Cerrar drawer
-        function openPomodoro() {
-            document.getElementById('pomodoroDrawer').classList.add('active');
-            document.getElementById('pomodoroOverlay').classList.add('active');
-        }
-
-        function closePomodoro() {
-            document.getElementById('pomodoroDrawer').classList.remove('active');
-            document.getElementById('pomodoroOverlay').classList.remove('active');
-        }
-
-        // Cambiar modo (Enfoque, Pausa corta, Pausa larga)
-        function setMode(mode, minutes) {
-            if (pomodoroState.isRunning) {
-                pauseTimer();
-            }
-
-            pomodoroState.currentMode = mode;
-            pomodoroState.minutes = minutes;
-            pomodoroState.seconds = 0;
-            pomodoroState.totalSeconds = minutes * 60;
-
-            // Actualizar UI
-            updateDisplay();
-            updateProgressBar(100);
-
-            // Actualizar labels
-            const labels = {
-                focus: '[Sesión de Trabajo Concentrado]',
-                short: '[Descanso Breve]',
-                long: '[Descanso Largo]'
-            };
-            document.getElementById('pomodoroLabel').textContent = labels[mode];
-
-            // Actualizar clases activas
-            document.querySelectorAll('.pomodoro-mode').forEach(el => {
-                el.classList.remove('active');
-            });
-            document.querySelector(`[data-mode="${mode}"]`).classList.add('active');
-        }
-
-        // Iniciar timer
-        function startTimer() {
-            if (pomodoroState.isRunning) return;
-
-            pomodoroState.isRunning = true;
-            document.getElementById('startBtn').style.display = 'none';
-            document.getElementById('pauseBtn').style.display = 'block';
-
-            // Activar palpitación del botón flotante
-            document.querySelector('.pomodoro-trigger').classList.add('running');
-
-            pomodoroState.interval = setInterval(() => {
-                if (pomodoroState.seconds === 0) {
-                    if (pomodoroState.minutes === 0) {
-                        // Timer completado
-                        completePomodoro();
-                        return;
-                    }
-                    pomodoroState.minutes--;
-                    pomodoroState.seconds = 59;
-                } else {
-                    pomodoroState.seconds--;
-                }
-
-                updateDisplay();
-                updateProgressBar();
-            }, 1000);
-        }
-
-        // Pausar timer
-        function pauseTimer() {
-            pomodoroState.isRunning = false;
-            clearInterval(pomodoroState.interval);
-            document.getElementById('startBtn').style.display = 'block';
-            document.getElementById('pauseBtn').style.display = 'none';
-
-            // Desactivar palpitación del botón flotante
-            document.querySelector('.pomodoro-trigger').classList.remove('running');
-        }
-
-        // Reiniciar timer
-        function resetTimer() {
-            pauseTimer();
-            const modeMinutes = {
-                focus: 25,
-                short: 5,
-                long: 15
-            };
-            setMode(pomodoroState.currentMode, modeMinutes[pomodoroState.currentMode]);
-        }
-
-        // Timer completado
-        function completePomodoro() {
-            pauseTimer();
-
-            // Solo contar si fue una sesión de enfoque
-            if (pomodoroState.currentMode === 'focus') {
-                pomodoroState.completedPomodoros++;
-                pomodoroState.totalMinutes += 25;
-                updateStats();
-            }
-
-            // Notificación (si el navegador lo permite)
-            if ('Notification' in window && Notification.permission === 'granted') {
-                new Notification('¡Pomodoro Completado!', {
-                    body: pomodoroState.currentMode === 'focus' ? '¡Hora de un descanso!' : '¡Hora de volver al trabajo!',
-                    icon: '/favicon.png'
-                });
-            }
-
-            // Alerta simple
-            alert(pomodoroState.currentMode === 'focus' ? '¡Sesión completada! Hora de descansar 🎉' : '¡Descanso terminado! Volvamos al trabajo 💪');
-
-            // Auto-cambio de modo
-            if (pomodoroState.currentMode === 'focus') {
-                // Después de enfoque, sugerir pausa corta
-                setMode('short', 5);
-            } else {
-                // Después de pausa, volver a enfoque
-                setMode('focus', 25);
-            }
-        }
-
-        // Actualizar display del tiempo
-        function updateDisplay() {
-            const mins = String(pomodoroState.minutes).padStart(2, '0');
-            const secs = String(pomodoroState.seconds).padStart(2, '0');
-            document.getElementById('pomodoroTime').textContent = `${mins}:${secs}`;
-        }
-
-        // Actualizar barra de progreso
-        function updateProgressBar(percent = null) {
-            if (percent === null) {
-                const elapsed = pomodoroState.totalSeconds - (pomodoroState.minutes * 60 + pomodoroState.seconds);
-                percent = (elapsed / pomodoroState.totalSeconds) * 100;
-            }
-            document.getElementById('pomodoroProgressBar').style.width = `${100 - percent}%`;
-        }
-
-        // Actualizar estadísticas
-        function updateStats() {
-            document.getElementById('completedPomodoros').textContent = pomodoroState.completedPomodoros;
-            document.getElementById('totalTime').textContent = `${pomodoroState.totalMinutes} min`;
-
-            // Guardar en localStorage
-            localStorage.setItem('pomodoroStats', JSON.stringify({
-                completed: pomodoroState.completedPomodoros,
-                totalMinutes: pomodoroState.totalMinutes,
-                date: new Date().toDateString()
-            }));
-        }
-
-        // Cargar estadísticas al iniciar
-        window.addEventListener('load', () => {
-            const stats = localStorage.getItem('pomodoroStats');
-            if (stats) {
-                const data = JSON.parse(stats);
-                // Solo cargar si es de hoy
-                if (data.date === new Date().toDateString()) {
-                    pomodoroState.completedPomodoros = data.completed;
-                    pomodoroState.totalMinutes = data.totalMinutes;
-                    updateStats();
-                }
-            }
-
-            // Pedir permiso para notificaciones
-            if ('Notification' in window && Notification.permission === 'default') {
-                Notification.requestPermission();
-            }
-        });
-    </script>
-
-</body>
-</html>

@@ -499,3 +499,94 @@
         font-size: 1.5rem;
     }
 }
+
+/* Responsive styles for Private Area */
+@media (max-width: 768px) {
+    .pomodoro-trigger {
+        bottom: 1rem;
+        right: 1rem;
+        width: 50px;
+        height: 50px;
+    }
+
+    .pomodoro-trigger svg {
+        width: 24px;
+        height: 24px;
+    }
+
+    .pomodoro-drawer {
+        width: 100%;
+        right: -100%;
+    }
+
+    .pomodoro-time {
+        font-size: 3rem;
+    }
+
+    .pomodoro-content {
+        padding: 1.5rem;
+    }
+
+    .app-container {
+        padding: 2rem 1rem;
+    }
+
+    .block-header {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1rem;
+    }
+
+    .block-title {
+        font-size: 1.5rem;
+    }
+
+    .block-subtitle {
+        font-size: 0.9rem;
+    }
+
+    .success-badge {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+
+    .success-badge p {
+        font-size: 0.8rem;
+        letter-spacing: 0.5px;
+        flex-wrap: wrap;
+    }
+
+    .recursos-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .recursos-grid:has(.recurso-card:nth-child(2):last-child),
+    .recursos-grid:has(.recurso-card:only-child) {
+        max-width: 100%;
+    }
+
+    .tablon-anuncios {
+        padding: 1rem;
+        max-width: 100%;
+    }
+
+    .tablon-title {
+        font-size: 0.8rem;
+    }
+
+    .tablon-content {
+        font-size: 0.85rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .app-container {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .recursos-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

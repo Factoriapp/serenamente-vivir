@@ -60,6 +60,10 @@
     --transition: all 0.3s ease;
     --transition-fast: all 0.2s ease;
     --transition-slow: all 0.4s ease;
+    
+    /* Variables específicas del área privada */
+    --color-premium-text: #0A5D70;
+    --color-accent-medium: #1B7A8E;
 }
 
 /* Variables SCSS para breakpoints (no CSS variables) */
