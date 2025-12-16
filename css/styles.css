@@ -134,7 +134,7 @@ nav a:hover {
 }
 
 nav a.active {
-  background-color: var(--color-green);
+  background-color: transparent;
   color: var(--color-gray);
   font-weight: 600;
 }

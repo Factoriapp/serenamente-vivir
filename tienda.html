@@ -19,10 +19,32 @@
         <div class="header-content">
             <nav>
                 <a href="serenamente_vivir.html">Inicio</a>
-                <a href="tienda.html" class="active">Para ti</a>
-                <a href="tu_espacio_privado.html">Tu Espacio Privado</a>
-                <a href="meditaciones_personalizadas.html">Meditaciones Personalizadas</a>
+                <a href="sobre_mi.html">Sobre mi</a>
+                <a href="tienda.html">Para ti</a>
+                <a href="publicaciones.html">Publicaciones</a>
+                <a href="#" onclick="irAEspacioPrivado(); return false;">Tu Espacio Privado</a>
+                <a href="#membership-featured">Membresía</a>
                 <a href="contacto.html">Contacto</a>
+
+                <!-- Mostrar según estado de sesión -->
+                <a href="#" onclick="abrirModalLogin(); return false;" class="nav-destacado" id="btnIniciarSesion">Iniciar Sesión</a>
+
+                <!-- Dropdown de usuario logueado -->
+                <div class="user-menu-container" id="userMenuContainer" style="display: none; position: relative;">
+                    <a href="#" onclick="toggleUserDropdown(); return false;" class="user-logged" id="btnUsuarioLogueado">
+                        <span style="font-weight: 600;">Hola <span id="nombreUsuarioHeader"></span>!</span>
+                        <span style="margin-left: 0.25rem; font-size: 0.75em;">▼</span>
+                    </a>
+
+                    <div class="user-dropdown" id="userDropdown" style="display: none;">
+                        <a href="cuenta.html" class="user-dropdown-item">
+                            👤 Mi Cuenta
+                        </a>
+                        <a href="#" onclick="cerrarSesion(); return false;" class="user-dropdown-item" style="color: #d9534f;">
+                            🚪 Cerrar Sesión
+                        </a>
+                    </div>
+                </div>
             </nav>
         </div>
     </header>

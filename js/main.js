@@ -212,3 +212,39 @@ document.addEventListener('dictionaryApplied', function() {
 // Verificación de carga exitosa
 console.log('✨ Serenamente Vivir - main.js cargado correctamente - ' + new Date().toLocaleTimeString());
 console.log('✅ Lead Magnet: Validación activa');
+
+// ============================================
+// FUNCIÓN: Resaltar enlace de navegación activo
+// ============================================
+function highlightActiveLink() {
+    const currentPath = window.location.pathname.split('/').pop(); // Get current file name (e.g., serenamente_vivir.html)
+    const navLinks = document.querySelectorAll('header nav a');
+
+    navLinks.forEach(link => {
+        // Remove active class from all links first
+        link.classList.remove('active');
+
+        // Special handling for the "Membresía" link on serenamente_vivir.html
+        // It points to an anchor on the same page
+        if (link.getAttribute('href') === '#membership-featured' && currentPath === 'serenamente_vivir.html') {
+            link.classList.add('active');
+            return; 
+        }
+
+        // Regular page links
+        const linkPath = link.getAttribute('href').split('/').pop();
+        if (linkPath === currentPath) {
+            link.classList.add('active');
+        }
+    });
+    console.log('✅ Navegación: Enlace activo resaltado.');
+}
+
+// Ejecutar al cargar la página
+window.addEventListener('DOMContentLoaded', highlightActiveLink);
+
+// Re-ejecutar si config-loader.js reemplaza el DOM
+document.addEventListener('dictionaryApplied', function() {
+    console.log('🔄 Re-resaltando enlace activo después de aplicar diccionario...');
+    highlightActiveLink();
+});
