@@ -1,13 +1,6 @@
-en publicaciones_horizontal.html
+en el archivo sobrem.mi.html
 
-1 quita hover de zoom en imagenes
-2 centra las imagenes verticalmente en las    
- tarjetas
-3 coloca las etiquetas en el borde 
-superior derech de la tarjeta y que no        
-tapen el texto como ahora
-4 No todas las tarjetas tienen la misma       
-tamaño. Iguala la altura de todas las         
-tarjetas a la más alta
-5 Algún boton de tarjeta se esta cortando.    
- Ajústalo 
+verifica que el texto
+    Terapeuta sistémica | Acompañamiento a mujeres, 
+
+utilice las fuentes del proyecto

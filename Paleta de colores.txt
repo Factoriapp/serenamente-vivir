@@ -6,7 +6,8 @@
   - --color-cyan: #c9e1e1 - Cyan suave
   - --color-green: #cae4b2 - Verde menta
   - --color-cream: #f1ede2 - Crema cálida
-  - --color-gray: #898989 - Gris medio
+  - --color-gray: 
+   - Gris medio
 
   Colores de Texto:
 
