@@ -23,25 +23,25 @@
                 <a href="tienda.html">Para ti</a>
                 <a href="publicaciones.html">Publicaciones</a>
                 <a href="#" onclick="irAEspacioPrivado(); return false;">Tu Espacio Privado</a>
-                <a href="#membership-featured">Membresía</a>
+                <a href="#membership-featured">MembresÃ­a</a>
                 <a href="contacto.html">Contacto</a>
 
-                <!-- Mostrar según estado de sesión -->
-                <a href="#" onclick="abrirModalLogin(); return false;" class="nav-destacado" id="btnIniciarSesion">Iniciar Sesión</a>
+                <!-- Mostrar segÃºn estado de sesiÃ³n -->
+                <a href="#" onclick="abrirModalLogin(); return false;" class="nav-destacado" id="btnIniciarSesion">Iniciar SesiÃ³n</a>
 
                 <!-- Dropdown de usuario logueado -->
                 <div class="user-menu-container" id="userMenuContainer" style="display: none; position: relative;">
                     <a href="#" onclick="toggleUserDropdown(); return false;" class="user-logged" id="btnUsuarioLogueado">
                         <span style="font-weight: 600;">Hola <span id="nombreUsuarioHeader"></span>!</span>
-                        <span style="margin-left: 0.25rem; font-size: 0.75em;">▼</span>
+                        <span style="margin-left: 0.25rem; font-size: 0.75em;">?</span>
                     </a>
 
                     <div class="user-dropdown" id="userDropdown" style="display: none;">
                         <a href="cuenta.html" class="user-dropdown-item">
-                            👤 Mi Cuenta
+                            ?? Mi Cuenta
                         </a>
                         <a href="#" onclick="cerrarSesion(); return false;" class="user-dropdown-item" style="color: #d9534f;">
-                            🚪 Cerrar Sesión
+                            ?? Cerrar SesiÃ³n
                         </a>
                     </div>
                 </div>
@@ -200,9 +200,9 @@
                     </div>
                     <div class="blog-content">
                         <h3>Ritual guiado para soltar y renacer</h3>
-                        <p>Un acompañamiento cálido para cerrar un capítulo, agradecer lo vivido y abrirte a nuevas posibilidades con serenidad y conexión.</p>
-                        <p class="service-detail"><strong>Precio:</strong> 12€ | Audio + guía PDF</p>
-                        <p class="service-detail">Incluye meditaciones, pasos claros y una lista de reproducción recomendada.</p>
+                        <p>Un acompaÃ±amiento cÃ¡lido para cerrar un capÃ­tulo, agradecer lo vivido y abrirte a nuevas posibilidades con serenidad y conexiÃ³n.</p>
+                        <p class="service-detail"><strong>Precio:</strong> 12Â€ | Audio + guÃ­a PDF</p>
+                        <p class="service-detail">Incluye meditaciones, pasos claros y una lista de reproducciÃ³n recomendada.</p>
                         <div style="display:flex;align-items:center;gap:0.75rem;flex-wrap:wrap;justify-content:flex-start;margin-top:auto;">
                             <a href="#detalle-ritual" class="btn btn-primary">Ver detalles</a>
                         </div>
@@ -215,9 +215,9 @@
     <!-- Separator -->
     <div class="separator"></div>
 
-    <!-- Membership Section - Bloque Destacado -->
-    <section class="membership-featured" style="background: #f3f5f0;">
-        <div class="container" style="border: 1px solid #e0e0e0;">
+    <div class="container">
+        <!-- Membership Section - Bloque Destacado -->
+        <section id="membership-featured" class="membership-featured">
             <div class="membership-content">
                 <div class="membership-header" style="text-align: center; margin-bottom: 2rem;">
                     <h2>Membresía</h2>
@@ -244,7 +244,7 @@
                             <li><strong>Descuentos especiales</strong> en talleres, retiros y sesiones 1:1</li>
                         </ul>
 
-                        <a href="tu_espacio_privado.html" class="btn btn-primary" style="width: 100%; text-align: center; margin-bottom: 1rem;">Únete a nuestra Comunidad</a>
+                        <a href="membresia.html" class="btn btn-primary" style="width: 100%; text-align: center; margin-bottom: 1rem;">Únete a nuestra Comunidad</a>
 
                         <p style="text-align: center; font-size: 1.1rem; color: var(--color-gray); margin: 0;">
                             <strong>29€/mes</strong> · Cancela cuando quieras
@@ -252,138 +252,110 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
     <div class="separator"></div>
 
     <section id="detalles-recursos" class="detalles-recursos">
         <div id="detalle-sesion" class="detalle-bloque" style="padding: var(--spacing-xl) 0; background: #ffffff;">
-            <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--spacing-lg); align-items: center;">
-                <div>
+            <div class="container" style="max-width: 1120px; margin: 0 auto; padding: var(--spacing-lg); padding-bottom: 50px; border: 1px solid #e0e0e0; border-radius: var(--radius-medium); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--spacing-lg); align-items: stretch;">
+                <div style="display: flex; align-items: center;">
                     <img src="https://iili.io/KL1jAqF.png" alt="Sesiones 1:1" style="width: 100%; max-width: 520px; border-radius: var(--radius-medium); " loading="lazy">
                 </div>
-                <div>
-                    <h3 class="section-title-alt" style="text-align: left;">Sesiones 1:1</h3>
+                <div style="display: flex; flex-direction: column; text-align: right; position: relative;">
+                    <h3 class="section-title-alt" style="text-align: right;">Sesiones 1:1</h3>
                     <p style="color: var(--color-text-light); line-height: 1.8; margin-bottom: 1rem;">Espacio individual para ordenar lo que vives, tomar decisiones y recuperar serenidad con acompa&ntilde;amiento cercano.</p>
                     <p class="service-detail"><strong>Precio:</strong> seg&uacute;n modalidad | <strong>Duraci&oacute;n:</strong> 60 min | <strong>Modalidad:</strong> online o presencial</p>
-                    <a href="agenda.html" class="btn btn-primary">Agendar sesi&oacute;n</a>
+                    <a href="agenda.html" class="btn btn-primary" style="position: absolute; bottom: 0; right: 0; align-self: flex-end;">Agendar sesi&oacute;n</a>
                 </div>
             </div>
-        </div>
-
-        <div style="border-top: 1px solid #e0e0e0;"></div>
-
-        <div id="detalle-acompanamiento" class="detalle-bloque" style="padding: var(--spacing-xl) 0; background: #f3f5f0;">
-            <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--spacing-lg); align-items: center;">
-                <div>
-                    <img src="https://iili.io/KL1iK1j.png" alt="Acompa&ntilde;amiento" style="width: 100%; max-width: 520px; border-radius: var(--radius-medium); " loading="lazy">
-                </div>
-                <div>
+        </div><div id="detalle-acompanamiento" class="detalle-bloque" style="padding: var(--spacing-xl) 0; background: #ffffff;">
+            <div class="container" style="max-width: 1120px; margin: 0 auto; padding: var(--spacing-lg); padding-bottom: 50px; border: 1px solid #e0e0e0; border-radius: var(--radius-medium); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--spacing-lg); align-items: stretch;">
+                <div style="display: flex; flex-direction: column; text-align: left; position: relative;">
                     <h3 class="section-title-alt" style="text-align: left;">Acompa&ntilde;amiento</h3>
                     <p style="color: var(--color-text-light); line-height: 1.8; margin-bottom: 1rem;">Proceso sostenido para integrar cambios con seguimiento, materiales y plan de acci&oacute;n personalizado.</p>
                     <p class="service-detail"><strong>Planes:</strong> 3, 6 o 12 meses | <strong>Modalidad:</strong> online o presencial</p>
-                    <a href="contacto.html" class="btn btn-primary">Hablar y planificar</a>
+                    <a href="contacto.html" class="btn btn-primary" style="position: absolute; bottom: 0; left: 0;">Hablar y planificar</a>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <img src="https://iili.io/KL1iK1j.png" alt="Acompa&ntilde;amiento" style="width: 100%; max-width: 520px; border-radius: var(--radius-medium); " loading="lazy">
                 </div>
             </div>
-        </div>
-
-        <div style="border-top: 1px solid #e0e0e0;"></div>
-
-        <div id="detalle-talleres" class="detalle-bloque" style="padding: var(--spacing-xl) 0; background: #ffffff;">
-            <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--spacing-lg); align-items: center;">
-                <div>
+        </div><div id="detalle-talleres" class="detalle-bloque" style="padding: var(--spacing-xl) 0; background: #ffffff;">
+            <div class="container" style="max-width: 1120px; margin: 0 auto; padding: var(--spacing-lg); padding-bottom: 50px; border: 1px solid #e0e0e0; border-radius: var(--radius-medium); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--spacing-lg); align-items: stretch;">
+                <div style="display: flex; align-items: center;">
                     <img src="https://iili.io/KQF8g9e.png" alt="Talleres" style="width: 100%; max-width: 520px; border-radius: var(--radius-medium); " loading="lazy">
                 </div>
-                <div>
-                    <h3 class="section-title-alt" style="text-align: left;">Talleres</h3>
+                <div style="display: flex; flex-direction: column; text-align: right; position: relative;">
+                    <h3 class="section-title-alt" style="text-align: right;">Talleres</h3>
                     <p style="color: var(--color-text-light); line-height: 1.8; margin-bottom: 1rem;">Encuentros grupales con pr&aacute;ctica guiada, materiales y comunidad para sostener el aprendizaje.</p>
                     <p class="service-detail"><strong>Precio:</strong> seg&uacute;n convocatoria | <strong>Formato:</strong> online y presencial</p>
-                    <a href="contacto.html" class="btn btn-primary">Ver fechas</a>
+                    <a href="contacto.html" class="btn btn-primary" style="position: absolute; bottom: 0; right: 0;">Ver fechas</a>
                 </div>
             </div>
-        </div>
-
-        <div style="border-top: 1px solid #e0e0e0;"></div>
-
-        <div id="detalle-retiros" class="detalle-bloque" style="padding: var(--spacing-xl) 0; background: #f3f5f0;">
-            <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--spacing-lg); align-items: center;">
-                <div>
-                    <img src="https://iili.io/KQ3DhW7.png" alt="Retiros" style="width: 100%; max-width: 520px; border-radius: var(--radius-medium); " loading="lazy">
-                </div>
-                <div>
+        </div><div id="detalle-retiros" class="detalle-bloque" style="padding: var(--spacing-xl) 0; background: #ffffff;">
+            <div class="container" style="max-width: 1120px; margin: 0 auto; padding: var(--spacing-lg); padding-bottom: 50px; border: 1px solid #e0e0e0; border-radius: var(--radius-medium); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--spacing-lg); align-items: stretch;">
+                <div style="display: flex; flex-direction: column; text-align: left; position: relative;">
                     <h3 class="section-title-alt" style="text-align: left;">Retiros</h3>
                     <p style="color: var(--color-text-light); line-height: 1.8; margin-bottom: 1rem;">Inmersi&oacute;n en naturaleza con pr&aacute;cticas, constelaciones y espacios de silencio para restaurarte.</p>
                     <p class="service-detail"><strong>Duraci&oacute;n:</strong> 2 o 3 d&iacute;as | <strong>Incluye:</strong> alojamiento, alimentaci&oacute;n consciente y actividades</p>
-                    <a href="contacto.html" class="btn btn-primary">Consultar retiros</a>
+                    <a href="contacto.html" class="btn btn-primary" style="position: absolute; bottom: 0; left: 0;">Consultar retiros</a>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <img src="https://iili.io/KQ3DhW7.png" alt="Retiros" style="width: 100%; max-width: 520px; border-radius: var(--radius-medium); " loading="lazy">
                 </div>
             </div>
-        </div>
-
-        <div style="border-top: 1px solid #e0e0e0;"></div>
-
-        <div id="detalle-meditacion" class="detalle-bloque" style="padding: var(--spacing-xl) 0; background: #ffffff;">
-            <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--spacing-lg); align-items: center;">
-                <div>
+        </div><div id="detalle-meditacion" class="detalle-bloque" style="padding: var(--spacing-xl) 0; background: #ffffff;">
+            <div class="container" style="max-width: 1120px; margin: 0 auto; padding: var(--spacing-lg); padding-bottom: 50px; border: 1px solid #e0e0e0; border-radius: var(--radius-medium); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--spacing-lg); align-items: stretch;">
+                <div style="display: flex; align-items: center;">
                     <img src="https://iili.io/KLlTHBe.png" alt="Meditaci&oacute;n guiada gratis" style="width: 100%; max-width: 520px; border-radius: var(--radius-medium); " loading="lazy">
                 </div>
-                <div>
+                <div style="display: flex; flex-direction: column; text-align: right; position: relative;">
                     <!-- Etiqueta removida -->
-                    <h3 class="section-title-alt" style="text-align: left;">Meditaci&oacute;n guiada: Calma en 10 minutos</h3>
+                    <h3 class="section-title-alt" style="text-align: right;">Meditaci&oacute;n guiada: Calma en 10 minutos</h3>
                     <p style="color: var(--color-text-light); line-height: 1.8; margin-bottom: 1rem;">Audio breve para regular el sistema nervioso, ideal para pausas r&aacute;pidas cuando sientes saturaci&oacute;n.</p>
                     <p class="service-detail"><strong>Precio:</strong> Gratis | <strong>Formato:</strong> MP3 | <strong>Duraci&oacute;n:</strong> 10 min</p>
-                    <a href="tu_espacio_privado.html" class="btn btn-primary">Descargar ahora</a>
+                    <a href="tu_espacio_privado.html" class="btn btn-primary" style="position: absolute; bottom: 0; right: 0;">Descargar ahora</a>
                 </div>
             </div>
-        </div>
-
-        <div style="border-top: 1px solid #e0e0e0;"></div>
-
-        <div id="detalle-taller" class="detalle-bloque" style="padding: var(--spacing-xl) 0; background: #f3f5f0;">
-            <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--spacing-lg); align-items: center;">
-                <div>
-                    <img src="https://iili.io/KQF8g9e.png" alt="Taller grabado l&iacute;mites" style="width: 100%; max-width: 520px; border-radius: var(--radius-medium); " loading="lazy">
-                </div>
-                <div>
+        </div><div id="detalle-taller" class="detalle-bloque" style="padding: var(--spacing-xl) 0; background: #ffffff;">
+            <div class="container" style="max-width: 1120px; margin: 0 auto; padding: var(--spacing-lg); padding-bottom: 50px; border: 1px solid #e0e0e0; border-radius: var(--radius-medium); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--spacing-lg); align-items: stretch;">
+                <div style="display: flex; flex-direction: column; text-align: left; position: relative;">
                     <!-- Etiqueta removida -->
                     <h3 class="section-title-alt" style="text-align: left;">Taller grabado: L&iacute;mites desde la calma</h3>
                     <p style="color: var(--color-text-light); line-height: 1.8; margin-bottom: 1rem;">Pr&aacute;cticas para marcar l&iacute;mites sin culpa, alineando cuerpo, emoci&oacute;n y mente.</p>
                     <p class="service-detail"><strong>Precio:</strong> 29&euro; | <strong>Incluye:</strong> video + cuaderno de ejercicios en PDF</p>
-                    <a href="tu_espacio_privado.html" class="btn btn-primary">Comprar y acceder</a>
+                    <a href="tu_espacio_privado.html" class="btn btn-primary" style="position: absolute; bottom: 0; left: 0;">Comprar y acceder</a>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <img src="https://iili.io/KQF8g9e.png" alt="Taller grabado l&iacute;mites" style="width: 100%; max-width: 520px; border-radius: var(--radius-medium); " loading="lazy">
                 </div>
             </div>
-        </div>
-
-        <div style="border-top: 1px solid #e0e0e0;"></div>
-
-        <div id="detalle-pack" class="detalle-bloque" style="padding: var(--spacing-xl) 0; background: #ffffff;">
-            <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--spacing-lg); align-items: center;">
-                <div>
+        </div><div id="detalle-pack" class="detalle-bloque" style="padding: var(--spacing-xl) 0; background: #ffffff;">
+            <div class="container" style="max-width: 1120px; margin: 0 auto; padding: var(--spacing-lg); padding-bottom: 50px; border: 1px solid #e0e0e0; border-radius: var(--radius-medium); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--spacing-lg); align-items: stretch;">
+                <div style="display: flex; align-items: center;">
                     <img src="https://iili.io/KL1jAqF.png" alt="Pack 3 sesiones" style="width: 100%; max-width: 520px; border-radius: var(--radius-medium); " loading="lazy">
                 </div>
-                <div>
+                <div style="display: flex; flex-direction: column; text-align: right; position: relative;">
                     <!-- Etiqueta removida -->
-                    <h3 class="section-title-alt" style="text-align: left;">Pack 3 sesiones 1:1</h3>
+                    <h3 class="section-title-alt" style="text-align: right;">Pack 3 sesiones 1:1</h3>
                     <p style="color: var(--color-text-light); line-height: 1.8; margin-bottom: 1rem;">Trayecto breve y enfocado para trabajar un tema puntual con seguimiento y plan de integraci&oacute;n.</p>
                     <p class="service-detail"><strong>Precio:</strong> 180&euro; | <strong>Modalidad:</strong> Online o presencial | <strong>Duraci&oacute;n:</strong> 3 x 60 min</p>
-                    <a href="agenda.html" class="btn btn-primary">Reservar pack</a>
+                    <a href="agenda.html" class="btn btn-primary" style="position: absolute; bottom: 0; right: 0;">Reservar pack</a>
                 </div>
             </div>
-        </div>
-
-        <div style="border-top: 1px solid #e0e0e0;"></div>
-
-        <div id="detalle-ritual" class="detalle-bloque" style="padding: var(--spacing-xl) 0; background: #f3f5f0;">
-            <div class="container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--spacing-lg); align-items: center;">
-                <div>
-                    <img src="https://iili.io/KQ3DhW7.png" alt="Ritual guiado de cierre de ciclo" style="width: 100%; max-width: 520px; border-radius: var(--radius-medium); " loading="lazy">
-                </div>
-                <div>
+        </div><div id="detalle-ritual" class="detalle-bloque" style="padding: var(--spacing-xl) 0; background: #ffffff;">
+            <div class="container" style="max-width: 1120px; margin: 0 auto; padding: var(--spacing-lg); padding-bottom: 50px; border: 1px solid #e0e0e0; border-radius: var(--radius-medium); box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: var(--spacing-lg); align-items: stretch;">
+                <div style="display: flex; flex-direction: column; text-align: left; position: relative;">
                     <!-- Etiqueta removida -->
                     <h3 class="section-title-alt" style="text-align: left;">Ritual guiado de cierre de ciclo</h3>
                     <p style="color: var(--color-text-light); line-height: 1.8; margin-bottom: 1rem;">Paso a paso para cerrar etapas, honrar aprendizajes y abrir espacio a lo nuevo.</p>
                     <p class="service-detail"><strong>Precio:</strong> 12&euro; | <strong>Incluye:</strong> Audio, gu&iacute;a PDF y playlist recomendada</p>
-                    <a href="tu_espacio_privado.html" class="btn btn-primary">Comprar ahora</a>
+                    <a href="tu_espacio_privado.html" class="btn btn-primary" style="position: absolute; bottom: 0; left: 0;">Comprar ahora</a>
+                </div>
+                <div style="display: flex; align-items: center;">
+                    <img src="https://iili.io/KQ3DhW7.png" alt="Ritual guiado de cierre de ciclo" style="width: 100%; max-width: 520px; border-radius: var(--radius-medium); " loading="lazy">
                 </div>
             </div>
         </div>
@@ -400,8 +372,8 @@
                     <ul>
                         <li><a href="serenamente_vivir.html">Inicio</a></li>
                         <li><a href="tienda.html">Para ti</a></li>
-                        <li><a href="blog.html">InspiraciÃ³n</a></li>
-                        <li><a href="tu_espacio_privado.html">MembresÃ­a</a></li>
+                        <li><a href="blog.html">InspiraciÃƒÂ³n</a></li>
+                        <li><a href="tu_espacio_privado.html">MembresÃƒÂ­a</a></li>
                         <li><a href="contacto.html">Contacto</a></li>
                     </ul>
                 </div>
@@ -409,13 +381,13 @@
                 <div class="footer-section">
                     <ul>
                         <li><a href="#">Privacidad</a></li>
-                        <li><a href="#">TÃ©rminos</a></li>
+                        <li><a href="#">TÃƒÂ©rminos</a></li>
                         <li><a href="#">Aviso Legal</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
-                    <p>SÃ­gueme en redes sociales.</p>
+                    <p>SÃƒÂ­gueme en redes sociales.</p>
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="Instagram">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
@@ -455,5 +427,8 @@
 </body>
 
 </html>
+
+
+
 
 
