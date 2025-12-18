@@ -248,3 +248,31 @@ document.addEventListener('dictionaryApplied', function() {
     console.log('🔄 Re-resaltando enlace activo después de aplicar diccionario...');
     highlightActiveLink();
 });
+
+// ============================================
+
+// LÓGICA DE EXPANSIÓN DE TEXTO
+
+// ============================================
+
+document.addEventListener('DOMContentLoaded', function() {
+
+    document.addEventListener('click', function(e) {
+
+        if (e.target.classList.contains('leer-mas-btn')) {
+
+            const wrapper = e.target.previousElementSibling;
+
+            if (wrapper && wrapper.classList.contains('texto-expandible-wrapper')) {
+
+                wrapper.classList.toggle('is-expanded');
+
+                e.target.textContent = wrapper.classList.contains('is-expanded') ? '- Leer menos' : '+ Leer más detalles';
+
+            }
+
+        }
+
+    });
+
+});
