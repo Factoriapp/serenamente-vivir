@@ -1509,7 +1509,8 @@ nav a.user-logged:hover {
   color: var(--color-gray);
   min-width: 80px;
 }
-.contact-info-item a, .contact-info-item span {
+.contact-info-item a,
+.contact-info-item span {
   color: var(--color-gray);
   text-decoration: none;
 }
@@ -1596,6 +1597,23 @@ textarea.form-input-style {
   border-radius: var(--radius-medium);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   background: #ffffff;
+  max-width: 1120px;
+  /* Set specific width as requested */
+  width: 100%;
+  /* Ensure it takes full width up to max */
+  height: 375px;
+  /* FIXED height as requested */
+  min-height: 375px;
+  /* align-items: center; removed to ensure top alignment of text column */
+  /* Global vertical centering */
+  overflow: hidden;
+  /* Ensure content stays within fixed height initially */
+  transition: height 0.3s ease;
+}
+
+.detalle-bloque.expanded-block .container {
+  height: auto;
+  overflow: visible;
 }
 
 .detalle-imagen-columna {
@@ -1612,10 +1630,13 @@ textarea.form-input-style {
 .detalle-texto-columna {
   display: flex;
   flex-direction: column;
-  height: 250px;
+  height: 100%;
+  /* Occupy full height of grid cell */
+  justify-content: flex-start;
 }
 .detalle-texto-columna .texto-expandible-wrapper {
-  max-height: 135px; /* Aprox 6 líneas */
+  max-height: 135px;
+  /* Aprox 6 líneas */
   overflow: hidden;
   transition: max-height 0.5s ease-in-out;
   position: relative;
@@ -1638,6 +1659,224 @@ textarea.form-input-style {
 }
 .detalle-texto-columna .service-detail {
   margin-bottom: 20px;
+}
+
+/* ======================================
+   ESTILOS ESPECÍFICOS: DETALLE SESIONES 1:1
+   ====================================== */
+/* Ajustes específicos para bloques con Imagen a la Izquierda
+   (#detalle-sesion, #detalle-talleres, #detalle-meditacion, #detalle-pack) */
+#detalle-sesion .detalle-texto-columna,
+#detalle-talleres .detalle-texto-columna,
+#detalle-meditacion .detalle-texto-columna,
+#detalle-pack .detalle-texto-columna {
+  height: auto;
+  text-align: right;
+  /* Align text right */
+}
+#detalle-sesion .container,
+#detalle-talleres .container,
+#detalle-meditacion .container,
+#detalle-pack .container {
+  padding-top: 1.5rem;
+  /* Adjusted padding to fit in 350px */
+  padding-bottom: 2.5rem;
+  /* Increased gap - Item 14 */
+}
+#detalle-sesion.detalle-bloque,
+#detalle-talleres.detalle-bloque,
+#detalle-meditacion.detalle-bloque,
+#detalle-pack.detalle-bloque {
+  padding-top: var(--spacing-sm);
+}
+#detalle-sesion .texto-expandible-wrapper,
+#detalle-talleres .texto-expandible-wrapper,
+#detalle-meditacion .texto-expandible-wrapper,
+#detalle-pack .texto-expandible-wrapper {
+  max-height: 115px;
+  /* ~5 lines - Item 2 */
+  overflow: hidden;
+}
+#detalle-sesion .texto-expandible-wrapper.is-expanded,
+#detalle-talleres .texto-expandible-wrapper.is-expanded,
+#detalle-meditacion .texto-expandible-wrapper.is-expanded,
+#detalle-pack .texto-expandible-wrapper.is-expanded {
+  max-height: 2000px;
+}
+#detalle-sesion .texto-expandible-wrapper:not(.is-expanded)::after,
+#detalle-talleres .texto-expandible-wrapper:not(.is-expanded)::after,
+#detalle-meditacion .texto-expandible-wrapper:not(.is-expanded)::after,
+#detalle-pack .texto-expandible-wrapper:not(.is-expanded)::after {
+  height: 36px;
+}
+#detalle-sesion .detalle-texto-columna > div:last-child,
+#detalle-talleres .detalle-texto-columna > div:last-child,
+#detalle-meditacion .detalle-texto-columna > div:last-child,
+#detalle-pack .detalle-texto-columna > div:last-child {
+  margin-top: auto;
+  /* Anchor to bottom - Item 25 */
+  padding-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  /* Align button right - Item 4 */
+}
+#detalle-sesion .service-detail,
+#detalle-talleres .service-detail,
+#detalle-meditacion .service-detail,
+#detalle-pack .service-detail {
+  margin-bottom: 4px;
+  /* Reduced gap - Item 15 */
+  text-align: right;
+}
+#detalle-sesion .detalle-imagen-columna img,
+#detalle-talleres .detalle-imagen-columna img,
+#detalle-meditacion .detalle-imagen-columna img,
+#detalle-pack .detalle-imagen-columna img {
+  height: 375px;
+  /* Increased height to 375px - Item 20 */
+  object-fit: contain;
+  /* Prevent truncation - Item 19 */
+}
+#detalle-sesion,
+#detalle-talleres,
+#detalle-meditacion,
+#detalle-pack {
+  /* Gap Title - Item 1 */
+}
+#detalle-sesion .section-title-alt,
+#detalle-talleres .section-title-alt,
+#detalle-meditacion .section-title-alt,
+#detalle-pack .section-title-alt {
+  margin-bottom: 1.5rem;
+}
+
+/* Ajustes específicos para bloques con Imagen a la Derecha
+   (#detalle-acompanamiento, #detalle-retiros, #detalle-taller, #detalle-ritual) */
+#detalle-acompanamiento .detalle-texto-columna,
+#detalle-retiros .detalle-texto-columna,
+#detalle-taller .detalle-texto-columna,
+#detalle-ritual .detalle-texto-columna {
+  height: auto;
+  text-align: left;
+  /* Align text left - Item 2 */
+}
+#detalle-acompanamiento,
+#detalle-retiros,
+#detalle-taller,
+#detalle-ritual {
+  /* Container global styles for 375px and centering are already applied broadly */
+}
+#detalle-acompanamiento .container,
+#detalle-retiros .container,
+#detalle-taller .container,
+#detalle-ritual .container {
+  padding-top: 1.5rem;
+  padding-bottom: 2.5rem;
+  /* Gap inferior 2.5rem */
+}
+#detalle-acompanamiento.detalle-bloque,
+#detalle-retiros.detalle-bloque,
+#detalle-taller.detalle-bloque,
+#detalle-ritual.detalle-bloque {
+  padding-top: var(--spacing-sm);
+}
+#detalle-acompanamiento .texto-expandible-wrapper,
+#detalle-retiros .texto-expandible-wrapper,
+#detalle-taller .texto-expandible-wrapper,
+#detalle-ritual .texto-expandible-wrapper {
+  max-height: 115px;
+  /* ~5 lines - Item 4 */
+  overflow: hidden;
+}
+#detalle-acompanamiento .texto-expandible-wrapper.is-expanded,
+#detalle-retiros .texto-expandible-wrapper.is-expanded,
+#detalle-taller .texto-expandible-wrapper.is-expanded,
+#detalle-ritual .texto-expandible-wrapper.is-expanded {
+  max-height: 2000px;
+}
+#detalle-acompanamiento .texto-expandible-wrapper:not(.is-expanded)::after,
+#detalle-retiros .texto-expandible-wrapper:not(.is-expanded)::after,
+#detalle-taller .texto-expandible-wrapper:not(.is-expanded)::after,
+#detalle-ritual .texto-expandible-wrapper:not(.is-expanded)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 36px;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff);
+  pointer-events: none;
+}
+#detalle-acompanamiento .detalle-texto-columna > div:last-child,
+#detalle-retiros .detalle-texto-columna > div:last-child,
+#detalle-taller .detalle-texto-columna > div:last-child,
+#detalle-ritual .detalle-texto-columna > div:last-child {
+  margin-top: auto;
+  /* Anchor to bottom - Item 25 */
+  padding-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  /* Align button left - Item 2 */
+}
+#detalle-acompanamiento .service-detail,
+#detalle-retiros .service-detail,
+#detalle-taller .service-detail,
+#detalle-ritual .service-detail {
+  margin-bottom: 4px;
+  /* Reduced gap */
+  text-align: left;
+  /* Align text left */
+}
+#detalle-acompanamiento .detalle-imagen-columna img,
+#detalle-retiros .detalle-imagen-columna img,
+#detalle-taller .detalle-imagen-columna img,
+#detalle-ritual .detalle-imagen-columna img {
+  height: 375px;
+  /* Fixed height - Item 5 */
+  object-fit: contain;
+  /* Prevent truncation */
+}
+#detalle-acompanamiento,
+#detalle-retiros,
+#detalle-taller,
+#detalle-ritual {
+  /* Gap Title */
+}
+#detalle-acompanamiento .section-title-alt,
+#detalle-retiros .section-title-alt,
+#detalle-taller .section-title-alt,
+#detalle-ritual .section-title-alt {
+  margin-bottom: 1.5rem;
+}
+#detalle-acompanamiento .leer-mas-btn,
+#detalle-retiros .leer-mas-btn,
+#detalle-taller .leer-mas-btn,
+#detalle-ritual .leer-mas-btn {
+  margin: 0.5rem 0 0.2rem 0;
+  text-align: left;
+  /* Align read more left */
+}
+
+/* Botón "Leer más" para expansión de texto */
+.leer-mas-btn {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  color: var(--color-gray);
+  cursor: pointer;
+  margin: 0.5rem 0 0.2rem 0;
+  /* Reduced margins - Item 12 */
+  text-align: right;
+  /* Align right - Item 3 */
+  width: 100%;
+  transition: color 0.3s ease;
+  background: none;
+  border: none;
+  padding: 0;
+}
+.leer-mas-btn:hover {
+  color: var(--color-beige);
 }
 
 /* ============================================

@@ -83,7 +83,7 @@ if (document.getElementById('leadMagnetForm')) {
     consentCheckbox.addEventListener('change', validar);
 
     // Submit
-    document.getElementById('leadMagnetForm').addEventListener('submit', function(e) {
+    document.getElementById('leadMagnetForm').addEventListener('submit', function (e) {
         e.preventDefault();
 
         // Verificar si el formulario es válido
@@ -115,7 +115,7 @@ function initializeModals() {
     const registroModalOverlay = document.getElementById('registroModalOverlay');
 
     // Función para abrir el modal de login
-    window.abrirModalLogin = function() {
+    window.abrirModalLogin = function () {
         if (loginModal) {
             loginModal.style.display = 'flex';
             document.body.style.overflow = 'hidden';
@@ -123,7 +123,7 @@ function initializeModals() {
     };
 
     // Función para cerrar el modal de login
-    window.cerrarModalLogin = function() {
+    window.cerrarModalLogin = function () {
         if (loginModal) {
             loginModal.style.display = 'none';
             document.body.style.overflow = '';
@@ -141,7 +141,7 @@ function initializeModals() {
     }
 
     // Función para abrir el modal de registro
-    window.abrirModalRegistro = function() {
+    window.abrirModalRegistro = function () {
         if (registroModal) {
             registroModal.style.display = 'flex';
             document.body.style.overflow = 'hidden';
@@ -149,7 +149,7 @@ function initializeModals() {
     };
 
     // Función para cerrar el modal de registro
-    window.cerrarModalRegistro = function() {
+    window.cerrarModalRegistro = function () {
         if (registroModal) {
             registroModal.style.display = 'none';
             document.body.style.overflow = '';
@@ -167,7 +167,7 @@ function initializeModals() {
     }
 
     // Cerrar modales con tecla ESC
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') {
             const loginModal = document.getElementById('loginModal');
             const registroModal = document.getElementById('registroModal');
@@ -196,7 +196,7 @@ if (typeof window.initializeRegistroForm === 'function') {
 }
 
 // Re-inicializar modales si config-loader.js reemplaza el DOM
-document.addEventListener('dictionaryApplied', function() {
+document.addEventListener('dictionaryApplied', function () {
     console.log('🔄 Re-inicializando modales después de aplicar diccionario...');
     initializeModals();
 
@@ -228,7 +228,7 @@ function highlightActiveLink() {
         // It points to an anchor on the same page
         if (link.getAttribute('href') === '#membership-featured' && currentPath === 'serenamente_vivir.html') {
             link.classList.add('active');
-            return; 
+            return;
         }
 
         // Regular page links
@@ -244,7 +244,7 @@ function highlightActiveLink() {
 window.addEventListener('DOMContentLoaded', highlightActiveLink);
 
 // Re-ejecutar si config-loader.js reemplaza el DOM
-document.addEventListener('dictionaryApplied', function() {
+document.addEventListener('dictionaryApplied', function () {
     console.log('🔄 Re-resaltando enlace activo después de aplicar diccionario...');
     highlightActiveLink();
 });
@@ -255,24 +255,59 @@ document.addEventListener('dictionaryApplied', function() {
 
 // ============================================
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
 
-    document.addEventListener('click', function(e) {
-
+    // Función: Manejar clic en "Leer más"
+    document.addEventListener('click', function (e) {
         if (e.target.classList.contains('leer-mas-btn')) {
-
             const wrapper = e.target.previousElementSibling;
-
             if (wrapper && wrapper.classList.contains('texto-expandible-wrapper')) {
-
                 wrapper.classList.toggle('is-expanded');
 
+                // Buscar el bloque padre para desbloquear la altura
+                const parentBlock = wrapper.closest('.detalle-bloque');
+                if (parentBlock) {
+                    parentBlock.classList.toggle('expanded-block', wrapper.classList.contains('is-expanded'));
+                }
+
                 e.target.textContent = wrapper.classList.contains('is-expanded') ? '- Leer menos' : '+ Leer más detalles';
-
             }
-
         }
+    });
 
+    // Función: Inicializar botones (ocultar si el texto es corto)
+    function initReadMoreButtons() {
+        const wrappers = document.querySelectorAll('.texto-expandible-wrapper');
+
+        wrappers.forEach(wrapper => {
+            const btn = wrapper.nextElementSibling;
+
+            // Verificar si es un botón de leer más
+            if (btn && btn.classList.contains('leer-mas-btn')) {
+                // Si el contenido es más alto que el límite (115px según CSS), mostrar botón
+                // Añadimos un pequeño margen de error (e.g. 5px)
+                if (wrapper.scrollHeight > (wrapper.clientHeight + 5)) {
+                    btn.style.display = 'block';
+                } else {
+                    btn.style.display = 'none';
+                    // Opcional: Quitar el gradiente si no hay botón, aunque el CSS lo maneja por clase not(.is-expanded)
+                    // Para ser más limpios, podríamos añadir una clase 'no-overflow'
+                    wrapper.style.maxHeight = 'none'; // Quitar límite visual si no es necesario
+                    wrapper.classList.add('no-truncation'); // Para CSS si queremos quitar el :after
+                }
+            }
+        });
+        console.log('✅ Botones "Leer más" inicializados condicionalmente.');
+    }
+
+    // Ejecutar al inicio y al redimensionar
+    // Le damos un pequeño delay para asegurar renderizado de fuentes/imágenes
+    setTimeout(initReadMoreButtons, 100);
+    window.addEventListener('resize', initReadMoreButtons);
+
+    // Re-ejecutar si config-loader aplica diccionario
+    document.addEventListener('dictionaryApplied', function () {
+        setTimeout(initReadMoreButtons, 100);
     });
 
 });

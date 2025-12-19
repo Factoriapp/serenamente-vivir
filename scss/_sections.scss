@@ -892,7 +892,7 @@
     gap: 0.75rem;
 
     // Pushes the last element (e.g., a button container) to the bottom
-    & > *:last-child {
+    &>*:last-child {
         margin-top: auto;
     }
 }
@@ -1227,7 +1227,8 @@
         min-width: 80px;
     }
 
-    a, span {
+    a,
+    span {
         color: var(--color-gray);
         text-decoration: none;
     }
@@ -1309,6 +1310,7 @@ textarea.form-input-style {
 
 .detalle-bloque {
     padding: var(--spacing-lg) 0;
+
     &:first-of-type {
         padding-top: 0;
     }
@@ -1323,13 +1325,30 @@ textarea.form-input-style {
     border-radius: var(--radius-medium);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     background: #ffffff;
+    max-width: 1120px;
+    /* Set specific width as requested */
+    width: 100%;
+    /* Ensure it takes full width up to max */
+    height: 375px;
+    /* FIXED height as requested */
+    min-height: 375px;
+    /* align-items: center; removed to ensure top alignment of text column */
+    /* Global vertical centering */
+    overflow: hidden;
+    /* Ensure content stays within fixed height initially */
+    transition: height 0.3s ease;
+}
+
+.detalle-bloque.expanded-block .container {
+    height: auto;
+    overflow: visible;
 }
 
 .detalle-imagen-columna {
     height: 250px;
     border-radius: var(--radius-medium);
     overflow: hidden;
-    
+
     img {
         width: 100%;
         height: 100%;
@@ -1340,10 +1359,13 @@ textarea.form-input-style {
 .detalle-texto-columna {
     display: flex;
     flex-direction: column;
-    height: 250px;
-    
+    height: 100%;
+    /* Occupy full height of grid cell */
+    justify-content: flex-start;
+
     .texto-expandible-wrapper {
-        max-height: 135px; /* Aprox 6 líneas */
+        max-height: 135px;
+        /* Aprox 6 líneas */
         overflow: hidden;
         transition: max-height 0.5s ease-in-out;
         position: relative;
@@ -1363,12 +1385,183 @@ textarea.form-input-style {
         }
     }
 
-    & > div:last-child {
+    &>div:last-child {
         margin-top: auto;
-        padding-top: 1rem; 
+        padding-top: 1rem;
     }
 
     .service-detail {
-        margin-bottom: 20px; 
+        margin-bottom: 20px;
+    }
+}
+
+/* ======================================
+   ESTILOS ESPECÍFICOS: DETALLE SESIONES 1:1
+   ====================================== */
+
+/* Ajustes específicos para bloques con Imagen a la Izquierda
+   (#detalle-sesion, #detalle-talleres, #detalle-meditacion, #detalle-pack) */
+#detalle-sesion,
+#detalle-talleres,
+#detalle-meditacion,
+#detalle-pack {
+    .detalle-texto-columna {
+        height: auto;
+        text-align: right;
+        /* Align text right */
+    }
+
+    .container {
+        padding-top: 1.5rem;
+        /* Adjusted padding to fit in 350px */
+        padding-bottom: 2.5rem;
+        /* Increased gap - Item 14 */
+    }
+
+    &.detalle-bloque {
+        padding-top: var(--spacing-sm);
+    }
+
+    .texto-expandible-wrapper {
+        max-height: 115px;
+        /* ~5 lines - Item 2 */
+        overflow: hidden;
+
+        &.is-expanded {
+            max-height: 2000px;
+        }
+
+        &:not(.is-expanded)::after {
+            height: 36px;
+        }
+    }
+
+    .detalle-texto-columna>div:last-child {
+        margin-top: auto;
+        /* Anchor to bottom - Item 25 */
+        padding-top: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        /* Align button right - Item 4 */
+    }
+
+    .service-detail {
+        margin-bottom: 4px;
+        /* Reduced gap - Item 15 */
+        text-align: right;
+    }
+
+    .detalle-imagen-columna img {
+        height: 375px;
+        /* Increased height to 375px - Item 20 */
+        object-fit: contain;
+        /* Prevent truncation - Item 19 */
+    }
+
+    /* Gap Title - Item 1 */
+    .section-title-alt {
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* Ajustes específicos para bloques con Imagen a la Derecha
+   (#detalle-acompanamiento, #detalle-retiros, #detalle-taller, #detalle-ritual) */
+#detalle-acompanamiento,
+#detalle-retiros,
+#detalle-taller,
+#detalle-ritual {
+    .detalle-texto-columna {
+        height: auto;
+        text-align: left;
+        /* Align text left - Item 2 */
+    }
+
+    /* Container global styles for 375px and centering are already applied broadly */
+    .container {
+        padding-top: 1.5rem;
+        padding-bottom: 2.5rem;
+        /* Gap inferior 2.5rem */
+    }
+
+    &.detalle-bloque {
+        padding-top: var(--spacing-sm);
+    }
+
+    .texto-expandible-wrapper {
+        max-height: 115px;
+        /* ~5 lines - Item 4 */
+        overflow: hidden;
+
+        &.is-expanded {
+            max-height: 2000px;
+        }
+
+        &:not(.is-expanded)::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 36px;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff);
+            pointer-events: none;
+        }
+    }
+
+    .detalle-texto-columna>div:last-child {
+        margin-top: auto;
+        /* Anchor to bottom - Item 25 */
+        padding-top: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        /* Align button left - Item 2 */
+    }
+
+    .service-detail {
+        margin-bottom: 4px;
+        /* Reduced gap */
+        text-align: left;
+        /* Align text left */
+    }
+
+    .detalle-imagen-columna img {
+        height: 375px;
+        /* Fixed height - Item 5 */
+        object-fit: contain;
+        /* Prevent truncation */
+    }
+
+    /* Gap Title */
+    .section-title-alt {
+        margin-bottom: 1.5rem;
+    }
+
+    .leer-mas-btn {
+        margin: 0.5rem 0 0.2rem 0;
+        text-align: left;
+        /* Align read more left */
+    }
+}
+
+/* Botón "Leer más" para expansión de texto */
+.leer-mas-btn {
+    font-family: var(--font-sans);
+    font-size: 14px;
+    color: var(--color-gray);
+    cursor: pointer;
+    margin: 0.5rem 0 0.2rem 0;
+    /* Reduced margins - Item 12 */
+    text-align: right;
+    /* Align right - Item 3 */
+    width: 100%;
+    transition: color 0.3s ease;
+    background: none;
+    border: none;
+    padding: 0;
+
+    &:hover {
+        color: var(--color-beige);
     }
 }
