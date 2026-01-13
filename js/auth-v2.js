@@ -1,7 +1,14 @@
 // ============================================
-// SISTEMA DE AUTENTICACIÓN REAL (SUPABASE) - V 2.1
+// SISTEMA DE AUTENTICACIÓN REAL (SUPABASE) - V 2.2
 // ============================================
-console.log('%c🚀 SERENAMENTE: Cargando sistema de autenticación SUPABASE (V.2.1)', 'background: #222; color: #bada55; padding: 10px; font-weight: bold;');
+console.log('%c🚀 SERENAMENTE: SUPABASE V-2.2 ACTIVA', 'background: #222; color: #bada55; padding: 10px; font-weight: bold;');
+
+// LIMPIEZA DE SEGURIDAD: Borrar rastro de la versión local vieja
+if (localStorage.getItem('usuarios') || localStorage.getItem('usuarioActual')) {
+    console.warn('🧹 Limpiando rastro de base de datos local antigua...');
+    localStorage.removeItem('usuarios');
+    localStorage.removeItem('usuarioActual');
+}
 
 // Alias para facilitar el uso en el código
 function getSupabase() {
