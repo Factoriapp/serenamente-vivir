@@ -4,84 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Serenamente Vivir - Un espacio para volver a ti</title>
+
+    <!-- SEO Básico -->
+    <title>Serenamente Vivir - Un espacio para volver a ti | Marlene Sosa</title>
+    <meta name="description"
+        content="Acompañamiento terapéutico para mujeres. Constelaciones Familiares, Biodescodificación y Genograma en un espacio de calma y sanación.">
+    <meta name="keywords"
+        content="terapia mujeres, constelaciones familiares, biodescodificación, salud emocional, bienestar, Marlene Sosa">
+    <link rel="canonical" href="https://serenamentevivir.com/serenamente_vivir.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://serenamentevivir.com/">
+    <meta property="og:title" content="Serenamente Vivir - Un espacio para volver a ti">
+    <meta property="og:description"
+        content="Espacio terapéutico para reconectar con tu esencia y sanar tu historia desde la calma.">
+    <meta property="og:image" content="https://iili.io/K4a3jgj.png">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://serenamentevivir.com/">
+    <meta property="twitter:title" content="Serenamente Vivir - Marlene Sosa">
+    <meta property="twitter:description"
+        content="Acompañamiento terapéutico para mujeres en momentos de transformación vital.">
+    <meta property="twitter:image" content="https://iili.io/K4a3jgj.png">
+
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
         rel="stylesheet">
 
     <!-- CSS Externo - Sistema SCSS Modular -->
     <link rel="stylesheet" href="css/styles.css?v=11">
-
-    <!-- ESTILOS MODAL (INLINE - WORKAROUND) -->
-    <style>
-        .modal {
-            display: none;
-            position: fixed !important;
-            top: 0 !important;
-            left: 0 !important;
-            width: 100% !important;
-            height: 100% !important;
-            z-index: 2000 !important;
-            align-items: center !important;
-            justify-content: center !important;
-        }
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.6);
-        }
-        .modal-content {
-            position: relative;
-            background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            max-width: 500px;
-            width: 90%;
-            z-index: 2001;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
-        }
-        .modal-close {
-            position: absolute;
-            top: 1rem;
-            right: 1rem;
-            font-size: 28px;
-            color: #999;
-            cursor: pointer;
-            border: none;
-            background: transparent;
-            width: 35px;
-            height: 35px;
-            border-radius: 50%;
-            line-height: 1;
-        }
-        .modal-close:hover {
-            background-color: #f0f0f0;
-            color: #333;
-        }
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-        .form-label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: #333;
-        }
-        .form-input {
-            width: 100%;
-            padding: 0.75rem 1rem;
-            border: 2px solid #ddd;
-            border-radius: 8px;
-            font-size: 1rem;
-        }
-        .form-input:focus {
-            outline: none;
-            border-color: #e7cf9d;
-        }
-    </style>
 </head>
 
 <body>
@@ -98,11 +51,13 @@
                 <a href="contacto.html">Contacto</a>
 
                 <!-- Mostrar según estado de sesión -->
-                <a href="#" onclick="abrirModalLogin(); return false;" class="nav-destacado" id="btnIniciarSesion">Iniciar Sesión</a>
+                <a href="#" onclick="abrirModalLogin(); return false;" class="nav-destacado"
+                    id="btnIniciarSesion">Iniciar Sesión</a>
 
                 <!-- Dropdown de usuario logueado -->
                 <div class="user-menu-container" id="userMenuContainer" style="display: none; position: relative;">
-                    <a href="#" onclick="toggleUserDropdown(); return false;" class="user-logged" id="btnUsuarioLogueado">
+                    <a href="#" onclick="toggleUserDropdown(); return false;" class="user-logged"
+                        id="btnUsuarioLogueado">
                         <span style="font-weight: 600;">Hola <span id="nombreUsuarioHeader"></span>!</span>
                         <span style="margin-left: 0.25rem; font-size: 0.75em;">▼</span>
                     </a>
@@ -111,7 +66,8 @@
                         <a href="cuenta.html" class="user-dropdown-item">
                             👤 Mi Cuenta
                         </a>
-                        <a href="#" onclick="cerrarSesion(); return false;" class="user-dropdown-item" style="color: #d9534f;">
+                        <a href="#" onclick="cerrarSesion(); return false;" class="user-dropdown-item"
+                            style="color: #d9534f;">
                             🚪 Cerrar Sesión
                         </a>
                     </div>
@@ -138,7 +94,10 @@
         <div class="container">
             <h2>Un espacio para volver a ti</h2>
             <p class="section-intro"><em>Permítete sentir, reconectar y elegir tu camino.</em></p>
-            <p class="section-intro"><strong>Serenamente Vivir</strong> es un espacio terapéutico pensado para mujeres <br>que desean reconectar con su esencia, sanar su historia y elegir su vida <br>desde la calma y honestidad interior.</p>
+            <p class="section-intro"><strong>Serenamente Vivir</strong> es un espacio terapéutico pensado para mujeres
+                <br>que desean reconectar con su esencia, sanar su historia y elegir su vida <br>desde la calma y
+                honestidad interior.
+            </p>
 
             <div class="who-grid">
                 <img src="https://iili.io/K47j7AG.png" alt="Marlene Sosa" class="who-image">
@@ -168,7 +127,8 @@
     <!-- Sessions Section - Versión Resumida -->
     <section id="como-puedo-ayudarte" class="sessions-section">
         <div class="container">
-            <h2>Descubre tu camino a la serenidad <span class="sr-only">: Recursos y Acompañamiento Sistémico, Biodescodificación y Constelaciones Familiares.</span></h2>
+            <h2>Descubre tu camino a la serenidad <span class="sr-only">: Recursos y Acompañamiento Sistémico,
+                    Biodescodificación y Constelaciones Familiares.</span></h2>
             <div class="services-grid">
                 <!-- Sesiones 1:1 -->
                 <div class="service-card service-card-summary">
@@ -177,7 +137,8 @@
                     </div>
                     <div class="service-card-content">
                         <h3>Sesiones 1:1</h3>
-                        <p>Un espacio íntimo y personalizado donde reconectar con tu verdad interior y encontrar claridad en tus circunstancias actuales.</p>
+                        <p>Un espacio íntimo y personalizado donde reconectar con tu verdad interior y encontrar
+                            claridad en tus circunstancias actuales.</p>
                         <a href="tienda.html#servicios" class="btn btn-primary">Ver más</a>
                     </div>
                 </div>
@@ -189,7 +150,8 @@
                     </div>
                     <div class="service-card-content">
                         <h3>Acompañamiento</h3>
-                        <p>Procesos de transformación continua adaptados a tu ritmo, con herramientas sistémicas y apoyo sostenido.</p>
+                        <p>Procesos de transformación continua adaptados a tu ritmo, con herramientas sistémicas y apoyo
+                            sostenido.</p>
                         <a href="tienda.html#servicios" class="btn btn-primary">Ver más</a>
                     </div>
                 </div>
@@ -201,13 +163,17 @@
                     </div>
                     <div class="service-card-content">
                         <h3>Talleres</h3>
-                        <p>Encuentros grupales para compartir experiencias, aprender en comunidad y crecer juntas en un espacio seguro.</p>
+                        <p>Encuentros grupales para compartir experiencias, aprender en comunidad y crecer juntas en un
+                            espacio seguro.</p>
                         <a href="tienda.html#servicios" class="btn btn-primary">Ver más</a>
                     </div>
                 </div>
             </div>
             <div style="text-align: center; margin-top: 30px;">
-                <a href="tienda.html" style="color: var(--color-gray); text-decoration: none; font-size: 18px; font-weight: 600; transition: var(--transition);" onmouseover="this.style.color='var(--color-cyan)'" onmouseout="this.style.color='var(--color-gray)'">Ver todos los recursos →</a>
+                <a href="tienda.html"
+                    style="color: var(--color-gray); text-decoration: none; font-size: 18px; font-weight: 600; transition: var(--transition);"
+                    onmouseover="this.style.color='var(--color-cyan)'"
+                    onmouseout="this.style.color='var(--color-gray)'">Ver todos los recursos →</a>
             </div>
         </div>
     </section>
@@ -221,56 +187,61 @@
             <h2>Historias de transformación</h2>
 
             <div class="testimonials-vertical">
-                    <!-- Testimonial 1: Imagen izquierda -->
-                    <div class="testimonial-row">
-                        <div class="testimonial-image-container">
-                            <img src="https://placehold.co/69x69/e7cf9d/ffffff?text=AG" alt="Ana García" loading="lazy">
-                        </div>
-                        <div class="testimonial-content-container">
-                            <p class="testimonial-quote-mark beige">"</p>
-                            <p class="testimonial-text-large">
-                                Llegué a Marlene con una ansiedad que no me dejaba vivir. Sentía que mi cabeza iba a mil por hora. Sus sesiones no solo me calmaron, me enseñaron a escucharme. Hoy elijo mi vida desde la paz, no desde el miedo.
-                            </p>
-                            <div class="testimonial-author-info">
-                                <h3>Ana García</h3>
-                                <p>Paciente de Sesiones 1:1</p>
-                            </div>
+                <!-- Testimonial 1: Imagen izquierda -->
+                <div class="testimonial-row">
+                    <div class="testimonial-image-container">
+                        <img src="https://placehold.co/69x69/e7cf9d/ffffff?text=AG" alt="Ana García" loading="lazy">
+                    </div>
+                    <div class="testimonial-content-container">
+                        <p class="testimonial-quote-mark beige">"</p>
+                        <p class="testimonial-text-large">
+                            Llegué a Marlene con una ansiedad que no me dejaba vivir. Sentía que mi cabeza iba a mil por
+                            hora. Sus sesiones no solo me calmaron, me enseñaron a escucharme. Hoy elijo mi vida desde
+                            la paz, no desde el miedo.
+                        </p>
+                        <div class="testimonial-author-info">
+                            <h3>Ana García</h3>
+                            <p>Paciente de Sesiones 1:1</p>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Testimonial 2: Imagen derecha -->
-                    <div class="testimonial-row-reverse">
-                        <div class="testimonial-image-container">
-                            <img src="https://placehold.co/69x69/cae4b2/ffffff?text=LP" alt="Lucía Pérez" loading="lazy">
-                        </div>
-                        <div class="testimonial-content-container">
-                            <p class="testimonial-quote-mark green">"</p>
-                            <p class="testimonial-text-large">
-                                La comunidad privada es mi refugio semanal. Antes me sentía muy sola en mi proceso. Saber que tengo recursos y apoyo constante me da una seguridad impagable. No estoy sola en esto.
-                            </p>
-                            <div class="testimonial-author-info">
-                                <h3>Lucía Pérez</h3>
-                                <p>Miembro de la Comunidad</p>
-                            </div>
+                <!-- Testimonial 2: Imagen derecha -->
+                <div class="testimonial-row-reverse">
+                    <div class="testimonial-image-container">
+                        <img src="https://placehold.co/69x69/cae4b2/ffffff?text=LP" alt="Lucía Pérez" loading="lazy">
+                    </div>
+                    <div class="testimonial-content-container">
+                        <p class="testimonial-quote-mark green">"</p>
+                        <p class="testimonial-text-large">
+                            La comunidad privada es mi refugio semanal. Antes me sentía muy sola en mi proceso. Saber
+                            que tengo recursos y apoyo constante me da una seguridad impagable. No estoy sola en esto.
+                        </p>
+                        <div class="testimonial-author-info">
+                            <h3>Lucía Pérez</h3>
+                            <p>Miembro de la Comunidad</p>
                         </div>
                     </div>
+                </div>
 
-                    <!-- Testimonial 3: Imagen izquierda -->
-                    <div class="testimonial-row">
-                        <div class="testimonial-image-container">
-                            <img src="https://placehold.co/69x69/c9e1e1/ffffff?text=MR" alt="Marta Ruiz" loading="lazy">
-                        </div>
-                        <div class="testimonial-content-container">
-                            <p class="testimonial-quote-mark cyan">"</p>
-                            <p class="testimonial-text-large">
-                                El retiro fue un antes y un después. Sentirme sostenida por la mirada amorosa de Marlene fue profundamente sanador. Es una experiencia imprescindible para cualquier mujer que necesite parar.
-                            </p>
-                            <div class="testimonial-author-info">
-                                <h3>Marta Ruiz</h3>
-                                <p>Asistente a Retiro</p>
-                            </div>
+                <!-- Testimonial 3: Imagen izquierda -->
+                <div class="testimonial-row">
+                    <div class="testimonial-image-container">
+                        <img src="https://placehold.co/69x69/c9e1e1/ffffff?text=MR" alt="Marta Ruiz" loading="lazy">
+                    </div>
+                    <div class="testimonial-content-container">
+                        <p class="testimonial-quote-mark cyan">"</p>
+                        <p class="testimonial-text-large">
+                            El retiro fue un antes y un después. Sentirme sostenida por la mirada amorosa de Marlene fue
+                            profundamente sanador. Es una experiencia imprescindible para cualquier mujer que necesite
+                            parar.
+                        </p>
+                        <div class="testimonial-author-info">
+                            <h3>Marta Ruiz</h3>
+                            <p>Asistente a Retiro</p>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
     </section>
@@ -289,16 +260,22 @@
 
                 <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;">
                     <div>
-                        <img src="https://iili.io/KLlTHBe.png" alt="Comunidad Privada" style="width: 100%; object-fit: cover;" loading="lazy">
+                        <img src="https://iili.io/KLlTHBe.png" alt="Comunidad Privada"
+                            style="width: 100%; object-fit: cover;" loading="lazy">
                     </div>
 
                     <div>
-                        <p style="font-size: 1.1rem; color: var(--color-text-light); line-height: 1.8; margin-bottom: 2rem;">
-                            Un espacio diseñado para acompañarte de manera continua en tu proceso de transformación personal.
+                        <p
+                            style="font-size: 1.1rem; color: var(--color-text-light); line-height: 1.8; margin-bottom: 2rem;">
+                            Un espacio diseñado para acompañarte de manera continua en tu proceso de transformación
+                            personal.
                         </p>
 
-                        <h3 style="font-family: var(--font-serif); font-size: 1.8rem; font-style: italic; color: var(--color-gray); margin-bottom: 1.5rem;">¿Qué incluye?</h3>
-                        <ul style="color: var(--color-text); line-height: 2; margin-bottom: 2.5rem; font-size: 1.05rem;">
+                        <h3
+                            style="font-family: var(--font-serif); font-size: 1.8rem; font-style: italic; color: var(--color-gray); margin-bottom: 1.5rem;">
+                            ¿Qué incluye?</h3>
+                        <ul
+                            style="color: var(--color-text); line-height: 2; margin-bottom: 2.5rem; font-size: 1.05rem;">
                             <li><strong>Sesiones grupales mensuales</strong> online</li>
                             <li><strong>Biblioteca completa</strong> de meditaciones guiadas y recursos</li>
                             <li><strong>Círculos de mujeres</strong> (online y presenciales)</li>
@@ -307,7 +284,8 @@
                             <li><strong>Descuentos especiales</strong> en talleres, retiros y sesiones 1:1</li>
                         </ul>
 
-                        <a href="membresia.html" class="btn btn-primary" style="width: 100%; text-align: center; margin-bottom: 1rem;">Únete a nuestra Comunidad</a>
+                        <a href="membresia.html" class="btn btn-primary"
+                            style="width: 100%; text-align: center; margin-bottom: 1rem;">Únete a nuestra Comunidad</a>
 
                         <p style="text-align: center; font-size: 1.1rem; color: var(--color-gray); margin: 0;">
                             <strong>29€/mes</strong> · Cancela cuando quieras
@@ -333,12 +311,14 @@
                 <!-- Artículo 1: Ansiedad -->
                 <article class="blog-card">
                     <div class="blog-card-image">
-                        <img src="https://placehold.co/600x400/e7cf9d/ffffff?text=Ansiedad" alt="Gestión de ansiedad" loading="lazy">
+                        <img src="https://placehold.co/600x400/e7cf9d/ffffff?text=Ansiedad" alt="Gestión de ansiedad"
+                            loading="lazy">
                     </div>
                     <div class="blog-content">
                         <span class="blog-category-badge emociones">Emociones</span>
                         <h3>El mensaje oculto detrás de tu ansiedad</h3>
-                        <p>¿Y si la ansiedad no fuera el enemigo, sino una mensajera que intenta decirte algo importante?</p>
+                        <p>¿Y si la ansiedad no fuera el enemigo, sino una mensajera que intenta decirte algo
+                            importante?</p>
                         <a href="#" class="blog-read-more">Leer artículo →</a>
                     </div>
                 </article>
@@ -346,7 +326,8 @@
                 <!-- Artículo 2: Rituales -->
                 <article class="blog-card">
                     <div class="blog-card-image">
-                        <img src="https://placehold.co/600x400/cae4b2/ffffff?text=Rituales" alt="Rituales diarios" loading="lazy">
+                        <img src="https://placehold.co/600x400/cae4b2/ffffff?text=Rituales" alt="Rituales diarios"
+                            loading="lazy">
                     </div>
                     <div class="blog-content">
                         <span class="blog-category-badge habitos">Hábitos</span>
@@ -359,7 +340,8 @@
                 <!-- Artículo 3: Duelo -->
                 <article class="blog-card">
                     <div class="blog-card-image">
-                        <img src="https://placehold.co/600x400/f1ede2/333333?text=Duelo" alt="Proceso de duelo" loading="lazy">
+                        <img src="https://placehold.co/600x400/f1ede2/333333?text=Duelo" alt="Proceso de duelo"
+                            loading="lazy">
                     </div>
                     <div class="blog-content">
                         <span class="blog-category-badge sanacion">Sanación</span>
@@ -389,7 +371,8 @@
 
                 <div>
                     <h2>Un regalo para tu calma</h2>
-                    <p>¿Sientes que el ruido mental no te deja descansar? He grabado una <strong>Meditación de Calma Interior (15 min)</strong> especialmente para ti.</p>
+                    <p>¿Sientes que el ruido mental no te deja descansar? He grabado una <strong>Meditación de Calma
+                            Interior (15 min)</strong> especialmente para ti.</p>
                     <p>Es una herramienta de emergencia para volver a tu centro cuando la ansiedad aprieta.</p>
 
                     <div class="lead-form-box">
@@ -401,7 +384,8 @@
                             <label class="privacy-checkbox">
                                 <input type="checkbox" id="consentCheckbox" name="privacy" required>
                                 <span class="privacy-text">
-                                    He leído y acepto la <a href="#">Política de Privacidad</a> y acepto recibir correos de Serenamente Vivir.
+                                    He leído y acepto la <a href="#">Política de Privacidad</a> y acepto recibir correos
+                                    de Serenamente Vivir.
                                 </span>
                             </label>
 
@@ -422,7 +406,8 @@
         <div class="container">
             <h2>¿Tienes dudas sobre qué camino elegir?</h2>
             <div class="antifuga-content">
-                <p>A veces es difícil saber si necesitas una Sesión Individual, un Taller o entrar a la Comunidad. No te quedes con la incertidumbre.</p>
+                <p>A veces es difícil saber si necesitas una Sesión Individual, un Taller o entrar a la Comunidad. No te
+                    quedes con la incertidumbre.</p>
             </div>
 
             <div class="antifuga-cta-container">
@@ -453,9 +438,9 @@
 
                 <div class="footer-section">
                     <ul>
-                        <li><a href="#">Privacidad</a></li>
-                        <li><a href="#">Términos</a></li>
-                        <li><a href="#">Aviso Legal</a></li>
+                        <li><a href="privacidad.html">Privacidad</a></li>
+                        <li><a href="cookies.html">Cookies</a></li>
+                        <li><a href="aviso-legal.html">Aviso Legal</a></li>
                     </ul>
                 </div>
 
@@ -463,25 +448,36 @@
                     <p>Sígueme en redes sociales.</p>
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="Instagram">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                style="width: 24px; height: 24px;">
                                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                             </svg>
                         </a>
                         <a href="#" class="social-link" aria-label="Facebook">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                style="width: 24px; height: 24px;">
                                 <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
                             </svg>
                         </a>
                         <a href="https://wa.me/34XXXXXXXXX" class="social-link" aria-label="WhatsApp">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
-                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                style="width: 24px; height: 24px;">
+                                <path
+                                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                                </path>
                             </svg>
                         </a>
                         <a href="mailto:info@serenamentevivir.com" class="social-link" aria-label="Email">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                style="width: 24px; height: 24px;">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
                                 <polyline points="22,6 12,13 2,6"></polyline>
                             </svg>
                         </a>
@@ -525,7 +521,9 @@
                     </a>
                 </div>
 
-                <div id="loginMensajeError" style="display: none; padding: 1rem; background: var(--color-error-bg); border-left: 4px solid var(--color-error); color: var(--color-error); margin-bottom: 1rem; border-radius: 8px;"></div>
+                <div id="loginMensajeError"
+                    style="display: none; padding: 1rem; background: var(--color-error-bg); border-left: 4px solid var(--color-error); color: var(--color-error); margin-bottom: 1rem; border-radius: 8px;">
+                </div>
 
                 <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;">
                     Iniciar Sesión
@@ -535,7 +533,8 @@
                     <p style="font-size: 0.9rem; color: var(--color-text-light); margin-bottom: 0.5rem;">
                         ¿No tienes cuenta?
                     </p>
-                    <button type="button" onclick="cerrarModalLogin(); abrirModalRegistro();" class="btn btn-secondary" style="width: 100%;">
+                    <button type="button" onclick="cerrarModalLogin(); abrirModalRegistro();" class="btn btn-secondary"
+                        style="width: 100%;">
                         Crear Cuenta Nueva
                     </button>
                 </div>
@@ -569,32 +568,41 @@
 
                 <div class="form-group">
                     <label class="form-label">Contraseña *</label>
-                    <input type="password" id="password" class="form-input" required placeholder="Mínimo 6 caracteres" minlength="6">
+                    <input type="password" id="password" class="form-input" required placeholder="Mínimo 6 caracteres"
+                        minlength="6">
                 </div>
 
                 <div class="form-group">
                     <label class="form-label">Confirmar Contraseña *</label>
-                    <input type="password" id="confirmPassword" class="form-input" required placeholder="Repite tu contraseña" minlength="6">
+                    <input type="password" id="confirmPassword" class="form-input" required
+                        placeholder="Repite tu contraseña" minlength="6">
                 </div>
 
                 <div class="form-group">
                     <label style="display: flex; align-items: start; gap: 0.5rem; cursor: pointer;">
                         <input type="checkbox" id="terminos" required style="margin-top: 0.25rem;">
                         <span style="font-size: 0.9rem; color: var(--color-text-light);">
-                            Acepto los <a href="#" style="color: var(--color-primary); text-decoration: underline;">términos y condiciones</a>
+                            Acepto los <a href="#"
+                                style="color: var(--color-primary); text-decoration: underline;">términos y
+                                condiciones</a>
                         </span>
                     </label>
                 </div>
 
-                <div id="mensajeError" style="display: none; padding: 1rem; background: var(--color-error-bg); border-left: 4px solid var(--color-error); color: var(--color-error); margin-bottom: 1rem; border-radius: 8px;"></div>
-                <div id="mensajeExito" style="display: none; padding: 1rem; background: var(--color-success-bg); border-left: 4px solid var(--color-success-dark); color: var(--color-success-dark); margin-bottom: 1rem; border-radius: 8px;"></div>
+                <div id="mensajeError"
+                    style="display: none; padding: 1rem; background: var(--color-error-bg); border-left: 4px solid var(--color-error); color: var(--color-error); margin-bottom: 1rem; border-radius: 8px;">
+                </div>
+                <div id="mensajeExito"
+                    style="display: none; padding: 1rem; background: var(--color-success-bg); border-left: 4px solid var(--color-success-dark); color: var(--color-success-dark); margin-bottom: 1rem; border-radius: 8px;">
+                </div>
 
                 <button type="submit" class="btn btn-primary" style="width: 100%; margin-bottom: 1rem;">
                     Crear Mi Cuenta
                 </button>
 
                 <p style="text-align: center; font-size: 0.9rem; color: var(--color-text-light);">
-                    ¿Ya tienes cuenta? <a href="#" onclick="cerrarModalRegistro(); abrirModalLogin(); return false;" style="color: var(--color-primary); font-weight: 500;">Inicia sesión aquí</a>
+                    ¿Ya tienes cuenta? <a href="#" onclick="cerrarModalRegistro(); abrirModalLogin(); return false;"
+                        style="color: var(--color-primary); font-weight: 500;">Inicia sesión aquí</a>
                 </p>
             </form>
         </div>
@@ -604,70 +612,6 @@
     <script src="js/config-loader.js"></script>
     <script src="js/auth.js?v=10"></script>
     <script src="js/main.js?v=11"></script>
-
-    <!-- Actualizar header según estado de sesión -->
-    <script>
-        function actualizarHeaderUsuario() {
-            const usuario = obtenerUsuarioActual();
-            const btnIniciarSesion = document.getElementById('btnIniciarSesion');
-            const userMenuContainer = document.getElementById('userMenuContainer');
-            const nombreUsuarioHeader = document.getElementById('nombreUsuarioHeader');
-
-            if (usuario) {
-                // Usuario logueado → Mostrar dropdown con nombre
-                const primerNombre = obtenerPrimerNombre(usuario.nombre);
-                nombreUsuarioHeader.textContent = primerNombre;
-                btnIniciarSesion.style.display = 'none';
-                userMenuContainer.style.display = 'inline-block';
-            } else {
-                // No hay usuario → Mostrar "Iniciar Sesión"
-                btnIniciarSesion.style.display = 'inline-block';
-                userMenuContainer.style.display = 'none';
-            }
-        }
-
-        // Toggle dropdown de usuario
-        function toggleUserDropdown() {
-            const dropdown = document.getElementById('userDropdown');
-            dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
-        }
-
-        // Cerrar dropdown al hacer click fuera
-        document.addEventListener('click', function(e) {
-            const userMenuContainer = document.getElementById('userMenuContainer');
-            const userDropdown = document.getElementById('userDropdown');
-
-            if (userMenuContainer && !userMenuContainer.contains(e.target)) {
-                if (userDropdown) {
-                    userDropdown.style.display = 'none';
-                }
-            }
-        });
-
-        // Ir a Espacio Privado (verificar si está logueado)
-        function irAEspacioPrivado() {
-            const usuario = obtenerUsuarioActual();
-
-            if (usuario) {
-                // Usuario logueado → ir al área privada
-                window.location.href = 'area-privada.html';
-            } else {
-                // No hay usuario → abrir modal de login
-                abrirModalLogin();
-            }
-        }
-
-        // Cerrar sesión
-        function cerrarSesion() {
-            if (confirm('¿Seguro que quieres cerrar sesión?')) {
-                localStorage.removeItem('usuarioActual');
-                window.location.reload();
-            }
-        }
-
-        // Ejecutar al cargar la página
-        window.addEventListener('DOMContentLoaded', actualizarHeaderUsuario);
-    </script>
 </body>
 
 </html>

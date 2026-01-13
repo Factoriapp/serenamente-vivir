@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- SEO Básico -->
-    <meta name="description" content="[DESCRIPCIÓN: Servicios, cursos y eventos disponibles. Describe tus soluciones y beneficios principales.]">
+    <meta name="description"
+        content="[DESCRIPCIÓN: Servicios, cursos y eventos disponibles. Describe tus soluciones y beneficios principales.]">
     <meta name="author" content="[TU_NOMBRE_PROFESIONAL]">
     <meta name="robots" content="index, follow">
     <title>[oferta-de-servicios]</title>
@@ -16,7 +18,8 @@
     <meta property="og:url" content="[TU_URL_COMPLETA]/catalogo.html">
     <meta property="og:site_name" content="[TU_NOMBRE_MARCA]">
     <meta property="og:title" content="Servicios y Soluciones Profesionales">
-    <meta property="og:description" content="[DESCRIPCIÓN: Descubre cómo puedo ayudarte con servicios personalizados, cursos y eventos]">
+    <meta property="og:description"
+        content="[DESCRIPCIÓN: Descubre cómo puedo ayudarte con servicios personalizados, cursos y eventos]">
     <meta property="og:image" content="[TU_URL_COMPLETA]/images/og-image-servicios.jpg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
@@ -37,32 +40,37 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
 
     <header class="header" id="header">
         <nav class="nav-container">
-            <a href="index.html" class="logo-container" aria-label="Inicio" style="text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
+            <a href="index.html" class="logo-container" aria-label="Inicio"
+                style="text-decoration: none; display: flex; align-items: center; gap: 0.5rem;">
                 <img id="headerLogo" class="logo-img hidden" src="" alt="Logotipo" style="height: 40px; width: auto;">
-                
+
                 <span id="headerBrandName" class="logo">
                     [Identidad del Sitio]
                 </span>
             </a>
 
             <!-- CENTRO: Área Personal (TODOS) - Con lógica de portero -->
-            <div class="header-center-action" id="headerCenterAction" onclick="navegarAreaPersonal(event)" style="cursor: pointer;">
+            <div class="header-center-action" id="headerCenterAction" onclick="navegarAreaPersonal(event)"
+                style="cursor: pointer;">
                 <span>👤</span>
                 <span>Área Personal</span>
             </div>
 
             <!-- DERECHA: Avatar + Nombre (Usuarios) - Indicador visual sin link -->
             <div class="header-center-profile" id="headerCenterProfile" style="display: none;">
-                <img id="userAvatar" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'%3E%3Ccircle cx='18' cy='18' r='18' fill='%236B9080'/%3E%3Ctext x='18' y='23' font-size='14' fill='white' text-anchor='middle' font-family='Arial'%3EUS%3C/text%3E%3C/svg%3E"
-                     alt="Avatar"
-                     style="width: 36px; height: 36px; border-radius: 50%;">
+                <img id="userAvatar"
+                    src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' viewBox='0 0 36 36'%3E%3Ccircle cx='18' cy='18' r='18' fill='%236B9080'/%3E%3Ctext x='18' y='23' font-size='14' fill='white' text-anchor='middle' font-family='Arial'%3EUS%3C/text%3E%3C/svg%3E"
+                    alt="Avatar" style="width: 36px; height: 36px; border-radius: 50%;">
                 <span id="userNameHeader">Usuario</span>
             </div>
 
@@ -71,11 +79,14 @@
                 <li><a href="presentacion-profesional.html">[presentacion-profesional]</a></li>
                 <li><a href="catalogo.html" class="active">[catalogo]</a></li>
                 <li><a href="blog.html">[blog]</a></li>
-                <li><a href="javascript:void(0);" id="areaPersonalLink" onclick="navegarAreaPersonal(event)">Área Personal</a></li>
-                <li id="cuentaMenuItem" class="hidden"><a href="javascript:void(0);" id="cuentaLink" onclick="navegarCuenta(event)">Mi Cuenta</a></li>
+                <li><a href="javascript:void(0);" id="areaPersonalLink" onclick="navegarAreaPersonal(event)">Área
+                        Personal</a></li>
+                <li id="cuentaMenuItem" class="hidden"><a href="javascript:void(0);" id="cuentaLink"
+                        onclick="navegarCuenta(event)">Mi Cuenta</a></li>
                 <li><a href="membresia.html">[membresia]</a></li>
                 <li><a href="contacto-agenda.html" class="nav-cta">[contacto-agenda]</a></li>
-                <li id="salirMenuItem" class="hidden"><a href="javascript:void(0);" onclick="cerrarSesion()">Salir</a></li>
+                <li id="salirMenuItem" class="hidden"><a href="javascript:void(0);" onclick="cerrarSesion()">Salir</a>
+                </li>
             </ul>
 
             <!-- DERECHA: Botones de autenticación -->
@@ -101,16 +112,21 @@
         <div class="container">
             <div class="guia-cliente">
                 <h4>📍 Página Unificada: Lista Única de Soluciones</h4>
-                <p><strong>Estrategia:</strong> Sin barreras. Servicios, Cursos y Eventos conviven en el mismo espacio.</p>
-                <p><strong>Orden:</strong> El profesional decide qué aparece primero según su prioridad de venta (ej. llenar un evento urgente).</p>
-                <p><strong>Claridad:</strong> Las "Etiquetas" (Badges) en la esquina superior derecha indican al usuario qué tipo de solución es.</p>
-                <p><strong>Nueva Funcionalidad:</strong> Cada tarjeta lleva a una sección de detalle en la misma página. El usuario hace scroll para ver más información antes de comprar.</p>
+                <p><strong>Estrategia:</strong> Sin barreras. Servicios, Cursos y Eventos conviven en el mismo espacio.
+                </p>
+                <p><strong>Orden:</strong> El profesional decide qué aparece primero según su prioridad de venta (ej.
+                    llenar un evento urgente).</p>
+                <p><strong>Claridad:</strong> Las "Etiquetas" (Badges) en la esquina superior derecha indican al usuario
+                    qué tipo de solución es.</p>
+                <p><strong>Nueva Funcionalidad:</strong> Cada tarjeta lleva a una sección de detalle en la misma página.
+                    El usuario hace scroll para ver más información antes de comprar.</p>
             </div>
 
             <div class="section-header">
                 <h1 class="section-title">[Catálogo de Recursos]</h1>
                 <p class="section-description">
-                    [Intro: Explora las diferentes formas en las que podemos trabajar juntos. Haz clic en "Ver Detalles" para conocer en profundidad qué incluye cada opción.]
+                    [Intro: Explora las diferentes formas en las que podemos trabajar juntos. Haz clic en "Ver Detalles"
+                    para conocer en profundidad qué incluye cada opción.]
                 </p>
             </div>
         </div>
@@ -129,7 +145,8 @@
                     </div>
 
                     <h3 class="card-title">[Guía Gratuita: Los 5 Errores...]</h3>
-                    <p class="card-text">[PDF de 18 páginas con ejercicios prácticos para identificar y eliminar tus ladrones de tiempo.]</p>
+                    <p class="card-text">[PDF de 18 páginas con ejercicios prácticos para identificar y eliminar tus
+                        ladrones de tiempo.]</p>
 
                     <div class="mt-auto">
                         <div class="card-precio" data-recurso-id="lead-magnet-001">
@@ -147,7 +164,8 @@
                     </div>
 
                     <h3 class="card-title">[Mini-Curso: Desconexión Digital]</h3>
-                    <p class="card-text">[7 video-lecciones de 10 minutos para recuperar tu atención y reducir la ansiedad.]</p>
+                    <p class="card-text">[7 video-lecciones de 10 minutos para recuperar tu atención y reducir la
+                        ansiedad.]</p>
 
                     <div class="mt-auto">
                         <div class="card-precio" data-recurso-id="curso-bajo-101">
@@ -170,8 +188,9 @@
                         <span class="event-month">NOV</span>
                     </div>
 
-<h3 class="card-title">[Taller en Vivo: Diseña tu Semana Ideal]</h3>
-                    <p class="card-text">[Masterclass intensiva de 2h. Crea un sistema semanal sostenible que respete tu energía.]</p>
+                    <h3 class="card-title">[Taller en Vivo: Diseña tu Semana Ideal]</h3>
+                    <p class="card-text">[Masterclass intensiva de 2h. Crea un sistema semanal sostenible que respete tu
+                        energía.]</p>
 
                     <div class="mt-auto">
                         <div class="card-precio" data-recurso-id="evento-205">
@@ -189,8 +208,9 @@
                         <img src="https://iili.io/f3yx86v.png" alt="Sesión de Diagnóstico" loading="lazy">
                     </div>
 
-<h3 class="card-title">[Sesión de Diagnóstico Profesional]</h3>
-                    <p class="card-text">[60 minutos 1:1 conmigo. Analizamos tu situación actual y diseñamos un plan de acción personalizado.]</p>
+                    <h3 class="card-title">[Sesión de Diagnóstico Profesional]</h3>
+                    <p class="card-text">[60 minutos 1:1 conmigo. Analizamos tu situación actual y diseñamos un plan de
+                        acción personalizado.]</p>
 
                     <div class="mt-auto">
                         <div class="card-precio" data-recurso-id="servicio-301">
@@ -208,8 +228,9 @@
                         <img src="https://iili.io/f3yx86v.png" alt="Programa Productividad" loading="lazy">
                     </div>
 
-<h3 class="card-title">[Programa: Productividad con Calma]</h3>
-                    <p class="card-text">[8 módulos en profundidad. Domina tu tiempo, energía y atención sin sacrificar tu bienestar.]</p>
+                    <h3 class="card-title">[Programa: Productividad con Calma]</h3>
+                    <p class="card-text">[8 módulos en profundidad. Domina tu tiempo, energía y atención sin sacrificar
+                        tu bienestar.]</p>
 
                     <div class="mt-auto">
                         <div class="card-precio" data-recurso-id="recurso-101">
@@ -227,8 +248,9 @@
                         <img src="https://iili.io/f3yx86v.png" alt="Mentoría Premium" loading="lazy">
                     </div>
 
-<h3 class="card-title">[Mentoría Premium de 90 Días]</h3>
-                    <p class="card-text">[Acompañamiento 1:1 completo para transformar tu relación con el trabajo y alcanzar tus objetivos.]</p>
+                    <h3 class="card-title">[Mentoría Premium de 90 Días]</h3>
+                    <p class="card-text">[Acompañamiento 1:1 completo para transformar tu relación con el trabajo y
+                        alcanzar tus objetivos.]</p>
 
                     <div class="mt-auto">
                         <div class="card-precio" data-recurso-id="programa-premium-501">
@@ -252,14 +274,18 @@
         <div class="container">
             <div class="detail-box">
                 <div class="detail-box__content">
-                    <span class="model-tag" style="background: var(--color-accent-medium); color: white;">📚 Lead Magnet Gratuito</span>
-                    <h2 style="margin-top: 0.5rem; font-size: 2rem; margin-bottom: 2rem;">[Guía: Los 5 Errores que Sabotean tu Productividad]</h2>
+                    <span class="model-tag" style="background: var(--color-accent-medium); color: white;">📚 Lead Magnet
+                        Gratuito</span>
+                    <h2 style="margin-top: 0.5rem; font-size: 2rem; margin-bottom: 2rem;">[Guía: Los 5 Errores que
+                        Sabotean tu Productividad]</h2>
 
                     <p style="line-height: 1.8; color: var(--color-text-light); margin-bottom: 2rem;">
-                        [Copywriting: Descarga inmediata. PDF de 18 páginas con ejercicios prácticos. Identifica y elimina tus ladrones de tiempo...]
+                        [Copywriting: Descarga inmediata. PDF de 18 páginas con ejercicios prácticos. Identifica y
+                        elimina tus ladrones de tiempo...]
                     </p>
 
-                    <div style="background: var(--color-bg-neutral); padding: 2rem; border-radius: 8px; margin-bottom: 2rem;">
+                    <div
+                        style="background: var(--color-bg-neutral); padding: 2rem; border-radius: 8px; margin-bottom: 2rem;">
                         <h3 style="font-size: 1.1rem; margin-bottom: 1rem;">✓ Incluye:</h3>
                         <ul style="margin: 0; padding-left: 1.2rem; line-height: 1.8;">
                             <li>Test de auto-diagnóstico</li>
@@ -270,11 +296,13 @@
 
                     <!-- PRECIO SIEMPRE €0 -->
                     <div style="text-align: center; margin-bottom: 2rem;">
-                        <p class="price price--xlarge price--text" style="color: var(--color-accent-medium); margin: 0;">GRATIS</p>
+                        <p class="price price--xlarge price--text"
+                            style="color: var(--color-accent-medium); margin: 0;">GRATIS</p>
                     </div>
 
                     <!-- BOTÓN GATILLO (Captura email) -->
-                    <button onclick="activarGatillo('lead-magnet-001', 'Guía Gratuita')" class="btn btn-primary btn-large w-full gatillo-adquisicion">
+                    <button onclick="activarGatillo('lead-magnet-001', 'Guía Gratuita')"
+                        class="btn btn-primary btn-large w-full gatillo-adquisicion">
                         [Descargar Ahora]
                     </button>
                 </div>
@@ -287,21 +315,29 @@
         <div class="container">
             <div class="detail-box">
                 <div class="detail-box__content">
-                    <span class="model-tag" style="background: var(--color-secondary); color: white;">🎓 Mini-Curso</span>
-                    <h2 style="margin-top: 0.5rem; font-size: 2rem; margin-bottom: 2rem;">[Desconexión Digital en 7 Días]</h2>
+                    <span class="model-tag" style="background: var(--color-secondary); color: white;">🎓
+                        Mini-Curso</span>
+                    <h2 style="margin-top: 0.5rem; font-size: 2rem; margin-bottom: 2rem;">[Desconexión Digital en 7
+                        Días]</h2>
 
                     <p style="line-height: 1.8; color: var(--color-text-light); margin-bottom: 2rem;">
-                        [Copywriting: 7 video-lecciones de 10 minutos cada una. Recupera tu atención y reduce la ansiedad por notificaciones...]
+                        [Copywriting: 7 video-lecciones de 10 minutos cada una. Recupera tu atención y reduce la
+                        ansiedad por notificaciones...]
                     </p>
 
                     <!-- DOBLE PRECIO - VISIBLE SIEMPRE -->
-                    <div class="precio-container" data-recurso-id="curso-bajo-101" data-precio-normal="19" data-precio-premium="0" style="text-align: center; margin-bottom: 2rem;">
-                        <p style="margin: 0; font-size: 1.1rem; color: var(--color-text); font-weight: 700;">Precio: <span style="font-weight: 800; color: var(--color-text); font-size: 1.4rem;">€19</span></p>
-                        <p style="margin: 0.5rem 0 0 0; font-size: 1.1rem; color: var(--color-text); font-weight: 700;">Precio para Miembros: <span class="price price--xlarge price--text" style="font-weight: 900; color: var(--color-accent-medium);">€0</span></p>
+                    <div class="precio-container" data-recurso-id="curso-bajo-101" data-precio-normal="19"
+                        data-precio-premium="0" style="text-align: center; margin-bottom: 2rem;">
+                        <p style="margin: 0; font-size: 1.1rem; color: var(--color-text); font-weight: 700;">Precio:
+                            <span style="font-weight: 800; color: var(--color-text); font-size: 1.4rem;">€19</span></p>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 1.1rem; color: var(--color-text); font-weight: 700;">
+                            Precio para Miembros: <span class="price price--xlarge price--text"
+                                style="font-weight: 900; color: var(--color-accent-medium);">€0</span></p>
                     </div>
 
                     <!-- BOTÓN GATILLO -->
-                    <button onclick="activarGatillo('curso-bajo-101', 'Mini-Curso: Desconexión Digital')" class="btn btn-secondary btn-large w-full gatillo-adquisicion">
+                    <button onclick="activarGatillo('curso-bajo-101', 'Mini-Curso: Desconexión Digital')"
+                        class="btn btn-secondary btn-large w-full gatillo-adquisicion">
                         [Lo Quiero]
                     </button>
                 </div>
@@ -316,7 +352,8 @@
                 <div class="detail-box__content">
                     <div class="flex-between" style="margin-bottom: 2rem;">
                         <div>
-                            <span class="model-tag" style="background: var(--color-primary); color: white;">📅 Evento en Vivo</span>
+                            <span class="model-tag" style="background: var(--color-primary); color: white;">📅 Evento en
+                                Vivo</span>
                             <h2 style="margin-top: 0.5rem; font-size: 2rem;">[Nombre del Taller / Evento]</h2>
                         </div>
                         <div class="text-right">
@@ -331,7 +368,9 @@
                         <div>
                             <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">¿Qué vas a conseguir?</h3>
                             <p style="line-height: 1.8; color: var(--color-text-light); margin-bottom: 1.5rem;">
-                                [Descripción detallada del evento. Aquí explicas la transformación. "En estas 2 horas intensivas, vamos a desmontar tus creencias sobre la productividad y te irás con un sistema listo para usar..."]
+                                [Descripción detallada del evento. Aquí explicas la transformación. "En estas 2 horas
+                                intensivas, vamos a desmontar tus creencias sobre la productividad y te irás con un
+                                sistema listo para usar..."]
                             </p>
                             <ul class="list-unstyled">
                                 <li>✅ Estrategias prácticas aplicables al momento.</li>
@@ -342,20 +381,30 @@
 
                         <div class="info-box">
                             <h3 style="font-size: 1.2rem; margin-bottom: 1rem;">Reserva tu Plaza</h3>
-                            <p style="font-size: 0.9rem; color: var(--color-text-light);">Las plazas son limitadas para garantizar la interacción.</p>
+                            <p style="font-size: 0.9rem; color: var(--color-text-light);">Las plazas son limitadas para
+                                garantizar la interacción.</p>
 
                             <!-- DOBLE PRECIO - VISIBLE SIEMPRE -->
                             <div style="margin: 2rem 0; text-align: center;">
-                                <p style="margin: 0; font-size: 1.1rem; color: var(--color-text); font-weight: 700;">Precio: <span style="font-weight: 800; color: var(--color-text); font-size: 1.4rem;">€47</span></p>
-                                <p style="margin: 0.5rem 0 0 0; font-size: 1.1rem; color: var(--color-text); font-weight: 700;">Precio para Miembros: <span class="price price--xlarge price--text" style="font-weight: 900; color: var(--color-accent-medium);">€0</span></p>
+                                <p style="margin: 0; font-size: 1.1rem; color: var(--color-text); font-weight: 700;">
+                                    Precio: <span
+                                        style="font-weight: 800; color: var(--color-text); font-size: 1.4rem;">€47</span>
+                                </p>
+                                <p
+                                    style="margin: 0.5rem 0 0 0; font-size: 1.1rem; color: var(--color-text); font-weight: 700;">
+                                    Precio para Miembros: <span class="price price--xlarge price--text"
+                                        style="font-weight: 900; color: var(--color-accent-medium);">€0</span></p>
                             </div>
 
                             <!-- BOTÓN GATILLO DE ADQUISICIÓN -->
-                            <button onclick="activarGatillo('evento-205', 'Taller: Gestión del Tiempo')" class="btn btn-primary btn-large w-full gatillo-adquisicion">
+                            <button onclick="activarGatillo('evento-205', 'Taller: Gestión del Tiempo')"
+                                class="btn btn-primary btn-large w-full gatillo-adquisicion">
                                 [Lo Quiero]
                             </button>
 
-                            <p class="text-center" style="margin-top: 1rem; font-size: 0.8rem; color: var(--color-muted-text);">✓ Acceso inmediato tras confirmar</p>
+                            <p class="text-center"
+                                style="margin-top: 1rem; font-size: 0.8rem; color: var(--color-muted-text);">✓ Acceso
+                                inmediato tras confirmar</p>
                         </div>
                     </div>
                 </div>
@@ -391,14 +440,17 @@
                 <!-- TEXTO DERECHA -->
                 <div>
                     <span class="model-tag">👤 Servicio Personalizado</span>
-                    <h2 style="margin-top: 0.5rem; font-size: 2rem; margin-bottom: 1.5rem;">[Sesión de Diagnóstico y Claridad]</h2>
+                    <h2 style="margin-top: 0.5rem; font-size: 2rem; margin-bottom: 1.5rem;">[Sesión de Diagnóstico y
+                        Claridad]</h2>
 
                     <p style="line-height: 1.8; color: var(--color-text-light); margin-bottom: 2rem;">
-                        [Descripción detallada del servicio. "A veces solo necesitas una visión externa para desbloquearte. En esta sesión de 60 minutos, analizaremos tu caso específico y..."]
+                        [Descripción detallada del servicio. "A veces solo necesitas una visión externa para
+                        desbloquearte. En esta sesión de 60 minutos, analizaremos tu caso específico y..."]
                     </p>
 
                     <h4 style="font-size: 1.1rem; margin-bottom: 1rem;">Perfecto si:</h4>
-                    <ul style="margin-bottom: 2rem; padding-left: 1.2rem; color: var(--color-text-light); line-height: 1.8;">
+                    <ul
+                        style="margin-bottom: 2rem; padding-left: 1.2rem; color: var(--color-text-light); line-height: 1.8;">
                         <li style="margin-bottom: 0.5rem;">Te sientes estancado y no sabes el siguiente paso.</li>
                         <li style="margin-bottom: 0.5rem;">Necesitas una segunda opinión profesional.</li>
                         <li style="margin-bottom: 0.5rem;">Quieres resolver un problema concreto de forma rápida.</li>
@@ -406,12 +458,16 @@
 
                     <!-- DOBLE PRECIO - VISIBLE SIEMPRE -->
                     <div style="text-align: center; margin-bottom: 1.5rem;">
-                        <p style="margin: 0; font-size: 1.1rem; color: var(--color-text); font-weight: 700;">Precio: <span style="font-weight: 800; color: var(--color-text); font-size: 1.4rem;">€97</span></p>
-                        <p style="margin: 0.5rem 0 0 0; font-size: 1.1rem; color: var(--color-text); font-weight: 700;">Precio para Miembros: <span class="price price--large price--text" style="font-weight: 900; color: var(--color-accent-medium);">€47</span></p>
+                        <p style="margin: 0; font-size: 1.1rem; color: var(--color-text); font-weight: 700;">Precio:
+                            <span style="font-weight: 800; color: var(--color-text); font-size: 1.4rem;">€97</span></p>
+                        <p style="margin: 0.5rem 0 0 0; font-size: 1.1rem; color: var(--color-text); font-weight: 700;">
+                            Precio para Miembros: <span class="price price--large price--text"
+                                style="font-weight: 900; color: var(--color-accent-medium);">€47</span></p>
                     </div>
 
                     <!-- BOTÓN GATILLO DE ADQUISICIÓN -->
-                    <button onclick="activarGatillo('servicio-301', 'Sesión de Diagnóstico')" class="btn btn-secondary btn-large gatillo-adquisicion" style="width: 100%;">
+                    <button onclick="activarGatillo('servicio-301', 'Sesión de Diagnóstico')"
+                        class="btn btn-secondary btn-large gatillo-adquisicion" style="width: 100%;">
                         [Lo Quiero]
                     </button>
                 </div>
@@ -425,20 +481,24 @@
         <div class="container">
             <div class="detail-box">
                 <div class="detail-box__content">
-                    <span class="model-tag" style="background: var(--color-secondary); color: white;">🎓 Formación Online</span>
+                    <span class="model-tag" style="background: var(--color-secondary); color: white;">🎓 Formación
+                        Online</span>
                     <h2 style="margin-top: 0.5rem; font-size: 2rem; margin-bottom: 2rem;">[Programa: Calma Mental]</h2>
 
                     <div class="detail-grid-asymmetric">
                         <!-- TEXTO IZQUIERDA -->
                         <div>
                             <p style="line-height: 1.8; color: var(--color-text-light); margin-bottom: 2rem;">
-                                [Copywriting del curso. "Un programa diseñado para personas ocupadas que quieren recuperar su paz mental sin retirarse a una montaña. Aprenderás herramientas de gestión emocional aplicables desde el día 1..."]
+                                [Copywriting del curso. "Un programa diseñado para personas ocupadas que quieren
+                                recuperar su paz mental sin retirarse a una montaña. Aprenderás herramientas de gestión
+                                emocional aplicables desde el día 1..."]
                             </p>
 
                             <div class="detail-grid-2col">
                                 <div class="info-box info-box--small">
                                     <h4 style="margin-top: 0; margin-bottom: 1rem;">📚 Qué incluye</h4>
-                                    <ul style="margin: 0; padding-left: 1rem; font-size: 0.9rem; color: var(--color-text-light); line-height: 1.8;">
+                                    <ul
+                                        style="margin: 0; padding-left: 1rem; font-size: 0.9rem; color: var(--color-text-light); line-height: 1.8;">
                                         <li>10 Lecciones en Video HD</li>
                                         <li>Cuaderno de trabajo PDF</li>
                                         <li>Audio-meditaciones guiadas</li>
@@ -447,7 +507,8 @@
                                 </div>
                                 <div class="info-box info-box--small">
                                     <h4 style="margin-top: 0; margin-bottom: 1rem;">⚙️ Formato</h4>
-                                    <ul style="margin: 0; padding-left: 1rem; font-size: 0.9rem; color: var(--color-text-light); line-height: 1.8;">
+                                    <ul
+                                        style="margin: 0; padding-left: 1rem; font-size: 0.9rem; color: var(--color-text-light); line-height: 1.8;">
                                         <li>100% Online y Grabado</li>
                                         <li>Acceso inmediato</li>
                                         <li>De por vida</li>
@@ -463,17 +524,26 @@
 
                             <!-- DOBLE PRECIO - VISIBLE SIEMPRE -->
                             <div style="text-align: center;">
-                                <p style="margin: 0; font-size: 1.1rem; color: var(--color-text); font-weight: 700;">Precio: <span style="font-weight: 800; color: var(--color-text); font-size: 1.4rem;">€129</span></p>
-                                <p style="margin: 0.5rem 0 1.5rem 0; font-size: 1.1rem; color: var(--color-text); font-weight: 700;">Precio para Miembros: <span class="price price--xlarge price--secondary" style="font-weight: 900; color: var(--color-accent-medium);">€67</span></p>
+                                <p style="margin: 0; font-size: 1.1rem; color: var(--color-text); font-weight: 700;">
+                                    Precio: <span
+                                        style="font-weight: 800; color: var(--color-text); font-size: 1.4rem;">€129</span>
+                                </p>
+                                <p
+                                    style="margin: 0.5rem 0 1.5rem 0; font-size: 1.1rem; color: var(--color-text); font-weight: 700;">
+                                    Precio para Miembros: <span class="price price--xlarge price--secondary"
+                                        style="font-weight: 900; color: var(--color-accent-medium);">€67</span></p>
                             </div>
 
                             <!-- BOTÓN GATILLO DE ADQUISICIÓN -->
-                            <button onclick="activarGatillo('recurso-101', 'Programa: Calma Mental')" class="btn btn-secondary w-full gatillo-adquisicion" style="margin-bottom: 1rem;">
+                            <button onclick="activarGatillo('recurso-101', 'Programa: Calma Mental')"
+                                class="btn btn-secondary w-full gatillo-adquisicion" style="margin-bottom: 1rem;">
                                 [Lo Quiero]
                             </button>
 
-                            <p style="margin: 0; font-size: 0.8rem; color: var(--color-text-light);">✓ Garantía de 15 días</p>
-                            <p style="margin: 0.25rem 0 0 0; font-size: 0.8rem; color: var(--color-text-light);">✓ Acceso inmediato</p>
+                            <p style="margin: 0; font-size: 0.8rem; color: var(--color-text-light);">✓ Garantía de 15
+                                días</p>
+                            <p style="margin: 0.25rem 0 0 0; font-size: 0.8rem; color: var(--color-text-light);">✓
+                                Acceso inmediato</p>
                         </div>
                     </div>
                 </div>
@@ -486,11 +556,15 @@
         <div class="container">
             <div class="detail-box">
                 <div class="detail-box__content">
-                    <span class="model-tag" style="background: linear-gradient(135deg, var(--color-accent-medium), var(--color-primary)); color: white;">⭐ Programa Premium</span>
-                    <h2 style="margin-top: 0.5rem; font-size: 2rem; margin-bottom: 2rem;">[Mentoría Premium: Transformación de 90 Días]</h2>
+                    <span class="model-tag"
+                        style="background: linear-gradient(135deg, var(--color-accent-medium), var(--color-primary)); color: white;">⭐
+                        Programa Premium</span>
+                    <h2 style="margin-top: 0.5rem; font-size: 2rem; margin-bottom: 2rem;">[Mentoría Premium:
+                        Transformación de 90 Días]</h2>
 
                     <p style="line-height: 1.8; color: var(--color-text-light); margin-bottom: 2rem;">
-                        [Copywriting: Acompañamiento 1:1 completo durante 90 días. Transforma tu relación con el trabajo y alcanza tus objetivos profesionales sin sacrificar tu bienestar...]
+                        [Copywriting: Acompañamiento 1:1 completo durante 90 días. Transforma tu relación con el trabajo
+                        y alcanza tus objetivos profesionales sin sacrificar tu bienestar...]
                     </p>
 
                     <div class="detail-grid-2col" style="margin-bottom: 2rem;">
@@ -516,17 +590,24 @@
 
                     <!-- DOBLE PRECIO - VISIBLE SIEMPRE -->
                     <div style="text-align: center; margin-bottom: 2rem;">
-                        <p style="margin: 0; font-size: 1.1rem; color: var(--color-text); font-weight: 700;">Precio: <span style="font-weight: 800; color: var(--color-text); font-size: 1.5rem;">€297</span></p>
-                        <p style="margin: 0.5rem 0 1rem 0; font-size: 1.1rem; color: var(--color-text); font-weight: 700;">Precio para Miembros: <span class="price price--xlarge price--text" style="font-weight: 900; color: var(--color-accent-medium);">€147</span></p>
-                        <p style="margin: 0; font-size: 0.9rem; color: var(--color-text);">(Pago único o 3 cuotas sin intereses)</p>
+                        <p style="margin: 0; font-size: 1.1rem; color: var(--color-text); font-weight: 700;">Precio:
+                            <span style="font-weight: 800; color: var(--color-text); font-size: 1.5rem;">€297</span></p>
+                        <p
+                            style="margin: 0.5rem 0 1rem 0; font-size: 1.1rem; color: var(--color-text); font-weight: 700;">
+                            Precio para Miembros: <span class="price price--xlarge price--text"
+                                style="font-weight: 900; color: var(--color-accent-medium);">€147</span></p>
+                        <p style="margin: 0; font-size: 0.9rem; color: var(--color-text);">(Pago único o 3 cuotas sin
+                            intereses)</p>
                     </div>
 
                     <!-- BOTÓN GATILLO -->
-                    <button onclick="activarGatillo('programa-premium-501', 'Mentoría Premium 90 Días')" class="btn btn-primary btn-large w-full gatillo-adquisicion">
+                    <button onclick="activarGatillo('programa-premium-501', 'Mentoría Premium 90 Días')"
+                        class="btn btn-primary btn-large w-full gatillo-adquisicion">
                         [Quiero Reservar Mi Plaza]
                     </button>
 
-                    <p style="margin-top: 1rem; text-align: center; font-size: 0.8rem; color: var(--color-text-light);">✓ Plazas limitadas (máx. 5 mentorías simultáneas)</p>
+                    <p style="margin-top: 1rem; text-align: center; font-size: 0.8rem; color: var(--color-text-light);">
+                        ✓ Plazas limitadas (máx. 5 mentorías simultáneas)</p>
                 </div>
             </div>
         </div>
@@ -537,38 +618,51 @@
         <div class="container">
             <div class="guia-cliente">
                 <h4>📍 Módulo: Asistente de Orientación</h4>
-                <p><strong>Propósito:</strong> Si la lista unificada abruma al usuario, este módulo lo rescata. "Cuéntame tu problema y yo te digo qué elegir de la lista de arriba".</p>
+                <p><strong>Propósito:</strong> Si la lista unificada abruma al usuario, este módulo lo rescata.
+                    "Cuéntame tu problema y yo te digo qué elegir de la lista de arriba".</p>
             </div>
 
             <div style="max-width: 800px; margin: 0 auto;">
 
-                <div id="acordeonHeader" onclick="toggleOrientacion()" style="background: white; padding: 1.5rem 2rem; border-radius: 12px; box-shadow: var(--shadow-sm); cursor: pointer; border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; transition: all 0.3s;">
+                <div id="acordeonHeader" onclick="toggleOrientacion()"
+                    style="background: white; padding: 1.5rem 2rem; border-radius: 12px; box-shadow: var(--shadow-sm); cursor: pointer; border: 1px solid var(--color-border); display: flex; align-items: center; justify-content: space-between; transition: all 0.3s;">
                     <div style="display: flex; align-items: center; gap: 1rem;">
-                        <div style="background: var(--color-primary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">?</div>
+                        <div
+                            style="background: var(--color-primary); color: white; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">
+                            ?</div>
                         <div>
-                            <h3 style="margin: 0; font-size: 1.1rem; color: var(--color-text);">¿No sabes qué opción es para ti?</h3>
-                            <p style="margin: 0; font-size: 0.9rem; color: var(--color-text-light);">Haz clic aquí y te ayudo a elegir.</p>
+                            <h3 style="margin: 0; font-size: 1.1rem; color: var(--color-text);">¿No sabes qué opción es
+                                para ti?</h3>
+                            <p style="margin: 0; font-size: 0.9rem; color: var(--color-text-light);">Haz clic aquí y te
+                                ayudo a elegir.</p>
                         </div>
                     </div>
-                    <div id="acordeonIcon" style="font-size: 1.2rem; color: var(--color-primary); transition: transform 0.3s;">▼</div>
+                    <div id="acordeonIcon"
+                        style="font-size: 1.2rem; color: var(--color-primary); transition: transform 0.3s;">▼</div>
                 </div>
 
-                <div id="acordeonContent" style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out;">
-                    <div style="background: white; padding: 2rem; border-radius: 0 0 12px 12px; border: 1px solid var(--color-border); border-top: none; margin-top: -5px; box-shadow: var(--shadow-sm);">
+                <div id="acordeonContent"
+                    style="max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out;">
+                    <div
+                        style="background: white; padding: 2rem; border-radius: 0 0 12px 12px; border: 1px solid var(--color-border); border-top: none; margin-top: -5px; box-shadow: var(--shadow-sm);">
                         <form id="formOrientacion" style="display: grid; gap: 1rem;">
                             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                                 <input type="text" class="form-input" placeholder="Tu Nombre" required>
                                 <input type="email" class="form-input" placeholder="Tu Email" required>
                             </div>
-                            <textarea class="form-input" rows="3" placeholder="Cuéntame brevemente tu situación o duda..." required></textarea>
+                            <textarea class="form-input" rows="3"
+                                placeholder="Cuéntame brevemente tu situación o duda..." required></textarea>
 
-                            <label style="font-size: 0.85rem; display: flex; gap: 0.5rem; align-items: start; cursor: pointer;">
+                            <label
+                                style="font-size: 0.85rem; display: flex; gap: 0.5rem; align-items: start; cursor: pointer;">
                                 <input type="checkbox" id="consentimiento" required style="margin-top: 3px;">
-                                <span style="color: var(--color-text-light);">Acepto la política de privacidad y recibir la recomendación por email.</span>
+                                <span style="color: var(--color-text-light);">Acepto la política de privacidad y recibir
+                                    la recomendación por email.</span>
                             </label>
 
                             <div style="text-align: right;">
-                                <button type="submit" id="btnOrientacion" class="btn btn-primary" disabled style="opacity: 0.5; cursor: not-allowed;">
+                                <button type="submit" id="btnOrientacion" class="btn btn-primary" disabled
+                                    style="opacity: 0.5; cursor: not-allowed;">
                                     Enviar Consulta
                                 </button>
                             </div>
@@ -597,9 +691,9 @@
             }
 
             // Habilitar botón solo con checkbox
-            document.getElementById('consentimiento').addEventListener('change', function() {
+            document.getElementById('consentimiento').addEventListener('change', function () {
                 const btn = document.getElementById('btnOrientacion');
-                if(this.checked) {
+                if (this.checked) {
                     btn.disabled = false;
                     btn.style.opacity = '1';
                     btn.style.cursor = 'pointer';
@@ -619,8 +713,10 @@
         <div class="footer-wrapper">
             <div class="guia-cliente">
                 <h4>📍 Módulo: Footer (Pie de Página)</h4>
-                <p><strong>Propósito:</strong> Proveer navegación secundaria, enlaces legales, redes sociales y contacto.</p>
-                <p><strong>Siempre incluir:</strong> Política de privacidad, Términos y condiciones, Contacto, Login miembros (discreto).</p>
+                <p><strong>Propósito:</strong> Proveer navegación secundaria, enlaces legales, redes sociales y
+                    contacto.</p>
+                <p><strong>Siempre incluir:</strong> Política de privacidad, Términos y condiciones, Contacto, Login
+                    miembros (discreto).</p>
             </div>
 
             <div class="footer-content">
@@ -637,41 +733,52 @@
 
                 <div class="footer-section">
                     <ul>
-                        <li><a href="#">Privacidad</a></li>
-                        <li><a href="#">Términos</a></li>
-                        <li><a href="#">Aviso Legal</a></li>
+                        <li><a href="privacidad.html">Privacidad</a></li>
+                        <li><a href="cookies.html">Cookies</a></li>
+                        <li><a href="aviso-legal.html">Aviso Legal</a></li>
                     </ul>
                 </div>
 
                 <div class="footer-section">
                     <p>Sígueme en redes sociales.</p>
-                <div class="social-links">
-                    <a href="#" class="social-link" aria-label="Instagram">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                        </svg>
-                    </a>
-                    <a href="#" class="social-link" aria-label="Facebook">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
-                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                        </svg>
-                    </a>
-                    <a href="#" class="social-link" aria-label="YouTube">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
-                            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"></path>
-                            <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
-                        </svg>
-                    </a>
-                    <a href="#" class="social-link" aria-label="Email">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
-                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                            <polyline points="22,6 12,13 2,6"></polyline>
-                        </svg>
-                    </a>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                style="width: 24px; height: 24px;">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                style="width: 24px; height: 24px;">
+                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="YouTube">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                style="width: 24px; height: 24px;">
+                                <path
+                                    d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z">
+                                </path>
+                                <polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Email">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                style="width: 24px; height: 24px;">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
+                                <polyline points="22,6 12,13 2,6"></polyline>
+                            </svg>
+                        </a>
+                    </div>
                 </div>
-            </div>
             </div>
 
             <div class="footer-bottom">
@@ -775,10 +882,11 @@
         }
 
         // EJECUTAR AL CARGAR LA PÁGINA
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             console.log('🏪 Tienda lista. Nivel de usuario:', detectarNivelUsuario());
             console.log('💰 Doble Precio visible para TODOS (objetivo: upsell permanente)');
         });
     </script>
 </body>
+
 </html>

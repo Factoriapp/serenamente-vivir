@@ -2445,6 +2445,95 @@ footer,
   background-color: var(--color-cyan);
 }
 
+/* ============================================
+   COOKIE BANNER (GLASSMORPHISM)
+   ============================================ */
+.cookie-banner {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 600px;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(231, 207, 157, 0.3);
+  border-radius: 50px;
+  padding: 10px 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  animation: slideUp 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  transition: all 0.5s ease;
+}
+.cookie-banner--hidden {
+  opacity: 0;
+  transform: translate(-50%, 20px);
+  pointer-events: none;
+}
+.cookie-banner__content {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  justify-content: space-between;
+}
+.cookie-banner__content p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--color-gray);
+  font-family: "Source Sans Pro", sans-serif;
+}
+.cookie-banner__content p a {
+  color: var(--color-beige);
+  text-decoration: underline;
+  font-weight: 600;
+}
+.cookie-banner__content p a:hover {
+  color: var(--color-gray);
+}
+.cookie-banner__content .btn-compact {
+  padding: 8px 20px;
+  font-size: 0.85rem;
+  background-color: var(--color-green);
+  color: var(--color-gray);
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+.cookie-banner__content .btn-compact:hover {
+  background-color: var(--color-beige);
+  transform: translateY(-2px);
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, 40px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+}
+/* Ajuste responsive para el banner */
+@media (max-width: 600px) {
+  .cookie-banner {
+    bottom: 15px;
+    border-radius: 15px;
+    padding: 15px;
+  }
+  .cookie-banner__content {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+}
 /* 4. Responsive (último para que override lo necesario) */
 /* ============================================
    RESPONSIVE - 4 BREAKPOINTS MEJORADOS

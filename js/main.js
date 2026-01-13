@@ -207,7 +207,31 @@ document.addEventListener('dictionaryApplied', function () {
     if (typeof window.initializeRegistroForm === 'function') {
         window.initializeRegistroForm();
     }
+
+    // Actualizar Header
+    if (typeof window.actualizarHeaderUsuario === 'function') {
+        window.actualizarHeaderUsuario();
+    }
 });
+
+/**
+ * Manejar el envío del formulario de contacto
+ */
+window.handleContactSubmit = function (event) {
+    event.preventDefault();
+    const form = event.target;
+    const nameInput = document.getElementById('contact-name');
+    const name = nameInput ? nameInput.value : 'amiga';
+
+    // Usar la función de utilidad para mostrar el mensaje
+    if (typeof mostrarMensajeFormulario === 'function') {
+        mostrarMensajeFormulario(form, `✓ Gracias ${name}. Hemos recibido tu mensaje. Te responderemos en menos de 24 horas.`, 'success');
+    } else {
+        alert(`Gracias ${name}. Hemos recibido tu mensaje. Te responderemos en menos de 24 horas.`);
+    }
+
+    form.reset();
+};
 
 // Verificación de carga exitosa
 console.log('✨ Serenamente Vivir - main.js cargado correctamente - ' + new Date().toLocaleTimeString());
@@ -241,13 +265,51 @@ function highlightActiveLink() {
 }
 
 // Ejecutar al cargar la página
-window.addEventListener('DOMContentLoaded', highlightActiveLink);
+window.addEventListener('DOMContentLoaded', () => {
+    highlightActiveLink();
+    if (typeof window.actualizarHeaderUsuario === 'function') {
+        window.actualizarHeaderUsuario();
+    }
+});
 
 // Re-ejecutar si config-loader.js reemplaza el DOM
 document.addEventListener('dictionaryApplied', function () {
     console.log('🔄 Re-resaltando enlace activo después de aplicar diccionario...');
     highlightActiveLink();
+    initializeCookieBanner(); // Inicializar aviso de cookies
 });
+
+/**
+ * ==========================================
+ * SISTEMA DE COOKIES (Simplicidad Radical)
+ * ==========================================
+ */
+function initializeCookieBanner() {
+    // Si ya han sido aceptadas, no hacer nada
+    if (localStorage.getItem('cookiesAceptadas') === 'true') return;
+
+    // Crear el elemento del banner
+    const banner = document.createElement('div');
+    banner.id = 'cookieBanner';
+    banner.className = 'cookie-banner';
+    banner.innerHTML = `
+        <div class="cookie-banner__content">
+            <p>Usamos cookies para mejorar tu experiencia serena en nuestra web. 
+               <a href="cookies.html">Más información</a>
+            </p>
+            <button id="acceptCookies" class="btn btn-compact">Entendido</button>
+        </div>
+    `;
+
+    document.body.appendChild(banner);
+
+    // Lógica del botón
+    document.getElementById('acceptCookies').addEventListener('click', function () {
+        localStorage.setItem('cookiesAceptadas', 'true');
+        banner.classList.add('cookie-banner--hidden');
+        setTimeout(() => banner.remove(), 500);
+    });
+}
 
 // ============================================
 
@@ -310,4 +372,90 @@ document.addEventListener('DOMContentLoaded', function () {
         setTimeout(initReadMoreButtons, 100);
     });
 
+});
+
+// ============================================
+// LÓGICA DE HEADER Y SESIÓN (UI)
+// ============================================
+
+/**
+ * Actualiza la visibilidad de los elementos del header según el estado de la sesión
+ */
+window.actualizarHeaderUsuario = function () {
+    if (typeof obtenerUsuarioActual !== 'function') {
+        console.warn('⚠️ actualizarHeaderUsuario: obtenerUsuarioActual no definida (¿auth.js cargado?)');
+        return;
+    }
+
+    const usuario = obtenerUsuarioActual();
+    const btnIniciarSesion = document.getElementById('btnIniciarSesion');
+    const userMenuContainer = document.getElementById('userMenuContainer');
+    const nombreUsuarioHeader = document.getElementById('nombreUsuarioHeader');
+
+    if (usuario) {
+        // Usuario logueado → Mostrar dropdown con nombre
+        if (nombreUsuarioHeader) {
+            nombreUsuarioHeader.textContent = typeof obtenerPrimerNombre === 'function'
+                ? obtenerPrimerNombre(usuario.nombre)
+                : usuario.nombre.split(' ')[0];
+        }
+        if (btnIniciarSesion) btnIniciarSesion.style.display = 'none';
+        if (userMenuContainer) userMenuContainer.style.display = 'inline-block';
+    } else {
+        // No hay usuario → Mostrar "Iniciar Sesión"
+        if (btnIniciarSesion) btnIniciarSesion.style.display = 'inline-block';
+        if (userMenuContainer) userMenuContainer.style.display = 'none';
+    }
+    console.log('✅ Header: Estado de usuario actualizado');
+};
+
+/**
+ * Toggle dropdown de usuario
+ */
+window.toggleUserDropdown = function () {
+    const dropdown = document.getElementById('userDropdown');
+    if (dropdown) {
+        dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
+    }
+};
+
+/**
+ * Ir a Espacio Privado (verificar si está logueado)
+ */
+window.irAEspacioPrivado = function () {
+    const usuario = typeof obtenerUsuarioActual === 'function' ? obtenerUsuarioActual() : null;
+
+    if (usuario) {
+        // Usuario logueado → ir al área privada
+        window.location.href = 'area-privada.html';
+    } else {
+        // No hay usuario → abrir modal de login
+        if (typeof window.abrirModalLogin === 'function') {
+            window.abrirModalLogin();
+        } else {
+            window.location.href = 'serenamente_vivir.html?login=true';
+        }
+    }
+};
+
+/**
+ * Cerrar sesión con confirmación
+ */
+window.cerrarSesion = function () {
+    if (confirm('¿Seguro que quieres cerrar sesión?')) {
+        localStorage.removeItem('usuarioActual');
+        window.location.reload();
+    }
+};
+
+// Cerrar dropdown al hacer click fuera
+document.addEventListener('click', function (e) {
+    const userMenuContainer = document.getElementById('userMenuContainer');
+    const userDropdown = document.getElementById('userDropdown');
+
+    if (userMenuContainer && !userMenuContainer.contains(e.target)) {
+        if (userDropdown) {
+            userDropdown.style.display = 'none';
+        }
+    }
 });

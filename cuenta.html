@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,7 +8,9 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
 
     <style>
@@ -19,7 +22,7 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
         }
 
         .app-header-container {
@@ -71,7 +74,7 @@
             background: white;
             border: 1px solid var(--color-border);
             border-radius: 8px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             min-width: 200px;
             display: none;
             z-index: 1000;
@@ -272,7 +275,7 @@
 
         .btn-upgrade:hover {
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
             background: var(--color-secondary);
         }
 
@@ -490,6 +493,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <!-- HEADER -->
@@ -498,11 +502,13 @@
             <div class="app-logo">[Tu Logo]</div>
 
             <div style="display: flex; gap: 1rem; align-items: center;">
-                <div id="headerBadge" style="padding: 0.5rem 1.5rem; background: #8db4a0; color: white; border-radius: 6px; font-weight: 600; font-size: 0.9rem;">
+                <div id="headerBadge"
+                    style="padding: 0.5rem 1.5rem; background: #8db4a0; color: white; border-radius: 6px; font-weight: 600; font-size: 0.9rem;">
                     [Premium]
                 </div>
 
-                <button onclick="cerrarSesion()" class="btn btn-secondary" style="background: #d9534f; color: white; border: none;">
+                <button onclick="cerrarSesion()" class="btn btn-secondary"
+                    style="background: #d9534f; color: white; border: none;">
                     🚪 Cerrar Sesión
                 </button>
 
@@ -527,7 +533,8 @@
             <section class="cuenta-block">
                 <div class="block-header">
                     <h2 class="block-title">
-                        <svg class="block-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="block-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
                             <circle cx="12" cy="7" r="4"></circle>
                         </svg>
@@ -557,10 +564,12 @@
                     </div>
 
                     <!-- Botón editar perfil -->
-                    <button class="btn btn-secondary btn" style="width: 100%; margin-bottom: 1rem;" onclick="toggleEditProfile()">[Editar Email]</button>
+                    <button class="btn btn-secondary btn" style="width: 100%; margin-bottom: 1rem;"
+                        onclick="toggleEditProfile()">[Editar Email]</button>
 
                     <!-- Formulario de edición (oculto por defecto) -->
-                    <form id="profileForm" style="display: none; margin-bottom: 1rem; padding-top: 1rem; border-top: 1px solid var(--color-border);">
+                    <form id="profileForm"
+                        style="display: none; margin-bottom: 1rem; padding-top: 1rem; border-top: 1px solid var(--color-border);">
                         <div class="form-group">
                             <label class="form-label">[Nuevo Email]</label>
                             <input type="email" class="form-input" value="ana@ejemplo.com" id="userEmail">
@@ -587,7 +596,8 @@
                                 <label class="form-label">[Confirmar Contraseña]</label>
                                 <input type="password" class="form-input" placeholder="[Repetir nueva contraseña]">
                             </div>
-                            <button type="submit" class="btn btn-primary btn" style="width: 100%;">[Actualizar Contraseña]</button>
+                            <button type="submit" class="btn btn-primary btn" style="width: 100%;">[Actualizar
+                                Contraseña]</button>
                         </form>
                     </div>
                 </div>
@@ -597,7 +607,8 @@
             <section class="cuenta-block" id="subscriptionPremium" data-user-type="ana">
                 <div class="block-header">
                     <h2 class="block-title">
-                        <svg class="block-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="block-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="10"></circle>
                             <polyline points="12 6 12 12 16 14"></polyline>
                         </svg>
@@ -637,7 +648,8 @@
             <section class="cuenta-block" id="subscriptionAlaCarta" data-user-type="regina">
                 <div class="block-header">
                     <h2 class="block-title">
-                        <svg class="block-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="block-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <circle cx="12" cy="12" r="10"></circle>
                             <polyline points="12 6 12 12 16 14"></polyline>
                         </svg>
@@ -664,7 +676,8 @@
                             <div class="upsell-feature">[Ahorra en comparación con compras individuales]</div>
                         </div>
 
-                        <button class="btn btn-upgrade" onclick="window.location.href='membresia.html'">[Ver Planes de Membresía]</button>
+                        <button class="btn btn-upgrade" onclick="window.location.href='membresia.html'">[Ver Planes de
+                            Membresía]</button>
                     </div>
 
                     <p style="color: var(--color-text-light); font-size: 0.875rem; text-align: center;">
@@ -682,9 +695,12 @@
         <section class="cuenta-block full-width bg-alt" id="serviciosEspeciales">
             <div class="block-header">
                 <h2 class="block-title">
-                    <svg class="block-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="block-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="12" cy="12" r="3"></circle>
-                        <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
+                        <path
+                            d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z">
+                        </path>
                     </svg>
                     [Servicios Especiales Contratados]
                 </h2>
@@ -694,10 +710,13 @@
                 <div class="servicios-grid">
 
                     <!-- Servicio 1: Asistente IA Premium -->
-                    <div class="servicio-card" style="padding: 1rem; background: var(--color-bg-secondary); border-radius: 6px; border-left: 3px solid var(--color-primary);">
-                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                    <div class="servicio-card"
+                        style="padding: 1rem; background: var(--color-bg-secondary); border-radius: 6px; border-left: 3px solid var(--color-primary);">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
                             <div>
-                                <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 0.25rem;">[Asistente IA Premium]</div>
+                                <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 0.25rem;">[Asistente IA
+                                    Premium]</div>
                                 <div style="font-size: 0.8rem; color: var(--color-text-light);">[Add-on activo]</div>
                             </div>
                             <span class="status-badge status-active">[Activo]</span>
@@ -713,11 +732,15 @@
                     </div>
 
                     <!-- Servicio 2: Soporte Prioritario -->
-                    <div class="servicio-card" style="padding: 1rem; background: var(--color-bg-secondary); border-radius: 6px; border-left: 3px solid var(--color-primary);">
-                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                    <div class="servicio-card"
+                        style="padding: 1rem; background: var(--color-bg-secondary); border-radius: 6px; border-left: 3px solid var(--color-primary);">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
                             <div>
-                                <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 0.25rem;">[Soporte Prioritario]</div>
-                                <div style="font-size: 0.8rem; color: var(--color-text-light);">[Incluido en Premium]</div>
+                                <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 0.25rem;">[Soporte
+                                    Prioritario]</div>
+                                <div style="font-size: 0.8rem; color: var(--color-text-light);">[Incluido en Premium]
+                                </div>
                             </div>
                             <span class="status-badge status-active">[Activo]</span>
                         </div>
@@ -732,10 +755,13 @@
                     </div>
 
                     <!-- Servicio 3: Almacenamiento Extra -->
-                    <div class="servicio-card" style="padding: 1rem; background: var(--color-bg-secondary); border-radius: 6px; border-left: 3px solid var(--color-primary);">
-                        <div style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
+                    <div class="servicio-card"
+                        style="padding: 1rem; background: var(--color-bg-secondary); border-radius: 6px; border-left: 3px solid var(--color-primary);">
+                        <div
+                            style="display: flex; justify-content: space-between; align-items: start; margin-bottom: 0.5rem;">
                             <div>
-                                <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 0.25rem;">[Almacenamiento Extra]</div>
+                                <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 0.25rem;">
+                                    [Almacenamiento Extra]</div>
                                 <div style="font-size: 0.8rem; color: var(--color-text-light);">[Add-on +50GB]</div>
                             </div>
                             <span class="status-badge status-active">[Activo]</span>
@@ -753,7 +779,8 @@
                 </div>
 
                 <!-- Mensaje si no hay servicios -->
-                <div id="noServiciosMsg" style="display: none; text-align: center; padding: 2rem; color: var(--color-text-light);">
+                <div id="noServiciosMsg"
+                    style="display: none; text-align: center; padding: 2rem; color: var(--color-text-light);">
                     [No tienes servicios especiales contratados]
                 </div>
             </div>
@@ -766,7 +793,8 @@
         <section class="cuenta-block full-width">
             <div class="block-header">
                 <h2 class="block-title">
-                    <svg class="block-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <svg class="block-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path>
                     </svg>
                     [Historial de Facturación]
@@ -775,84 +803,84 @@
 
             <div class="block-body" style="padding: 0;">
 
-            <!-- TABLA PREMIUM (ANA) -->
-            <div id="historialPremium" data-user-type="ana">
-                <table class="historial-table">
-                    <thead>
-                        <tr>
-                            <th>[Fecha]</th>
-                            <th>[Concepto]</th>
-                            <th>[Monto]</th>
-                            <th>[Estado]</th>
-                            <th>[Acción]</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>[15 Nov 2025]</td>
-                            <td>[Membresía Premium - Mensual]</td>
-                            <td>[€29.00]</td>
-                            <td style="color: #8db4a0; font-weight: 600;">[Pagado]</td>
-                            <td><a href="#" style="color: var(--color-primary);">[Descargar]</a></td>
-                        </tr>
-                        <tr>
-                            <td>[15 Oct 2025]</td>
-                            <td>[Membresía Premium - Mensual]</td>
-                            <td>[€29.00]</td>
-                            <td style="color: #8db4a0; font-weight: 600;">[Pagado]</td>
-                            <td><a href="#" style="color: var(--color-primary);">[Descargar]</a></td>
-                        </tr>
-                        <tr>
-                            <td>[15 Sep 2025]</td>
-                            <td>[Membresía Premium - Mensual]</td>
-                            <td>[€29.00]</td>
-                            <td style="color: #8db4a0; font-weight: 600;">[Pagado]</td>
-                            <td><a href="#" style="color: var(--color-primary);">[Descargar]</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                <!-- TABLA PREMIUM (ANA) -->
+                <div id="historialPremium" data-user-type="ana">
+                    <table class="historial-table">
+                        <thead>
+                            <tr>
+                                <th>[Fecha]</th>
+                                <th>[Concepto]</th>
+                                <th>[Monto]</th>
+                                <th>[Estado]</th>
+                                <th>[Acción]</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>[15 Nov 2025]</td>
+                                <td>[Membresía Premium - Mensual]</td>
+                                <td>[€29.00]</td>
+                                <td style="color: #8db4a0; font-weight: 600;">[Pagado]</td>
+                                <td><a href="#" style="color: var(--color-primary);">[Descargar]</a></td>
+                            </tr>
+                            <tr>
+                                <td>[15 Oct 2025]</td>
+                                <td>[Membresía Premium - Mensual]</td>
+                                <td>[€29.00]</td>
+                                <td style="color: #8db4a0; font-weight: 600;">[Pagado]</td>
+                                <td><a href="#" style="color: var(--color-primary);">[Descargar]</a></td>
+                            </tr>
+                            <tr>
+                                <td>[15 Sep 2025]</td>
+                                <td>[Membresía Premium - Mensual]</td>
+                                <td>[€29.00]</td>
+                                <td style="color: #8db4a0; font-weight: 600;">[Pagado]</td>
+                                <td><a href="#" style="color: var(--color-primary);">[Descargar]</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
-            <!-- TABLA A LA CARTA (REGINA) -->
-            <div id="historialAlaCarta" data-user-type="regina">
-                <table class="historial-table">
-                    <thead>
-                        <tr>
-                            <th>[Fecha]</th>
-                            <th>[Producto]</th>
-                            <th>[Monto]</th>
-                            <th>[Estado]</th>
-                            <th>[Acción]</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>[10 Nov 2025]</td>
-                            <td>[Curso: Gestión del Estrés]</td>
-                            <td>[€49.00]</td>
-                            <td style="color: #8db4a0; font-weight: 600;">[Pagado]</td>
-                            <td><a href="#" style="color: var(--color-primary);">[Descargar]</a></td>
-                        </tr>
-                        <tr>
-                            <td>[05 Oct 2025]</td>
-                            <td>[Ebook: Técnicas de Respiración]</td>
-                            <td>[€12.00]</td>
-                            <td style="color: #8db4a0; font-weight: 600;">[Pagado]</td>
-                            <td><a href="#" style="color: var(--color-primary);">[Descargar]</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
+                <!-- TABLA A LA CARTA (REGINA) -->
+                <div id="historialAlaCarta" data-user-type="regina">
+                    <table class="historial-table">
+                        <thead>
+                            <tr>
+                                <th>[Fecha]</th>
+                                <th>[Producto]</th>
+                                <th>[Monto]</th>
+                                <th>[Estado]</th>
+                                <th>[Acción]</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>[10 Nov 2025]</td>
+                                <td>[Curso: Gestión del Estrés]</td>
+                                <td>[€49.00]</td>
+                                <td style="color: #8db4a0; font-weight: 600;">[Pagado]</td>
+                                <td><a href="#" style="color: var(--color-primary);">[Descargar]</a></td>
+                            </tr>
+                            <tr>
+                                <td>[05 Oct 2025]</td>
+                                <td>[Ebook: Técnicas de Respiración]</td>
+                                <td>[€12.00]</td>
+                                <td style="color: #8db4a0; font-weight: 600;">[Pagado]</td>
+                                <td><a href="#" style="color: var(--color-primary);">[Descargar]</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
 
             </div>
         </section>
 
     </div>
 
-    <!-- SCRIPT DE GESTIÓN USUARIO UNIFICADO -->
-    <!-- Config Loader - Sistema Multi-Tenant -->
+    <!-- JavaScript -->
     <script src="js/config-loader.js"></script>
     <script src="js/auth.js?v=10"></script>
+    <script src="js/main.js?v=11"></script>
 
     <script>
         // ==========================================
@@ -860,9 +888,9 @@
         // ==========================================
 
         // Función principal de inicialización
-        window.addEventListener('DOMContentLoaded', function() {
-            // Obtener usuario actual desde user-manager.js
-            const usuario = obtenerUsuarioActual();
+        window.addEventListener('DOMContentLoaded', function () {
+            // Obtener usuario actual desde auth.js
+            const usuario = typeof obtenerUsuarioActual === 'function' ? obtenerUsuarioActual() : JSON.parse(localStorage.getItem('usuarioActual'));
 
             if (!usuario) {
                 // Si no hay usuario, redirigir a login
@@ -959,42 +987,16 @@
         // FUNCIONES COMUNES (AMBOS USUARIOS)
         // ==========================================
 
-        // Dropdown (si existiera en el futuro)
-        function toggleDropdown() {
-            const dropdown = document.getElementById('userDropdown');
-            if (dropdown) {
-                dropdown.classList.toggle('active');
-            }
-        }
-
-        // Cerrar clic fuera del dropdown
-        document.addEventListener('click', function(e) {
-            const menuBtn = document.querySelector('.user-menu-btn');
-            const dropdown = document.getElementById('userDropdown');
-
-            if (menuBtn && dropdown && !menuBtn.contains(e.target)) {
-                dropdown.classList.remove('active');
-            }
-        });
-
-        // Cerrar sesión
-        function cerrarSesion() {
-            if (confirm('¿Seguro que quieres cerrar sesión?')) {
-                localStorage.removeItem('usuarioActual');
-                window.location.href = 'serenamente_vivir.html';
-            }
-        }
-
         // Formulario de perfil (editar email)
-        document.getElementById('profileForm').addEventListener('submit', function(e) {
+        document.getElementById('profileForm').addEventListener('submit', function (e) {
             e.preventDefault();
             const nuevoEmail = document.getElementById('userEmail').value;
 
-            // Actualizar en localStorage (simulación)
-            const usuario = obtenerUsuarioActual();
+            // Actualizar en localStorage
+            const usuario = typeof obtenerUsuarioActual === 'function' ? obtenerUsuarioActual() : JSON.parse(localStorage.getItem('usuarioActual'));
             if (usuario) {
                 usuario.email = nuevoEmail;
-                localStorage.setItem('usuario', JSON.stringify(usuario));
+                localStorage.setItem('usuarioActual', JSON.stringify(usuario));
                 document.getElementById('userEmailDisplay').textContent = nuevoEmail;
                 alert('[Email actualizado correctamente]');
             }
@@ -1023,7 +1025,7 @@
         }
 
         // Formulario de contraseña
-        document.getElementById('passwordForm').addEventListener('submit', function(e) {
+        document.getElementById('passwordForm').addEventListener('submit', function (e) {
             e.preventDefault();
             alert('[Contraseña actualizada correctamente]');
             togglePasswordForm();
@@ -1031,4 +1033,5 @@
     </script>
 
 </body>
+
 </html>

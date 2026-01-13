@@ -1,6 +1,19 @@
-en el archivo sobrem.mi.html
+IMPORTANTE: ESto es únicamente para el archivo: tienda.html / Sección Detalles / Bloques de recursos
 
-verifica que el texto
-    Terapeuta sistémica | Acompañamiento a mujeres, 
+Normas de diseño de bloques
 
-utilice las fuentes del proyecto
+- Todos los bloque se ajustan a una altura inicial de 250 px
+- Todos los bloques tienen un borde tenue, de esquinas redondas, con ul leve efecto de sombra
+- Las imagenes se alternan lado izquierdo / lado derecho en los bloque
+- Las imagenes deben ajuastarse a la altura del contenedor sin truncarse
+- Al igual que la imagenes los textos y el botón se alternan lado dereco / lado izquierdo
+- La línea service-details y el boton están del mismo lado del texto, alineados a la derecha o izquierda respectivamente.
+- el boton debe ubicarse en el borde inferior del bloque en posición fija
+- La línea de service-details debe ubicarse enciama del botón a distancia de 20px en posición fija
+- el texto debe mostrar solos las primeras seis lineas, y luego se desvanece y se muestar el t5exto activo "Leer más"
+- al hacer clic en Leer más, se expande el bloque mostrando el resto del texto.
+
+Si hay dudas pregúntame para aclaralas.
+
+
+Adopta las estratégias de desarrollo más coherentes y eficientes

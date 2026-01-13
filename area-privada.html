@@ -1,10 +1,12 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mi Área Personal - Serenamente Vivir</title>
-    <meta name="description" content="Área privada para miembros de Serenamente Vivir. Accede a tu contenido y recursos.">
+    <meta name="description"
+        content="Área privada para miembros de Serenamente Vivir. Accede a tu contenido y recursos.">
 
     <!-- SEO: Página privada NO indexable -->
     <meta name="robots" content="noindex, nofollow">
@@ -42,6 +44,7 @@
             align-items: center !important;
             justify-content: center !important;
         }
+
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -50,6 +53,7 @@
             height: 100%;
             background-color: rgba(0, 0, 0, 0.6);
         }
+
         .modal-content {
             position: relative;
             background: white;
@@ -60,6 +64,7 @@
             z-index: 2001;
             box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
         }
+
         .modal-close {
             position: absolute;
             top: 1rem;
@@ -74,19 +79,23 @@
             border-radius: 50%;
             line-height: 1;
         }
+
         .modal-close:hover {
             background-color: #f0f0f0;
             color: #333;
         }
+
         .form-group {
             margin-bottom: 1.5rem;
         }
+
         .form-label {
             display: block;
             margin-bottom: 0.5rem;
             font-weight: 500;
             color: #333;
         }
+
         .form-input {
             width: 100%;
             padding: 0.75rem 1rem;
@@ -94,12 +103,14 @@
             border-radius: 8px;
             font-size: 1rem;
         }
+
         .form-input:focus {
             outline: none;
             border-color: #e7cf9d;
         }
     </style>
 </head>
+
 <body>
     <!-- Header -->
     <header>
@@ -114,11 +125,13 @@
                 <a href="contacto.html">Contacto</a>
 
                 <!-- Mostrar según estado de sesión -->
-                <a href="#" onclick="abrirModalLogin(); return false;" class="nav-destacado" id="btnIniciarSesion">Iniciar Sesión</a>
+                <a href="#" onclick="abrirModalLogin(); return false;" class="nav-destacado"
+                    id="btnIniciarSesion">Iniciar Sesión</a>
 
                 <!-- Dropdown de usuario logueado -->
                 <div class="user-menu-container" id="userMenuContainer" style="display: none; position: relative;">
-                    <a href="#" onclick="toggleUserDropdown(); return false;" class="user-logged" id="btnUsuarioLogueado">
+                    <a href="#" onclick="toggleUserDropdown(); return false;" class="user-logged"
+                        id="btnUsuarioLogueado">
                         <span style="font-weight: 600;">Hola <span id="nombreUsuarioHeader"></span>!</span>
                         <span style="margin-left: 0.25rem; font-size: 0.75em;">▼</span>
                     </a>
@@ -127,7 +140,8 @@
                         <a href="cuenta.html" class="user-dropdown-item">
                             👤 Mi Cuenta
                         </a>
-                        <a href="#" onclick="cerrarSesion(); return false;" class="user-dropdown-item" style="color: #d9534f;">
+                        <a href="#" onclick="cerrarSesion(); return false;" class="user-dropdown-item"
+                            style="color: #d9534f;">
                             🚪 Cerrar Sesión
                         </a>
                     </div>
@@ -184,14 +198,21 @@
 
                 <div class="tablon-anuncios" id="tablonAnuncios">
                     <div class="tablon-header">
-                        <svg class="tablon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <svg class="tablon-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
                         </svg>
                         <h3 class="tablon-title">[Anuncios y Novedades]</h3>
-                        <button class="tablon-close" onclick="cerrarTablon()" aria-label="Cerrar anuncio">&times;</button>
+                        <button class="tablon-close" onclick="cerrarTablon()"
+                            aria-label="Cerrar anuncio">&times;</button>
                     </div>
                     <div class="tablon-content" id="tablonContentText">
-                        <p>¡Hola! Esta semana tenemos novedades: ya está disponible el nuevo <a href="catalogo.html#curso-bajo-101" class="recurso-link">Mini-Curso de Desconexión Digital</a> 📚 y el Taller en vivo <a href="catalogo.html#evento-205" class="recurso-link">"Diseña tu Semana Ideal"</a> será el Jueves a las 19:00h 🎥. Además, abrimos plazas para la <a href="catalogo.html#programa-premium-501" class="recurso-link">Mentoría Premium</a> ⭐. ¡No te lo pierdas!</p>
+                        <p>¡Hola! Esta semana tenemos novedades: ya está disponible el nuevo <a
+                                href="catalogo.html#curso-bajo-101" class="recurso-link">Mini-Curso de Desconexión
+                                Digital</a> 📚 y el Taller en vivo <a href="catalogo.html#evento-205"
+                                class="recurso-link">"Diseña tu Semana Ideal"</a> será el Jueves a las 19:00h 🎥.
+                            Además, abrimos plazas para la <a href="catalogo.html#programa-premium-501"
+                                class="recurso-link">Mentoría Premium</a> ⭐. ¡No te lo pierdas!</p>
                     </div>
                 </div>
             </div>
@@ -275,7 +296,8 @@
                             <li>Contacto con naturaleza para sanar</li>
                             <li>Tiempo de silencio, reflexión y descanso</li>
                         </ul>
-                        <p class="service-detail"><strong>Duración:</strong> 2 o 3 dias | <strong>Incluye:</strong> alojamiento y actividades</p>
+                        <p class="service-detail"><strong>Duración:</strong> 2 o 3 dias | <strong>Incluye:</strong>
+                            alojamiento y actividades</p>
                         <div>
                             <a href="#detalle-retiros" class="btn btn-primary">Ver detalles</a>
                         </div>
@@ -292,7 +314,8 @@
                     </div>
                     <div class="blog-content">
                         <h3>Meditación guiada: Calma en 10 minutos</h3>
-                        <p>Audio breve para regular el sistema nervioso y volver a tu centro cuando sientes saturación.</p>
+                        <p>Audio breve para regular el sistema nervioso y volver a tu centro cuando sientes saturación.
+                        </p>
                         <p class="service-detail"><strong>Precio:</strong> Gratis | Formato: MP3 (10 min)</p>
                         <div>
                             <a href="#detalle-meditacion" class="btn btn-primary">Ver detalles</a>
@@ -323,7 +346,8 @@
                     </div>
                     <div class="blog-content">
                         <h3>Pack 3 sesiones 1:1</h3>
-                        <p>Trayecto breve y enfocado para trabajar un tema puntual con seguimiento y plan de integración.</p>
+                        <p>Trayecto breve y enfocado para trabajar un tema puntual con seguimiento y plan de
+                            integración.</p>
                         <p class="service-detail"><strong>Precio:</strong> 180&euro; | 3 x 60 min</p>
                         <div>
                             <a href="#detalle-pack" class="btn btn-primary">Ver detalles</a>
@@ -342,7 +366,8 @@
 
     <!-- Botón flotante -->
     <div class="pomodoro-trigger" onclick="openPomodoro()">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
             <circle cx="12" cy="12" r="10"></circle>
             <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
@@ -386,7 +411,8 @@
             <!-- Controles -->
             <div class="pomodoro-controls">
                 <button class="pomodoro-btn pomodoro-btn-start" id="startBtn" onclick="startTimer()">Iniciar</button>
-                <button class="pomodoro-btn pomodoro-btn-pause" id="pauseBtn" onclick="pauseTimer()" style="display: none;">Pausar</button>
+                <button class="pomodoro-btn pomodoro-btn-pause" id="pauseBtn" onclick="pauseTimer()"
+                    style="display: none;">Pausar</button>
                 <button class="pomodoro-btn pomodoro-btn-reset" onclick="resetTimer()">Reiniciar</button>
             </div>
 
@@ -405,7 +431,7 @@
         </div>
     </div>
 
-        <!-- Footer -->
+    <!-- Footer -->
     <footer class="footer">
         <div class="footer-wrapper">
             <div class="footer-content">
@@ -420,9 +446,9 @@
 
                 <div class="footer-section">
                     <ul>
-                        <li><a href="#">Privacidad</a></li>
-                        <li><a href="#">Términos</a></li>
-                        <li><a href="#">Aviso Legal</a></li>
+                        <li><a href="privacidad.html">Privacidad</a></li>
+                        <li><a href="cookies.html">Cookies</a></li>
+                        <li><a href="aviso-legal.html">Aviso Legal</a></li>
                     </ul>
                 </div>
 
@@ -430,20 +456,29 @@
                     <p>Sígueme en redes sociales.</p>
                     <div class="social-links">
                         <a href="#" class="social-link" aria-label="Instagram">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                style="width: 24px; height: 24px;">
                                 <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
                                 <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                             </svg>
                         </a>
                         <a href="https://wa.me/34XXXXXXXXX" class="social-link" aria-label="WhatsApp">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
-                                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                style="width: 24px; height: 24px;">
+                                <path
+                                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                                </path>
                             </svg>
                         </a>
                         <a href="mailto:info@serenamentevivir.com" class="social-link" aria-label="Email">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width: 24px; height: 24px;">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                style="width: 24px; height: 24px;">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+                                </path>
                                 <polyline points="22,6 12,13 2,6"></polyline>
                             </svg>
                         </a>
@@ -460,9 +495,9 @@
     <!-- SCRIPT DE GESTIÃ“N USUARIO -->
     <!-- Config Loader - Sistema Multi-Tenant -->
     <script src="js/config-loader.js"></script>
-        <script src="js/auth.js?v=10"></script>
-        <script src="js/area-privada.js"></script>
-    
-    </body>
-    </html>
+    <script src="js/auth.js?v=10"></script>
+    <script src="js/area-privada.js"></script>
 
+</body>
+
+</html>
