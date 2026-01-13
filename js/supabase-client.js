@@ -5,32 +5,26 @@
  */
 
 const SUPABASE_URL = 'https://pprkvdouocehtewpeviu.supabase.co';
-const SUPABASE_ANON_KEY = 'sb_publishable_8Pdc5x9Z4kn_Fc2ExXNuxA_8m5Aazu6';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBwcmt2ZG91b2NlaHRld3Bldml1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjgzMDEyNjQsImV4cCI6MjA4Mzg3NzI2NH0.JMb5cN33iqRD_XLGIz7nBZ_djWcagSBvSKMDOtkOfoI';
 
 // Inicializar el cliente de Supabase
 let supabase = null;
 
 if (typeof supabase === 'undefined' || supabase === null) {
-    if (typeof supabase !== 'undefined' && typeof supabase.createClient === 'function') {
-        supabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-        console.log('✅ Supabase Client inicializado correctamente');
-    } else if (typeof document !== 'undefined') {
-        // En navegadores, a veces el SDK se carga directamente en el objeto window o requiere el constructor
-        // Verificamos si existe la función global createClient (típico del CDN v2)
-        if (typeof supabase === 'undefined' || supabase === null) {
-            try {
-                // El CDN de Supabase suele exponer supabase.createClient o una función global createClient
-                if (window.supabase && typeof window.supabase.createClient === 'function') {
-                    supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-                    console.log('✅ Supabase Client inicializado desde window.supabase');
-                } else if (typeof createClient === 'function') {
-                    supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-                    console.log('✅ Supabase Client inicializado desde createClient global');
-                }
-            } catch (e) {
-                console.error('❌ Error al intentar inicializar Supabase:', e);
-            }
+    try {
+        // En navegadores con el CDN v2, supabase se exporta globalmente
+        // Probamos primero el constructor global createClient
+        if (typeof createClient === 'function') {
+            supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+            console.log('✅ Supabase Client inicializado (createClient)');
         }
+        // Si no, probamos con el objeto supabase del CDN
+        else if (window.supabase && typeof window.supabase.createClient === 'function') {
+            supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+            console.log('✅ Supabase Client inicializado (window.supabase)');
+        }
+    } catch (e) {
+        console.error('❌ Error fatal al inicializar Supabase:', e);
     }
 }
 
