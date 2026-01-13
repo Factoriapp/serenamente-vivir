@@ -2,6 +2,44 @@
 // SERENAMENTE VIVIR - JAVASCRIPT PRINCIPAL
 // ============================================
 
+// CONFIGURACIÓN GLOBAL (Fácil de actualizar para Marlene)
+const CONFIG = {
+    brandName: 'Serenamente Vivir',
+    contactEmail: 'hola@serenamentevivir.com',
+    whatsapp: {
+        number: '+34600000000',
+        message: 'Hola Marlene, vengo de la web y me gustaría recibir más información.'
+    },
+    socials: {
+        instagram: 'https://instagram.com/serenamente.vivir',
+        facebook: 'https://facebook.com/serenamente.vivir'
+    }
+};
+
+/**
+ * Inyecta los datos de contacto de forma dinámica en toda la web
+ * Busca elementos con data-contact-type
+ */
+function inicializarDatosContacto() {
+    const waLinks = document.querySelectorAll('a[href*="[TU_TELEFONO]"]');
+    waLinks.forEach(link => {
+        const url = `https://wa.me/${CONFIG.whatsapp.number}?text=${encodeURIComponent(CONFIG.whatsapp.message)}`;
+        link.href = url;
+    });
+
+    const emailPlaceholders = document.querySelectorAll('.contact-email-placeholder');
+    emailPlaceholders.forEach(el => {
+        el.textContent = CONFIG.contactEmail;
+        if (el.tagName === 'A') el.href = `mailto:${CONFIG.contactEmail}`;
+    });
+}
+
+// Inicializar al cargar el DOM
+document.addEventListener('DOMContentLoaded', () => {
+    inicializarDatosContacto();
+});
+
+
 // ============================================
 // FUNCIÓN AUXILIAR: Mostrar mensajes en formularios
 // ============================================
@@ -241,16 +279,16 @@ console.log('✅ Lead Magnet: Validación activa');
 // FUNCIÓN: Resaltar enlace de navegación activo
 // ============================================
 function highlightActiveLink() {
-    const currentPath = window.location.pathname.split('/').pop(); // Get current file name (e.g., serenamente_vivir.html)
+    const currentPath = window.location.pathname.split('/').pop(); // Get current file name (e.g., index.html)
     const navLinks = document.querySelectorAll('header nav a');
 
     navLinks.forEach(link => {
         // Remove active class from all links first
         link.classList.remove('active');
 
-        // Special handling for the "Membresía" link on serenamente_vivir.html
+        // Special handling for the "Membresía" link on index.html
         // It points to an anchor on the same page
-        if (link.getAttribute('href') === '#membership-featured' && currentPath === 'serenamente_vivir.html') {
+        if (link.getAttribute('href') === '#membership-featured' && currentPath === 'index.html') {
             link.classList.add('active');
             return;
         }
@@ -433,7 +471,7 @@ window.irAEspacioPrivado = function () {
         if (typeof window.abrirModalLogin === 'function') {
             window.abrirModalLogin();
         } else {
-            window.location.href = 'serenamente_vivir.html?login=true';
+            window.location.href = 'index.html?login=true';
         }
     }
 };
@@ -459,3 +497,4 @@ document.addEventListener('click', function (e) {
         }
     }
 });
+

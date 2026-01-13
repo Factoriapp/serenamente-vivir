@@ -1,29 +1,29 @@
-Ôªø<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi √Årea Personal - Serenamente Vivir</title>
+    <title>Mi ¡rea Personal - Serenamente Vivir</title>
     <meta name="description"
-        content="√Årea privada para miembros de Serenamente Vivir. Accede a tu contenido y recursos.">
+        content="¡rea privada para miembros de Serenamente Vivir. Accede a tu contenido y recursos.">
 
-    <!-- SEO: P√°gina privada NO indexable -->
+    <!-- SEO: P·gina privada NO indexable -->
     <meta name="robots" content="noindex, nofollow">
     <link rel="canonical" href="[TU_URL]/area-privada.html">
 
     <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="[TU_URL]/area-privada.html">
-    <meta property="og:title" content="√Årea Personal - Serenamente Vivir">
-    <meta property="og:description" content="√Årea privada para miembros. Accede a tu contenido y recursos.">
+    <meta property="og:title" content="¡rea Personal - Serenamente Vivir">
+    <meta property="og:description" content="¡rea privada para miembros. Accede a tu contenido y recursos.">
     <meta property="og:site_name" content="Serenamente Vivir - Profesional">
     <meta property="og:locale" content="es_ES">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="√Årea Personal - Serenamente Vivir">
-    <meta name="twitter:description" content="√Årea privada para miembros.">
+    <meta name="twitter:title" content="¡rea Personal - Serenamente Vivir">
+    <meta name="twitter:description" content="¡rea privada para miembros.">
 
     <!-- Fuentes y CSS -->
     <link
@@ -116,33 +116,33 @@
     <header>
         <div class="header-content">
             <nav>
-                <a href="serenamente_vivir.html">Inicio</a>
+                <a href="index.html">Inicio</a>
                 <a href="sobre_mi.html">Sobre mi</a>
                 <a href="tienda.html">Para ti</a>
                 <a href="publicaciones.html">Publicaciones</a>
                 <a href="#" onclick="irAEspacioPrivado(); return false;">Tu Espacio Privado</a>
-                <a href="#membership-featured">Membres√≠a</a>
+                <a href="#membership-featured">MembresÌa</a>
                 <a href="contacto.html">Contacto</a>
 
-                <!-- Mostrar seg√∫n estado de sesi√≥n -->
+                <!-- Mostrar seg˙n estado de sesiÛn -->
                 <a href="#" onclick="abrirModalLogin(); return false;" class="nav-destacado"
-                    id="btnIniciarSesion">Iniciar Sesi√≥n</a>
+                    id="btnIniciarSesion">Iniciar SesiÛn</a>
 
                 <!-- Dropdown de usuario logueado -->
                 <div class="user-menu-container" id="userMenuContainer" style="display: none; position: relative;">
                     <a href="#" onclick="toggleUserDropdown(); return false;" class="user-logged"
                         id="btnUsuarioLogueado">
                         <span style="font-weight: 600;">Hola <span id="nombreUsuarioHeader"></span>!</span>
-                        <span style="margin-left: 0.25rem; font-size: 0.75em;">‚ñº</span>
+                        <span style="margin-left: 0.25rem; font-size: 0.75em;">?</span>
                     </a>
 
                     <div class="user-dropdown" id="userDropdown" style="display: none;">
                         <a href="cuenta.html" class="user-dropdown-item">
-                            üë§ Mi Cuenta
+                            ?? Mi Cuenta
                         </a>
                         <a href="#" onclick="cerrarSesion(); return false;" class="user-dropdown-item"
                             style="color: #d9534f;">
-                            üö™ Cerrar Sesi√≥n
+                            ?? Cerrar SesiÛn
                         </a>
                     </div>
                 </div>
@@ -165,7 +165,7 @@
     <div class="app-container">
 
         <!-- ============================================
-             √öNICO BLOQUE: HUB DE CONSUMO
+             ⁄NICO BLOQUE: HUB DE CONSUMO
              ============================================ -->
         <section class="content-block">
             <div class="block-header">
@@ -175,25 +175,25 @@
                 </div>
 
                 <!-- ============================================
-                     TABL√ìN DE ANUNCIOS (Universal)
+                     TABL”N DE ANUNCIOS (Universal)
                      ============================================
 
                      ARQUITECTURA LEAN:
                      - Pepe escribe UN SOLO anuncio en dashboard.html
-                     - Este HTML es ID√âNTICO en area-privada-ana.html y area-privada-regina.html
-                     - La diferencia est√° en la L√ìGICA DE LOS ENLACES (backend/JS)
+                     - Este HTML es ID…NTICO en area-privada-ana.html y area-privada-regina.html
+                     - La diferencia est· en la L”GICA DE LOS ENLACES (backend/JS)
 
-                     L√ìGICA DE PERMISOS (Para Devito):
+                     L”GICA DE PERMISOS (Para Devito):
                      - Todos los enlaces <a> con clase "recurso-link" deben tener:
                        * data-recurso-id="123" (ID del recurso)
                        * data-nivel-requerido="premium" o "estandar"
 
                      - JavaScript verifica:
-                       * Si user.nivel >= recurso.nivel_requerido √¢‚Ä†‚Äô Abrir recurso
-                       * Si user.nivel < recurso.nivel_requerido √¢‚Ä†‚Äô Mostrar popup upsell
+                       * Si user.nivel >= recurso.nivel_requerido ‚Üí Abrir recurso
+                       * Si user.nivel < recurso.nivel_requerido ‚Üí Mostrar popup upsell
 
                      AUTO-OCULTABLE:
-                     - Si Pepe no escribe nada en dashboard √¢‚Ä†‚Äô display: none
+                     - Si Pepe no escribe nada en dashboard ‚Üí display: none
                      ============================================ -->
 
                 <div class="tablon-anuncios" id="tablonAnuncios">
@@ -207,12 +207,12 @@
                             aria-label="Cerrar anuncio">&times;</button>
                     </div>
                     <div class="tablon-content" id="tablonContentText">
-                        <p>¬°Hola! Esta semana tenemos novedades: ya est√° disponible el nuevo <a
-                                href="catalogo.html#curso-bajo-101" class="recurso-link">Mini-Curso de Desconexi√≥n
-                                Digital</a> üìö y el Taller en vivo <a href="catalogo.html#evento-205"
-                                class="recurso-link">"Dise√±a tu Semana Ideal"</a> ser√° el Jueves a las 19:00h üé•.
-                            Adem√°s, abrimos plazas para la <a href="catalogo.html#programa-premium-501"
-                                class="recurso-link">Mentor√≠a Premium</a> ‚≠ê. ¬°No te lo pierdas!</p>
+                        <p>°Hola! Esta semana tenemos novedades: ya est· disponible el nuevo <a
+                                href="catalogo.html#curso-bajo-101" class="recurso-link">Mini-Curso de DesconexiÛn
+                                Digital</a> ?? y el Taller en vivo <a href="catalogo.html#evento-205"
+                                class="recurso-link">"DiseÒa tu Semana Ideal"</a> ser· el Jueves a las 19:00h ??.
+                            Adem·s, abrimos plazas para la <a href="catalogo.html#programa-premium-501"
+                                class="recurso-link">MentorÌa Premium</a> ?. °No te lo pierdas!</p>
                     </div>
                 </div>
             </div>
@@ -230,31 +230,31 @@
                     </div>
                     <div class="blog-content">
                         <h3>Sesiones 1:1</h3>
-                        <p>Espacio √≠ntimo y personalizado para ordenar lo que vives y recuperar claridad.</p>
+                        <p>Espacio Ìntimo y personalizado para ordenar lo que vives y recuperar claridad.</p>
                         <ul>
                             <li>Reconectar con tu verdad interior</li>
                             <li>Explorar dudas y bloqueos emocionales</li>
-                            <li>Definir pasos concretos para tu situaci√≥n actual</li>
+                            <li>Definir pasos concretos para tu situaciÛn actual</li>
                         </ul>
-                        <p class="service-detail">Duraci√≥n: 60 min | Modalidad: online o presencial</p>
+                        <p class="service-detail">DuraciÛn: 60 min | Modalidad: online o presencial</p>
                         <div>
                             <a href="#detalle-sesion" class="btn btn-primary">Ver detalles</a>
                         </div>
                     </div>
                 </article>
 
-                <!-- Acompa√±amiento - ANA -->
+                <!-- AcompaÒamiento - ANA -->
                 <article class="blog-card" data-user-type="ana">
                     <div class="blog-card-image">
-                        <img src="https://iili.io/KL1iK1j.png" alt="Acompa√±amiento" loading="lazy">
+                        <img src="https://iili.io/KL1iK1j.png" alt="AcompaÒamiento" loading="lazy">
                     </div>
                     <div class="blog-content">
-                        <h3>Acompa√±amiento</h3>
-                        <p>Proceso sostenido con seguimiento y plan de acci√≥n para cambios profundos.</p>
+                        <h3>AcompaÒamiento</h3>
+                        <p>Proceso sostenido con seguimiento y plan de acciÛn para cambios profundos.</p>
                         <ul>
                             <li>Sesiones regulares adaptadas a tu ritmo</li>
-                            <li>Herramientas sist√©micas y de autoconocimiento</li>
-                            <li>Plan de integraci√≥n entre sesiones</li>
+                            <li>Herramientas sistÈmicas y de autoconocimiento</li>
+                            <li>Plan de integraciÛn entre sesiones</li>
                         </ul>
                         <p class="service-detail">Planes: 3, 6 o 12 meses | Modalidad: online o presencial</p>
                         <div>
@@ -270,13 +270,13 @@
                     </div>
                     <div class="blog-content">
                         <h3>Talleres</h3>
-                        <p>Encuentros grupales para aprender, pr√°cticar y compartir en comunidad.</p>
+                        <p>Encuentros grupales para aprender, pr·cticar y compartir en comunidad.</p>
                         <ul>
-                            <li>Tem√°ticas espec√≠ficas con pr√°ctica guiada</li>
+                            <li>Tem·ticas especÌficas con pr·ctica guiada</li>
                             <li>Apoyo colectivo y espacio seguro</li>
                             <li>Materiales para seguir despues del taller</li>
                         </ul>
-                        <p class="service-detail">Formato: online y presencial | Duraci√≥n: segun convocatoria</p>
+                        <p class="service-detail">Formato: online y presencial | DuraciÛn: segun convocatoria</p>
                         <div>
                             <a href="#detalle-talleres" class="btn btn-primary">Ver detalles</a>
                         </div>
@@ -290,13 +290,13 @@
                     </div>
                     <div class="blog-content">
                         <h3>Retiros</h3>
-                        <p>Inmersi√≥n en naturaleza con pr√°cticas, constelaciones y espacios de silencio.</p>
+                        <p>InmersiÛn en naturaleza con pr·cticas, constelaciones y espacios de silencio.</p>
                         <ul>
                             <li>Mindfulness, meditacion y trabajo grupal</li>
                             <li>Contacto con naturaleza para sanar</li>
-                            <li>Tiempo de silencio, reflexi√≥n y descanso</li>
+                            <li>Tiempo de silencio, reflexiÛn y descanso</li>
                         </ul>
-                        <p class="service-detail"><strong>Duraci√≥n:</strong> 2 o 3 dias | <strong>Incluye:</strong>
+                        <p class="service-detail"><strong>DuraciÛn:</strong> 2 o 3 dias | <strong>Incluye:</strong>
                             alojamiento y actividades</p>
                         <div>
                             <a href="#detalle-retiros" class="btn btn-primary">Ver detalles</a>
@@ -310,11 +310,11 @@
                 <!-- Meditacion guiada: Calma en 10 minutos - REGINA -->
                 <article class="blog-card" data-user-type="regina">
                     <div class="blog-card-image">
-                        <img src="https://iili.io/KLlTHBe.png" alt="Meditaci√≥n guiada gratis" loading="lazy">
+                        <img src="https://iili.io/KLlTHBe.png" alt="MeditaciÛn guiada gratis" loading="lazy">
                     </div>
                     <div class="blog-content">
-                        <h3>Meditaci√≥n guiada: Calma en 10 minutos</h3>
-                        <p>Audio breve para regular el sistema nervioso y volver a tu centro cuando sientes saturaci√≥n.
+                        <h3>MeditaciÛn guiada: Calma en 10 minutos</h3>
+                        <p>Audio breve para regular el sistema nervioso y volver a tu centro cuando sientes saturaciÛn.
                         </p>
                         <p class="service-detail"><strong>Precio:</strong> Gratis | Formato: MP3 (10 min)</p>
                         <div>
@@ -327,11 +327,11 @@
                 <!-- Taller grabado: Limites desde la calma - REGINA -->
                 <article class="blog-card" data-user-type="regina">
                     <div class="blog-card-image">
-                        <img src="https://iili.io/KQF8g9e.png" alt="Taller grabado l√≠mites" loading="lazy">
+                        <img src="https://iili.io/KQF8g9e.png" alt="Taller grabado lÌmites" loading="lazy">
                     </div>
                     <div class="blog-content">
                         <h3>Taller grabado: Limites desde la calma</h3>
-                        <p>Sesiones y ejercicios para marcar l√≠mites sin culpa, integrando cuerpo, emoci√≥n y mente.</p>
+                        <p>Sesiones y ejercicios para marcar lÌmites sin culpa, integrando cuerpo, emociÛn y mente.</p>
                         <p class="service-detail"><strong>Precio:</strong> 29&euro; | Incluye video + PDF</p>
                         <div>
                             <a href="#detalle-taller" class="btn btn-primary">Ver detalles</a>
@@ -347,7 +347,7 @@
                     <div class="blog-content">
                         <h3>Pack 3 sesiones 1:1</h3>
                         <p>Trayecto breve y enfocado para trabajar un tema puntual con seguimiento y plan de
-                            integraci√≥n.</p>
+                            integraciÛn.</p>
                         <p class="service-detail"><strong>Precio:</strong> 180&euro; | 3 x 60 min</p>
                         <div>
                             <a href="#detalle-pack" class="btn btn-primary">Ver detalles</a>
@@ -364,7 +364,7 @@
          POMODORO TIMER - DRAWER LATERAL
          ============================================ -->
 
-    <!-- Bot√≥n flotante -->
+    <!-- BotÛn flotante -->
     <div class="pomodoro-trigger" onclick="openPomodoro()">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
             stroke-linecap="round" stroke-linejoin="round">
@@ -379,7 +379,7 @@
     <!-- Panel lateral -->
     <div class="pomodoro-drawer" id="pomodoroDrawer">
         <div class="pomodoro-header">
-            <h3>[Temporizador de Concentraci√≥n]</h3>
+            <h3>[Temporizador de ConcentraciÛn]</h3>
             <button class="pomodoro-close" onclick="closePomodoro()">&times;</button>
         </div>
 
@@ -387,19 +387,19 @@
             <!-- Modos -->
             <div class="pomodoro-modes">
                 <div class="pomodoro-mode active" onclick="setMode('focus', 25)" data-mode="focus">
-                    üéØ [Trabajo Concentrado]<br><small>25 min</small>
+                    ?? [Trabajo Concentrado]<br><small>25 min</small>
                 </div>
                 <div class="pomodoro-mode" onclick="setMode('short', 5)" data-mode="short">
-                    ‚òï [Descanso Breve]<br><small>5 min</small>
+                    ? [Descanso Breve]<br><small>5 min</small>
                 </div>
                 <div class="pomodoro-mode" onclick="setMode('long', 15)" data-mode="long">
-                    üåü [Descanso Largo]<br><small>15 min</small>
+                    ?? [Descanso Largo]<br><small>15 min</small>
                 </div>
             </div>
 
             <!-- Display del timer -->
             <div class="pomodoro-display">
-                <div class="pomodoro-label" id="pomodoroLabel">[Sesi√≥n de Trabajo Concentrado]</div>
+                <div class="pomodoro-label" id="pomodoroLabel">[SesiÛn de Trabajo Concentrado]</div>
                 <div class="pomodoro-time" id="pomodoroTime">25:00</div>
 
                 <!-- Barra de progreso -->
@@ -416,9 +416,9 @@
                 <button class="pomodoro-btn pomodoro-btn-reset" onclick="resetTimer()">Reiniciar</button>
             </div>
 
-            <!-- Estad√≠sticas -->
+            <!-- EstadÌsticas -->
             <div class="pomodoro-stats">
-                <h4>üìä Estad√≠sticas de Hoy</h4>
+                <h4>?? EstadÌsticas de Hoy</h4>
                 <div class="pomodoro-stat-item">
                     <span>Pomodoros completados:</span>
                     <span class="pomodoro-stat-value" id="completedPomodoros">0</span>
@@ -437,9 +437,9 @@
             <div class="footer-content">
                 <div class="footer-section">
                     <ul>
-                        <li><a href="serenamente_vivir.html">Inicio</a></li>
+                        <li><a href="index.html">Inicio</a></li>
                         <li><a href="tienda.html">Tienda</a></li>
-                        <li><a href="publicaciones.html">Inspiraci√≥n</a></li>
+                        <li><a href="publicaciones.html">InspiraciÛn</a></li>
                         <li><a href="contacto.html">Contacto</a></li>
                     </ul>
                 </div>
@@ -453,9 +453,9 @@
                 </div>
 
                 <div class="footer-section">
-                    <p>S√≠gueme en redes sociales.</p>
+                    <p>SÌgueme en redes sociales.</p>
                     <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Instagram">
+                        <a href="https://instagram.com/serenamente.vivir" class="social-link" aria-label="Instagram">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                 style="width: 24px; height: 24px;">
@@ -464,7 +464,7 @@
                                 <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                             </svg>
                         </a>
-                        <a href="https://wa.me/34XXXXXXXXX" class="social-link" aria-label="WhatsApp">
+                        <a href="https://wa.me/[TU_TELEFONO]" class="social-link" aria-label="WhatsApp">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                 style="width: 24px; height: 24px;">
@@ -473,7 +473,7 @@
                                 </path>
                             </svg>
                         </a>
-                        <a href="mailto:info@serenamentevivir.com" class="social-link" aria-label="Email">
+                        <a href="mailto:hola@serenamentevivir.com" class="social-link" aria-label="Email">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
                                 stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                 style="width: 24px; height: 24px;">
@@ -492,7 +492,7 @@
         </div>
     </footer>
 
-    <!-- SCRIPT DE GESTI√É‚ÄúN USUARIO -->
+    <!-- SCRIPT DE GESTI√ìN USUARIO -->
     <!-- Config Loader - Sistema Multi-Tenant -->
     <script src="js/config-loader.js"></script>
     <script src="js/auth.js?v=10"></script>
@@ -501,3 +501,5 @@
 </body>
 
 </html>
+
+

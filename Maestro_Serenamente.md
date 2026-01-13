@@ -20,6 +20,11 @@ Actualizado al: 13 de Diciembre de 2025
 
 ## 2. LIBRO DE DECISIONES ESTRATÉGICAS
 
+### 2.2 Decisiones de Arquitectura y UX
+- **Fase 1 (Visual y Estructura)**: Prioridad absoluta a la estética sobre la funcionalidad técnica profunda. (05-Dic-2025)
+- **Modularización SCSS**: Adopción de un sistema de 10 módulos para facilitar el mantenimiento. (10-Dic-2025)
+- **Protocolo de Aprobación Crítica**: NUNCA tomar decisiones de arquitectura, estrategia de negocio o cambios técnicos significativos sin la aprobación previa y explícita del Fundador. (13-Ene-2026)
+
 ### Decisión de Arquitectura: Reutilización de Sistema Impulso Pro (03-Dic-2025)
 
 Contexto: Cliente necesita website profesional con urgencia (pocos días). Se evalúa construir desde cero vs reutilizar arquitectura existente.

@@ -76,7 +76,7 @@ function verificarAutenticacion() {
     const usuario = obtenerUsuarioActual();
     if (!usuario) {
         // Redirigir a la página principal si no está autenticado
-        window.location.href = 'serenamente_vivir.html';
+        window.location.href = 'index.html';
         return false;
     }
     return true;
@@ -390,3 +390,4 @@ if (window.location.pathname.includes('area-privada.html')) {
 console.log('🔐 Sistema de autenticación cargado');
 console.log('⚠️ NOTA: Este es un sistema de demostración usando localStorage');
 console.log('⚠️ Para producción, implementa un backend con base de datos real');
+

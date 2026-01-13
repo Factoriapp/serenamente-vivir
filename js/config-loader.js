@@ -442,3 +442,4 @@ window.TenantConfig = {
     isFeatureEnabled: isFeatureEnabled,
     getCurrentConfig: getCurrentTenantConfig
 };
+

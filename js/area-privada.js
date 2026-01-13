@@ -13,8 +13,8 @@ window.addEventListener('DOMContentLoaded', function() {
     console.log('---------------------------------');
 
     if (!usuario) {
-        console.warn('[area-privada.js] No hay usuario autenticado. Redirigiendo a serenamente_vivir.html...');
-        window.location.href = 'serenamente_vivir.html';
+        console.warn('[area-privada.js] No hay usuario autenticado. Redirigiendo a index.html...');
+        window.location.href = 'index.html';
         return;
     }
 
@@ -48,8 +48,8 @@ window.addEventListener('DOMContentLoaded', function() {
     } else if (usuario.nivel === 2) {
         aplicarVistaRegina(usuario);
     } else {
-        console.warn('[area-privada.js] Usuario con nivel insuficiente. Redirigiendo a serenamente_vivir.html...');
-        window.location.href = 'serenamente_vivir.html';
+        console.warn('[area-privada.js] Usuario con nivel insuficiente. Redirigiendo a index.html...');
+        window.location.href = 'index.html';
     }
 
     // 4. Inicializar funcionalidad de Tabs de Anuncios y Pomodoro (si existen)
@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const usuario = obtenerUsuarioActual();
             if (!usuario) {
-                window.location.href = 'serenamente_vivir.html'; // Redirigir si no hay usuario
+                window.location.href = 'index.html'; // Redirigir si no hay usuario
                 return;
             }
 
