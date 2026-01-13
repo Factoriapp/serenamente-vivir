@@ -168,9 +168,66 @@ window.initializeLoginForm = function () {
         });
 
         if (error) {
-            mostrarError('Error: ' + error.message, 'loginMensajeError');
+            // TRADUCCIÓN DE ERRORES AMIGABLE
+            let mensajeError = 'Error al iniciar sesión.';
+            if (error.message.includes('Invalid login credentials')) {
+                mensajeError = 'Usuario o contraseña incorrectos. Por favor, verifica tus datos.';
+            } else if (error.message.includes('Email not confirmed')) {
+                mensajeError = 'Por favor, confirma tu email antes de iniciar sesión.';
+            }
+
+            mostrarError(mensajeError, 'loginMensajeError');
         } else {
             window.location.reload();
+        }
+    });
+};
+
+// ============================================
+// FORMULARIO DE REGISTRO
+// ============================================
+
+window.initializeRegistroForm = function () {
+    const form = document.getElementById('registroForm');
+    if (!form) return;
+
+    form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const sb = getSupabase();
+        if (!sb) return;
+
+        const nombre = document.getElementById('nombre').value.trim();
+        const email = document.getElementById('email').value.trim().toLowerCase();
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+        const terminos = document.getElementById('terminos').checked;
+
+        if (password !== confirmPassword) {
+            mostrarError('Las contraseñas no coinciden');
+            return;
+        }
+
+        // Registro real en Supabase
+        const { data, error } = await sb.auth.signUp({
+            email: email,
+            password: password,
+            options: { data: { full_name: nombre } }
+        });
+
+        if (error) {
+            mostrarError('Error: ' + error.message);
+        } else {
+            mostrarExito('¡Cuenta creada! Revisa tu email para confirmar.');
+            form.reset();
+
+            // CIERRE AUTOMÁTICO TRAS ÉXITO (UX)
+            setTimeout(() => {
+                if (typeof window.cerrarModalRegistro === 'function') {
+                    window.cerrarModalRegistro();
+                }
+                // Opcional: Abrir modal de login automáticamente para facilitar el flujo
+                // if (typeof window.abrirModalLogin === 'function') window.abrirModalLogin();
+            }, 3000); // 3 segundos para leer el mensaje
         }
     });
 };
