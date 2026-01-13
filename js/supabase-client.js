@@ -1,32 +1,28 @@
 /**
  * SUPABASE CLIENT CONFIGURATION
  * ----------------------------
- * Configuración real para el proyecto Serenamente Vivir.
+ * V.2.1 - Conexión Robusta
  */
 
 const SUPABASE_URL = 'https://pprkvdouocehtewpeviu.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBwcmt2ZG91b2NlaHRld3Bldml1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjgzMDEyNjQsImV4cCI6MjA4Mzg3NzI2NH0.JMb5cN33iqRD_XLGIz7nBZ_djWcagSBvSKMDOtkOfoI';
 
-// Inicializar el cliente de Supabase
-let supabase = null;
+// Usamos una variable global clara para evitar conflictos
+window.serenamenteSupabase = null;
 
-if (typeof supabase === 'undefined' || supabase === null) {
+(function () {
     try {
-        // En navegadores con el CDN v2, supabase se exporta globalmente
-        // Probamos primero el constructor global createClient
-        if (typeof createClient === 'function') {
-            supabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-            console.log('✅ Supabase Client inicializado (createClient)');
-        }
-        // Si no, probamos con el objeto supabase del CDN
-        else if (window.supabase && typeof window.supabase.createClient === 'function') {
-            supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-            console.log('✅ Supabase Client inicializado (window.supabase)');
+        // Intentar inicializar usando las diferentes formas que ofrece el CDN
+        if (typeof supabase !== 'undefined' && typeof supabase.createClient === 'function') {
+            window.serenamenteSupabase = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+            console.log('✅ Supabase: Inicializado vía objeto global');
+        } else if (typeof createClient === 'function') {
+            window.serenamenteSupabase = createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+            console.log('✅ Supabase: Inicializado vía función global');
+        } else {
+            console.error('❌ Supabase: No se encontró la librería en el DOM.');
         }
     } catch (e) {
-        console.error('❌ Error fatal al inicializar Supabase:', e);
+        console.error('❌ Supabase: Error crítico en inicialización:', e);
     }
-}
-
-// Exportar para uso global
-window.supabase = supabase;
+})();

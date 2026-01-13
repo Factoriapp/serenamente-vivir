@@ -1,7 +1,12 @@
 // ============================================
-// SISTEMA DE AUTENTICACIÓN REAL (SUPABASE) - V 2.0
+// SISTEMA DE AUTENTICACIÓN REAL (SUPABASE) - V 2.1
 // ============================================
-console.log('%c🚀 SERENAMENTE: Cargando sistema de autenticación SUPABASE (V.2.0)', 'background: #222; color: #bada55; padding: 10px; font-weight: bold;');
+console.log('%c🚀 SERENAMENTE: Cargando sistema de autenticación SUPABASE (V.2.1)', 'background: #222; color: #bada55; padding: 10px; font-weight: bold;');
+
+// Alias para facilitar el uso en el código
+function getSupabase() {
+    return window.serenamenteSupabase;
+}
 
 // ============================================
 // FUNCIONES DE UTILIDAD
@@ -17,43 +22,51 @@ function obtenerPrimerNombre(nombreCompleto) {
  * Obtiene la sesión actual de Supabase
  */
 async function obtenerUsuarioActual() {
-    if (!supabase) return null;
-
-    const { data: { session }, error } = await supabase.auth.getSession();
-    if (error || !session) return null;
-
-    // Obtener perfil detallado de la tabla 'profiles'
-    const { data: profile, error: profileError } = await supabase
-        .from('profiles')
-        .select('*')
-        .eq('id', session.user.id)
-        .single();
-
-    if (profileError) {
-        console.error('❌ Error obteniendo perfil:', profileError);
-        return session.user; // Devolvemos al menos el usuario de auth
+    const sb = getSupabase();
+    if (!sb) {
+        console.warn('⚠️ Supabase no inicializado aún.');
+        return null;
     }
 
-    return {
-        ...session.user,
-        ...profile,
-        nombre: profile.full_name, // Mapeo para compatibilidad
-        nivel: profile.user_level,
-        tipoUsuario: profile.user_type
-    };
+    try {
+        const { data: { session }, error } = await sb.auth.getSession();
+        if (error || !session) return null;
+
+        // Obtener perfil detallado
+        const { data: profile, error: profileError } = await sb
+            .from('profiles')
+            .select('*')
+            .eq('id', session.user.id)
+            .single();
+
+        if (profileError) {
+            return session.user;
+        }
+
+        return {
+            ...session.user,
+            ...profile,
+            nombre: profile.full_name,
+            nivel: profile.user_level,
+            tipoUsuario: profile.user_type
+        };
+    } catch (err) {
+        console.error('❌ Error en obtenerUsuarioActual:', err);
+        return null;
+    }
 }
 
 /**
- * Cerrar sesión en Supabase
+ * Cerrar sesión
  */
 async function cerrarSesion() {
-    if (!supabase) return;
-    await supabase.auth.signOut();
+    const sb = getSupabase();
+    if (sb) await sb.auth.signOut();
     window.location.reload();
 }
 
 /**
- * Verificar si el usuario está logueado y tiene el nivel necesario
+ * Verificar sesión
  */
 async function verificarAutenticacion(nivelRequerido = 1) {
     const usuario = await obtenerUsuarioActual();
@@ -61,41 +74,10 @@ async function verificarAutenticacion(nivelRequerido = 1) {
         window.location.href = 'index.html?login=true';
         return false;
     }
-
-    if (usuario.user_level < nivelRequerido) {
+    if (usuario.nivel < nivelRequerido) {
         window.location.href = 'membresia.html';
         return false;
     }
-
-    return true;
-}
-
-/**
- * Simulación de Upgrade (en producción se haría tras pago en Stripe)
- */
-async function upgradeUsuarioAMiembro() {
-    const usuario = await obtenerUsuarioActual();
-    if (!usuario) return false;
-
-    if (!confirm('¿Deseas confirmar la suscripción a la Membresía Premium (29€/mes)?')) {
-        return false;
-    }
-
-    const { error } = await supabase
-        .from('profiles')
-        .update({
-            user_type: 'miembro',
-            user_level: 3
-        })
-        .eq('id', usuario.id);
-
-    if (error) {
-        mostrarError('Error al actualizar membresía: ' + error.message);
-        return false;
-    }
-
-    mostrarExito('¡Felicidades! Ahora eres miembro Premium.');
-    setTimeout(() => { window.location.href = 'area-privada.html'; }, 1500);
     return true;
 }
 
@@ -126,6 +108,8 @@ window.initializeRegistroForm = function () {
 
     form.addEventListener('submit', async function (e) {
         e.preventDefault();
+        const sb = getSupabase();
+        if (!sb) return;
 
         const nombre = document.getElementById('nombre').value.trim();
         const email = document.getElementById('email').value.trim().toLowerCase();
@@ -138,26 +122,17 @@ window.initializeRegistroForm = function () {
             return;
         }
 
-        if (!terminos) {
-            mostrarError('Debes aceptar los términos');
-            return;
-        }
-
-        // Registro en Supabase
-        const { data, error } = await supabase.auth.signUp({
+        // Registro real en Supabase
+        const { data, error } = await sb.auth.signUp({
             email: email,
             password: password,
-            options: {
-                data: {
-                    full_name: nombre
-                }
-            }
+            options: { data: { full_name: nombre } }
         });
 
         if (error) {
-            mostrarError('Error en registro: ' + error.message);
+            mostrarError('Error: ' + error.message);
         } else {
-            mostrarExito('¡Cuenta creada! Revisa tu email para confirmar y luego inicia sesión.');
+            mostrarExito('¡Cuenta creada! Revisa tu email para confirmar.');
             form.reset();
         }
     });
@@ -173,31 +148,21 @@ window.initializeLoginForm = function () {
 
     form.addEventListener('submit', async function (e) {
         e.preventDefault();
+        const sb = getSupabase();
+        if (!sb) return;
 
-        const email = (document.getElementById('loginEmail') || {}).value;
-        const password = (document.getElementById('loginPassword') || {}).value;
+        const email = document.getElementById('loginEmail').value;
+        const password = document.getElementById('loginPassword').value;
 
-        if (!email || !password) {
-            mostrarError('Completa todos los campos', 'loginMensajeError');
-            return;
-        }
-
-        const { data, error } = await supabase.auth.signInWithPassword({
+        const { data, error } = await sb.auth.signInWithPassword({
             email: email,
             password: password
         });
 
         if (error) {
-            mostrarError('Credenciales incorrectas: ' + error.message, 'loginMensajeError');
+            mostrarError('Error: ' + error.message, 'loginMensajeError');
         } else {
-            if (typeof cerrarModalLogin === 'function') {
-                cerrarModalLogin();
-                window.location.reload();
-            } else {
-                window.location.href = 'area-privada.html';
-            }
+            window.location.reload();
         }
     });
 };
-
-console.log('🔐 Sistema Autenticación Supabase Cargado');
