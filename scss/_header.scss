@@ -46,22 +46,6 @@ nav a:hover {
     color: #555;
 }
 
-nav a.active {
-    background-color: transparent;
-    color: var(--color-gray);
-    font-weight: 600;
-}
-
-/* Enlace destacado (Iniciar Sesión) */
-nav a.nav-destacado {
-    border: 1px solid var(--color-beige);
-    font-weight: 500;
-}
-
-nav a.nav-destacado:hover {
-    border-color: var(--color-green);
-    background-color: var(--color-beige);
-}
 
 /* Usuario logueado (sin borde) */
 nav a.user-logged {
