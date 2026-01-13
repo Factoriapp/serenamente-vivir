@@ -1,6 +1,7 @@
 // ============================================
-// SISTEMA DE AUTENTICACIÓN REAL (SUPABASE)
+// SISTEMA DE AUTENTICACIÓN REAL (SUPABASE) - V 2.0
 // ============================================
+console.log('%c🚀 SERENAMENTE: Cargando sistema de autenticación SUPABASE (V.2.0)', 'background: #222; color: #bada55; padding: 10px; font-weight: bold;');
 
 // ============================================
 // FUNCIONES DE UTILIDAD
