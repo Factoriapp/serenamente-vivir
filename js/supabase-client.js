@@ -1,8 +1,9 @@
 /**
  * SUPABASE CLIENT CONFIGURATION
  * ----------------------------
- * V.2.1 - Conexión Robusta
+ * V.2.2 - Conexión Robusta + Debug
  */
+console.log('📡 [Supabase Client] Iniciando carga de archivo...');
 
 const SUPABASE_URL = 'https://pprkvdouocehtewpeviu.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBwcmt2ZG91b2NlaHRld3Bldml1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjgzMDEyNjQsImV4cCI6MjA4Mzg3NzI2NH0.JMb5cN33iqRD_XLGIz7nBZ_djWcagSBvSKMDOtkOfoI';
