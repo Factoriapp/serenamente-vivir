@@ -39,7 +39,7 @@ function obtenerUsuarioActual() {
         }
 
         return usuarioObj;
-    } catch(e) {
+    } catch (e) {
         console.error('❌ JSON corrupto en localStorage:', e);
         localStorage.removeItem('usuarioActual'); // Limpiar dato malo
         return null;
@@ -48,7 +48,7 @@ function obtenerUsuarioActual() {
 
 // Mapear tipoUsuario a nivel numérico
 function mapearTipoANivel(tipoUsuario) {
-    switch(tipoUsuario) {
+    switch (tipoUsuario) {
         case 'miembro':
             return 3; // Ana (Premium)
         case 'comprador':
@@ -100,6 +100,33 @@ function actualizarTipoUsuario(nuevoTipo) {
         usuarios[index].nivel = mapearTipoANivel(nuevoTipo);
         guardarUsuarios(usuarios);
     }
+
+    return true;
+}
+
+/**
+ * Sube el nivel del usuario logueado a Miembro (Nivel 3 - Ana)
+ * Simula el proceso de compra de la membresía
+ */
+function upgradeUsuarioAMiembro() {
+    const usuario = obtenerUsuarioActual();
+    if (!usuario) return false;
+
+    // 1. Mostrar confirmación visual (simulación de pasarela)
+    if (!confirm('¿Deseas confirmar la suscripción a la Membresía Premium (29€/mes)?')) {
+        return false;
+    }
+
+    // 2. Actualizar el tipo de usuario y nivel
+    actualizarTipoUsuario('miembro');
+
+    // 3. Feedback visual
+    mostrarExito('¡Felicidades! Ahora eres miembro Premium. Bienvenido/a al equipo.');
+
+    // 4. Redirigir al área privada tras un pequeño delay
+    setTimeout(() => {
+        window.location.href = 'area-privada.html';
+    }, 1500);
 
     return true;
 }
@@ -172,7 +199,7 @@ function mostrarExito(mensaje, elementoId = 'mensajeExito') {
  * Inicializa el formulario de registro
  * Se llama desde main.js después de que los modales se crean en el DOM
  */
-window.initializeRegistroForm = function() {
+window.initializeRegistroForm = function () {
     const registroForm = document.getElementById('registroForm');
 
     if (!registroForm) {
@@ -185,7 +212,7 @@ window.initializeRegistroForm = function() {
     registroForm.parentNode.replaceChild(newRegistroForm, registroForm);
     const form = document.getElementById('registroForm');
 
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', function (e) {
         e.preventDefault();
 
         // Obtener valores del formulario
@@ -266,7 +293,7 @@ window.initializeRegistroForm = function() {
  * Inicializa el formulario de login
  * Se llama desde main.js después de que los modales se crean en el DOM
  */
-window.initializeLoginForm = function() {
+window.initializeLoginForm = function () {
     const loginForm = document.getElementById('loginForm');
 
     if (!loginForm) {
@@ -279,7 +306,7 @@ window.initializeLoginForm = function() {
     loginForm.parentNode.replaceChild(newLoginForm, loginForm);
     const form = document.getElementById('loginForm');
 
-    form.addEventListener('submit', function(e) {
+    form.addEventListener('submit', function (e) {
         e.preventDefault();
 
         // Obtener valores del formulario (usando IDs del modal)
@@ -334,7 +361,7 @@ window.initializeLoginForm = function() {
 // ============================================
 
 if (document.getElementById('cerrarSesion')) {
-    document.getElementById('cerrarSesion').addEventListener('click', function() {
+    document.getElementById('cerrarSesion').addEventListener('click', function () {
         // Cerrar sesión directamente sin diálogo molesto
         cerrarSesion();
     });

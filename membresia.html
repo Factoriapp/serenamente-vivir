@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- SEO Básico -->
+    <title>Membresía - Serenamente Vivir | Comunidad exclusiva para mujeres</title>
+    <meta name="description"
+        content="Únete a nuestra membresía y accede a un refugio de crecimiento continuo, sesiones grupales y recursos exclusivos para tu bienestar.">
+    <link rel="canonical" href="https://serenamentevivir.com/membresia.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://serenamentevivir.com/membresia.html">
+    <meta property="og:title" content="Membresía - Serenamente Vivir">
+    <meta property="og:description"
+        content="Un espacio diseñado para acompañarte de manera continua en tu proceso de transformación personal.">
+    <meta property="og:image" content="https://iili.io/KLlTHBe.png">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Source+Sans+Pro:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- CSS Externo - Sistema SCSS Modular -->
+    <link rel="stylesheet" href="css/styles.css?v=11">
+</head>
+
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <nav>
+                <a href="serenamente_vivir.html">Inicio</a>
+                <a href="sobre_mi.html">Sobre mi</a>
+                <a href="tienda.html">Para ti</a>
+                <a href="publicaciones.html">Publicaciones</a>
+                <a href="area-privada.html">Tu Espacio Privado</a>
+                <a href="membresia.html" class="active">Membresía</a>
+                <a href="contacto.html">Contacto</a>
+
+                <!-- Mostrar según estado de sesión -->
+                <a href="#" onclick="abrirModalLogin(); return false;" class="nav-destacado"
+                    id="btnIniciarSesion">Iniciar Sesión</a>
+
+                <!-- Dropdown de usuario logueado -->
+                <div class="user-menu-container" id="userMenuContainer" style="display: none; position: relative;">
+                    <a href="#" onclick="toggleUserDropdown(); return false;" class="user-logged"
+                        id="btnUsuarioLogueado">
+                        <span style="font-weight: 600;">Hola <span id="nombreUsuarioHeader"></span>!</span>
+                        <span style="margin-left: 0.25rem; font-size: 0.75em;">▼</span>
+                    </a>
+
+                    <div class="user-dropdown" id="userDropdown" style="display: none;">
+                        <a href="cuenta.html" class="user-dropdown-item">
+                            👤 Mi Cuenta
+                        </a>
+                        <a href="#" onclick="cerrarSesion(); return false;" class="user-dropdown-item"
+                            style="color: #d9534f;">
+                            🚪 Cerrar Sesión
+                        </a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-logo-container">
+            <img src="https://iili.io/K4AhJFs.png" alt="Serenamente Vivir" class="hero-logo">
+            <p class="hero-author">con <strong>Marlene Sosa</strong></p>
+        </div>
+        <img src="https://iili.io/K4a3jgj.png" alt="Serenamente Vivir" class="hero-banner">
+        <p class="hero-tagline"><em>Un refugio de crecimiento continuo</em></p>
+    </section>
+
+    <!-- Separator -->
+    <div class="separator"></div>
+
+    <!-- Main Content -->
+    <div class="container" style="padding: 80px 40px;">
+        <section id="membership-featured" class="membership-featured">
+            <div class="membership-content">
+                <div class="membership-header" style="text-align: center; margin-bottom: 4rem;">
+                    <h2 class="section-title-alt">La Membresía</h2>
+                    <p class="membership-intro"
+                        style="font-size: 1.25rem; color: var(--color-gray); font-style: italic;">Un acompañamiento
+                        sostenido en tu proceso de transformación personal</p>
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+                    <div class="membership-image-col">
+                        <img src="https://iili.io/KLlTHBe.png" alt="Comunidad Privada"
+                            style="width: 100%; border-radius: 15px; box-shadow: var(--shadow-soft);" loading="lazy">
+                    </div>
+
+                    <div class="membership-text-col">
+                        <p
+                            style="font-size: 1.15rem; color: var(--color-text-light); line-height: 1.8; margin-bottom: 2.5rem;">
+                            Hemos creado este espacio para que no camines sola. Un refugio donde cada mes nos
+                            encontramos para sanar, crecer y florecer juntas, respetando tu ritmo y honrando tu
+                            historia.
+                        </p>
+
+                        <h3
+                            style="font-family: var(--font-serif); font-size: 2rem; font-style: italic; color: var(--color-gray); margin-bottom: 1.5rem; border-bottom: 1px solid var(--color-beige); display: inline-block;">
+                            ¿Qué recibirás?</h3>
+                        <ul
+                            style="color: var(--color-text); line-height: 2.2; margin-bottom: 3rem; font-size: 1.1rem; list-style: none; padding-left: 0;">
+                            <li>✨ <strong>Sesiones grupales mensuales</strong> online en vivo</li>
+                            <li>🎧 <strong>Biblioteca completa</strong> de meditaciones guiadas</li>
+                            <li>⭕ <strong>Círculos de mujeres</strong> para compartir desde el alma</li>
+                            <li>🤝 <strong>Comunidad privada</strong> de apoyo y sororidad</li>
+                            <li>📓 <strong>Material exclusivo</strong> (PDFs, ejercicios, guías)</li>
+                            <li>💎 <strong>Descuentos especiales</strong> en sesiones 1:1 y retiros</li>
+                        </ul>
+
+                        <div class="pricing-card"
+                            style="background: var(--color-cream); padding: 30px; border-radius: 12px; text-align: center; border: 1px solid var(--color-beige);">
+                            <p
+                                style="font-size: 2.5rem; color: var(--color-gray); font-family: var(--font-serif); margin-bottom: 0.5rem;">
+                                <strong>29€</strong><span style="font-size: 1.2rem;">/mes</span>
+                            </p>
+                            <p style="color: var(--color-text-light); margin-bottom: 2rem; font-size: 0.95rem;">Cancela
+                                en cualquier momento sin compromiso</p>
+                            <button onclick="handleMembershipUpgrade()" class="btn btn-primary"
+                                style="width: 100%; font-size: 1.2rem; padding: 18px;">Quiero unirme ahora</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Separator -->
+    <div class="separator"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wrapper">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <ul>
+                        <li><a href="serenamente_vivir.html">Inicio</a></li>
+                        <li><a href="tienda.html">Para ti</a></li>
+                        <li><a href="publicaciones.html">Inspiración</a></li>
+                        <li><a href="membresia.html">Membresía</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <ul>
+                        <li><a href="privacidad.html">Privacidad</a></li>
+                        <li><a href="cookies.html">Cookies</a></li>
+                        <li><a href="aviso-legal.html">Aviso Legal</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <p>Sígueme en redes sociales.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                style="width: 24px; height: 24px;">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                        <a href="https://wa.me/[TU_TELEFONO]" class="social-link" aria-label="WhatsApp">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                style="width: 24px; height: 24px;">
+                                <path
+                                    d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z">
+                                </path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2025 Serenamente Vivir - Marlene Sosa | Todos los derechos reservados</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/config-loader.js"></script>
+    <script src="js/auth.js?v=10"></script>
+    <script src="js/main.js?v=11"></script>
+
+    <script>
+        function handleMembershipUpgrade() {
+            const usuario = obtenerUsuarioActual();
+            if (!usuario) {
+                abrirModalLogin();
+                // Opcional: pasar una flag para que tras login regrese aquí o haga upgrade
+                return;
+            }
+
+            if (usuario.nivel === 3) {
+                alert('¡Ya eres miembro Premium! Accede a tu Espacio Privado para ver el contenido.');
+                window.location.href = 'area-privada.html';
+                return;
+            }
+
+            if (typeof upgradeUsuarioAMiembro === 'function') {
+                upgradeUsuarioAMiembro();
+            } else {
+                console.error('Función upgradeUsuarioAMiembro no cargada');
+            }
+        }
+    </script>
+</body>
+
+</html>
