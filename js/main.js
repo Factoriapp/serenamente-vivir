@@ -1,3 +1,6 @@
+const SUPABASE_URL = 'https://pprkvdouocehtewpeviu.supabase.co';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBwcmt2ZG91b2NlaHRld3Bldml1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjgzMDEyNjQsImV4cCI6MjA4Mzg3NzI2NH0.JMb5cN33iqRD_XLGIz7nBZ_djWcagSBvSKMDOtkOfoI';
+let sb = null; try { if (typeof supabase !== 'undefined') { sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY); console.log('? MOTOR SUPABASE UNIFICADO Y ACTIVO'); } } catch(e) { console.error(e); }
 // ============================================
 // SERENAMENTE VIVIR - JAVASCRIPT PRINCIPAL
 // ============================================
@@ -497,4 +500,5 @@ document.addEventListener('click', function (e) {
         }
     }
 });
+
 
