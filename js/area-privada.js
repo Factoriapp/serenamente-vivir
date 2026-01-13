@@ -3,24 +3,22 @@
 // ============================================
 
 // Se ejecuta cuando el DOM está completamente cargado
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', async function () {
     console.log('[area-privada.js] DOMContentLoded - Iniciando lógica.');
 
     // 1. Verificación y redirección de usuario (usando función global de auth.js)
-    const usuario = obtenerUsuarioActual(); // Viene de js/auth.js
+    // Pasamos nivel 2 (Regina) como mínimo para esta página
+    const autenticado = await verificarAutenticacion(2);
+    if (!autenticado) return;
+
+    const usuario = await obtenerUsuarioActual();
     console.log('--- DEBUG: Objeto de Usuario ---');
     console.log(usuario);
     console.log('---------------------------------');
 
-    if (!usuario) {
-        console.warn('[area-privada.js] No hay usuario autenticado. Redirigiendo a index.html...');
-        window.location.href = 'index.html';
-        return;
-    }
-
     // 2. Actualizar el header y el título de la página con el nombre del usuario
     const primerNombre = obtenerPrimerNombre(usuario.nombre); // Viene de js/auth.js
-    
+
     const nombreUsuarioHeaderElement = document.getElementById('nombreUsuarioHeader'); // Nuevo ID del header estándar
     if (nombreUsuarioHeaderElement) {
         nombreUsuarioHeaderElement.textContent = primerNombre;
@@ -147,7 +145,7 @@ function mostrarSeccionesPorTipo(tipo) {
 // El nuevo header llama a toggleUserDropdown y cerrarSesion (de auth.js)
 // Asegurémonos de que toggleUserDropdown existe, si no, lo definimos o usamos el de main.js
 if (typeof window.toggleUserDropdown !== 'function') {
-    window.toggleUserDropdown = function() {
+    window.toggleUserDropdown = function () {
         const dropdown = document.getElementById('userDropdown');
         if (dropdown) {
             dropdown.style.display = dropdown.style.display === 'block' ? 'none' : 'block';
@@ -156,7 +154,7 @@ if (typeof window.toggleUserDropdown !== 'function') {
 }
 
 // Cerrar dropdown al hacer click fuera (adaptado a user-menu-container)
-document.addEventListener('click', function(e) {
+document.addEventListener('click', function (e) {
     const userMenuContainer = document.getElementById('userMenuContainer');
     const userDropdown = document.getElementById('userDropdown');
 
@@ -177,7 +175,7 @@ function inicializarTablonAnuncios() {
 
     const tablonCloseBtn = tablon.querySelector('.tablon-close');
     if (tablonCloseBtn) {
-        tablonCloseBtn.addEventListener('click', function() {
+        tablonCloseBtn.addEventListener('click', function () {
             tablon.classList.add('hidden');
             const hoy = new Date().toDateString();
             localStorage.setItem('tablonCerrado', hoy);
@@ -200,13 +198,13 @@ document.addEventListener('DOMContentLoaded', () => {
     const recursosLinks = document.querySelectorAll('.recurso-link');
 
     recursosLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
+        link.addEventListener('click', async function (e) {
             e.preventDefault();
 
             const recursoId = this.dataset.recursoId;
             const nivelRequerido = this.dataset.nivelRequerido;
 
-            const usuario = obtenerUsuarioActual();
+            const usuario = await obtenerUsuarioActual();
             if (!usuario) {
                 window.location.href = 'index.html'; // Redirigir si no hay usuario
                 return;
@@ -267,7 +265,7 @@ function inicializarPomodoro() {
     if (pomodoroOverlay) pomodoroOverlay.addEventListener('click', closePomodoro);
 
     pomodoroModes.forEach(modeBtn => {
-        modeBtn.addEventListener('click', function() {
+        modeBtn.addEventListener('click', function () {
             const mode = this.dataset.mode;
             const minutes = parseInt(this.innerText.match(/\d+/)[0]);
             setMode(mode, minutes);

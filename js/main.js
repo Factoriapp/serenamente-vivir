@@ -419,13 +419,13 @@ document.addEventListener('DOMContentLoaded', function () {
 /**
  * Actualiza la visibilidad de los elementos del header según el estado de la sesión
  */
-window.actualizarHeaderUsuario = function () {
+window.actualizarHeaderUsuario = async function () {
     if (typeof obtenerUsuarioActual !== 'function') {
         console.warn('⚠️ actualizarHeaderUsuario: obtenerUsuarioActual no definida (¿auth.js cargado?)');
         return;
     }
 
-    const usuario = obtenerUsuarioActual();
+    const usuario = await obtenerUsuarioActual();
     const btnIniciarSesion = document.getElementById('btnIniciarSesion');
     const userMenuContainer = document.getElementById('userMenuContainer');
     const nombreUsuarioHeader = document.getElementById('nombreUsuarioHeader');
@@ -444,7 +444,7 @@ window.actualizarHeaderUsuario = function () {
         if (btnIniciarSesion) btnIniciarSesion.style.display = 'inline-block';
         if (userMenuContainer) userMenuContainer.style.display = 'none';
     }
-    console.log('✅ Header: Estado de usuario actualizado');
+    console.log('✅ Header: Estado de usuario actualizado (Supabase)');
 };
 
 /**
@@ -460,8 +460,8 @@ window.toggleUserDropdown = function () {
 /**
  * Ir a Espacio Privado (verificar si está logueado)
  */
-window.irAEspacioPrivado = function () {
-    const usuario = typeof obtenerUsuarioActual === 'function' ? obtenerUsuarioActual() : null;
+window.irAEspacioPrivado = async function () {
+    const usuario = typeof obtenerUsuarioActual === 'function' ? await obtenerUsuarioActual() : null;
 
     if (usuario) {
         // Usuario logueado → ir al área privada
