@@ -1,8 +1,182 @@
 const SUPABASE_URL = 'https://pprkvdouocehtewpeviu.supabase.co';
 const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBwcmt2ZG91b2NlaHRld3Bldml1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjgzMDEyNjQsImV4cCI6MjA4Mzg3NzI2NH0.JMb5cN33iqRD_XLGIz7nBZ_djWcagSBvSKMDOtkOfoI';
-let sb = null; try { if (typeof supabase !== 'undefined') { sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY); console.log('? MOTOR SUPABASE UNIFICADO Y ACTIVO'); } } catch(e) { console.error(e); }
+let sb = null; try { if (typeof supabase !== 'undefined') { sb = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY); console.log('%c🚀 MOTOR SUPABASE UNIFICADO Y ACTIVO', 'color: #16a34a; font-weight: bold; font-size: 14px;'); } } catch (e) { console.error('❌ Error Supabase:', e); }
+
 // ============================================
-// SERENAMENTE VIVIR - JAVASCRIPT PRINCIPAL
+// FUNCIONES DE AUTENTICACION (Migradas de auth.js)
+// ============================================
+
+// LIMPIEZA DE SEGURIDAD: Borrar rastro de la versión local vieja
+if (localStorage.getItem('usuarios') || localStorage.getItem('usuarioActual')) {
+    console.warn('🧹 Limpiando rastro de base de datos local antigua...');
+    localStorage.removeItem('usuarios');
+    localStorage.removeItem('usuarioActual');
+}
+
+// Alias para facilitar el uso en el código
+function getSupabase() {
+    return sb; // Usa la variable sb unificada
+}
+
+// Obtener solo el primer nombre
+function obtenerPrimerNombre(nombreCompleto) {
+    if (!nombreCompleto) return '';
+    return nombreCompleto.trim().split(' ')[0];
+}
+
+/**
+ * Obtiene la sesión actual de Supabase
+ */
+async function obtenerUsuarioActual() {
+    const sb = getSupabase();
+    if (!sb) {
+        console.warn('⚠️ Supabase no inicializado aún.');
+        return null;
+    }
+
+    try {
+        const { data: { session }, error } = await sb.auth.getSession();
+        if (error || !session) return null;
+
+        // Obtener perfil detallado
+        const { data: profile, error: profileError } = await sb
+            .from('profiles')
+            .select('*')
+            .eq('id', session.user.id)
+            .single();
+
+        if (profileError) {
+            return session.user;
+        }
+
+        return {
+            ...session.user,
+            ...profile,
+            nombre: profile.full_name,
+            nivel: profile.user_level,
+            tipoUsuario: profile.user_type
+        };
+    } catch (err) {
+        console.error('❌ Error en obtenerUsuarioActual:', err);
+        return null;
+    }
+}
+
+/**
+ * Cerrar sesión (Versión Supabase)
+ */
+async function cerrarSesion() {
+    const sb = getSupabase();
+    if (sb) await sb.auth.signOut();
+    window.location.reload();
+}
+// Exportar para que esté disponible globalmente (para el onclick del HTML)
+window.cerrarSesion = cerrarSesion;
+
+/**
+ * Verificar sesión
+ */
+async function verificarAutenticacion(nivelRequerido = 1) {
+    const usuario = await obtenerUsuarioActual();
+    if (!usuario) {
+        window.location.href = 'index.html?login=true';
+        return false;
+    }
+    if (usuario.nivel < nivelRequerido) {
+        window.location.href = 'membresia.html';
+        return false;
+    }
+    return true;
+}
+
+// Mensajes UI
+function mostrarError(mensaje, elementoId = 'mensajeError') {
+    const elemento = document.getElementById(elementoId);
+    if (elemento) {
+        elemento.textContent = mensaje;
+        elemento.style.display = 'block';
+    }
+}
+
+function mostrarExito(mensaje, elementoId = 'mensajeExito') {
+    const elemento = document.getElementById(elementoId);
+    if (elemento) {
+        elemento.textContent = mensaje;
+        elemento.style.display = 'block';
+    }
+}
+
+// ============================================
+// FORMULARIO DE REGISTRO
+// ============================================
+
+window.initializeRegistroForm = function () {
+    const form = document.getElementById('registroForm');
+    if (!form) return;
+
+    form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const sb = getSupabase();
+        if (!sb) return;
+
+        const nombre = document.getElementById('nombre').value.trim();
+        const email = document.getElementById('email').value.trim().toLowerCase();
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirmPassword').value;
+        const terminos = document.getElementById('terminos').checked;
+
+        if (password !== confirmPassword) {
+            mostrarError('Las contraseñas no coinciden');
+            return;
+        }
+
+        // Registro real en Supabase
+        const { data, error } = await sb.auth.signUp({
+            email: email,
+            password: password,
+            options: { data: { full_name: nombre } }
+        });
+
+        if (error) {
+            mostrarError('Error: ' + error.message);
+        } else {
+            mostrarExito('¡Cuenta creada! Revisa tu email para confirmar.');
+            form.reset();
+        }
+    });
+};
+
+// ============================================
+// FORMULARIO DE LOGIN
+// ============================================
+
+window.initializeLoginForm = function () {
+    const form = document.getElementById('loginForm');
+    if (!form) return;
+
+    form.addEventListener('submit', async function (e) {
+        e.preventDefault();
+        const sb = getSupabase();
+        if (!sb) return;
+
+        const email = document.getElementById('loginEmail').value;
+        const password = document.getElementById('loginPassword').value;
+
+        const { data, error } = await sb.auth.signInWithPassword({
+            email: email,
+            password: password
+        });
+
+        if (error) {
+            mostrarError('Error: ' + error.message, 'loginMensajeError');
+        } else {
+            window.location.reload();
+        }
+    });
+};
+
+// ============================================
+// SERENAMENTE VIVIR - JAVASCRIPT PRINCIPAL (Original)
 // ============================================
 
 // CONFIGURACIÓN GLOBAL (Fácil de actualizar para Marlene)
@@ -40,6 +214,15 @@ function inicializarDatosContacto() {
 // Inicializar al cargar el DOM
 document.addEventListener('DOMContentLoaded', () => {
     inicializarDatosContacto();
+
+    // Verificar sesión y parámetros URL (para redirección desde email)
+    if (sb) {
+        sb.auth.onAuthStateChange((event, session) => {
+            if (event === 'SIGNED_IN') {
+                console.log('✅ Usuario detectado:', session.user.email);
+            }
+        });
+    }
 });
 
 
@@ -479,15 +662,7 @@ window.irAEspacioPrivado = async function () {
     }
 };
 
-/**
- * Cerrar sesión con confirmación
- */
-window.cerrarSesion = function () {
-    if (confirm('¿Seguro que quieres cerrar sesión?')) {
-        localStorage.removeItem('usuarioActual');
-        window.location.reload();
-    }
-};
+// Se elimina la función cerrarSesion duplicada, ya que la de Supabase (arriba) hace ambas cosas
 
 // Cerrar dropdown al hacer click fuera
 document.addEventListener('click', function (e) {
@@ -500,5 +675,3 @@ document.addEventListener('click', function (e) {
         }
     }
 });
-
-
