@@ -34,7 +34,7 @@
         rel="stylesheet">
 
     <!-- CSS Externo - Sistema SCSS Modular -->
-    <link rel="stylesheet" href="css/styles.css?v=17">
+    <link rel="stylesheet" href="css/styles.css?v=21">
     <!-- Despliegue Producción V.2.0 - Supabase Active -->
 </head>
 
@@ -42,7 +42,12 @@
     <!-- Header -->
     <header>
         <div class="header-content">
-            <nav>
+            <button class="mobile-menu-toggle" aria-label="Abrir menú" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav id="mainNav">
                 <a href="index.html">Inicio</a>
                 <a href="sobre_mi.html">Sobre mi</a>
                 <a href="tienda.html">Para ti</a>
@@ -118,6 +123,13 @@
                 <p>... acompañar mujeres en momentos de transformación vital, brindando herramientas para que encuentren
                     la calma, claridad y confianza necesarias para elegir consciente y asertivamente. Deseo que cada
                     persona sienta que es posible volver a sí misma, reconocerse y aceptarse en su totalidad.</p>
+            </div>
+
+            <div style="text-align: right; margin-top: 15px;">
+                <a href="sobre_mi.html"
+                    style="color: #333333 !important; text-decoration: none; font-size: 16px; font-weight: 600; transition: var(--transition);"
+                    onmouseover="this.style.color='var(--color-cyan)'" onmouseout="this.style.color='#333333'">... más
+                    sobre mi →</a>
             </div>
         </div>
     </section>
@@ -273,7 +285,7 @@
                         </p>
 
                         <h3
-                            style="font-family: var(--font-serif); font-size: 1.8rem; font-style: italic; color: var(--color-gray); margin-bottom: 1.5rem;">
+                            style="font-family: var(--font-sans); font-size: 1.8rem; font-style: italic; color: var(--color-gray); margin-bottom: 1.5rem;">
                             ¿Qué incluye?</h3>
                         <ul
                             style="color: var(--color-text); line-height: 2; margin-bottom: 2.5rem; font-size: 1.05rem;">
@@ -367,14 +379,16 @@
         <div class="container">
             <div class="who-grid" style="align-items: center;">
                 <div class="lead-magnet-image">
-                    <img src="https://iili.io/fuP5Rne.png" alt="Portada Meditación" loading="lazy">
+                    <img id="leadMagnetImage" src="https://iili.io/fuP5Rne.png" alt="Portada Meditación" loading="lazy">
                 </div>
 
                 <div>
                     <h2>Un regalo para tu calma</h2>
-                    <p>¿Sientes que el ruido mental no te deja descansar? He grabado una <strong>Meditación de Calma
-                            Interior (15 min)</strong> especialmente para ti.</p>
-                    <p>Es una herramienta de emergencia para volver a tu centro cuando la ansiedad aprieta.</p>
+                    <p>¿Sientes que el ruido mental no te deja descansar? He preparado una <strong
+                            id="leadMagnetTitle">Meditación guiada: Calma en 10 minutos</strong> especialmente para ti.
+                    </p>
+                    <p id="leadMagnetDescription">Es una herramienta de emergencia para volver a tu centro cuando la
+                        ansiedad aprieta.</p>
 
                     <div class="lead-form-box">
                         <p><strong>Descárgala gratis aquí:</strong></p>
@@ -614,7 +628,7 @@
 
     <script src="js/config-loader.js"></script>
 
-    <script src="js/main.js?v=22"></script>
+    <script src="js/main.js?v=20"></script>
 </body>
 
 </html>

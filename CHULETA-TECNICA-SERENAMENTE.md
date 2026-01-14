@@ -764,6 +764,38 @@ Error: Invalid CSS after "background": expected ";", was ": var(--color-beige"
 
 **Solución:**
 
+1. **Revisar media queries** en `_responsive.scss`.
+2. **Asegurarse de que el orden es correcto** (Desktop -> Tablet -> Mobile).
+3. **Verificar que no hay estilos inline** en HTML que ganen especificidad.
+
+---
+
+### Problema 5: "Layout roto por selectores genéricos (width 100% en checkbox)"
+
+**Síntoma:**
+- Un formulario se ve bien en desktop pero en móvil el checkbox "flota" o rompe el diseño.
+- El checkbox ocupa todo el ancho disponible.
+
+**Causa:**
+- Un selector CSS demasiado genérico como `.formulario input { width: 100%; }`.
+- Esto aplica `width: 100%` a **TODOS** los inputs, incluyendo `checkbox` y `radio`, deformándolos.
+
+**Solución:**
+- **NUNCA** usar selectores `input` genéricos para anchos.
+- **SIEMPRE** especificar el tipo de input:
+   ```css
+   /* ❌ MAL */
+   .lead-form input {
+       width: 100%;
+   }
+
+   /* ✅ BIEN */
+   .lead-form input[type="text"],
+   .lead-form input[type="email"],
+   .lead-form input[type="password"] {
+       width: 100%;
+   }
+   ```
 1. **Inspeccionar elemento (F12)**
    - Click derecho en elemento → "Inspeccionar"
    - Ver qué CSS se está aplicando

@@ -49,20 +49,71 @@
    iPads, tablets
    ======================================== */
 @media (max-width: $breakpoint-tablet) {
+
     /* Header responsive */
+    /* Header responsive - Modo Drawer */
     .header-content {
-        flex-direction: column;
-        gap: 20px;
+        flex-direction: row;
+        /* Mantener fila para logo (si hubiera) y botón */
+        justify-content: space-between;
+        /* Botón a la derecha/izquierda */
+        align-items: center;
+        padding: 0;
     }
 
+    /* Mostrar botón hamburguesa */
+    .mobile-menu-toggle {
+        display: flex;
+    }
+
+    /* Menú Oculto por defecto */
     nav {
+        display: none;
+        /* Oculto */
         flex-direction: column;
-        gap: 10px;
+        position: absolute;
+        top: 100%;
+        left: 0;
         width: 100%;
+        background-color: var(--color-white);
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        z-index: 1001;
+        border-top: 1px solid var(--color-beige);
+        gap: 15px;
+
+        /* Animación de entrada */
+        animation: slideDown 0.3s ease forwards;
     }
 
+    /* Menú Activo (Clase toggleada por JS) */
+    nav.active {
+        display: flex;
+    }
+
+    /* Estilos de enlaces en móvil */
     nav a {
         text-align: center;
+        width: 100%;
+        padding: 12px;
+        border-bottom: 1px solid #f0f0f0;
+        display: block;
+    }
+
+    nav a:last-child {
+        border-bottom: none;
+    }
+
+    @keyframes slideDown {
+        from {
+            opacity: 0;
+            transform: translateY(-10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     /* Hero */
@@ -230,16 +281,79 @@
     }
 
     /* Lead Magnet Responsive */
+    /* Lead Magnet Responsive - FORCED COLUMN AT 768px */
+    .lead-magnet-section .who-grid {
+        display: flex !important;
+        flex-direction: column !important;
+        grid-template-columns: 1fr !important;
+        /* Override override just in case */
+        align-items: center !important;
+        gap: 30px !important;
+    }
+
+    .lead-magnet-image {
+        width: 100% !important;
+        max-width: 450px !important;
+        margin: 0 auto 20px !important;
+    }
+
     .lead-magnet-section h2 {
         text-align: center;
     }
 
     .lead-form {
-        flex-direction: column;
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        align-items: stretch !important;
     }
 
-    .lead-form input {
-        min-width: 100%;
+    .lead-form input[type="text"],
+    .lead-form input[type="email"] {
+        min-width: 100% !important;
+        width: 100% !important;
+        margin-bottom: 10px;
+    }
+
+    .lead-form-box {
+        width: 100% !important;
+        max-width: 500px;
+        /* Evita que se estire demasiado */
+        margin: 0 auto;
+    }
+
+    /* Fix Checkbox Overflow FORCE - TABLET & MOBILE */
+    .privacy-checkbox {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: flex-start !important;
+        /* Alineación Izquierda Forzada */
+        align-items: flex-start !important;
+        gap: 12px !important;
+        text-align: left !important;
+        width: 100% !important;
+        margin-top: 10px !important;
+        margin-bottom: 20px !important;
+        align-self: flex-start !important;
+    }
+
+    .privacy-checkbox input[type="checkbox"] {
+        width: 18px !important;
+        height: 18px !important;
+        flex: 0 0 18px !important;
+        /* Evita expansión o contracción */
+        margin-top: 2px !important;
+        margin-right: 0 !important;
+        margin-left: 0 !important;
+    }
+
+    .privacy-text {
+        display: block !important;
+        font-size: 13px !important;
+        line-height: 1.4 !important;
+        color: var(--color-text-light) !important;
+        width: auto !important;
+        flex: 1 1 auto !important;
     }
 
     /* Antifuga Responsive */
@@ -272,6 +386,12 @@
     .testimonials-section h2 {
         font-size: 32px;
     }
+
+    /* FIX: Force Services Grid to 1 column in Tablet/Mobile */
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
 }
 
 /* ========================================
@@ -279,6 +399,7 @@
    Smartphones
    ======================================== */
 @media (max-width: $breakpoint-mobile-small) {
+
     /* Hero */
     .hero {
         padding: 15px 20px 20px;
@@ -439,6 +560,7 @@
         font-size: 28px;
     }
 
+    /* Lead Magnet Mobile */
     /* Lead Magnet Mobile */
     .lead-magnet-section {
         padding: 2rem 0;

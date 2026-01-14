@@ -75,7 +75,8 @@
 }
 
 .about-image {
-    width: 70%;
+    width: 100%;
+    max-width: 500px;
     height: auto;
     border-radius: var(--radius-medium);
     object-fit: cover;
@@ -124,7 +125,8 @@
 }
 
 .who-image {
-    width: 500px;
+    width: 100%;
+    max-width: 500px;
     height: auto;
     border-radius: var(--radius-medium);
     margin-top: -270px;
@@ -231,7 +233,8 @@
 }
 
 .sessions-image {
-    width: 98%;
+    width: 100%;
+    max-width: 600px;
     height: auto;
     border-radius: var(--radius-medium);
     object-fit: cover;

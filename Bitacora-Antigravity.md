@@ -30,6 +30,9 @@ Resolver problemas de despliegue y caché en Hostinger tras una prueba de verifi
 5. **Lead Magnet (Teresa):**
    - **Frontend:** Conectado `index.html` a la tabla `leads` vía `main.js`.
    - **Fix:** Se encapsuló la lógica en `initializeLeadMagnet` dentro de `DOMContentLoaded` para evitar errores de carga.
+   - **Lead Magnet Layout**: Corregido colapso visual en tablet (768px) forzando layout vertical.
+   - **Responsive Checkbox FIX**: El usuario identificó y corrigió un error crítico donde `input { width: 100% }` afectaba a los checkboxes. Se actualizó a selectores específicos `input[type="text"]`.
+   - **Estatus**: Responsive optimizado y validado.
    - **Estado:** ✅ Funciona perfecto en Local. ⏳ Pendiente de propagación en Hostinger (Caché).
 
 ### ⚠️ Estado Actual / Problemas Pendientes

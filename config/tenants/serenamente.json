@@ -66,6 +66,13 @@
     "retiros": true,
     "acompanamiento": true
   },
+  "lead_magnet": {
+    "title": "Meditación guiada: Calma en 10 minutos",
+    "description": "Audio breve para regular el sistema nervioso y volver a tu centro cuando sientes saturación.",
+    "image": "https://iili.io/KLlTHBe.png",
+    "price": "0€ (Regalo de bienvenida) | Formato: MP3",
+    "badge": "Regalo"
+  },
   "icon_pack": "wellness",
   "professional_type": "therapeutic",
   "language": "es",

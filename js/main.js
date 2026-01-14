@@ -98,6 +98,18 @@ function mostrarError(mensaje, elementoId = 'mensajeError') {
     }
 }
 
+// Menú Hamburguesa Móvil
+function toggleMobileMenu() {
+    const nav = document.getElementById('mainNav');
+    const btn = document.querySelector('.mobile-menu-toggle');
+
+    if (nav) {
+        nav.classList.toggle('active');
+        // Opcional: Animar el icono de hamburguesa a X
+        if (btn) btn.classList.toggle('open');
+    }
+}
+
 function mostrarExito(mensaje, elementoId = 'mensajeExito') {
     const elemento = document.getElementById(elementoId);
     if (elemento) {
@@ -578,27 +590,33 @@ console.log('✅ Lead Magnet: Validación activa');
 // FUNCIÓN: Resaltar enlace de navegación activo
 // ============================================
 function highlightActiveLink() {
-    const currentPath = window.location.pathname.split('/').pop(); // Get current file name (e.g., index.html)
+    let currentPath = window.location.pathname.split('/').pop(); // "index.html" o ""
+
+    // Si estamos en la raíz (string vacío), asumimos index.html
+    if (currentPath === '') {
+        currentPath = 'index.html';
+    }
+
     const navLinks = document.querySelectorAll('header nav a');
 
     navLinks.forEach(link => {
-        // Remove active class from all links first
         link.classList.remove('active');
 
-        // Special handling for the "Membresía" link on index.html
-        // It points to an anchor on the same page
-        if (link.getAttribute('href') === '#membership-featured' && currentPath === 'index.html') {
-            link.classList.add('active');
-            return;
-        }
+        const href = link.getAttribute('href');
+        if (!href) return;
 
-        // Regular page links
-        const linkPath = link.getAttribute('href').split('/').pop();
+        // Extraer nombre de archivo del href (ej: "sobre_mi.html")
+        // Ignora anclas internas simples '#' o 'javascript:;'
+        if (href.startsWith('#') || href.startsWith('javascript')) return;
+
+        const linkPath = href.split('/').pop();
+
         if (linkPath === currentPath) {
             link.classList.add('active');
         }
     });
-    console.log('✅ Navegación: Enlace activo resaltado.');
+
+    console.log('✅ Navegación: Enlace activo resaltado para:', currentPath);
 }
 
 // Ejecutar al cargar la página

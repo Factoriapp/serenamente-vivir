@@ -78,6 +78,9 @@ async function loadTenantConfig() {
         applyDictionary(config.dictionary);
         applyFeatures(config.features);
         applyBranding(config.brand);
+        if (config.lead_magnet) {
+            applyLeadMagnet(config.lead_magnet);
+        }
         loadIconPack(config.icon_pack);
 
         console.log('✅ [CONFIG-LOADER] Configuración aplicada exitosamente');
@@ -98,6 +101,15 @@ async function loadTenantConfig() {
         throw error;
     }
 }
+
+// ... (omit unchanged code for brevity, but I must return the full block if using replace_file, so I will switch tool strategy to just append the function and insert the call)
+// Wait, replace_file_content rules say I can't use multiple tools on same file. I will use one call.
+
+// I will just add the function at the end and insert the call in one go using MultiReplace? 
+// No, the instructions for replace_file_content say "Use this tool ONLY when you are making a SINGLE CONTIGUOUS block of edits".
+// I have to make two edits: one in loadTenantConfig and one at the end.
+// So I MUST use multi_replace_file_content.
+
 
 // ═══════════════════════════════════════════════════════════════════════════
 // DETECCIÓN DE TENANT
@@ -442,4 +454,26 @@ window.TenantConfig = {
     isFeatureEnabled: isFeatureEnabled,
     getCurrentConfig: getCurrentTenantConfig
 };
+
+
+// ═══════════════════════════════════════════════════════════════════════════
+// APLICACIÓN DE LEAD MAGNET (Nuevo)
+// ═══════════════════════════════════════════════════════════════════════════
+
+function applyLeadMagnet(lm) {
+    if (!lm) return;
+    console.log('🎁 [CONFIG-LOADER] Aplicando Lead Magnet:', lm.title);
+
+    const titleEl = document.getElementById('leadMagnetTitle');
+    const imgEl = document.getElementById('leadMagnetImage');
+    const descEl = document.getElementById('leadMagnetDescription');
+
+    if (titleEl) titleEl.textContent = lm.title;
+    if (descEl) descEl.textContent = lm.description;
+
+    // Si la imagen existe (ahora sí, porque revertimos el HTML), actualizamos su src
+    if (imgEl && lm.image) {
+        imgEl.src = lm.image;
+    }
+}
 

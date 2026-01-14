@@ -3,6 +3,15 @@
    SERENAMENTE VIVIR - SCSS PRINCIPAL
    Archivo orquestador que importa todos los módulos
    ============================================ */
+/* GLOBAL SAFETY: Prevent horizontal scrollbar caused by element overflow */
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100vw;
+  margin: 0;
+  padding: 0;
+}
+
 /* 1. Variables y configuración base */
 /* ============================================
    CSS CUSTOM PROPERTIES - Serenamente Vivir
@@ -101,6 +110,29 @@ header {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+  position: relative;
+  /* Ncesario para posicionar el menú móvil absoluto */
+}
+
+/* Botón Hamburguesa (Oculto en Desktop) */
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 1002;
+}
+
+.mobile-menu-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--color-gray);
+  border-radius: 2px;
+  transition: var(--transition);
 }
 
 .logo {
@@ -128,9 +160,13 @@ nav a {
   transition: var(--transition);
 }
 
-nav a:hover {
-  background-color: var(--color-beige);
-  color: #555;
+nav a:hover,
+nav a.active {
+  background-color: transparent;
+  /* Cleaner look */
+  color: var(--color-text);
+  /* Darker text for emphasis */
+  font-weight: 600;
 }
 
 /* Usuario logueado (sin borde) */
@@ -350,7 +386,8 @@ nav a.user-logged:hover {
 }
 
 .about-image {
-  width: 70%;
+  width: 100%;
+  max-width: 500px;
   height: auto;
   border-radius: var(--radius-medium);
   object-fit: cover;
@@ -399,7 +436,8 @@ nav a.user-logged:hover {
 }
 
 .who-image {
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   height: auto;
   border-radius: var(--radius-medium);
   margin-top: -270px;
@@ -506,7 +544,8 @@ nav a.user-logged:hover {
 }
 
 .sessions-image {
-  width: 98%;
+  width: 100%;
+  max-width: 600px;
   height: auto;
   border-radius: var(--radius-medium);
   object-fit: cover;
@@ -2000,7 +2039,9 @@ footer,
 
 /* Botón Primario - CTAs principales */
 .btn-primary {
-  background-color: var(--color-green);
+  background: linear-gradient(135deg, rgba(200, 225, 225, 0.6), rgba(202, 228, 178, 0.6)), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><defs><pattern id="bg" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="2" fill="%23e7cf9d" opacity="0.1"/></pattern></defs><rect fill="%23f1ede2" width="1200" height="600"/><rect fill="url(%23bg)" width="1200" height="600"/></svg>');
+  background-size: cover;
+  background-position: center;
   color: var(--color-gray);
   font-weight: 600;
 }
@@ -2562,17 +2603,61 @@ footer,
    ======================================== */
 @media (max-width: 768px) {
   /* Header responsive */
+  /* Header responsive - Modo Drawer */
   .header-content {
-    flex-direction: column;
-    gap: 20px;
+    flex-direction: row;
+    /* Mantener fila para logo (si hubiera) y botón */
+    justify-content: space-between;
+    /* Botón a la derecha/izquierda */
+    align-items: center;
+    padding: 0;
   }
+  /* Mostrar botón hamburguesa */
+  .mobile-menu-toggle {
+    display: flex;
+  }
+  /* Menú Oculto por defecto */
   nav {
+    display: none;
+    /* Oculto */
     flex-direction: column;
-    gap: 10px;
+    position: absolute;
+    top: 100%;
+    left: 0;
     width: 100%;
+    background-color: var(--color-white);
+    padding: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    z-index: 1001;
+    border-top: 1px solid var(--color-beige);
+    gap: 15px;
+    /* Animación de entrada */
+    animation: slideDown 0.3s ease forwards;
   }
+  /* Menú Activo (Clase toggleada por JS) */
+  nav.active {
+    display: flex;
+  }
+  /* Estilos de enlaces en móvil */
   nav a {
     text-align: center;
+    width: 100%;
+    padding: 12px;
+    border-bottom: 1px solid #f0f0f0;
+    display: block;
+  }
+  nav a:last-child {
+    border-bottom: none;
+  }
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   /* Hero */
   .hero h1 {
@@ -2709,14 +2794,71 @@ footer,
     padding: 40px 25px;
   }
   /* Lead Magnet Responsive */
+  /* Lead Magnet Responsive - FORCED COLUMN AT 768px */
+  .lead-magnet-section .who-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    grid-template-columns: 1fr !important;
+    /* Override override just in case */
+    align-items: center !important;
+    gap: 30px !important;
+  }
+  .lead-magnet-image {
+    width: 100% !important;
+    max-width: 450px !important;
+    margin: 0 auto 20px !important;
+  }
   .lead-magnet-section h2 {
     text-align: center;
   }
   .lead-form {
-    flex-direction: column;
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    align-items: stretch !important;
   }
-  .lead-form input {
-    min-width: 100%;
+  .lead-form input[type=text],
+  .lead-form input[type=email] {
+    min-width: 100% !important;
+    width: 100% !important;
+    margin-bottom: 10px;
+  }
+  .lead-form-box {
+    width: 100% !important;
+    max-width: 500px;
+    /* Evita que se estire demasiado */
+    margin: 0 auto;
+  }
+  /* Fix Checkbox Overflow FORCE - TABLET & MOBILE */
+  .privacy-checkbox {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: flex-start !important;
+    /* Alineación Izquierda Forzada */
+    align-items: flex-start !important;
+    gap: 12px !important;
+    text-align: left !important;
+    width: 100% !important;
+    margin-top: 10px !important;
+    margin-bottom: 20px !important;
+    align-self: flex-start !important;
+  }
+  .privacy-checkbox input[type=checkbox] {
+    width: 18px !important;
+    height: 18px !important;
+    flex: 0 0 18px !important;
+    /* Evita expansión o contracción */
+    margin-top: 2px !important;
+    margin-right: 0 !important;
+    margin-left: 0 !important;
+  }
+  .privacy-text {
+    display: block !important;
+    font-size: 13px !important;
+    line-height: 1.4 !important;
+    color: var(--color-text-light) !important;
+    width: auto !important;
+    flex: 1 1 auto !important;
   }
   /* Antifuga Responsive */
   .antifuga-cta-container {
@@ -2742,6 +2884,11 @@ footer,
   }
   .testimonials-section h2 {
     font-size: 32px;
+  }
+  /* FIX: Force Services Grid to 1 column in Tablet/Mobile */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
   }
 }
 /* ========================================
@@ -2876,6 +3023,7 @@ footer,
   .antifuga-section h2 {
     font-size: 28px;
   }
+  /* Lead Magnet Mobile */
   /* Lead Magnet Mobile */
   .lead-magnet-section {
     padding: 2rem 0;
