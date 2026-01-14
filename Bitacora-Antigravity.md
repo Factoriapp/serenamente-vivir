@@ -22,9 +22,20 @@ Resolver problemas de despliegue y caché en Hostinger tras una prueba de verifi
 3. **Memoria Persistente:**
    - Se creó este archivo `Bitacora-Antigravity.md` para evitar amnesia entre sesiones.
 
+4. **Base de Datos (Supabase):**
+   - **Limpieza:** Se aprendió a borrar usuarios eliminando primero `profiles` y luego `auth`.
+   - **Tabla `leads`:** Creada y asegurada (RLS) para guardar correos de Teresa.
+   - **Corrección:** Se añadió restricción `UNIQUE` al email en `leads` para evitar duplicados.
+
+5. **Lead Magnet (Teresa):**
+   - **Frontend:** Conectado `index.html` a la tabla `leads` vía `main.js`.
+   - **Fix:** Se encapsuló la lógica en `initializeLeadMagnet` dentro de `DOMContentLoaded` para evitar errores de carga.
+   - **Estado:** ✅ Funciona perfecto en Local. ⏳ Pendiente de propagación en Hostinger (Caché).
+
 ### ⚠️ Estado Actual / Problemas Pendientes
-- El despliegue en Hostinger ya debería ser estable.
-- Se descartó trabajar en `cookies.html` por ahora.
+- **Producción:** La web real puede tardar en reflejar los cambios de `main.js` (v=22) debido al caché de Hostinger. No tocar código, solo esperar.
+- **Base de Datos:** Lista para Regina (Auth) y Teresa (Leads).
+- **Pendiente:** Verificar el flujo de Registro de Usuarios (Regina) en la próxima sesión.
 
 ### 🔜 Próximos Pasos Sugeridos
 1. Verificar que todas las páginas HTML principales carguen correctamente sin estilos antiguos.
