@@ -102,15 +102,6 @@ async function loadTenantConfig() {
     }
 }
 
-// ... (omit unchanged code for brevity, but I must return the full block if using replace_file, so I will switch tool strategy to just append the function and insert the call)
-// Wait, replace_file_content rules say I can't use multiple tools on same file. I will use one call.
-
-// I will just add the function at the end and insert the call in one go using MultiReplace? 
-// No, the instructions for replace_file_content say "Use this tool ONLY when you are making a SINGLE CONTIGUOUS block of edits".
-// I have to make two edits: one in loadTenantConfig and one at the end.
-// So I MUST use multi_replace_file_content.
-
-
 // ═══════════════════════════════════════════════════════════════════════════
 // DETECCIÓN DE TENANT
 // ═══════════════════════════════════════════════════════════════════════════
@@ -135,7 +126,8 @@ function detectTenantId() {
 // ═══════════════════════════════════════════════════════════════════════════
 
 async function fetchTenantConfig(tenantId) {
-    const configUrl = `${TENANT_CONFIG.configBasePath}${tenantId}.json`;
+    // Cache busting para desarrollo: añade timestamp
+    const configUrl = `${TENANT_CONFIG.configBasePath}${tenantId}.json?t=${Date.now()}`;
 
     try {
         const response = await fetch(configUrl);
@@ -357,7 +349,7 @@ function applyBranding(brand) {
 
     // Actualizar favicon
     if (brand.favicon) {
-        const link = document.querySelector("link[rel~='icon']") || document.createElement('link');
+        const link = document.querySelector("link[rel~='icon']") || document.createElement('icon');
         link.rel = 'icon';
         link.href = brand.favicon;
         document.head.appendChild(link);
@@ -394,6 +386,14 @@ function applyDefaultConfig() {
     };
 
     applyTheme(defaultTheme);
+
+    // Fallback Lead Magnet (para asegurar que se vea incluso si falla la carga del JSON)
+    const defaultLeadMagnet = {
+        "title": "Meditación guiada: Calma en 10 minutos",
+        "description": "Audio breve para regular el sistema nervioso y volver a tu centro cuando sientes saturación.",
+        "image": "https://iili.io/KLlTHBe.png"
+    };
+    applyLeadMagnet(defaultLeadMagnet);
 }
 
 // ═══════════════════════════════════════════════════════════════════════════
@@ -455,25 +455,24 @@ window.TenantConfig = {
     getCurrentConfig: getCurrentTenantConfig
 };
 
-
 // ═══════════════════════════════════════════════════════════════════════════
-// APLICACIÓN DE LEAD MAGNET (Nuevo)
+// APLICACIÓN DE LEAD MAGNET (Nuevo UI estático)
 // ═══════════════════════════════════════════════════════════════════════════
 
 function applyLeadMagnet(lm) {
     if (!lm) return;
-    console.log('🎁 [CONFIG-LOADER] Aplicando Lead Magnet:', lm.title);
+    try {
+        // console.log('🎁 [CONFIG-LOADER] Updating Lead Magnet texts:', lm.title);
 
-    const titleEl = document.getElementById('leadMagnetTitle');
-    const imgEl = document.getElementById('leadMagnetImage');
-    const descEl = document.getElementById('leadMagnetDescription');
+        const titleEl = document.getElementById('leadMagnetTitle');
+        const descEl = document.getElementById('leadMagnetDescription');
+        const imgEl = document.getElementById('leadMagnetImage');
 
-    if (titleEl) titleEl.textContent = lm.title;
-    if (descEl) descEl.textContent = lm.description;
+        if (titleEl) titleEl.textContent = lm.title;
+        if (descEl) descEl.textContent = lm.description;
+        if (imgEl && lm.image) imgEl.src = lm.image;
 
-    // Si la imagen existe (ahora sí, porque revertimos el HTML), actualizamos su src
-    if (imgEl && lm.image) {
-        imgEl.src = lm.image;
+    } catch (e) {
+        console.error('Lead magnet error', e);
     }
 }
-
