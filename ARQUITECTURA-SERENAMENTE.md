@@ -666,3 +666,27 @@ getCurrentConfig() â†’ { tenant_id: "serenamente", ... }
 
 **Ãšltima actualizaciÃ³n**: 13-Dic-2025
 **Responsable**: Devito (Claude Code)
+
+## ??? CONTROL DE CACHÉ Y DESPLIEGUE (Anti-Caching)
+
+### Problema
+Los navegadores almacenan en caché los archivos HTML, CSS y JS para mejorar la velocidad. En un entorno de desarrollo activo, esto provoca que los usuarios vean versiones antiguas de la web después de un despliegue (ej: cambios en estilos o lógica que no se reflejan inmediatamente).
+
+### Solución Implementada (14-Ene-2026)
+
+Se implementó una estrategia de doble capa para garantizar que los cambios se reflejen inmediatamente en producción (Hostinger):
+
+1. **Capa 1: Servidor (.htaccess) - Automático**
+   - Se creó el archivo .htaccess en la raíz.
+   - Configura el servidor para **desactivar la caché de archivos HTML** (ExpiresByType text/html "access plus 0 seconds").
+   - **Resultado:** El navegador siempre descarga la última versión del HTML, garantizando que la estructura y el contenido estén frescos.
+
+2. **Capa 2: Versiones de Assets (?v=XX) - Manual**
+   - Para archivos CSS y JS, que sí mantenemos en caché por rendimiento (1 semana), usamos "Cache Busting" manual.
+   - **Regla:** Al realizar cambios significativos en styles.css o main.js, incrementamos el parámetro de versión en los enlaces del HTML.
+   - **Ejemplo:** <link href="css/styles.css?v=22"> ? <link href="css/styles.css?v=23">.
+
+### Protocolo de Despliegue
+Antes de subir a producción (Hostinger), si hubo cambios en CSS/JS:
+1. Buscar y reemplazar v=XX por v=XX+1 en todos los archivos HTML.
+2. Confirmar que el .htaccess está presente en la raíz.

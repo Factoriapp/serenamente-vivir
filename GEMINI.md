@@ -58,6 +58,7 @@ Cuando en este proyecto se menciona "BC" o "Base de Conocimiento", nos referimos
 2. `CHULETA-TECNICA-SERENAMENTE.md` - Sistema SCSS modular y arquitectura técnica
 3. `ARQUITECTURA-SERENAMENTE.md` - Sistema multi-tenant y configuración
 4. `TODO.md` - Tareas y deuda técnica pendiente
+5. `Bitacora-Antigravity.md` - Memoria persistente de sesiones pasadas (RESUMEN EJECUTIVO)
 
 Estos archivos constituyen la ÚNICA fuente de verdad del proyecto. Cualquier información que no esté aquí, no existe oficialmente.
 
@@ -225,6 +226,23 @@ Estos archivos constituyen la ÚNICA fuente de verdad del proyecto. Cualquier in
 - Se completa una tarea pendiente
 - Se cambia prioridad de un ítem
 - Se documenta una optimización futura
+
+### E. Para RECUPERAR MEMORIA → `Bitacora-Antigravity.md`
+
+**¿QUÉ ES?**: El "Punto de Guardado" del agente. Resumen ejecutivo de la última sesión.
+
+**FUNCIONES**:
+1. **Contexto Inmediato** - ¿Qué estábamos haciendo ayer?
+2. **Problemas Recientes** - ¿Qué bug dejamos a medias?
+3. **Próximos Pasos** - ¿Por dónde debo seguir hoy?
+
+**Cuándo CONSULTAR**:
+- **SIEMPRE AL INICIO DE UNA NUEVA SESIÓN** (Primer paso obligatorio).
+- Antes de preguntar "¿En qué quedamos?".
+
+**Cuándo ACTUALIZAR**:
+- Al finalizar una sesión o hito importante.
+- Al resolver un problema crítico (como el del caché).
 
 ---
 

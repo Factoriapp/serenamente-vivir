@@ -364,15 +364,55 @@ if (document.getElementById('leadMagnetForm')) {
     consentCheckbox.addEventListener('change', validar);
 
     // Submit
-    document.getElementById('leadMagnetForm').addEventListener('submit', function (e) {
+    document.getElementById('leadMagnetForm').addEventListener('submit', async function (e) {
         e.preventDefault();
 
-        // Verificar si el formulario es válido
+        // Verificar si el formulario es válido HTML5
         if (this.checkValidity()) {
-            console.log('📧 Lead enviado:', { nombre: leadName.value, email: leadEmail.value });
-            mostrarMensajeFormulario(this, '✓ ¡Perfecto! Revisa tu email para descargar el recurso.', 'success');
-            this.reset();
-            validar(); // Resetear botón
+            const btn = this.querySelector('button[type="submit"]');
+            const originalText = btn.textContent;
+            btn.textContent = 'Enviando...';
+            btn.disabled = true;
+
+            const sb = getSupabase();
+            if (!sb) {
+                mostrarMensajeFormulario(this, '❌ Error de conexión. Intenta más tarde.', 'error');
+                btn.textContent = originalText;
+                btn.disabled = false;
+                return;
+            }
+
+            // Datos a enviar
+            const leadData = {
+                nombre: leadName.value.trim(),
+                email: leadEmail.value.trim().toLowerCase(),
+                consentimiento: consentCheckbox.checked,
+                origen: 'web_home_magnet'
+            };
+
+            // Insertar en Supabase
+            const { error } = await sb.from('leads').insert([leadData]);
+
+            if (error) {
+                console.error('Error insertando lead:', error);
+
+                // Si el error es email duplicado (si ponemos UNIQUE en BD), manejarlo
+                if (error.code === '23505') { // Código PostgreSQL para unique_violation
+                    mostrarMensajeFormulario(this, '✓ ¡Ya tenemos tu email! Revisa tu bandeja de entrada.', 'success');
+                } else {
+                    mostrarMensajeFormulario(this, '❌ Ocurrió un error. Inténtalo de nuevo.', 'error');
+                }
+            } else {
+                console.log('📧 Lead guardado en Supabase:', leadData.email);
+                mostrarMensajeFormulario(this, '✓ ¡Recibido! Tu regalo está en camino a tu email.', 'success');
+                this.reset();
+                validar(); // Resetear botón
+            }
+
+            // Restaurar botón
+            btn.textContent = originalText;
+            btn.disabled = false;
+
         } else {
             // Si no es válido, forzar mostrar mensajes de validación HTML5
             this.reportValidity();
