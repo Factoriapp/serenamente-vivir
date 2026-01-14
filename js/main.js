@@ -334,7 +334,18 @@ function mostrarMensajeFormulario(form, mensaje, tipo = 'success') {
 // VALIDACIÓN LEAD MAGNET - CON MENSAJES HTML5
 // ============================================
 
-if (document.getElementById('leadMagnetForm')) {
+// ============================================
+// VALIDACIÓN LEAD MAGNET - CON MENSAJES HTML5
+// ============================================
+
+function initializeLeadMagnet() {
+    const leadForm = document.getElementById('leadMagnetForm');
+    if (!leadForm) return;
+
+    // Evitar doble inicialización
+    if (leadForm.dataset.initialized === 'true') return;
+    leadForm.dataset.initialized = 'true';
+
     const leadName = document.getElementById('leadName');
     const leadEmail = document.getElementById('leadEmail');
     const consentCheckbox = document.getElementById('consentCheckbox');
@@ -364,7 +375,7 @@ if (document.getElementById('leadMagnetForm')) {
     consentCheckbox.addEventListener('change', validar);
 
     // Submit
-    document.getElementById('leadMagnetForm').addEventListener('submit', async function (e) {
+    leadForm.addEventListener('submit', async function (e) {
         e.preventDefault();
 
         // Verificar si el formulario es válido HTML5
@@ -421,7 +432,12 @@ if (document.getElementById('leadMagnetForm')) {
 
     // Estado inicial
     validar();
+    console.log('✅ Lead Magnet: Validación e integración activa');
 }
+
+// Inicializar al cargar el DOM y al aplicar diccionario
+document.addEventListener('DOMContentLoaded', initializeLeadMagnet);
+document.addEventListener('dictionaryApplied', initializeLeadMagnet);
 
 // ============================================
 // MODAL DE LOGIN Y REGISTRO - INICIALIZACIÓN
