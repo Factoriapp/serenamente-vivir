@@ -45,3 +45,60 @@ Resolver problemas de despliegue y caché en Hostinger tras una prueba de verifi
 2. Retomar tareas del `TODO.md` (posiblemente optimizaciones de Fase 2 o ajustes de contenido).
 
 ---
+
+## 📅 SESIÓN: 14 de Enero de 2026 (Tarde/Noche)
+
+### 🎯 Objetivo de la Sesión
+Pulir la experiencia del "Lead Magnet" (hacerlo dinámico pero robusto), sincronizar navegación y simplificar la sección de contacto.
+
+### ✅ Logros y Cambios
+1. **Lead Magnet Robusto (Dinámico + Fallback):**
+   - **Problema:** En entorno local, la carga del JSON `serenamente.json` fallaba, impidiendo la actualización dinámica de la imagen y texto.
+   - **Solución:** Se implementó un "Fallback" en `config-loader.js` que aplica los datos correctos (Imagen Tarjeta, Texto Largo) incluso si el JSON falla.
+   - **Resultado:** El Lead Magnet se ve perfecto siempre. Imagen actualizada a la versión de la tarjeta (`KLlTHBe.png`).
+   - **Estilos:** Título centrado (H3), sin textos "gancho" fijos, icono de candado profesional (SVG), botón "Lo quiero".
+
+2. **Sección de Dudas (Antifuga) Simplificada:**
+   - Eliminado botón de WhatsApp y textos redundantes.
+   - Foco único en el contacto por email ("Pregúntame").
+
+3. **Sincronización Footer-Header:**
+   - El menú del pie de página ahora replica exactamente las opciones del encabezado.
+
+4. **Generación de Activos:**
+   - Se generó un audio de demostración (`meditacion_demo.wav`) vía script.
+
+### ⚠️ Estado Actual
+- **Código:** Estable y limpio.
+- **Configuración:** `config-loader.js` actualizado con versionado (`?v=99` en index) para evitar caché agresivo.
+- **Git:** Todo sincronizado en `main`.
+
+### 🔜 Próximos Pasos Sugeridos
+1. Validar el flujo de "Oficina Virtual" (Espacio Privado).
+
+---
+
+## 📅 SESIÓN: 15 de Enero de 2026 (La Gran Migración)
+
+### 🎯 Objetivo de la Sesión
+Estandarizar la infraestructura y mover el proyecto a su ubicación definitiva en la "Fábrica" (`03_FABRICA`).
+
+### ✅ Logros y Cambios
+1.  **Migración Física:**
+    - El proyecto ha sido movido de `Proyectos\Serenamente` a `Division Impulso Profesional\03_FABRICA\Serenamente`.
+    - **Motivo:** Centralización y orden ("Una sola fuente de verdad").
+
+2.  **Limpieza de Legado:**
+    - Eliminadas carpetas duplicadas/obsoletas (`Serenamente Antigravity`, `Serenamente_old`, `Impulso Profesional`).
+    - Ahora solo existe ESTA versión del proyecto.
+
+3.  **Conexión Neural:**
+    - Actualizado `GEMINI.md` local para apuntar a la nueva ruta de arquitectura: `Division Impulso Profesional\01_PLATAFORMA_MODELO`.
+
+### ⚠️ Estado Actual
+- **Ubicación:** `03_FABRICA`. Este es el entorno de PRODUCCIÓN.
+- **Salud:** `index.html` validado (carga correcta de Hero y Footer).
+
+### 🔜 Próximos Pasos Sugeridos
+1.  Continuar desarrollo desde aquí. No buscar en otras carpetas.
+2.  Mantener sincronía con `Manual_Creacion_Gemini.md` (Estructura Recursiva).

@@ -85,7 +85,7 @@ Estos archivos constituyen la ÚNICA fuente de verdad del proyecto. Cualquier in
 
 **Serenamente Vivir** es un website independiente que **REUTILIZA** la arquitectura técnica de Impulso Profesional, pero con identidad visual y contenido propios.
 
-**Los archivos de Impulso Profesional se encuentarn en: C:\Users\ulder\OneDrive\FactoriApp\Proyectos\Impulso Profesional\Plataforma_modelo
+**Los archivos de Impulso Profesional se encuentran en: C:\Users\ulder\OneDrive\FactoriApp\Division Impulso Profesional\01_PLATAFORMA_MODELO
 
 **¿Qué reutiliza de Impulso Pro?**
 - ✅ Sistema SCSS modular (arquitectura de archivos pequeños)
