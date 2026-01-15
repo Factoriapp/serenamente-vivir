@@ -95,9 +95,14 @@ Estandarizar la infraestructura y mover el proyecto a su ubicación definitiva e
 3.  **Conexión Neural:**
     - Actualizado `GEMINI.md` local para apuntar a la nueva ruta de arquitectura: `Division Impulso Profesional\01_PLATAFORMA_MODELO`.
 
+4.  **Identidad Definida:**
+    - Rol establecido como **"JEFE DE PROYECTO"**.
+    - Reporte dual: Al CEO (Usuario) y al Jefe de División (Stratego).
+
 ### ⚠️ Estado Actual
 - **Ubicación:** `03_FABRICA`. Este es el entorno de PRODUCCIÓN.
 - **Salud:** `index.html` validado (carga correcta de Hero y Footer).
+- **Repositorio:** `Factoriapp/cliente-serenamente` (Privado).
 
 ### 🔜 Próximos Pasos Sugeridos
 1.  Continuar desarrollo desde aquí. No buscar en otras carpetas.
